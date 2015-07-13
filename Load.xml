@@ -1,0 +1,29 @@
+
+<!--
+-->
+<load>
+<VehicleName></VehicleName> <!--Number of the Vehicle  -->
+<Trackid></TrackID> <!--TrackID of Unit -->
+<Company></Company> 
+<StartEvent></StartEvent>  <!--To Do Need to think here when to start a load : 
+	1. is it always going to be Exit Location of the start location 
+	2. Or any Event may be Driver message. 
+			-->
+<Route>
+	<RouteName><RouteName>
+	<RouteID><RouteID>
+	<Stops> 
+		<stop>
+			<location>
+				<lat></lat>
+				<long></long>
+			</location>
+			<DateTime><DateTime>
+			<ThreashHoldinMin></ThreashHoldinMin>
+			<PhysicalOrder>1</PhysicalOrder>
+			
+		</Stop>
+	</Stops>
+</Route>
+</load>
+
