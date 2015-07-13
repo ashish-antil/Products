@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E9CA19F-50BE-4C6A-BD80-2231144E96D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImardaSecurityBusiness</RootNamespace>
+    <AssemblyName>ImardaSecurityBusinessInterface</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LocalMessageAPI|AnyCPU'">
+    <OutputPath>bin\LocalMessageAPI\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ApiMethod\ApiMethod.cs" />
+    <Compile Include="View\ApiMethod\ApiMethod.cs" />
+    <Compile Include="Model\ScopeAccessLimit\ScopeAccessLimit.cs" />
+    <Compile Include="Model\ScopeAccess\ScopeAccess.cs" />
+    <Compile Include="View\ScopeAccessLimit\ScopeAccessLimit.cs" />
+    <Compile Include="Model\Scope\Scope.cs" />
+    <Compile Include="View\ScopeAccess\ScopeAccess.cs" />
+    <Compile Include="View\Scope\Scope.cs" />
+    <Compile Include="Model\Client\Client.cs" />
+    <Compile Include="View\Client\Client.cs" />
+    <Compile Include="Model\AccessLog\AccessLog.cs" />
+    <Compile Include="Model\ApplicationFeatureCategory\ApplicationFeatureCategory.cs" />
+    <Compile Include="Model\ApplicationFeatureOwner\ApplicationFeatureOwner.cs" />
+    <Compile Include="Model\ApplicationFeature\ApplicationFeature.cs" />
+    <Compile Include="Model\ApplicationPlanFeature\ApplicationPlanFeature.cs" />
+    <Compile Include="Model\ApplicationPlan\ApplicationPlan.cs" />
+    <Compile Include="Model\Application\Application.cs" />
+    <Compile Include="Model\Authorization\Authorizer.cs" />
+    <Compile Include="Model\BillableFeature\BillableFeature.cs" />
+    <Compile Include="Model\FeatureSupport\FeatureSupport.cs" />
+    <Compile Include="Model\LogonLog\LogonLog.cs" />
+    <Compile Include="Model\LogonType.cs" />
+    <Compile Include="Model\SecurityEntity\SecurityEntityType.cs" />
+    <Compile Include="Model\SecurityEntity\SecurityPermission.cs" />
+    <Compile Include="Model\SecurityEntity\SecurityEntityParent.cs" />
+    <Compile Include="Model\SecurityEntity\SecurityEntity.cs" />
+    <Compile Include="Model\SecurityEntity\SecurityEntityAndPermission.cs" />
+    <Compile Include="Model\SecurityEntry\SecurityEntry.cs" />
+    <Compile Include="Model\SecurityEntry\SecurityEntryKey.cs" />
+    <Compile Include="Model\SecurityObjectGroup\SecurityObjectGroup.cs" />
+    <Compile Include="Model\SecurityObjectMap\SecurityObjectMap.cs" />
+    <Compile Include="Model\SecurityObject\SecurityObjectInfo.cs" />
+    <Compile Include="Model\SecurityObject\SecurityObject.cs" />
+    <Compile Include="Model\SessionObjectCache\SessionObjectCache.cs" />
+    <Compile Include="Model\SessionObject\SessionObject.cs" />
+    <Compile Include="Model\Solution\Solution.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AccessLog\AccessLog.cs" />
+    <Compile Include="View\ApplicationFeatureCategory\ApplicationFeatureCategory.cs" />
+    <Compile Include="View\ApplicationFeatureOwner\ApplicationFeatureOwner.cs" />
+    <Compile Include="View\ApplicationFeature\ApplicationFeature.cs" />
+    <Compile Include="View\ApplicationFeature\ApplicationFeature.Extra.cs" />
+    <Compile Include="View\ApplicationPlanFeature\ApplicationPlanFeature.cs" />
+    <Compile Include="View\ApplicationPlan\ApplicationPlan.cs" />
+    <Compile Include="View\Application\DeleteApplication\DeleteApplication.cs" />
+    <Compile Include="View\Application\DeleteApplication\DeleteApplicationRequest.cs" />
+    <Compile Include="View\Application\GetApplicationList\GetApplicationList.cs" />
+    <Compile Include="View\Application\GetApplicationList\GetApplicationListResponse.cs" />
+    <Compile Include="View\Application\SaveApplication\SaveApplication.cs" />
+    <Compile Include="View\Application\SaveApplication\SaveApplicationRequest.cs" />
+    <Compile Include="View\BillableFeature\BillableFeature.cs" />
+    <Compile Include="View\BusinessMessages.cs" />
+    <Compile Include="View\FeatureSupport\FeatureSupport.cs" />
+    <Compile Include="View\LogonLog\LogonLog.cs" />
+    <Compile Include="View\LogonLog\LogonLog.Extra.cs" />
+    <Compile Include="View\SecurityEntityParent\SecurityEntityParent.cs" />
+    <Compile Include="View\SecurityEntity\SecurityEntity.cs" />
+    <Compile Include="View\SecurityEntity\SecurityEntity.Extra.cs" />
+    <Compile Include="View\SecurityEntry\SecurityEntry.cs" />
+    <Compile Include="View\SecurityEntry\SecurityEntry.Extra.cs" />
+    <Compile Include="View\SecurityInterface.cs" />
+    <Compile Include="View\SecurityObejct\SecurityObject.cs" />
+    <Compile Include="View\SecurityObjectGroup\SecurityObjectGroup.cs" />
+    <Compile Include="View\SecurityObjectMap\SecurityObjectMap.cs" />
+    <Compile Include="View\SessionObject\SessionObject.cs" />
+    <Compile Include="View\Solution\Solution.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

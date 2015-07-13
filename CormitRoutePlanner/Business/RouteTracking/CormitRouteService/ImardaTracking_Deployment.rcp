@@ -1,0 +1,28 @@
+#put ServiceName=ImardaTrackingService
+
+#put DefaultDB=ImardaTrackingBusinessInterface
+#put xml=`xmlTemplates`\CacheConfig.xml
+
+#put connectionStrings
+Tracking
+#end
+
+#put appSettings
+LogToDatabase=1
+LoggingServiceUrl=`LoggingServiceUrl`
+RSLSpeedCheckEnabled=true
+RSLRunInterval=1000
+RSLBatchSize=100
+RSLLowestSpeedLimit=30
+RslProbabilityThreshold=0
+#end
+
+#put services
+Tracking
+#end
+
+#put client
+GIS
+#end
+
+#recipe c:\i360.config\deploy\makeconfig.rcp

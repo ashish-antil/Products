@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB1FB605-A863-4906-A514-6C42C9BF68B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImardaConfigurationBusiness</RootNamespace>
+    <AssemblyName>ImardaConfigurationBusinessInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\Profiles\IProfile.cs" />
+    <Compile Include="Interfaces\Profiles\IProfileCache.cs" />
+    <Compile Include="Interfaces\Profiles\IProfileCacheManager.cs" />
+    <Compile Include="Interfaces\Profiles\IProfileProvider.cs" />
+    <Compile Include="Interfaces\Profiles\IProfileRule.cs" />
+    <Compile Include="Model\IncidentConfigurationChangeLog\IncidentConfigurationChangeLog.cs" />
+    <Compile Include="Model\IncidentConfigurationCompany\IncidentConfigurationCompany.cs" />
+    <Compile Include="Model\IncidentConfiguration\IncidentConfiguration.cs" />
+    <Compile Include="Model\ProfileAdmission\ProfileAdmission.cs" />
+    <Compile Include="Model\ProfileAssignment\ProfileAssignment.cs" />
+    <Compile Include="Model\ExtensionProfile\ExtensionProfileCacheManager.cs" />
+    <Compile Include="Model\ExtensionProfile\ExtensionProfileRule.cs" />
+    <Compile Include="Model\ExtensionProfile\ExtensionProfile.cs" />
+    <Compile Include="Model\ExtensionProfile\ProfileCache.cs" />
+    <Compile Include="Model\ExtensionProfile\ProfileCacheManagerBase.cs" />
+    <Compile Include="Model\ExtensionProfile\ProfileConstants.cs" />
+    <Compile Include="Model\ExtensionProfile\ProfileProvider.cs" />
+    <Compile Include="Model\ExtensionProfile\ProfileProviderBase.cs" />
+    <Compile Include="View\IncidentConfigurationChangeLog\IncidentConfigurationChangeLog.cs" />
+    <Compile Include="View\IncidentConfigurationCompany\IncidentConfigurationCompany.cs" />
+    <Compile Include="View\IncidentConfiguration\IncidentConfiguration.cs" />
+    <Compile Include="View\ProfileAdmission\ProfileAdmission.cs" />
+    <Compile Include="View\ProfileAssignment\ProfileAssignment.cs" />
+    <Compile Include="Model\Profile\Profile.cs" />
+    <Compile Include="View\Profile\IProfileProviderService.cs" />
+    <Compile Include="View\Profile\Profile.cs" />
+    <Compile Include="Model\Shortcut\Shortcut.cs" />
+    <Compile Include="View\Shortcut\Shortcut.cs" />
+    <Compile Include="Model\Configuration\ConfigExtensions.cs" />
+    <Compile Include="Model\Configuration\ConfigListRequest.cs" />
+    <Compile Include="Model\Configuration\ConfigRequest.cs" />
+    <Compile Include="Model\Configuration\ConfigHierarchy.cs" />
+    <Compile Include="Model\Configuration\ConfigValue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Configuration\Configuration.Extra.cs" />
+    <Compile Include="View\Culture\CultureIDs.cs" />
+    <Compile Include="View\Culture\CulturePreferences.cs" />
+    <Compile Include="View\Culture\ICultureConfigGroup.cs" />
+    <Compile Include="View\Hierarchy\Hierarchy.cs" />
+    <Compile Include="View\ImardaConfigurationInterface.cs" />
+    <Compile Include="Model\Configuration\Configuration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda.Logging\Imarda.Logging.csproj">
+      <Project>{94E293D9-705A-4A6B-9CB9-ECCFBBDE3BE6}</Project>
+      <Name>Imarda.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

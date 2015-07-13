@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="2e517c4f-83b3-4d18-861f-1d3b6cd26708" name="maurice.verheijen@INZ09PC016 2009-05-11 16:28:00" runUser="PROLIFICXNZ\maurice.verheijen" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Default Run Configuration" id="3e998e83-3345-42f1-a45e-2c8724e99f0f">
+    <Deployment runDeploymentRoot="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestResults\maurice.verheijen_INZ09PC016 2009-05-11 16_28_00">
+      <DeploymentItem filename="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\ConfigManagement\bin\Debug\ConfigManagement.dll" />
+    </Deployment>
+    <Hosts skipUnhostableTests="false" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Error">
+    <Counters total="19" executed="9" passed="8" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="10" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="INZ09PC016" outcome="Error" timestamp="2009-05-11T16:28:38.3779641+12:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <Times creation="2009-05-11T16:28:00.8777241+12:00" queuing="2009-05-11T16:28:01.7371046+12:00" start="2009-05-11T16:28:01.8777305+12:00" finish="2009-05-11T16:28:38.3779641+12:00" />
+  <TestDefinitions>
+    <UnitTest name="UsageExample_Text" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="f02b29eb-e632-3520-81e3-e7b795f31e46">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="6d69f140-acba-4f3e-825f-597a384f4312" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="UsageExample_Text" />
+    </UnitTest>
+    <UnitTest name="TestMethod1" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="bcbff09f-1bf5-328d-2908-9d4d9ded0753">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest2, TestProject1" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="ConfigItemsTextAppend" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="47e79bdb-c614-496a-9545-4641cb34d196">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f431297a-b103-4464-b7e2-71b3019a85b4" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ConfigItemsTextAppend" />
+    </UnitTest>
+    <UnitTest name="ConfigItemsNumbers" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="4c731372-d1bd-12f4-338e-86c1720fc545">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5e03dc96-e794-4b05-8770-c9b3896b3234" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ConfigItemsNumbers" />
+    </UnitTest>
+    <UnitTest name="ConfigItemsResolve" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="d28fd9ae-89de-2393-cb2e-0d7265a89b30">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c23478c3-e74e-4250-8a26-7ef10a58c8f0" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ConfigItemsResolve" />
+    </UnitTest>
+    <UnitTest name="ConfigItemSingularPluralText" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="130ed5c4-bdcb-2646-4ab1-f47320e5bed6">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d6504646-9616-468c-beca-a62ee81fe074" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ConfigItemSingularPluralText" />
+    </UnitTest>
+    <UnitTest name="InsertTest" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="3ca40dbe-a2dd-f2d5-4b54-ac7247f1c9fd">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="ca6e6f7e-ca2d-4c7b-9800-08bba5ef214a" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.CfgColorTest, TestProject1" name="InsertTest" />
+    </UnitTest>
+    <UnitTest name="GetColorComponentFTest" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="5dc6a1e5-96eb-78e9-a1c3-5fa2c6ff4faa">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <DeploymentItems>
+        <DeploymentItem filename="ConfigManagement.dll" />
+      </DeploymentItems>
+      <Execution id="ca8e3a23-ac7c-4569-8df0-162068df344b" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.CfgColorTest, TestProject1" name="GetColorComponentFTest" />
+    </UnitTest>
+    <UnitTest name="ToStringTest" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="0911b782-ccd6-ccaf-4095-e6ebd8e40b0b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="3c3113ed-70be-4ce2-904f-12bc13eea2d8" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.CfgColorTest, TestProject1" name="ToStringTest" />
+    </UnitTest>
+    <UnitTest name="InitializeTest" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="f45bd8e0-1eef-0282-1590-cf619cb2f01a">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="93d54d97-e898-4f60-9c0a-7058cc7f7f39" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.CfgColorTest, TestProject1" name="InitializeTest" />
+    </UnitTest>
+    <UnitTest name="Populate" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="39191eb9-379c-e194-ed57-d42c656bd2c8">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="7c405b1e-1938-4f6a-9d42-65494ef28e79" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="Populate" />
+    </UnitTest>
+    <UnitTest name="TestWrappers" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="642fef7b-1ed4-a43c-87e4-90ad275f0921">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="72c7d5bb-11c0-4822-9195-fec417e53e59" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="TestWrappers" />
+    </UnitTest>
+    <UnitTest name="TestColors" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="338c5d75-7a55-9d61-9454-4c6230f3bd13">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d12068a5-3060-4e5c-98b0-c882e049d5b0" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="TestColors" />
+    </UnitTest>
+    <UnitTest name="UsageExample_PreCalcApplicationParameter" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="a54def80-f22f-80f0-58ab-307977b2c8f0">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="1dc2fefb-3863-4432-a96b-4021c94c4f2e" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="UsageExample_PreCalcApplicationParameter" />
+    </UnitTest>
+    <UnitTest name="ConfigItemsTextInsert" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="474d9544-a5f4-2281-9003-6cc142b83eeb">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="df39f95d-3e64-48a7-abfc-6dd4729f41be" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ConfigItemsTextInsert" />
+    </UnitTest>
+    <UnitTest name="ConfigItemsTextIndex" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="c6bd3257-a3ff-1414-07ed-5ec4a607d301">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="dbcf611e-b72d-4e05-947c-cfac7ac19a7f" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ConfigItemsTextIndex" />
+    </UnitTest>
+    <UnitTest name="ResolvingGuids" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="54a445f0-3491-f747-af69-a4f642bda2a3">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="14b8be51-0be4-4826-ae2b-aea7cce2f5c1" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ResolvingGuids" />
+    </UnitTest>
+    <UnitTest name="Populate2" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="f9ed410f-44df-8a64-6bde-812531ba3fac">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d349180c-b9e9-4b17-b9c0-535b6e09c481" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="Populate2" />
+    </UnitTest>
+    <UnitTest name="ConfigItemsTextBool" storage="c:\workspace\imarda360.infrastructure\services\configuration\testproject1\bin\debug\testproject1.dll" id="7db256fd-fa67-12ac-e346-24f1a0ebae2b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="180a4dd4-c73c-4e08-b575-1f98745e339a" />
+      <TestMethod codeBase="C:\Workspace\Imarda360.Infrastructure\Services\Configuration\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="ConfigItemsTextBool" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0911b782-ccd6-ccaf-4095-e6ebd8e40b0b" executionId="3c3113ed-70be-4ce2-904f-12bc13eea2d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ca40dbe-a2dd-f2d5-4b54-ac7247f1c9fd" executionId="ca6e6f7e-ca2d-4c7b-9800-08bba5ef214a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f45bd8e0-1eef-0282-1590-cf619cb2f01a" executionId="93d54d97-e898-4f60-9c0a-7058cc7f7f39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5dc6a1e5-96eb-78e9-a1c3-5fa2c6ff4faa" executionId="ca8e3a23-ac7c-4569-8df0-162068df344b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39191eb9-379c-e194-ed57-d42c656bd2c8" executionId="7c405b1e-1938-4f6a-9d42-65494ef28e79" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f9ed410f-44df-8a64-6bde-812531ba3fac" executionId="d349180c-b9e9-4b17-b9c0-535b6e09c481" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="474d9544-a5f4-2281-9003-6cc142b83eeb" executionId="df39f95d-3e64-48a7-abfc-6dd4729f41be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7db256fd-fa67-12ac-e346-24f1a0ebae2b" executionId="180a4dd4-c73c-4e08-b575-1f98745e339a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c6bd3257-a3ff-1414-07ed-5ec4a607d301" executionId="7abe278b-bd9e-464b-8e81-402be95dab8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="130ed5c4-bdcb-2646-4ab1-f47320e5bed6" executionId="0fea0d01-5d47-4cf9-bb45-09b6d104662f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="47e79bdb-c614-496a-9545-4641cb34d196" executionId="e831523f-76e0-4495-b722-6c4595d821e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4c731372-d1bd-12f4-338e-86c1720fc545" executionId="7fdd7a45-26fe-48f5-8875-7e99fb80c5a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d28fd9ae-89de-2393-cb2e-0d7265a89b30" executionId="55ac01a2-37e5-42fb-9613-37f96e48a744" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f02b29eb-e632-3520-81e3-e7b795f31e46" executionId="4086a288-dd0c-4298-83bb-71333218c27e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a54def80-f22f-80f0-58ab-307977b2c8f0" executionId="ad86ea6d-9bb5-497e-a129-766a94350337" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54a445f0-3491-f747-af69-a4f642bda2a3" executionId="0727f629-d608-4a4e-9ac6-87149ddf4e70" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="338c5d75-7a55-9d61-9454-4c6230f3bd13" executionId="dd3c8339-b221-4d73-b128-2dc768358ccf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="642fef7b-1ed4-a43c-87e4-90ad275f0921" executionId="03ebd53b-ae77-4442-aaa3-68b554875c84" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bcbff09f-1bf5-328d-2908-9d4d9ded0753" executionId="e0a61210-642c-4901-babd-d83390cbfc43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3c3113ed-70be-4ce2-904f-12bc13eea2d8" testId="0911b782-ccd6-ccaf-4095-e6ebd8e40b0b" testName="ToStringTest" computerName="INZ09PC016" duration="00:00:00.0372508" startTime="2009-05-11T16:28:01.9402309+12:00" endTime="2009-05-11T16:28:02.1433572+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ca6e6f7e-ca2d-4c7b-9800-08bba5ef214a" testId="3ca40dbe-a2dd-f2d5-4b54-ac7247f1c9fd" testName="InsertTest" computerName="INZ09PC016" duration="00:00:00.0038158" startTime="2009-05-11T16:28:02.1433572+12:00" endTime="2009-05-11T16:28:02.1589823+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="93d54d97-e898-4f60-9c0a-7058cc7f7f39" testId="f45bd8e0-1eef-0282-1590-cf619cb2f01a" testName="InitializeTest" computerName="INZ09PC016" duration="00:00:00.0521063" startTime="2009-05-11T16:28:02.1589823+12:00" endTime="2009-05-11T16:28:02.2058576+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ca8e3a23-ac7c-4569-8df0-162068df344b" testId="5dc6a1e5-96eb-78e9-a1c3-5fa2c6ff4faa" testName="GetColorComponentFTest" computerName="INZ09PC016" duration="00:00:00.0334288" startTime="2009-05-11T16:28:02.2214827+12:00" endTime="2009-05-11T16:28:02.2683580+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7c405b1e-1938-4f6a-9d42-65494ef28e79" testId="39191eb9-379c-e194-ed57-d42c656bd2c8" testName="Populate" computerName="INZ09PC016" duration="00:00:00.0090705" startTime="2009-05-11T16:28:02.2683580+12:00" endTime="2009-05-11T16:28:02.2839831+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d349180c-b9e9-4b17-b9c0-535b6e09c481" testId="f9ed410f-44df-8a64-6bde-812531ba3fac" testName="Populate2" computerName="INZ09PC016" duration="00:00:00.0119704" startTime="2009-05-11T16:28:02.2839831+12:00" endTime="2009-05-11T16:28:02.2996082+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <DebugTrace>Adding '214fcc47-8274-48f4-a190-84cbe8579d80', Type 'StringLiteral', Version: «Hello World»
+Adding '66dc85d3-a779-4414-9857-002da6823924', Type 'StringWithArgs', Version: «String with {0} parameter placeholders»
+Adding 'b984895a-78df-4f7a-a08a-4414bd28d64b', Type 'Integer', Version: «2008»
+Adding '5beef1c3-ba97-456f-b3e2-f2bd2ba89047', Type 'Decimal', Version: «1.5»
+Adding '8b703ba2-a99a-4753-b460-57771eafc1cb', Type 'Real', Version: «3.14159265358979»
+Adding 'fc8f6041-ec79-4adb-895e-f587736bb985', Type 'Bool', Version: «1»
+Adding '03af1283-c0a6-40e0-9243-7152ed3c6983', Type 'Xml', Version: «&lt;Hello&gt;Test&lt;/Hello&gt;»
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="df39f95d-3e64-48a7-abfc-6dd4729f41be" testId="474d9544-a5f4-2281-9003-6cc142b83eeb" testName="ConfigItemsTextInsert" computerName="INZ09PC016" duration="00:00:00.0012418" startTime="2009-05-11T16:28:02.2996082+12:00" endTime="2009-05-11T16:28:02.2996082+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="180a4dd4-c73c-4e08-b575-1f98745e339a" testId="7db256fd-fa67-12ac-e346-24f1a0ebae2b" testName="ConfigItemsTextBool" computerName="INZ09PC016" duration="00:00:00.0023411" startTime="2009-05-11T16:28:02.2996082+12:00" endTime="2009-05-11T16:28:02.3152333+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7abe278b-bd9e-464b-8e81-402be95dab8b" testId="c6bd3257-a3ff-1414-07ed-5ec4a607d301" testName="ConfigItemsTextIndex" computerName="INZ09PC016" duration="00:00:36.0627308" startTime="2009-05-11T16:28:02.3152333+12:00" endTime="2009-05-11T16:28:38.3779641+12:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="0fea0d01-5d47-4cf9-bb45-09b6d104662f" testId="130ed5c4-bdcb-2646-4ab1-f47320e5bed6" testName="ConfigItemSingularPluralText" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="e831523f-76e0-4495-b722-6c4595d821e7" testId="47e79bdb-c614-496a-9545-4641cb34d196" testName="ConfigItemsTextAppend" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="7fdd7a45-26fe-48f5-8875-7e99fb80c5a2" testId="4c731372-d1bd-12f4-338e-86c1720fc545" testName="ConfigItemsNumbers" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="55ac01a2-37e5-42fb-9613-37f96e48a744" testId="d28fd9ae-89de-2393-cb2e-0d7265a89b30" testName="ConfigItemsResolve" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="4086a288-dd0c-4298-83bb-71333218c27e" testId="f02b29eb-e632-3520-81e3-e7b795f31e46" testName="UsageExample_Text" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="ad86ea6d-9bb5-497e-a129-766a94350337" testId="a54def80-f22f-80f0-58ab-307977b2c8f0" testName="UsageExample_PreCalcApplicationParameter" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="0727f629-d608-4a4e-9ac6-87149ddf4e70" testId="54a445f0-3491-f747-af69-a4f642bda2a3" testName="ResolvingGuids" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="dd3c8339-b221-4d73-b128-2dc768358ccf" testId="338c5d75-7a55-9d61-9454-4c6230f3bd13" testName="TestColors" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="03ebd53b-ae77-4442-aaa3-68b554875c84" testId="642fef7b-1ed4-a43c-87e4-90ad275f0921" testName="TestWrappers" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="e0a61210-642c-4901-babd-d83390cbfc43" testId="bcbff09f-1bf5-328d-2908-9d4d9ded0753" testName="TestMethod1" computerName="INZ09PC016" duration="00:00:00" startTime="0001-01-01T13:00:00.0000000+13:00" endTime="0001-01-01T13:00:00.0000000+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    </UnitTestResult>
+  </Results>
+</TestRun>

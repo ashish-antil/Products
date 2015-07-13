@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D602C213-48AC-484B-91B7-E38313EDA271}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImardaConfigurationBusiness</RootNamespace>
+    <AssemblyName>ImardaConfigurationBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Imarda360.Shared\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\IncidentConfigurationChangeLog\IncidentConfigurationChangeLog.cs" />
+    <Compile Include="Control\IncidentConfigurationCompany\IncidentConfigurationCompany.cs" />
+    <Compile Include="Control\IncidentConfiguration\IncidentConfiguration.cs" />
+    <Compile Include="Control\ProfileAdmission\ProfileAdmission.cs" />
+    <Compile Include="Control\ProfileAssignment\ProfileAssignment.cs" />
+    <Compile Include="Control\Profile\ExtensionProfile.cs" />
+    <Compile Include="Control\Profile\Profile.cs" />
+    <Compile Include="Control\Shortcut\Shortcut.cs" />
+    <Compile Include="ConfigProxyContext.cs" />
+    <Compile Include="ConfigurationProxy.cs" />
+    <Compile Include="Control\ConfigCache.cs" />
+    <Compile Include="Control\Configuration\Configuration.Extra.cs" />
+    <Compile Include="Control\Culture\CulturePreferences.cs" />
+    <Compile Include="Control\Hierarchy\Hierarchy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control\ImardaConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda.Logging\Imarda.Logging.csproj">
+      <Project>{94e293d9-705a-4a6b-9cb9-eccfbbde3be6}</Project>
+      <Name>Imarda.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConfigurationHelpers\ConfigManagement\ConfigManagement.csproj">
+      <Project>{E772D262-A1FF-4BB2-B74A-37589F0571D1}</Project>
+      <Name>ConfigManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImardaConfigurationBusinessInterface\ImardaConfigurationBusinessInterface.csproj">
+      <Project>{BB1FB605-A863-4906-A514-6C42C9BF68B1}</Project>
+      <Name>ImardaConfigurationBusinessInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

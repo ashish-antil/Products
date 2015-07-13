@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08076EDA-D9D0-4C70-B1E5-E7EFE4FAA3E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Imarda360TaskExecBusiness</RootNamespace>
+    <AssemblyName>Imarda360TaskExecBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Office\Office15\DCF\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\ActionHelper.cs" />
+    <Compile Include="Control\i360TaskManager.cs" />
+    <Compile Include="Control\i360TaskManager_AddressFixer.cs" />
+    <Compile Include="Control\i360TaskManager_ReportHandler.cs" />
+    <Compile Include="Control\i360TaskManager_SystemEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Business\CRM\ImardaCRMBusinessInterface\ImardaCRMBusinessInterface.csproj">
+      <Project>{7770a95b-d345-4892-bc40-9d7effc64c8a}</Project>
+      <Name>ImardaCRMBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda.Logging\Imarda.Logging.csproj">
+      <Project>{94e293d9-705a-4a6b-9cb9-eccfbbde3be6}</Project>
+      <Name>Imarda.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Configuration\ConfigurationHelpers\ConfigManagement\ConfigManagement.csproj">
+      <Project>{E772D262-A1FF-4BB2-B74A-37589F0571D1}</Project>
+      <Name>ConfigManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Configuration\ImardaConfigurationBusinessInterface\ImardaConfigurationBusinessInterface.csproj">
+      <Project>{BB1FB605-A863-4906-A514-6C42C9BF68B1}</Project>
+      <Name>ImardaConfigurationBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Notification\ImardaNotificationBusinessInterface\ImardaNotificationBusinessInterface.csproj">
+      <Project>{ee38f10b-f9d6-4ddb-b996-48aaea829d88}</Project>
+      <Name>ImardaNotificationBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Security\ImardaSecurityBusinessInterface\CormitSecurityBusinessInterface.csproj">
+      <Project>{5E9CA19F-50BE-4C6A-BD80-2231144E96D1}</Project>
+      <Name>CormitSecurityBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Task\ImardaTaskBusinessInterface\ImardaTaskBusinessInterface.csproj">
+      <Project>{B2708896-E7BC-4078-87F7-E3BEE08A77FA}</Project>
+      <Name>ImardaTaskBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Task\TaskManager\TaskManager.csproj">
+      <Project>{B04B65CE-B562-4E31-A55B-B59BAA67A207}</Project>
+      <Name>TaskManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApplicationBase\Imarda360Base.csproj">
+      <Project>{1D04713F-179E-42B1-BF98-4E4051C70710}</Project>
+      <Name>Imarda360Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task\TaskBusinessInterface\Imarda360TaskBusinessInterface.csproj">
+      <Project>{07E0AF3C-83BC-4D32-AD39-8C8C2D26A889}</Project>
+      <Name>Imarda360TaskBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task\TaskBusiness\Imarda360TaskBusiness.csproj">
+      <Project>{505004B3-5339-4D5D-9FE7-C69BA1FAC96B}</Project>
+      <Name>Imarda360TaskBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

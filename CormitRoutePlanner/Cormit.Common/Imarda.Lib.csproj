@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Imarda.Lib</RootNamespace>
+    <AssemblyName>Imarda.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LocalMessageAPI|AnyCPU'">
+    <OutputPath>bin\LocalMessageAPI\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MediaInfoNET">
+      <HintPath>..\Cormit.Shared\MediaInfoNET.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq">
+      <HintPath>..\Cormit.Shared\GoogleCode\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>..\Cormit.Shared\GoogleCode\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\BaseConcurrentCache.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="ImardaMSMQueue\IMsmqIdMessage.cs" />
+    <Compile Include="ImardaMSMQueue\ImardaMSMQueue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\GuidExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="MVVM\Common\DispatchedObservableCollection.cs" />
+    <Compile Include="MVVM\Common\Disposable.cs" />
+    <Compile Include="MVVM\Common\DisposableObservableObject.cs" />
+    <Compile Include="MVVM\Common\Interfaces\IDisposeManager.cs" />
+    <Compile Include="MVVM\Common\Interfaces\INotifyPropertyChangedHandler.cs" />
+    <Compile Include="MVVM\Common\Interfaces\IViewModel.cs" />
+    <Compile Include="MVVM\Common\ObservableObject.cs" />
+    <Compile Include="DataStructures\BitMatrix64.cs" />
+    <Compile Include="DataStructures\Classifier.cs" />
+    <Compile Include="DataStructures\EventTimer.cs" />
+    <Compile Include="DataStructures\ExpiryMap.cs" />
+    <Compile Include="DataStructures\Tally.cs" />
+    <Compile Include="DataStructures\SortedQueue.cs" />
+    <Compile Include="MVVM\EventArgs\GenericEventArgs.cs" />
+    <Compile Include="MVVM\Extensions\ChainResultExtensions.cs" />
+    <Compile Include="MVVM\Extensions\DisposeManagerExtensions.cs" />
+    <Compile Include="MVVM\Extensions\GenericEnumerableExtensions.cs" />
+    <Compile Include="MVVM\Extensions\PropertyChangedExtensions.cs" />
+    <Compile Include="MVVM\Extensions\PropertyExtensions.cs" />
+    <Compile Include="Geo\BoundingBox.cs" />
+    <Compile Include="Geo\LatLon.cs" />
+    <Compile Include="DataStructures\CircularList.cs" />
+    <Compile Include="Leases\LeaseManager.cs" />
+    <Compile Include="Leases\PassiveLease.cs" />
+    <Compile Include="Leases\PassiveLeaseManager.cs" />
+    <Compile Include="MeasurementUnit\Units\Density.cs" />
+    <Compile Include="MeasurementUnit\ParseAttribute.cs" />
+    <Compile Include="MeasurementUnit\UnitParser.cs" />
+    <Compile Include="MeasurementUnit\Units\Voltage.cs" />
+    <Compile Include="MVVM\Extensions\StringExtensions.cs" />
+    <Compile Include="MVVM\Extensions\ValueTypeExtensions.cs" />
+    <Compile Include="MVVM\FileHelper.cs" />
+    <Compile Include="Tasks\IJobQueue.cs" />
+    <Compile Include="Tasks\JobHandler.cs" />
+    <Compile Include="Tasks\JobResult.cs" />
+    <Compile Include="ThreadHelpers\AbortableThreadPool.cs" />
+    <Compile Include="ThreadHelpers\ThreadControl.cs" />
+    <Compile Include="MeasurementUnit\Units\Acceleration.cs" />
+    <Compile Include="MeasurementUnit\Units\Angle.cs" />
+    <Compile Include="MeasurementUnit\Units\AngularVelocity.cs" />
+    <Compile Include="MeasurementUnit\Units\Area.cs" />
+    <Compile Include="MeasurementUnit\Units\Currency.cs" />
+    <Compile Include="MeasurementUnit\Units\ElectricCurrent.cs" />
+    <Compile Include="MeasurementUnit\Units\Energy.cs" />
+    <Compile Include="MeasurementUnit\Enums.cs" />
+    <Compile Include="ErrorHandling\IServiceMessageResponse.cs" />
+    <Compile Include="MeasurementUnit\Units\Force.cs" />
+    <Compile Include="MeasurementUnit\Units\Frequency.cs" />
+    <Compile Include="MeasurementUnit\Units\FuelEfficiency.cs" />
+    <Compile Include="MeasurementUnit\IMeasurement.cs" />
+    <Compile Include="MeasurementUnit\Units\Length.cs" />
+    <Compile Include="MeasurementUnit\Units\Mass.cs" />
+    <Compile Include="MeasurementUnit\Units\MassFlow.cs" />
+    <Compile Include="MeasurementUnit\Measurement.cs" />
+    <Compile Include="MeasurementUnit\MeasurementFormatInfo.cs" />
+    <Compile Include="MeasurementUnit\MUnit.cs" />
+    <Compile Include="MeasurementUnit\MwF.cs" />
+    <Compile Include="MeasurementUnit\Units\Power.cs" />
+    <Compile Include="MeasurementUnit\Units\Pressure.cs" />
+    <Compile Include="MeasurementUnit\Units\Unitless.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MeasurementUnit\Units\Speed.cs" />
+    <Compile Include="MeasurementUnit\Units\Temperature.cs" />
+    <Compile Include="MeasurementUnit\Units\Duration.cs" />
+    <Compile Include="MeasurementUnit\UnitAttribute.cs" />
+    <Compile Include="MeasurementUnit\UnitConverter.cs" />
+    <Compile Include="Recurrence\BaseGenerators.cs" />
+    <Compile Include="Recurrence\DateGeneratorFactory.cs" />
+    <Compile Include="Recurrence\GenDaily.cs" />
+    <Compile Include="Recurrence\GenEnum.cs" />
+    <Compile Include="Recurrence\Generator.cs" />
+    <Compile Include="Recurrence\GenMerge.cs" />
+    <Compile Include="Recurrence\GenMonthly.cs" />
+    <Compile Include="Recurrence\GenWeekly.cs" />
+    <Compile Include="Recurrence\GenYearly.cs" />
+    <Compile Include="Recurrence\ICalEvent.cs" />
+    <Compile Include="TimeWindow\DailyTimeRange.cs" />
+    <Compile Include="TimeWindow\TimeWindow.cs" />
+    <Compile Include="TimeWindow\ValueHistory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\ArrayUtils.cs" />
+    <Compile Include="Utilities\AssemblyUtils.cs" />
+    <Compile Include="Utilities\AttentionUtils.cs" />
+    <Compile Include="Utilities\BigEndianHelper.cs" />
+    <Compile Include="Utilities\ConfigUtils.cs" />
+    <Compile Include="Utilities\CRC16.cs" />
+    <Compile Include="Utilities\CryptoRandom.cs" />
+    <Compile Include="Utilities\FileStorage\FileStorage.cs" />
+    <Compile Include="Utilities\FileStorage\IFileStorage.cs" />
+    <Compile Include="Utilities\FileStorage\YmdFileStorage.cs" />
+    <Compile Include="Utilities\Formats.cs" />
+    <Compile Include="Utilities\DisplayUtils.cs" />
+    <Compile Include="Utilities\Generators.cs" />
+    <Compile Include="Utilities\GeoUtils.cs" />
+    <Compile Include="Utilities\ImardaFormatProvider.cs" />
+    <Compile Include="Utilities\IOUtils.cs" />
+    <Compile Include="Utilities\KnownPaths\IKnownPathManager.cs" />
+    <Compile Include="Utilities\KnownPaths\KnownPathManager.cs" />
+    <Compile Include="Utilities\KnownPaths\KnownYmdPathManager.cs" />
+    <Compile Include="Utilities\VideoUtils.cs" />
+    <Compile Include="Utilities\MiscUtils.cs" />
+    <Compile Include="Utilities\NetworkUtils.cs" />
+    <Compile Include="Utilities\NumberUtils.cs" />
+    <Compile Include="Utilities\ReflectionUtils.cs" />
+    <Compile Include="Utilities\Sampler.cs" />
+    <Compile Include="Utilities\ScriptUtils.cs" />
+    <Compile Include="Utilities\SequentialGuid.cs" />
+    <Compile Include="Utilities\StringUtils.cs" />
+    <Compile Include="Extensions\ThrowExtensions.cs" />
+    <Compile Include="Utilities\TimeUtils.cs" />
+    <Compile Include="MeasurementUnit\Units\Volume.cs" />
+    <Compile Include="MeasurementUnit\Units\VolumeFlow.cs" />
+    <Compile Include="Utilities\TransportUtils.cs" />
+    <Compile Include="Utilities\XmlUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MVVM\To be extracted into a separate library.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

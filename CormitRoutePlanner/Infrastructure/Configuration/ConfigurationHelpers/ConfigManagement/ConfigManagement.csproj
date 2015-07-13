@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E772D262-A1FF-4BB2-B74A-37589F0571D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Imarda360.Infrastructure.ConfigurationService</RootNamespace>
+    <AssemblyName>ConfigManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="ConfigDataTypes\CfgMeasurement.cs" />
+    <Compile Include="ConfigDataTypes\CfgSystem.cs" />
+    <Compile Include="ConfigGroup.cs" />
+    <Compile Include="ConfigTemplate.cs" />
+    <Compile Include="ConfigValueType.cs" />
+    <Compile Include="ConfigServiceContext.cs" />
+    <Compile Include="ConfigDataTypes\CfgBool.cs" />
+    <Compile Include="ConfigDataTypes\CfgColor.cs" />
+    <Compile Include="ConfigDataTypes\CfgNumber.cs" />
+    <Compile Include="ConfigDataTypes\CfgParams.cs" />
+    <Compile Include="ConfigDataTypes\CfgText.cs" />
+    <Compile Include="ConfigDataTypes\CfgXml.cs" />
+    <Compile Include="ConfigException.cs" />
+    <Compile Include="CItem.cs" />
+    <Compile Include="ConfigItem.cs" />
+    <Compile Include="ConfigAssignAttribute.cs" />
+    <Compile Include="ConfigItemVersion.cs" />
+    <Compile Include="BaseContext.cs" />
+    <Compile Include="ConfigKey.cs" />
+    <Compile Include="Conversions.cs" />
+    <Compile Include="IConfigData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Business\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499a-cddd-4e8a-a6bb-cbbfdfca5cdc}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ImardaConfigurationBusinessInterface\ImardaConfigurationBusinessInterface.csproj">
+      <Project>{bb1fb605-a863-4906-a514-6c42c9bf68b1}</Project>
+      <Name>ImardaConfigurationBusinessInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Target Name="AfterBuild">
+    <Delete Files="$(TargetDir)app.config" />
+    <Copy SourceFiles="$(ProjectDir)app.config" DestinationFiles="$(TargetDir)app.config" />
+    <Delete Files="$(TargetDir)app_alpha.config" />
+    <Copy SourceFiles="$(ProjectDir)app.config" DestinationFiles="$(TargetDir)app_alpha.config" />
+    <Delete Files="$(TargetDir)app_beta.config" />
+    <Copy SourceFiles="$(ProjectDir)app.config" DestinationFiles="$(TargetDir)app_beta.config" />
+  </Target>
+</Project>

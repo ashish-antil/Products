@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Route Page1";
+}
+@section CormitJSViewScript
+{
+    <script type="text/javascript" src="@Url.Content("/RouteApp/CormitRouteApp.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/RouteApp/Controller/CormitRouteController.js")"></script>
+
+}
+<header>
+    <!-- Menue Bar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Route Plan</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Routes</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Map control-->
+<div ng-controller="CormitRouteController">
+    <div class="row">
+        <ui-gmap-google-map center="map.center" zoom='map.zoom' options='map.options' >
+        </ui-gmap-google-map>
+        <div class="mymap"></div>
+    </div>
+    <!-- List of route Reght bar-->
+    <div id="routegridBar">
+        <div>
+            <a href="#" class="list-group-item active">Item 1</a>
+            <a href="#" class="list-group-item">Item 2</a>
+            <a href="#" class="list-group-item">Item 3</a>
+            <a href="#" class="list-group-item">Item 4</a>
+            <a href="#" class="list-group-item">Item 5</a>
+        </div>
+    </div>
+    <script language="javascript">
+        $('#routegridBar').BootSideMenu({ side: "right", autoClose: false });
+
+    </script>
+</div>

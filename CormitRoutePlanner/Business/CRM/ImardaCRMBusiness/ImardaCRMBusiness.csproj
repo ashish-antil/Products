@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D2E0CE2E-890A-48D9-B797-3CB7138A8BB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImardaCRMBusiness</RootNamespace>
+    <AssemblyName>ImardaCRMBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\CustomerCommunication\CustomerCommunicationNode.cs" />
+    <Compile Include="Control\UsageLog\UsageLog.cs" />
+    <Compile Include="Control\ActivityLog\ActivityLog.cs" />
+    <Compile Include="Control\ActivityLog\ActivityLog.Extra.cs" />
+    <Compile Include="Control\History\History.Extra.cs" />
+    <Compile Include="Control\History\History.cs" />
+    <Compile Include="Control\MessageItem\MessageItem.cs" />
+    <Compile Include="Control\MessageItem\MessageItem.Extra.cs" />
+    <Compile Include="Control\MessageOwner\MessageOwner.cs" />
+    <Compile Include="Control\NewsItem\NewsItem.cs" />
+    <Compile Include="Control\RelationShipType\RelationShipType.cs" />
+    <Compile Include="Control\RelationShip\RelationShip.cs" />
+    <Compile Include="Control\Company\Company.Extra.cs" />
+    <Compile Include="Control\ContactMap\ContactMap.cs" />
+    <Compile Include="Control\Asset\Asset.cs" />
+    <Compile Include="Control\CompanyLocation\CompanyLocation.Extra.cs" />
+    <Compile Include="Control\ContactMap\ContactMap.Extra.cs" />
+    <Compile Include="Control\Contact\Contact.cs" />
+    <Compile Include="Control\Contact\Contact.Extra.cs" />
+    <Compile Include="Control\CRMProxy.cs" />
+    <Compile Include="Control\EmailGroup\EmailGroup.Extra.cs" />
+    <Compile Include="Control\NotificationHistory\NotificationHistory.cs" />
+    <Compile Include="Control\NotificationHistory\NotificationHistory.Extra.cs" />
+    <Compile Include="Control\NotificationItem\NotificationItem.cs" />
+    <Compile Include="Control\NotificationItem\NotificationItem.Extra.cs" />
+    <Compile Include="Control\NotificationPlanItem\NotificationPlanItem.cs" />
+    <Compile Include="Control\NotificationItem\NotificationPlan\NotificationPlan.cs" />
+    <Compile Include="Control\NotificationItem\NotificationPlan\NotificationPlan.Extra.cs" />
+    <Compile Include="Control\Person\Person.Extra.cs" />
+    <Compile Include="Control\Widget\WidgetDef.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control\ImardaCRM.cs" />
+    <Compile Include="Control\Company\Company.cs" />
+    <Compile Include="Control\CompanyLocation\CompanyLocation.cs" />
+    <Compile Include="Control\CompanyModule\CompanyModule.cs" />
+    <Compile Include="Control\EmailGroup\EmailGroup.cs" />
+    <Compile Include="Control\Person\Person.cs" />
+    <Compile Include="Control\Role\Role.cs" />
+    <Compile Include="Control\RoleType\RoleType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda.Logging\Imarda.Logging.csproj">
+      <Project>{94e293d9-705a-4a6b-9cb9-eccfbbde3be6}</Project>
+      <Name>Imarda.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Attributing\ImardaAttributingBusinessInterface\ImardaAttributingBusinessInterface.csproj">
+      <Project>{d2836fb1-6087-44e7-8242-eb10f22eb09e}</Project>
+      <Name>ImardaAttributingBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Configuration\ConfigurationHelpers\ConfigManagement\ConfigManagement.csproj">
+      <Project>{E772D262-A1FF-4BB2-B74A-37589F0571D1}</Project>
+      <Name>ConfigManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Configuration\ImardaConfigurationBusinessInterface\ImardaConfigurationBusinessInterface.csproj">
+      <Project>{BB1FB605-A863-4906-A514-6C42C9BF68B1}</Project>
+      <Name>ImardaConfigurationBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Notification\ImardaNotificationBusinessInterface\ImardaNotificationBusinessInterface.csproj">
+      <Project>{EE38F10B-F9D6-4DDB-B996-48AAEA829D88}</Project>
+      <Name>ImardaNotificationBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImardaCRMBusinessInterface\ImardaCRMBusinessInterface.csproj">
+      <Project>{7770A95B-D345-4892-BC40-9D7EFFC64C8A}</Project>
+      <Name>ImardaCRMBusinessInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

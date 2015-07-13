@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FernBusinessBase</RootNamespace>
+    <AssemblyName>FernBusinessBase</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LocalMessageAPI|AnyCPU'">
+    <OutputPath>bin\LocalMessageAPI\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Imarda360.Shared\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Imarda360.Shared\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Imarda360.Shared\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChannelHanding\ChannelInvoker.cs" />
+    <Compile Include="ChannelHanding\CommucationException.cs" />
+    <Compile Include="ChannelHanding\DuplexProxy.cs" />
+    <Compile Include="ChannelHanding\Proxy.cs" />
+    <Compile Include="ChannelHanding\RemoteCall.cs" />
+    <Compile Include="Control\AttributeDefinitionCache.cs" />
+    <Compile Include="Control\AttributeDefinitionItems.cs" />
+    <Compile Include="Control\AttributeValueCache.cs" />
+    <Compile Include="Control\AttributeCacheManager.cs" />
+    <Compile Include="Control\AttributeValuesForEntity.cs" />
+    <Compile Include="Control\AttributeValues.cs" />
+    <Compile Include="Control\BusinessBase.cs" />
+    <Compile Include="Control\ConnectionString.cs" />
+    <Compile Include="Control\DatabaseSafeCast.cs" />
+    <Compile Include="Control\Dynamic.cs" />
+    <Compile Include="Control\EntityCache.cs" />
+    <Compile Include="Control\EntityCacheManager.cs" />
+    <Compile Include="Control\EntityItems.cs" />
+    <Compile Include="Control\ErrorHandling\ErrorCodeManager.cs" />
+    <Compile Include="Control\ErrorHandling\ErrorHandler.cs" />
+    <Compile Include="Cache\BusinessObjectCache.cs" />
+    <Compile Include="Control\ErrorHandling\MessageResponseException.cs" />
+    <Compile Include="Control\ErrorHandling\ValidationException.cs" />
+    <Compile Include="Database\ImardaDatabase.cs" />
+    <Compile Include="Database\ImardaDataReader.cs" />
+    <Compile Include="DataPath\ImardaResourceIdentifier.cs" />
+    <Compile Include="Extensions\ProxyExtensions.cs" />
+    <Compile Include="Interfaces\ProcessingExtensions\IExtensionProcessingService.cs" />
+    <Compile Include="Interfaces\ProcessingExtensions\IProcessingExtension.cs" />
+    <Compile Include="Interfaces\Processors\ISimpleMsmqProcessor.cs" />
+    <Compile Include="Interfaces\Processors\ISimpleThreadProcessor.cs" />
+    <Compile Include="Interfaces\Processors\ISimpleProcessor.cs" />
+    <Compile Include="Interfaces\Processors\SimpleMsmqProcessor.cs" />
+    <Compile Include="Interfaces\Processors\SimpleThreadProcessor.cs" />
+    <Compile Include="Interfaces\ProcessingExtensions\IExtensionProcessingData.cs" />
+    <Compile Include="Interfaces\ProcessingExtensions\IExtensionProcessor.cs" />
+    <Compile Include="Interfaces\Processors\SimpleProcessorBase.cs" />
+    <Compile Include="Storage\IServiceFileStorage.cs" />
+    <Compile Include="Storage\IServiceYmdFileStorage.cs" />
+    <Compile Include="Storage\ServiceFileStorage.cs" />
+    <Compile Include="Filtering\FilterEngine.cs" />
+    <Compile Include="Filtering\FilterSettings.cs" />
+    <Compile Include="Filtering\Interfaces\IFilterEngine.cs" />
+    <Compile Include="Filtering\Interfaces\IFilterItem.cs" />
+    <Compile Include="Filtering\Interfaces\IFilterSettings.cs" />
+    <Compile Include="Model\AttributeDefinition.cs" />
+    <Compile Include="Model\AttributeValue.cs" />
+    <Compile Include="Model\DisplaySettings.cs" />
+    <Compile Include="Model\DuplexProxyStorage.cs" />
+    <Compile Include="Model\Extensions\EntityExtensions.cs" />
+    <Compile Include="Extensions\ChannelInvokerExtensions.cs" />
+    <Compile Include="Model\IHasLinkedData.cs" />
+    <Compile Include="Model\InvalidPatternAttribute.cs" />
+    <Compile Include="Model\ValidASCIIAttribute.cs" />
+    <Compile Include="Model\ValidNonEmptyAttribute.cs" />
+    <Compile Include="Model\EAHelper.cs" />
+    <Compile Include="Model\EntityAttributeFactory.cs" />
+    <Compile Include="Model\ValidIntAttribute.cs" />
+    <Compile Include="Model\ValidLengthAttribute.cs" />
+    <Compile Include="Model\ValidPatternAttribute.cs" />
+    <Compile Include="Storage\ServiceYmdFileStorage.cs" />
+    <Compile Include="Utilities\AuthenticationHelper.cs" />
+    <Compile Include="Model\EntityAttributes.cs" />
+    <Compile Include="Model\NameValueList.cs" />
+    <Compile Include="Model\BusinessEntity.cs" />
+    <Compile Include="Model\FullBusinessEntity.cs" />
+    <Compile Include="Model\KeyValuePair.cs" />
+    <Compile Include="Model\Map\Map.cs" />
+    <Compile Include="Model\Ranking.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\EncryptionHelper.cs" />
+    <Compile Include="View\BusinessInterfaces\Enums.cs" />
+    <Compile Include="View\BusinessInterfaces\ITrackable.cs" />
+    <Compile Include="View\BusinessMessageResponse.cs" />
+    <Compile Include="View\BusinessProxy.cs" />
+    <Compile Include="View\Generics\AddRemoveRequest.cs" />
+    <Compile Include="View\Generics\GenericRequestWithListT.cs" />
+    <Compile Include="View\Generics\SimpleListRequest.cs" />
+    <Compile Include="View\Generics\ObjectRequest.cs" />
+    <Compile Include="View\Generics\SaveStringRequest.cs" />
+    <Compile Include="View\Generics\EntityTypeAndID.cs" />
+    <Compile Include="View\Generics\GenericRequest.cs" />
+    <Compile Include="View\Generics\GetItemResponse.cs" />
+    <Compile Include="View\Generics\GetFilteredExtentRequest.cs" />
+    <Compile Include="View\Generics\GetListByTimestampRequest.cs" />
+    <Compile Include="View\Generics\GetListRequest.cs" />
+    <Compile Include="View\Generics\GetListResponse.cs" />
+    <Compile Include="View\Generics\GetUpdateCountRequest.cs" />
+    <Compile Include="View\Generics\GetUpdateCountRequestList.cs" />
+    <Compile Include="View\Generics\GetUpdateCountResponse.cs" />
+    <Compile Include="View\Generics\GetUpdateCountResponseList.cs" />
+    <Compile Include="View\Generics\IDAndDateRangeRequest.cs" />
+    <Compile Include="View\Generics\IDListRequest.cs" />
+    <Compile Include="View\Generics\IDRequest.cs" />
+    <Compile Include="View\Generics\IRequestBase.cs" />
+    <Compile Include="View\Generics\IWithOptions.cs" />
+    <Compile Include="View\Generics\KeyValueListResponse.cs" />
+    <Compile Include="View\Generics\ParameterMessageBase.cs" />
+    <Compile Include="View\Generics\PingRequest.cs" />
+    <Compile Include="View\Generics\ResetPasswordRequest.cs" />
+    <Compile Include="View\Generics\SaveAttributesRequest.cs" />
+    <Compile Include="View\Generics\SaveCompositeRequest.cs" />
+    <Compile Include="View\Generics\SaveFileToDiskRequest.cs" />
+    <Compile Include="View\Generics\SaveListRequest.cs" />
+    <Compile Include="View\Generics\SaveRequest.cs" />
+    <Compile Include="View\Generics\SaveStringListRequest.cs" />
+    <Compile Include="View\Generics\SessionRequest.cs" />
+    <Compile Include="View\Generics\SetMapsForEntityRequest.cs" />
+    <Compile Include="View\Generics\SimpleResponse.cs" />
+    <Compile Include="View\Generics\StringRequest.cs" />
+    <Compile Include="View\Generics\TypeRequest.cs" />
+    <Compile Include="View\Generics\UpdateListRequest.cs" />
+    <Compile Include="View\Generics\UpdateMessageResponse.cs" />
+    <Compile Include="View\IDuplexServiceFacadeBase.cs" />
+    <Compile Include="View\IServerFacadeBase.cs" />
+    <Compile Include="WcfService\ImardaServiceHost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FernServiceBase\FernServiceBase.csproj">
+      <Project>{fa0c7382-3840-4025-bb4f-d128d602cc90}</Project>
+      <Name>FernServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{a0f83e5f-9310-4ade-9edf-da54dc80213e}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Imarda.Logging\Imarda.Logging.csproj">
+      <Project>{94e293d9-705a-4a6b-9cb9-eccfbbde3be6}</Project>
+      <Name>Imarda.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Storage\_info.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

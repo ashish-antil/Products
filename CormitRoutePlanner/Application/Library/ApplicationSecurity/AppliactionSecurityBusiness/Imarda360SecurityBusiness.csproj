@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B24605D5-648A-427A-B537-61048FEFF3B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Imarda360SecurityBusiness</RootNamespace>
+    <AssemblyName>Imarda360SecurityBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\ApplicationFeatureOwner\ApplicationFeatureOwner.cs" />
+    <Compile Include="Control\ApplicationFeature\ApplicationFeature.Extra.cs" />
+    <Compile Include="Control\FeatureSupport\FeatureSupport.cs" />
+    <Compile Include="Control\ApplicationPlanFeature\ApplicationPlanFeature.cs" />
+    <Compile Include="Control\ApplicationFeature\ApplicationFeature.cs" />
+    <Compile Include="Control\ApplicationFeatureCategory\ApplicationFeatureCategory.cs" />
+    <Compile Include="Control\ApplicationPlan\ApplicationPlan.cs" />
+    <Compile Include="Control\SecurityEntity\SecurityEntity.Extra.cs" />
+    <Compile Include="Proxies.cs" />
+    <Compile Include="Control\Imarda360Security.cs" />
+    <Compile Include="SecuritySingleton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Business\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastructure\Configuration\ConfigurationHelpers\ConfigManagement\ConfigManagement.csproj">
+      <Project>{E772D262-A1FF-4BB2-B74A-37589F0571D1}</Project>
+      <Name>ConfigManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastructure\Configuration\ImardaConfigurationBusinessInterface\ImardaConfigurationBusinessInterface.csproj">
+      <Project>{BB1FB605-A863-4906-A514-6C42C9BF68B1}</Project>
+      <Name>ImardaConfigurationBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastructure\Security\ImardaSecurityBusinessInterface\CormitSecurityBusinessInterface.csproj">
+      <Project>{5E9CA19F-50BE-4C6A-BD80-2231144E96D1}</Project>
+      <Name>CormitSecurityBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ApplicationBase\Imarda360Base.csproj">
+      <Project>{1D04713F-179E-42B1-BF98-4E4051C70710}</Project>
+      <Name>Imarda360Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Task\TaskBusiness\Imarda360TaskBusiness.csproj">
+      <Project>{505004B3-5339-4D5D-9FE7-C69BA1FAC96B}</Project>
+      <Name>Imarda360TaskBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppliactionSecurityBusinessInterface\Imarda360SecurityBusinessInterface.csproj">
+      <Project>{99DD1D74-8E68-4938-9DD1-981C72A3BCED}</Project>
+      <Name>Imarda360SecurityBusinessInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

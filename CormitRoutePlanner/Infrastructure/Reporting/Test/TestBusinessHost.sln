@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBusinessHost", "TestBusinessHost.csproj", "{9EABFCA8-3515-4422-BCA5-130B4AE0A458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImardaReportingBusinessInterface", "..\ImardaReportingBusinessInterface\ImardaReportingBusinessInterface.csproj", "{6A5988C9-B43B-448D-AB00-EEA15E81458B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImardaReportingBusiness", "..\ImardaReportingBusiness\ImardaReportingBusiness.csproj", "{1BC4F5CE-D58A-4967-8EE0-13F852E66C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessBase", "..\..\..\..\Imarda360.Business\Base\BusinessBase\BusinessBase.csproj", "{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EABFCA8-3515-4422-BCA5-130B4AE0A458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EABFCA8-3515-4422-BCA5-130B4AE0A458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EABFCA8-3515-4422-BCA5-130B4AE0A458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5988C9-B43B-448D-AB00-EEA15E81458B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5988C9-B43B-448D-AB00-EEA15E81458B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC4F5CE-D58A-4967-8EE0-13F852E66C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC4F5CE-D58A-4967-8EE0-13F852E66C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

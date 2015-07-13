@@ -1,0 +1,71 @@
+﻿@using Newtonsoft.Json
+<!DOCTYPE html>
+<html lang="en" ng-app="CormitRouteApp">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title </title>
+
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/Content/BootSideMenu.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+    @* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVgry_JIdTPFrD7OEKjDIVoMkcHMHBYQY"></script>*@
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false'"></script>
+    *
+        
+        <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/BootSideMenu.js"></script>
+
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <script src="~/Scripts/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+
+
+    @* <script src="~/Scripts/angular-google-maps.js"></script>*@
+
+    @*  <script type="text/javascript" 
+                src="http://www.directiv.es/application/html/js/nlaplante/angular-google-maps/angular-google-maps.js"></script>*@
+    <script src="~/Scripts/lodash.min.js"></script>
+    <script src="~/Scripts/angular-google-maps.min.js"></script>
+
+    @*This Section is for Angular JS Scripts which are present in RouteApp\  *@
+    @RenderSection("CormitJSViewScript", required: false)
+
+
+</head>
+<body>
+   
+    <!-- Left Menue -->
+
+
+    <div id="body">
+      
+        @RenderSection("featured", required: false)
+        @RenderBody()
+
+
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My Route Planner</p>
+            </div>
+        </div>
+    </footer>
+
+   
+    @RenderSection("scripts", required: false)
+   
+</body>
+</html>

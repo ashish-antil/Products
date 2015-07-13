@@ -1,0 +1,8 @@
+﻿The ServiceStorage class are used by the IDS and EMS injector to manage storage of files.
+ServiceYmdStorage esp. provides storage in a \yyyy\mm\dd directory structure.
+It also include handling of known paths i.e. keeping track of existing directories.
+
+Todo:
+Most of the code from the IDS and EMS injector dealing with files could be mutualized
+in a class extending the functionalities provided by ServiceStorage in InjectorBase
+esp. if we need to create new injectors based on the file system.

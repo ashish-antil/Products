@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient.csproj", "{77A862F2-091E-49D5-B2F7-825913691239}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImardaReportingBusinessInterface", "..\ImardaReportingBusinessInterface\ImardaReportingBusinessInterface.csproj", "{6A5988C9-B43B-448D-AB00-EEA15E81458B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImardaReportingBusiness", "..\ImardaReportingBusiness\ImardaReportingBusiness.csproj", "{1BC4F5CE-D58A-4967-8EE0-13F852E66C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionTest", "..\ConnectionTest\ConnectionTest.csproj", "{4AEB9D1C-B64D-47A7-A811-0CE3260C6E4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessBase", "..\..\..\..\Imarda360.Business\Base\BusinessBase\BusinessBase.csproj", "{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imarda.Lib", "..\..\..\..\Imarda360.Common\Imarda.Common\Imarda.Lib.csproj", "{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77A862F2-091E-49D5-B2F7-825913691239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A862F2-091E-49D5-B2F7-825913691239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A862F2-091E-49D5-B2F7-825913691239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5988C9-B43B-448D-AB00-EEA15E81458B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5988C9-B43B-448D-AB00-EEA15E81458B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC4F5CE-D58A-4967-8EE0-13F852E66C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC4F5CE-D58A-4967-8EE0-13F852E66C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AEB9D1C-B64D-47A7-A811-0CE3260C6E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AEB9D1C-B64D-47A7-A811-0CE3260C6E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AEB9D1C-B64D-47A7-A811-0CE3260C6E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AEB9D1C-B64D-47A7-A811-0CE3260C6E4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(VaultVsipSolution-v2) = preSolution
+		VaultHost = http://vault/VaultService
+		VaultRepositoryID = 3
+		VaultRepositoryGUID = d3003a0b-8cf2-4e96-9657-111dc9ad6a8f
+		ProjectCount = 6
+		ProjectRelativeDiskPath1 = ..\ImardaReportingBusiness\ImardaReportingBusiness.csproj
+		ProjectRelativeDiskPath2 = ..\ImardaReportingBusinessInterface\ImardaReportingBusinessInterface.csproj
+		ProjectRelativeDiskPath3 = TestClient.csproj
+		ProjectRelativeDiskPath4 = ..\ConnectionTest\ConnectionTest.csproj
+		ProjectRelativeDiskPath5 = ..\..\..\..\Imarda360.Business\Base\BusinessBase\BusinessBase.csproj
+		ProjectRelativeDiskPath6 = ..\..\..\..\Imarda360.Common\Imarda.Common\Imarda.Lib.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+smtp:smtp.imardainc.com
+mail to:itadmin@imardainc.com
+from:buildadmin@imardainc.com
+subject:error on building file
+cc:nick.booy@imardainc.com dave.jollie@imardainc.com subhangini.deshpande@imardainc.com
+content: find an error when building the release

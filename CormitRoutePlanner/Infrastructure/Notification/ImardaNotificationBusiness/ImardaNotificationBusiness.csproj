@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3910162C-1C3F-4757-B054-5724CCD02AEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImardaNotificationBusiness</RootNamespace>
+    <AssemblyName>ImardaNotificationBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+    <OutputPath>bin\Local\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Renci.SshNet, Version=2014.4.6.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Imarda360.Shared\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\EmailDraft\EmailDraft.Extra.cs" />
+    <Compile Include="Control\EmailFailed\EmailFailed.Extra.cs" />
+    <Compile Include="Control\EmailPending\EmailPending.Extra.cs" />
+    <Compile Include="Control\EmailSent\EmailSent.Extra.cs" />
+    <Compile Include="Control\FtpFailed\FtpFailed.cs" />
+    <Compile Include="Control\FtpPending\FtpPending.cs" />
+    <Compile Include="Control\FtpSent\FtpSent.cs" />
+    <Compile Include="Control\ImardaNotification.Extra.cs" />
+    <Compile Include="Control\SMSDraft\SMSDraft.Extra.cs" />
+    <Compile Include="Control\SMSFailed\SMSFailed.Extra.cs" />
+    <Compile Include="Control\SMSPending\SMSPending.Extra.cs" />
+    <Compile Include="Control\SMSSent\SMSSent.Extra.cs" />
+    <Compile Include="NotificationProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control\ImardaNotification.cs" />
+    <Compile Include="Control\EmailDraft\EmailDraft.cs" />
+    <Compile Include="Control\EmailFailed\EmailFailed.cs" />
+    <Compile Include="Control\EmailPending\EmailPending.cs" />
+    <Compile Include="Control\EmailSent\EmailSent.cs" />
+    <Compile Include="Control\Notification\Notification.cs" />
+    <Compile Include="Control\SMSDraft\SMSDraft.cs" />
+    <Compile Include="Control\SMSFailed\SMSFailed.cs" />
+    <Compile Include="Control\SMSPending\SMSPending.cs" />
+    <Compile Include="Control\SMSSent\SMSSent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Cormit.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda.Logging\Imarda.Logging.csproj">
+      <Project>{94e293d9-705a-4a6b-9cb9-eccfbbde3be6}</Project>
+      <Name>Imarda.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Attributing\ImardaAttributingBusinessInterface\ImardaAttributingBusinessInterface.csproj">
+      <Project>{d2836fb1-6087-44e7-8242-eb10f22eb09e}</Project>
+      <Name>ImardaAttributingBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Configuration\ConfigurationHelpers\ConfigManagement\ConfigManagement.csproj">
+      <Project>{E772D262-A1FF-4BB2-B74A-37589F0571D1}</Project>
+      <Name>ConfigManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Configuration\ImardaConfigurationBusinessInterface\ImardaConfigurationBusinessInterface.csproj">
+      <Project>{BB1FB605-A863-4906-A514-6C42C9BF68B1}</Project>
+      <Name>ImardaConfigurationBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImardaNotificationBusinessInterface\ImardaNotificationBusinessInterface.csproj">
+      <Project>{EE38F10B-F9D6-4DDB-B996-48AAEA829D88}</Project>
+      <Name>ImardaNotificationBusinessInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\FtpFailed\FtpFailed.Extra.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
