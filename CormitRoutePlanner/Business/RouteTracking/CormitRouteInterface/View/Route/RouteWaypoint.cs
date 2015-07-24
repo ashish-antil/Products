@@ -7,7 +7,7 @@ using FernBusinessBase;
 
 namespace Cormit.Business.RouteTracking
 {
-    partial interface IImardaTracking
+    partial interface ICormitRouteTracking
     {
 
         #region Operation Contracts for RouteWayPoint

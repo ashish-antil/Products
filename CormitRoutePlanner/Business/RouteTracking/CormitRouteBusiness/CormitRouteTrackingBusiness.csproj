@@ -44,11 +44,14 @@
   <ItemGroup>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Imarda360.Shared\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <HintPath>..\..\..\..\Cormit.Shared\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Imarda360.Shared\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <HintPath>..\..\..\..\Cormit.Shared\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\..\..\..\Cormit.Shared\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

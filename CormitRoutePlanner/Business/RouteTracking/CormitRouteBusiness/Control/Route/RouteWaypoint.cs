@@ -77,7 +77,7 @@ namespace Cormit.Business.RouteTracking
             {
                 foreach (RouteWaypoint entity in request.List)
                 {
-                    var properties = new object[]
+                    var properties = new object[] 
 					{
 						entity.ID,
 						entity.CompanyID,

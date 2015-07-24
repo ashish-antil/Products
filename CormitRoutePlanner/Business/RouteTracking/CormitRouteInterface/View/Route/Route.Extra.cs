@@ -6,7 +6,7 @@ using FernBusinessBase;
 
 namespace Cormit.Business.RouteTracking
 {
-	partial interface IImardaTracking
+    partial interface ICormitRouteTracking
 	{
 		[OperationContract]
 		GetItemResponse<Route> GetRouteByExternalID(IDRequest request);
