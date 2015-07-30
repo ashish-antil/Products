@@ -8,7 +8,7 @@ Copyright @2009 CodeGenerator
 using Cormit.Business.RouteTracking;
 using FernBusinessBase;
 
-namespace Imarda360Application.Tracking
+namespace Cormit.Application.RouteApplication.Tracking
 {
 	public class ImardaProxyManager
 	{

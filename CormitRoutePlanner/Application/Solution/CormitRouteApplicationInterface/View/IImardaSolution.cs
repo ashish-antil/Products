@@ -5,7 +5,7 @@ using System.ServiceModel;
 
 
 
-namespace Imarda360Application
+namespace Cormit.Application.RouteApplication
 {
 	[ServiceContract]
 	public partial interface IImardaSolution

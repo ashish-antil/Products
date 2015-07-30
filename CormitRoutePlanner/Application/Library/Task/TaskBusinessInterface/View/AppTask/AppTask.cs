@@ -3,7 +3,7 @@ using FernBusinessBase;
 using Imarda360Base;
 using ImardaTaskBusiness;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	partial interface IImardaTask
 	{

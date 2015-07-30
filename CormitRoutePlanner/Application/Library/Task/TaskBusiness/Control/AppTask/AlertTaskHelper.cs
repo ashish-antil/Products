@@ -8,7 +8,7 @@ using FernBusinessBase.Errors;
 using Imarda.Lib;
 using ImardaTaskBusiness;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	public static class AlertTaskHelper
 	{
@@ -34,10 +34,10 @@ namespace Imarda360Application.Task
 			sbTypedData.AppendKV("TZ", tzi.Id); // required
 			string typedData = sbTypedData.ToString();
 
-			var alertTask = new Imarda360Application.Task.AlertTask
+			var alertTask = new AlertTask
 			{
 				ID = SequentialGuid.NewDbGuid(),
-				Arguments = new Imarda360Application.Task.AlertTask.Args
+				Arguments = new AlertTask.Args
 				{
 					EventID = eventID,
 					EventOwnerID = ownerID,

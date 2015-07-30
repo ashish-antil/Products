@@ -5,9 +5,9 @@ using FernBusinessBase;
 using FernBusinessBase.Errors;
 using ImardaSecurityBusiness;
 using System.ServiceModel;
-using Imarda360Application.Security;
+using Cormit.Application.RouteApplication.Security;
 
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
 	partial class ImardaSecurity
 	{

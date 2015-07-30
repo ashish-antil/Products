@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using Cormit.Application.RouteApplication.Task;
 using FernBusinessBase;
 using FernBusinessBase.Errors;
 using Imarda360.Infrastructure.ConfigurationService;
-using Imarda360Application.Task;
 using Imarda360Base;
 using ImardaConfigurationBusiness;
 using ImardaSecurityBusiness;
@@ -15,7 +15,7 @@ using System.Linq;
 using System.Text;
 using ImardaBusinessBase;
 
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
 	[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
 	public partial class ImardaSecurity : FernBusinessBase.BusinessBase, IImardaSecurity

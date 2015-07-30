@@ -81,6 +81,14 @@
       <Project>{4560d515-4a71-4680-b8dc-93a7c9749947}</Project>
       <Name>CormitRouteTrackingApplicationLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Application\Solution\CormitRouteApplicationInterface\Imarda360BusinessInterface.csproj">
+      <Project>{57402001-1654-4542-af9c-d4134f7b092f}</Project>
+      <Name>Imarda360BusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Application\Solution\CormitRouteApplication\Imarda360Business.csproj">
+      <Project>{6a7d8cfa-1316-4ae0-b27b-85cfbd3682fe}</Project>
+      <Name>Imarda360Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Business\RouteTracking\CormitRouteBusiness\CormitRouteTrackingBusiness.csproj">
       <Project>{487b13e4-c354-497d-ad5e-13f45e83a468}</Project>
       <Name>CormitRouteTrackingBusiness</Name>

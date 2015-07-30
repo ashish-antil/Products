@@ -12,7 +12,7 @@ using ImardaSecurityBusiness;
 #endregion
 
 // ReSharper disable once CheckNamespace
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
     /// <summary>
     ///     Session object in the application layer. This derives from the business session object

@@ -51,9 +51,9 @@ namespace AllHost
 
 
 			hostTypes.Add(typeof (Cormit.Business.RouteTracking.CormitRouteTracking));
-			
-			
 
+
+            hostTypes.Add(typeof(Cormit.Application.RouteApplication.Cormit24));
 			
 
 			Console.WindowWidth = 120;

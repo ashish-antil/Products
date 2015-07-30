@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Runtime.Serialization;
 using FernBusinessBase;
 
-namespace Imarda360Application
+namespace Cormit.Application.RouteApplication
 {
 	[Flags]
 	[DataContract]

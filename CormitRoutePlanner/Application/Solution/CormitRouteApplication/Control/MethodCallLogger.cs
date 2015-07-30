@@ -9,7 +9,7 @@ using Imarda.Lib;
 using System.Timers;
 using Imarda.Logging;
 
-namespace Imarda360Application
+namespace Cormit.Application.RouteApplication
 {
 	internal class MethodCallLogger
 	{

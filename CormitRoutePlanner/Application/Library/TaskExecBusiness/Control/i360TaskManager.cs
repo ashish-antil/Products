@@ -15,7 +15,7 @@ using FernBusinessBase.Errors;
 using System.Diagnostics;
 
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	/// <summary>
 	/// Main partial class for TaskManager in the application component.

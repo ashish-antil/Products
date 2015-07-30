@@ -10,7 +10,7 @@ using ImardaTaskBusiness;
 using FernBusinessBase;
 
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	public class ImardaProxyManager
 	{

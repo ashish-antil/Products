@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	[DataContract]
 	public class AddressTask : AppTask

@@ -12,7 +12,7 @@ using ImardaTaskBusiness;
 
 using System.Collections.Generic;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	//TODO restructure this: use Command pattern
 

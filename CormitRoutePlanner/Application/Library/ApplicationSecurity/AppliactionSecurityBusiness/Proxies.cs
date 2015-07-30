@@ -7,7 +7,7 @@ using ImardaSecurityBusiness;
 using System.Diagnostics;
 using FernBusinessBase;
 
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
 	public class ImardaProxyManager
 	{

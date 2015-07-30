@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
-using Imarda360Application.Task;
+using Cormit.Application.RouteApplication.Task;
 using Imarda.Lib;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	[DataContract]
 	public class ReportTask : AppTask

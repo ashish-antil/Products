@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\IImardaSolution.cs" />
-    <Compile Include="View\Imarda360Interface.cs" />
+    <Compile Include="View\Cormit24Interface.cs" />
     <Compile Include="View\Requests\CopyUnitsRequest.cs" />
   </ItemGroup>
   <ItemGroup>

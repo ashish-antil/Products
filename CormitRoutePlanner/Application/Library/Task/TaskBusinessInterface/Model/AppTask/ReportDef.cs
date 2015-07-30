@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Xml;
 using Imarda.Lib;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	[DataContract]
 	public class ReportDef

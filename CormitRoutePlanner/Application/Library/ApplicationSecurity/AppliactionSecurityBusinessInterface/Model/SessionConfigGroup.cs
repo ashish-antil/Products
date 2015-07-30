@@ -9,7 +9,7 @@ using System.Collections;
 using ImardaConfigurationBusiness;
 
 
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
 	/// <summary>
 	/// Contains user configuration settings for storage in the session object.

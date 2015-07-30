@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 using Imarda.Lib;
 
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	[DataContract]
 	[KnownType(typeof(ReportTask))]

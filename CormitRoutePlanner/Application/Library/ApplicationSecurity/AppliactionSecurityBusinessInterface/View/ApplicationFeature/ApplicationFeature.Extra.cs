@@ -5,7 +5,7 @@ using System.ServiceModel;
 using FernBusinessBase;
 using ImardaSecurityBusiness;
 
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
 	partial interface IImardaSecurity
 	{

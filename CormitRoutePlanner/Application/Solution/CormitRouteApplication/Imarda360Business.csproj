@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\Imarda360.cs" />
+    <Compile Include="Control\Cormit24.cs" />
     <Compile Include="Control\ImardaSolution.cs" />
     <Compile Include="Control\MethodCallLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

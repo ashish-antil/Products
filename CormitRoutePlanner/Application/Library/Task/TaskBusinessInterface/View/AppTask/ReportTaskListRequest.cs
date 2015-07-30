@@ -3,7 +3,7 @@ using System.ServiceModel;
 using FernBusinessBase;
 using Imarda.Lib;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	[MessageContract]
 	public class ReportTaskListRequest : IRequestBase

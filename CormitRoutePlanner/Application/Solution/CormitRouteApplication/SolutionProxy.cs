@@ -17,7 +17,7 @@ using ImardaSecurityBusiness;
 
 #endregion
 
-namespace Imarda360Application
+namespace Cormit.Application.RouteApplication
 {
 	public class ImardaProxyManager
 	{

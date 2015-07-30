@@ -8,7 +8,7 @@ using Imarda.Lib;
 using ImardaTaskBusiness;
 
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
 	public partial class ImardaTask : FernBusinessBase.BusinessBase, IImardaTask

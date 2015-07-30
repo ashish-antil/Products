@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using FernServiceBase;
 
-namespace Imarda360Application
+namespace Cormit.Application.RouteApplication
 {
 	public class ProjectInstaller : BaseProjectInstaller {
 		public ProjectInstaller()

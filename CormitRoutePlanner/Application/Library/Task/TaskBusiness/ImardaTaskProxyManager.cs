@@ -1,7 +1,7 @@
 ﻿//using System.Web.Services.Description;
 using FernBusinessBase;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	public class ImardaTaskProxyManager
 	{

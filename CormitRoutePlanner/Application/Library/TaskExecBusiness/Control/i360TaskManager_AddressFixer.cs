@@ -8,7 +8,7 @@ using Imarda.Lib;
 
 using ImardaTaskBusiness;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	/// <summary>
 	/// This partial class handles the fixing of empty addresses in the unit trace.

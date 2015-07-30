@@ -8,7 +8,7 @@ using System.ServiceModel;
 using Imarda360Base;
 using Imarda.Lib;
 
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
 	partial class ImardaSecurity
 	{

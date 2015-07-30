@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 	[DataContract]
 	public class NotificationDef

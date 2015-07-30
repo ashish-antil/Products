@@ -12,7 +12,7 @@ using System.ServiceModel;
 using ImardaSecurityBusiness;
 using Imarda360Base;
 using FernBusinessBase;
-namespace Imarda360Application.Security
+namespace Cormit.Application.RouteApplication.Security
 {
 
 	[ServiceContract]

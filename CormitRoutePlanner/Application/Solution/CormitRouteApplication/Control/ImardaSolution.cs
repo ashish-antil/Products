@@ -8,7 +8,7 @@ using System.ServiceModel;
 using FernBusinessBase.Errors;
 
 
-namespace Imarda360Application
+namespace Cormit.Application.RouteApplication
 {
 	/// <summary>
 	/// Declaring the class FacadeImplementation to be an IImardaSolution. 

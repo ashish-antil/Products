@@ -1,7 +1,7 @@
 ﻿using System.ServiceModel;
 using FernBusinessBase;
 
-namespace Imarda360Application.Task
+namespace Cormit.Application.RouteApplication.Task
 {
 
 	[ServiceContract]

@@ -1,6 +1,6 @@
 using Imarda.Lib;
 
-namespace Imarda360Application
+namespace Cormit.Application.RouteApplication
 {
 
 	public class Imarda360Service : FernServiceBase.FernServiceBase
@@ -11,7 +11,7 @@ namespace Imarda360Application
 		/// </summary>
 		public Imarda360Service() : base("ImardaSolutionService")
 		{
-			RegisterHost(new ImardaServiceHost(typeof(Imarda360)));
+			RegisterHost(new ImardaServiceHost(typeof(Cormit24)));
 			//RegisterHost(new ImardaServiceHost(typeof(Security.ImardaSecurity)));
 		}
 
