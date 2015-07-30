@@ -16,6 +16,7 @@ namespace Cormit.Application.Tracking
 	[ServiceContract]
 	public partial interface ICormitRouteTracking : IServerFacadeBase 
 	{
+
         //[OperationContract]
         //Get360ItemResponse<Trackable> GetTrackableLastPosition(IDRequest request);
 	}
