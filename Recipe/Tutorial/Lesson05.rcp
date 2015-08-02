@@ -1,0 +1,150 @@
+#tags lesson #require #put #! #putx #exp #cdata #@
+
+Lesson 05: Dictionary operations I
+
+1. #require
+When running a recipe, some macros may be required for execution.
+The user has to provide them, either on command line for Recipe.exe, or
+by Run>Set Parameters (F4) in RecipeGui.exe.
+
+The command to declare a parameter is:
+
+#require x
+
+where 'x' is the macro name that must exist in the dictionary.
+If you try to run this recipe, you'll get a message:
+"Required macro x" and the recipe will not be run.
+Press F4 and fill in a text for x.
+Then run the recipe again.
+
+#mbox You entered `x`
+
+You can run the recipe now multiple times without requiring to reenter a value
+for 'x'.
+
+--------------------------------------------
+2. Revisiting #put
+
+You have already seen #put, which puts a value in the dictionary. There
+are two forms, one with an = sign and one in combination with #end
+
+The simple form is:
+#put greeting=hello world
+This puts a single line in the dictionary under the name 'greeting'
+
+The dictionary is not case-sensitive, so looking up 'greeting' and 'GREETING'
+will both yield the same result, e.g. 
+
+#mbox
+`greeting` 
+`GREETING`
+`gReEtInG`
+#end
+
+The multi-line format looks like this:
+
+#put greeting
+Hello World.
+How are you?
+#end
+
+Note that the = sign is not allowed here.
+
+#mbox `greeting`
+
+Also note that #put will overwrite the macro if it already exists.
+
+An alternative notation for #put is #! because it is used so often.
+
+#! a=Hello world.
+
+Finally, note that if you want a CRLF after the last line in the multi-line
+block, you have to leave a blank line between the last line and #end
+
+#! b1
+no CRLF
+#end
+
+#! b2
+has a CRLF
+
+#end
+
+Compare the results:
+#info [`b1`]
+#info [`b2`]
+
+The #end marker must start at position 1 of the line or will be ignored.
+
+-------------------------------------------
+3. Uninterpreted character data: #cdata
+
+Normally all macros in a command are expanded before executing the command.
+First the parameters, then the optional block of text between the command
+and the #end marker.
+
+The parameters will always be expanded, without exception. There command
+with the name #cdata alias #@ however allows you to grab the text block
+and put it unchanged in the dictionary, a bit like html's <!cdata[[...]]> does.
+
+There is one difference with other commands can have a block: the #end marker
+is followed by the same macro name as found after #cdata. The interpreter
+will look for this #end marker and take the text between it as macro value.
+This means any `...` constructions as well as #-commands that appear will
+not be expanded and executed. E.g.
+
+#cdata foo
+#put a
+Hello
+world
+#end
+#mbox say `a`
+#end foo
+
+Run this recipe and check the Log pane for the output:
+#info foo=`foo`
+
+There are two common uses for #cdata: reusable templates and macro-recipes.
+Let's first look at macro-recipes.
+We can execute the above recipe, now in the dictionary under the name 'foo':
+
+#recipe foo
+
+4. Using #putx and #exp to expand a template
+
+To use a #cdata template do this. First create the template. For a change, 
+let's some aliases:
+
+#@ t
+insert into [MyDatabase].dbo.[Address]('`newguid`', '`name`', '`ts:sql`')
+#end t
+
+#! name=Alice
+#putx i1=t
+#write `i1`
+
+#! name=Bob
+#putx i2=t
+#write `i2`
+
+What happens here is that #putx finds the macro (here: 't') in the dictionary,
+then expands all the macro placeholders in the text associated with 't' and 
+assigns the result to a new macro. The macro 't' remains unchanged.
+
+Note how `newguid` and `ts:sql` are built-in macros that generate a GUID and
+a timestamp.
+
+There is another command #exp which does almost the same, but it assigns the
+expanded value back to the same dictionary entry:
+
+#! name=Charlie
+#exp t
+#write `t`
+
+This has change the template itself, which cannot be used anymore now to 
+generate other instances. #exp x is equivalent to #putx x=x
+
+In a later lesson we will see how #expn can be used to generate multiple 
+expansions of a template in an easier way.
+
+End of lesson.

@@ -1,0 +1,19 @@
+#put template=`paste`
+
+#put req=`template`
+#find `bq`([^`bq`]+)`bq` req
+` `#require $1
+
+#end
+#unique req
+
+#put rcp
+` `#cdata template
+`template`
+` `#end template
+`req`
+` `#putx a=template
+` `#copy ``a``
+#end
+
+#edit rcp

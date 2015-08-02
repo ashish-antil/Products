@@ -1,0 +1,30 @@
+#tags lesson #stash #restore global
+
+Recipes can have a simple restore point: a backup of the dictionary before changes.
+
+#put a=one
+#stash
+#put a=two
+#info `a`
+#restore
+#info `a`
+
+This will show in the log:
+@set a=one
+@set a=two
+@info two
+@info one
+
+With #stash a copy of the entire dictionary is made. After #stash the
+dictionary can be changed as usual, but the #restore command replaces 
+the current dictionary with the stashed one.
+
+There is no stack of dictionaries. With #stash the previously stashed
+dictionary gets overwritten.
+
+Although it is possible to use #stash and #restore in subrecipes, loops,
+#if, #def..#enddef etc. it is not recommended to do so. Use #stash and
+#restore in the top level of the main recipe only.
+
+End of lesson.
+

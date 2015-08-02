@@ -1,0 +1,32 @@
+#name AtomProcessor
+
+#require Name
+#require InboundAtomType
+
+#new C:\TeamImarda\Imarda360\Imarda360.Gateway\AtomGateway\AtomGatewayBusiness\Control\AtomProcessor_`Name`.cs
+using System;
+using FernBusinessBase;
+using Imarda.Lib;
+using ImardaBatchProcessorInterface;
+using ImardaTrackingBusiness;
+
+
+namespace ImardaAtomGatewayBusiness
+{
+	internal partial class AtomProcessor //`Name`
+	{
+		private bool Process`Name`(Atom atom, ProcessingResult result)
+		{
+			Unit unit = result.Unit;
+			int type = atom.Type;
+
+			switch (type)
+			{
+				case InboundAtomTypes.`InboundAtomType`:
+					break;
+			}
+		}
+	}
+}
+#end
+

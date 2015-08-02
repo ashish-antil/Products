@@ -1,0 +1,45 @@
+#tags lesson #put #write #info #mbox #warn
+
+Lesson 02: Some output commands
+
+#put greeting=Hello World
+
+#write This text will be written in the Log pane below
+
+#write
+The write command can also contain
+multiple lines like this.
+It can also contain macros like: `greeting`.
+#end
+
+
+#info This text too will be written, but is prefixed by @info.
+
+Use #info for debugging; #write is actually 
+meant for the command line recipe, to write to standard output.
+
+
+#mbox This is a message box. I say "`greeting`".
+
+
+All these commands can have the form of a single line 
+or a multiline block, terminated by #end.
+
+#info Line one and`nl`Line two.
+Note that `nl` is a built-in macro that represends a new line.
+
+#info
+Line one and
+Line two.
+#end
+
+
+#warn
+Finally there is #warn, it shows a message like mbox,
+but it shows a OK and Cancel button. OK will continue
+the recipe, Cancel will stop the execution
+#end
+
+#mbox Here is the message after #warn, you must have clicked OK!
+
+End of lesson.

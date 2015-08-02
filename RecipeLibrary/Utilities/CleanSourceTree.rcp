@@ -1,0 +1,15 @@
+#tags clean dll git
+
+#mode write
+
+#put repo=c:\teamimarda\imarda360
+
+#del -r `repo`\*.dll
+#del -r `repo`\*.pdb
+
+
+#git a
+checkout HEAD -- Imarda360.Shared
+#end
+
+#info `a`

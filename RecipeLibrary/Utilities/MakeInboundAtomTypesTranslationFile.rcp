@@ -1,0 +1,28 @@
+#load source=C:\TeamImarda\Imarda360\Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\View\InboundAtomTypes.cs
+
+#with source
+nomatch GatewayCommand
+xmatch public const int (\w*) += +(\d+);
+col /|/2 1
+store list
+subs /(\d+)\|([^\r\n]*)/INSERT INTO [AtomTypes](Number,Description) VALUES($1, '$2')/
+#end
+
+#put repo=C:\TeamImarda\ImardaTools
+#put iat=TextTools\ttxlib\InboundAtomTypes
+
+#newer `repo`\`iat`.txt
+`list`
+#end
+
+#newer `repo`\`iat`.sql
+`source`
+#end
+
+#git o
+add `iat`.txt
+add `iat`.sql
+commit -m "Updated InboundAtomTypes translation file for TextTools"
+#end
+
+#info `o`

@@ -1,0 +1,115 @@
+#version 1.8.2+
+
+Do not put in git
+
+#tags insert sql incoming
+
+
+#default trackID=IMARDA1
+
+
+#ask ignition
+Ignition?
+-
+Off
+On
+#end
+
+#ask selection
+Message type?
+-
+gn,230|Geofence Enter
+gx,240|Geofence Exit
+ign,170|Ignition
+idle1,190|Idle Start
+idle1,200|Idle Stop
+dig,140|Digital
+#end
+
+#if selection ^gn,|^gx,
+use this to get options: SELECT TOP 100 gfid, gftitle FROM [IMARDA360.TRACKING].DBO.CompanyGeofence WHERE ID in (...)
+
+#cdata geofences
+4426=3380 OAKLEIGH SOUTH
+3841=3136 MIDDLE BRIGHTON
+4066=3981 Laverton MLDC
+3701=3933 Wodonga RDC
+#end geofences
+
+#putm geofences
+
+#with geofences
+subs /=/|/
+#end
+
+#ask gfid
+Geofence
+-
+``geofences``
+#end
+
+#putv gftitle=``gfid``
+#endif
+
+
+#if selection ^dig,
+#ask digHi
+Digital Input
+-
+false|low
+true|high
+#end
+#endif
+
+#! gn
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`trackID`</ID><IsSenderTime>true</IsSenderTime><Parts><AtomPart  i:type="d3p1:Ignition"><d3p1:Ignition>`ignition`</d3p1:Ignition></AtomPart><AtomPart  i:type="d3p1:GPS"><d3p1:Dir>82</d3p1:Dir><d3p1:Fix>true</d3p1:Fix><d3p1:Hdop>6</d3p1:Hdop><d3p1:Lat>-31938622</d3p1:Lat><d3p1:Lon>115844842</d3p1:Lon><d3p1:PSpd>62</d3p1:PSpd><d3p1:Rssi>0.99</d3p1:Rssi><d3p1:Sat>3</d3p1:Sat><d3p1:Spd>19</d3p1:Spd><d3p1:Time>2013-06-17T05:23:19Z</d3p1:Time></AtomPart><AtomPart i:type="d3p1:Odometer"><d3p1:AfterCalibration>false</d3p1:AfterCalibration><d3p1:Mtr>35682100</d3p1:Mtr></AtomPart><AtomPart i:type="d3p1:Geofence"><d3p1:ID>`gfid`</d3p1:ID><d3p1:MaxNumber>0</d3p1:MaxNumber><d3p1:Mode>Enter</d3p1:Mode><d3p1:Name>`gftitle`</d3p1:Name><d3p1:SpdLmt>0</d3p1:SpdLmt><d3p1:TInside>0</d3p1:TInside><d3p1:Tout>0</d3p1:Tout></AtomPart><AtomPart i:type="d3p1:IPAddress"><d3p1:Address>127.0.0.1</d3p1:Address><d3p1:Tag>105</d3p1:Tag></AtomPart></Parts><Seq>3</Seq><Time>`timestamp`Z</Time><Type>230</Type></Atom>
+#end
+
+#! gx
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`trackID`</ID><IsSenderTime>true</IsSenderTime><Parts><AtomPart  i:type="d3p1:Ignition"><d3p1:Ignition>`ignition`</d3p1:Ignition></AtomPart><AtomPart  i:type="d3p1:GPS"><d3p1:Dir>82</d3p1:Dir><d3p1:Fix>true</d3p1:Fix><d3p1:Hdop>6</d3p1:Hdop><d3p1:Lat>-31938622</d3p1:Lat><d3p1:Lon>115844842</d3p1:Lon><d3p1:PSpd>62</d3p1:PSpd><d3p1:Rssi>0.99</d3p1:Rssi><d3p1:Sat>3</d3p1:Sat><d3p1:Spd>19</d3p1:Spd><d3p1:Time>2013-06-17T05:23:19Z</d3p1:Time></AtomPart><AtomPart i:type="d3p1:Odometer"><d3p1:AfterCalibration>false</d3p1:AfterCalibration><d3p1:Mtr>35682100</d3p1:Mtr></AtomPart><AtomPart i:type="d3p1:Geofence"><d3p1:ID>`gfid`</d3p1:ID><d3p1:MaxNumber>0</d3p1:MaxNumber><d3p1:Mode>Exit</d3p1:Mode><d3p1:Name>`gftitle`</d3p1:Name><d3p1:SpdLmt>0</d3p1:SpdLmt><d3p1:TInside>0</d3p1:TInside><d3p1:Tout>0</d3p1:Tout></AtomPart><AtomPart i:type="d3p1:IPAddress"><d3p1:Address>127.0.0.1</d3p1:Address><d3p1:Tag>105</d3p1:Tag></AtomPart></Parts><Seq>3</Seq><Time>`timestamp`Z</Time><Type>240</Type></Atom>
+#end
+
+#! ign
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`trackID`</ID><IsSenderTime>true</IsSenderTime><Parts><AtomPart  i:type="d3p1:GPS"><d3p1:Dir>0</d3p1:Dir><d3p1:Fix>true</d3p1:Fix><d3p1:Hdop>0</d3p1:Hdop><d3p1:Lat>-38180790</d3p1:Lat><d3p1:Lon>144376310</d3p1:Lon><d3p1:PSpd>0</d3p1:PSpd><d3p1:Rssi>0</d3p1:Rssi><d3p1:Sat>0</d3p1:Sat><d3p1:Spd>0</d3p1:Spd><d3p1:Time>2013-07-02T05:51:31Z</d3p1:Time></AtomPart><AtomPart  i:type="d3p1:Ignition"><d3p1:Ignition>`ignition`</d3p1:Ignition></AtomPart><AtomPart  i:type="d3p1:Odometer"><d3p1:AfterCalibration>false</d3p1:AfterCalibration><d3p1:Mtr>56791800</d3p1:Mtr></AtomPart><AtomPart  i:type="d3p1:PowerChange"><d3p1:DeviceBackupBatteryVoltage i:nil="true" /><d3p1:DevicePower i:nil="true" /><d3p1:DeviceSupplyVoltage i:nil="true" /><d3p1:EnginePower>true</d3p1:EnginePower><d3p1:GPSAerialConnected i:nil="true" /><d3p1:MDTConnected i:nil="true" /><d3p1:VehicleBatteryVoltage i:nil="true" /></AtomPart><AtomPart  i:type="d3p1:IPAddress"><d3p1:Address>10.5.2.22</d3p1:Address><d3p1:Tag>105</d3p1:Tag></AtomPart></Parts><Seq>4417</Seq><Time>`timestamp`Z</Time><Type>170</Type></Atom>
+#end
+
+#! idle1
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`trackID`</ID><IsSenderTime>true</IsSenderTime><Parts><AtomPart i:type="d3p1:Ignition"><d3p1:Ignition>`ignition`</d3p1:Ignition></AtomPart><AtomPart i:type="d3p1:GPS"><d3p1:Dir>12</d3p1:Dir><d3p1:Fix>true</d3p1:Fix><d3p1:Hdop>0.9</d3p1:Hdop><d3p1:Lat>-31971720</d3p1:Lat><d3p1:Lon>115990360</d3p1:Lon><d3p1:PSpd>14</d3p1:PSpd><d3p1:Rssi>-73</d3p1:Rssi><d3p1:Sat>9</d3p1:Sat><d3p1:Spd>0</d3p1:Spd><d3p1:Time>`timestamp`Z</d3p1:Time></AtomPart><AtomPart i:type="d3p1:Odometer"><d3p1:AfterCalibration>false</d3p1:AfterCalibration><d3p1:Mtr>52701200</d3p1:Mtr></AtomPart><AtomPart i:type="d3p1:IPAddress"><d3p1:Address>127.0.0.1</d3p1:Address><d3p1:Tag>105</d3p1:Tag></AtomPart></Parts><Seq>348</Seq><Time>`timestamp`Z</Time><Type>190</Type></Atom>
+#end
+
+#! idle0
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`trackID`</ID><IsSenderTime>true</IsSenderTime><Parts><AtomPart i:type="d3p1:Ignition"><d3p1:Ignition>`ignition`</d3p1:Ignition></AtomPart><AtomPart i:type="d3p1:GPS"><d3p1:Dir>12</d3p1:Dir><d3p1:Fix>true</d3p1:Fix><d3p1:Hdop>0.9</d3p1:Hdop><d3p1:Lat>-31971720</d3p1:Lat><d3p1:Lon>115990360</d3p1:Lon><d3p1:PSpd>14</d3p1:PSpd><d3p1:Rssi>-73</d3p1:Rssi><d3p1:Sat>9</d3p1:Sat><d3p1:Spd>0</d3p1:Spd><d3p1:Time>`timestamp`Z</d3p1:Time></AtomPart><AtomPart i:type="d3p1:Odometer"><d3p1:AfterCalibration>false</d3p1:AfterCalibration><d3p1:Mtr>52701200</d3p1:Mtr></AtomPart><AtomPart i:type="d3p1:IPAddress"><d3p1:Address>127.0.0.1</d3p1:Address><d3p1:Tag>105</d3p1:Tag></AtomPart></Parts><Seq>348</Seq><Time>`timestamp`Z</Time><Type>200</Type></Atom>
+#end
+
+#! dig
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`trackID`</ID><IsSenderTime>true</IsSenderTime><Parts><AtomPart i:type="d3p1:GPS"><d3p1:Dir>286</d3p1:Dir><d3p1:Fix>true</d3p1:Fix><d3p1:Hdop>0</d3p1:Hdop><d3p1:Lat>-32278340</d3p1:Lat><d3p1:Lon>115712800</d3p1:Lon><d3p1:PSpd>0</d3p1:PSpd><d3p1:Rssi>0</d3p1:Rssi><d3p1:Sat>0</d3p1:Sat><d3p1:Spd>0</d3p1:Spd><d3p1:Time>`timestamp`Z</d3p1:Time></AtomPart><AtomPart i:type="d3p1:Ignition"><d3p1:Ignition>`ignition`</d3p1:Ignition></AtomPart><AtomPart i:type="d3p1:Odometer"><d3p1:AfterCalibration>false</d3p1:AfterCalibration><d3p1:Mtr>46461000</d3p1:Mtr></AtomPart><AtomPart i:type="d3p1:DigitalInput"><d3p1:Delay>0</d3p1:Delay><d3p1:Line>1</d3p1:Line><d3p1:Value>`digHi`</d3p1:Value></AtomPart><AtomPart i:type="d3p1:IPAddress"><d3p1:Address>127.0.0.1</d3p1:Address><d3p1:Tag>105</d3p1:Tag></AtomPart></Parts><Seq>7340</Seq><Time>`timestamp`Z</Time><Type>140</Type></Atom>
+#end
+
+#extract (\w+),(\d+) selection
+` `#putv atomxml=$1
+` `#put type=$2
+#end
+#info `selection`
+
+## selection
+
+#put dt=`ts:sql`
+#put ID=`newseqguid`
+Create the sql command:
+
+#put sql
+INSERT INTO [Imarda360.Tracking].dbo.[IncomingMessage]
+VALUES ('`ID`','`atomxml`',0,0,`type`,'`dt`','`dt`','`trackID`',8)
+
+#end
+
+Put on clipboard, for easy pasting into ssms
+
+#put f=c:\temp\InsertIncMsg.sql
+#newer `f`
+`sql`
+#end
+
+#run {`f`}
+
+

@@ -1,0 +1,24 @@
+#dir a=-r C:\TeamImarda\Imarda360\Imarda360.Gateway\CommunicatorServices\App_NY.config
+
+#info `a`
+
+#cdata r
+#run {notepad++} "`a`"
+#end r
+
+#iter a r
+
+
+#cdata NY
+#dir a=-r c:\program files (x86)\*.exe.config
+
+#info `a`
+
+#cdata r
+#run {notepad++} "`a`"
+#end r
+
+#iter a r
+#end NY
+
+#dir a=-r c:\teamimarda\imarda360\hosts.txt

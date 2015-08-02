@@ -1,0 +1,101 @@
+#server 0.0.0.0:7711
+
+#cdata /sql
+#load sql=C:\Tools1\Recipe\SQL\`q_q`.sql
+#write `timestamp` `q_q`
+#recipe C:\Tools1\Recipe\RunSqlScript.rcp
+#put post=`sqlresult`
+#put mime=text/plain
+#end /sql
+================================
+#cdata /time
+#put post=It's `ts:sql` on `computername`
+#end /time
+================================
+#cdata /ua
+#if q_veh .
+#load sql=C:\Tools1\Recipe\SQL2\ua-by-veh.sql
+#else
+#load sql=C:\Tools1\Recipe\SQL2\ua-by-trackid.sql
+#endif
+#write `timestamp` /ua
+#recipe C:\Tools1\Recipe\RunSqlScriptRaw.rcp
+#recipe C:\Tools1\Recipe\Rcp\kvstring.rcp
+#put post=`sqlresult`
+#put mime=text/plain
+#end /ua
+================================
+#cdata /locations
+#load sql=C:\Tools1\Recipe\SQL2\locations.sql
+#write `timestamp` /locations
+#recipe C:\Tools1\Recipe\RunSqlScriptRaw.rcp
+#put post=`sqlresult`
+#with post
+subs /\ +/ /
+#end
+#put mime=text/plain
+#end /locations
+================================
+#cdata /disk
+#recipe C:\Tools1\Recipe\Rcp\diskspace.rcp
+#put mime=text/plain
+#end /disk
+================================
+#cdata /rstart
+#cmd post
+net start "Recipe Service"
+#end
+#end /rstart
+================================
+#cdata /stats
+#dir a=C:\i360.logs\Gateway\*.txt
+#with a
+sort
+reverse
+delblank
+xmatch ^([^\r\n]+)
+#end
+#load post=`a`
+#put mime=text/plain
+#end /stats
+================================
+#cdata /msg
+#putv guids=post
+#putv text=post
+
+#with guids
+xguid
+delblank
+enclose INSERT INTO #TEMP1 VALUES('[]')
+#end
+
+#extract (?s)---\r\n(.*) text
+$1
+#end
+
+#putv title=text
+
+#extract (?is)title:\s*([^\r\n]+)\s* title
+$1
+#end
+
+#with text
+nomatch (?i)^title:
+chomp
+subs /'/''/
+subs /^/'/s
+append '
+subs #\r\n#<br/>#
+#end
+
+#load sql=C:\Tools1\Recipe\SQL\msg.sql
+#recipe C:\Tools1\Recipe\RunSqlScriptRaw.rcp
+
+#end /msg
+================================
+#cdata /
+#recipe c:\tools1\recipe\Index.rcp
+#end /
+
+================================
+#recipe `query`

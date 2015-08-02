@@ -1,0 +1,102 @@
+#tags atom atompart
+
+Requires RecipeGUI 1.5+
+
+#name AtomPart
+
+#require Issue
+#require Name - the prefix name of the class, e.g. "Info" -> class InfoPart
+#default FieldType=bool|int|string|float
+#require Property
+#default UseTag=no|yes
+
+
+#put no=
+#put yes
+
+		[DataMember]
+		public char Tag { get; set; }
+
+#end
+#putv TagMember=`UseTag`
+
+#put yes=, ITag
+#putv TagIntf=`UseTag`
+
+#put yes
+
+		public `Name`Part(char tag, `FieldType` value)
+		{
+			Tag = tag;
+			`Property` = value;
+		}
+
+#end
+#putv ExtraCons=`UseTag`
+
+
+#put base=C:\TeamImarda\Imarda360\
+
+Add an AtomPart subclass to the gateway interface (model)
+
+#put file=`base`Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\Model\AtomParts\`Name`Part.cs
+
+#newer `file`
+//& `Issue`
+using System;
+using System.Runtime.Serialization;
+using ImardaBatchProcessorInterface;
+
+namespace ImardaAtomGatewayBusiness
+{
+	/// <summary>
+	/// `Name`
+	/// </summary>
+	[DataContract(Name = "`Name`")]
+	[Serializable]
+	public class `Name`Part : AtomPart`TagIntf`
+	{
+		public `Name`Part()
+		{
+		}
+
+		public `Name`Part(`FieldType` value)
+		{
+			`Property` = value;
+		}
+`ExtraCons`
+
+		[DataMember]
+		public `FieldType` `Property` { get; set; }
+`TagMember`
+
+	}
+}
+
+#end
+#put LocalFolder=`base`Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\Model\AtomParts
+#put LocalFile=`Name`Part.cs
+
+
+Add the new file to the project:
+
+#put rx=<ItemGroup>\s*(?=<Compile\ Include)
+
+#after `rx` `base`Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\AtomGatewayBusinessInterface.csproj
+<Compile Include="Model\AtomParts\`Name`Part.cs" />
+
+#end
+
+Add a KnowType declaration to the config files:
+
+#do -r `base`App*.config
+#do C:\TeamImarda\Imarda360\Imarda360.Business\Tools\AllHost\CreateLocalAppConfig.rcp
+#do C:\i360.Config\AfterInstall.rcp
+
+#warn Click OK to add file to git (index)
+
+#git
+commit -am "`Name`Part created and referenced by configs"
+#end
+
+#run {`file`}

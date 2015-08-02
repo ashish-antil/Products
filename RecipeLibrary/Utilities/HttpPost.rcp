@@ -1,0 +1,7 @@
+#post resp=http://10.48.26.5:7711/loginmsg
+This is the beta2 website. Login page messages can be 
+changed by HTTP POST of the message text to 
+http://beta2.imarda.com/loginmsg
+#end
+
+

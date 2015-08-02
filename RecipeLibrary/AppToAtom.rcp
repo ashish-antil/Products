@@ -1,0 +1,24 @@
+This recipe generates a 'sideways' message from application to gateway.
+
+#name AppToAtom
+
+#require MethodName
+#require AtomType
+
+#do C:\TeamImarda\Imarda360\Imarda360.Application\Imarda360.Libraries\Imarda360AtomGateway\Imarda360AtomGatewayBusiness\Control\Imarda360AtomGateway.cs
+
+#default interface=unit|enqueue
+#put unit=C:\TeamImarda\Imarda360\Imarda360.Application\Imarda360.Libraries\Imarda360AtomGateway\Imarda360AtomGatewayBusinessInterface\View\Unit.cs
+#put enqueue=C:\TeamImarda\Imarda360\Imarda360.Application\Imarda360.Libraries\Imarda360AtomGateway\Imarda360AtomGatewayBusinessInterface\View\OutboundMessages.cs
+#putv file=`interface`
+
+#do `file`
+
+#default Action=Post|Work
+#name AppToAtom_`Action`
+#do C:\TeamImarda\Imarda360\Imarda360.Gateway\AtomGateway\AtomGatewayBusiness\Control\AtomProcessor_Application.cs
+
+#name NewAuthToken
+#put authtoken=`MethodName`
+#do C:\TeamImarda\Imarda360\Imarda360.Common\Imarda.Common\IDs\AuthToken.cs
+

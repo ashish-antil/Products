@@ -1,0 +1,33 @@
+#tags apply files iter process
+
+#dir files=-r C:\TeamImarda\Imarda360\Imarda360.Gateway\AtomGateway\AtomGatewayBusiness\Control\*.cs
+
+#with files
+nomatch (?i)_resharper|assembly\.cs|designer\.|vault
+#end
+
+#put result=c:\temp\filelist.txt
+#del `result`
+#new `result`
+`files`
+#end
+
+#put list=
+
+#cdata process1
+#load a=`f`
+#find ConfigUtils\.Get[^(]*\(([^)]*)\) a
+$1
+
+#end
+#if a .
+#append list
+`f`
+`a`
+
+#end
+#endif
+#end process1
+
+#putv f=files
+#iter f process1

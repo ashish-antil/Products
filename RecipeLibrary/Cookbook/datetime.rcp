@@ -1,0 +1,17 @@
+datetime
+___________________________________________________________
+#tags sequential guid sunday
+2013-12-12T22:33:45 maurice.verheijen
+
+Get the date time of last Sunday midnight UTC as a sequential guid
+
+#csharp guidstring
+var now = DateTime.Today;
+var sunday = now - TimeSpan.FromDays((int)now.DayOfWeek);
+var buf = new byte[16];
+byte[] tbuf = BitConverter.GetBytes(sunday.Ticks);
+Array.Reverse(tbuf);
+Buffer.BlockCopy(tbuf, 0, buf, 10, 6);
+return new Guid(buf).ToString();
+#end
+

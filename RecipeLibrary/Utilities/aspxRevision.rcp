@@ -1,0 +1,11 @@
+#default folder=C:\inetpub\wwwroot\Imarda360
+
+#require file
+#require release
+#require revision
+
+#put rx="([^?"]+`file`)\?(?:\d+\.\d+\.\d+|<%=cacheVersion\ ?%>)"
+
+#subs `rx` -r `folder`\*.aspx
+"$1?`release`.`revision`"
+#end

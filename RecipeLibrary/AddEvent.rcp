@@ -1,0 +1,34 @@
+#tags event addevent
+
+Use this recipe to add a SQL statement to the EventData.sql
+
+#marker AddEvent
+
+#require eventID
+#require name
+#require description
+
+#default category=Vehicle|Driver|Fatigue|Location|Service|Device|User|Fleet|Message|JobDispatch
+#put Vehicle=e9f4f44c-3a6a-4002-87a0-6e7f4f38ff69
+#put Driver=a5e2bf3c-110c-4a4c-b72e-9def30ff0f6d
+#put Fatigue=918038AE-70BA-4c5b-9A7A-73DAA3BF8CDF
+#put Location=5292523a-43d4-4c90-a6be-ca7f70e80fe0
+#put Service=3f2d8969-9cc3-4ec5-8a92-44a7422749dc
+#put Device=26b8d08c-2764-4a66-b5b2-8f31dc75acbd
+#put User=450b2b51-977d-4e6b-9673-bdfa488e2057
+#put Fleet=cca8bf69-e16a-4bff-9298-69fdd64770db
+#put Message=387a8f32-9273-4a79-a7ff-5b06049d8200
+#put JobDispatch=B7A45290-5A64-45d2-8379-FC94FBED4422
+#putv catid=`category`
+
+#put datetime=`ts:sql`
+#put date=`timestamp`
+
+#do C:\TeamImarda\Imarda360\Imarda360.DatabaseScripts\Imarda360.Alerting\Data\Imarda360.EventData.sql
+#do C:\TeamImarda\Imarda360\Imarda360.Business\Services\ImardaAlerting\ImardaAlertingBusinessInterface\View\Event\EventGuids.cs
+#do C:\TeamImarda\Imarda360\Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\View\Mapping.cs
+
+
+//#run {C:\TeamImarda\Imarda360\Imarda360.Documentation\Dev\Misc\CODES.docx}
+
+

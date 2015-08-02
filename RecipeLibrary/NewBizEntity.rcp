@@ -1,0 +1,617 @@
+#tags biz business entity
+
+Create a new Business Tier Entity
+
+#name NewBizEntity
+
+#require jira - the jira issue number
+#require service - the service e.g. GIS, JobDispatch, CRM
+#require entity - the name of the entity, e.g. Person, Job
+
+Put some type name conversions (SQL->C#) in the dictionary:
+#put varchar=string
+#put nvarchar=string
+#put int=int
+#put smallint=short
+#put tinyint=byte
+#put real=float
+#put float=double
+#put decimal=decimal
+#put bit=bool
+#put datetime=DateTime
+#put uniqueidentifier=Guid
+
+Enter the SQL entity column declarations here in the 'columns' list.
+Put all datetime columns at the end because they get special treatment.
+
+-------------------------------------------------------
+#put columns
+OwnerID uniqueidentifier NOT NULL,
+OwnerType int NUll,
+ReportedBY nvarchar(max) null,
+Datereported datetime null, 
+Description nvarchar(max) null,
+FixDueDate datetime null, 
+FixLocation nvarchar(max) null, 
+Priority int null,
+Sceduled bit null, 
+WorkerNote nvarchar(max) null, 
+WorkShopNote nvarchar(max) null, 
+Iscompleted bit null
+#end
+-------------------------------------------------------
+
+First generate the table and stored procedures:
+
+#put gitbase=C:\TeamImarda\Imarda360\
+#put bizpath=Imarda360.Business\Services\Imarda`service`\Imarda`service`Business
+#put biz=`gitbase``bizpath`
+
+#put sqlpath=Imarda360.DatabaseScripts\Imarda360.`service`\
+#put sqlfile=`gitbase``sqlpath`Imarda360.`service`All.sql
+
+
+#append `sqlfile`
+--& `jira`
+/****** Object:  Table [dbo].[`entity`]    Added by `username` on `timestamp` ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[`entity`]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[`entity`](
+	[ID] [uniqueidentifier] NOT NULL,
+	[CompanyID] [uniqueidentifier] NOT NULL,
+      	[DateCreated] [datetime] NULL,
+	[DateModified] [datetime] NULL,
+	[Active] [bit] NOT NULL,
+	[Deleted] [bit] NOT NULL,
+	[UserID] [uniqueidentifier] NOT NULL,
+	[OwnerID] [uniqueidentifier] NOT NULL,
+	[OwnerType] [int] NUll,
+	[ReportedBY] nvarchar(max) null,
+	[Datereported] datetime null, 
+	[Description] nvarchar(max) null,
+	[FixDueDate] datetime null, 
+	[FixLocation] nvarchar(max) null, 
+	[Priority] int null,
+	[Sceduled] bit null, 
+	[WorkerNote] nvarchar(max) null, 
+	[WorkShopNote] nvarchar(max) null, 
+	[Iscompleted] bit null,
+/*** EntityProperty_`entity`
+	[``field``] ``sqltype`` ``constraint``,
+***/	
+ CONSTRAINT [PK_`entity`] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+/****** Object:  StoredProcedure [dbo].[SPGet`entity`UpdateCount]   Added by `username` on `timestamp` ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`UpdateCount]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SPGet`entity`UpdateCount]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`UpdateCount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N' 
+CREATE PROCEDURE [dbo].[SPGet`entity`UpdateCount]
+@companyid uniqueidentifier
+,@LastRecordid uniqueidentifier
+,@DateModified datetime
+AS
+	SELECT count(*) FROM `entity`	
+	WHERE 
+	[CompanyID]=@CompanyID AND [Deleted]=0
+	AND (([DateModified] > @DateModified) OR ([DateModified] = @DateModified AND [ID] > @LastRecordID))  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SPGet`entity`]   Added by `username` on `timestamp` ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SPGet`entity`]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N' 
+CREATE PROCEDURE [dbo].[SPGet`entity`]
+@ID uniqueidentifier
+AS
+	SELECT * FROM `entity`	
+	WHERE [ID]=@ID
+	AND [Deleted]=0
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SPDelete`entity`]   Added by `username` on `timestamp` ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPDelete`entity`]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SPDelete`entity`]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPDelete`entity`]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N' 
+CREATE PROCEDURE [dbo].[SPDelete`entity`]
+@ID uniqueidentifier
+AS
+	DELETE FROM `entity`	
+	WHERE [ID]=@ID
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SPSave`entity`]   Added by `username` on `timestamp` ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPSave`entity`]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SPSave`entity`]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPSave`entity`]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N' 
+CREATE PROCEDURE [dbo].[SPSave`entity`]
+		@ID uniqueidentifier
+		,@CompanyID uniqueidentifier
+		,@UserID uniqueidentifier
+		,@DateCreated datetime
+		,@DateModified datetime
+		,@Active bit
+		,@Deleted bit
+/*** EntityProperty_`entity`
+		,@``field`` ``sqltype``
+***/
+AS
+BEGIN
+	DECLARE @count int
+	SELECT @count=count(*) FROM `entity`
+	WHERE id=@id
+	IF @count=0
+		INSERT INTO `entity`
+		(
+		[ID]
+		,[CompanyID]
+		,[UserID]
+		,[DateCreated]
+		,[DateModified]
+		,[Active]
+		,[Deleted]
+/*** EntityProperty_`entity`
+		,[``field``] --& "jira"
+***/
+		)
+		VALUES
+		(
+		@ID
+		,@CompanyID
+		,@UserID
+		,@DateCreated
+		,@DateModified
+		,@Active
+		,@Deleted
+/*** EntityProperty_`entity`
+		,@``field`` --& "jira"
+***/
+		)
+	ELSE
+		UPDATE `entity`
+		SET 
+		[ID]=@ID
+		,[CompanyID]=@CompanyID
+		,[UserID]=@UserID
+		,[DateCreated]=@DateCreated
+		,[DateModified]=@DateModified
+		,[Active]=@Active
+		,[Deleted]=@Deleted
+/*** EntityProperty_`entity`
+		,[``field``]=@``field`` --& "jira"
+***/
+		WHERE [ID]=@ID
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SPGet`entity`List]   Added by `username` on `timestamp` ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`List]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SPGet`entity`List]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`List]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[SPGet`entity`List]
+	@IncludeInactive bit,
+	@CompanyID uniqueidentifier
+AS
+	SELECT * FROM `entity`	
+	WHERE [CompanyID]=@CompanyID 
+	AND [Deleted]=0
+	AND (@IncludeInactive=1 OR [Active]=1)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SPGet`entity`ListByTimeStamp]   Added by `username` on `timestamp` ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`ListByTimeStamp]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SPGet`entity`ListByTimeStamp]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SPGet`entity`ListByTimeStamp]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[SPGet`entity`ListByTimeStamp]
+ @IncludeInactive bit,
+ @Cap int,
+ @CompanyID uniqueidentifier,
+ @LastRecordID uniqueidentifier,
+ @DateModified datetime
+AS
+	SELECT TOP (@Cap) * FROM `entity`
+	WHERE [CompanyID] = @CompanyID
+	AND (([DateModified] > @DateModified) OR ([DateModified] = @DateModified AND [ID] > @LastRecordID)) 
+	AND (@IncludeInactive=1 OR Active=1)  
+	AND [Deleted]=0
+	ORDER BY [DateModified], [ID]
+
+' 
+END
+GO
+--. `jira`
+
+
+#end
+
+Add the fields to the table and stored procedure
+
+#putv FillInSqlFields=columns
+#find (\w+)\ +(\w+)\ *([^\r\n]*) FillInSqlFields
+` `#put field=$1
+` `#put sqltype=$2
+` `#put constraint=$3
+` `#do `sqlfile`
+
+#end
+
+#name EntityProperty_`entity`
+#recipe FillInSqlFields
+
+#subs "jira" `sqlfile`
+``jira``
+#end
+
+-------------------------------------------------------
+Convert to C# types
+#putv data=columns
+#find (?m)(\w+)\s+(\w+)[^\r\n]* data
+``$2`` $1
+
+#end
+
+#exp data
+#warn `data`
+
+List of valid type, other than DateTime:
+#put valid=bool|s?byte|u?short|u?int|u?long|float|double|decimal|Guid|string
+
+Regex to find valid types other than DateTime, where $1=type, $2=property name
+#put nondt=(?m)(`valid`)\s+(\w+)
+
+Use #find in data list to create some text to insert:
+
+#putv fields1=data
+#find `nondt` fields1
+						,entity.$2
+
+#end
+
+#putv fields2=data
+#find (?m)(DateTime)\s+(\w+) fields2
+						,BusinessBase.ReadyDateForStorage(entity.$2)
+
+#end
+
+#putv fields3=data
+#find (?m)([^\r\n]+) fields3
+		[DataMember] public $1 { get; set; }
+
+
+#end
+
+#putv assign1=data
+#find `nondt` assign1
+			$2 = GetValue<$1>(dr, "$2");
+
+#end
+
+#putv assign2=data
+#find (?m)DateTime\s+(\w+) assign2
+			$1 = GetDateTime(dr, "$1");
+
+#end
+
+Now create the files...
+
+#new `biz`Interface\Model\`entity`\`entity`.cs
+//& `jira`
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using System.Runtime.Serialization;
+using FernBusinessBase;
+using FernBusinessBase.Control;
+
+namespace Imarda`service`Business 
+{
+	[DataContract]
+	public class `entity` : FullBusinessEntity 
+	{				
+		public `entity`()
+		{
+		}
+
+`fields3`
+
+` `#if EntityProperty
+		[DataMember]
+		public ``cstype`` ``field`` { get; set; }
+` `#endif
+
+		public override void AssignData(IDataReader dr)
+		{
+			base.AssignData(dr);
+`assign1`
+` `#if EntityProperty_NoDate
+			``field`` = GetValue<``cstype``>(dr, "``field``");
+` `#endif
+
+`assign2`
+` `#if EntityProperty_Date
+			``field`` = GetDateTime(dr, "``field``");
+` `#endif
+		}
+	
+	}
+}
+#end
+
+#new `biz`Interface\View\`entity`\`entity`.cs
+//& `jira`
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.ServiceModel;
+using FernBusinessBase;
+
+namespace Imarda`service`Business 
+{
+	partial interface IImarda`service` 
+	{
+
+		#region Operation Contracts for `entity`
+		
+		[OperationContract]
+		GetListResponse<`entity`> Get`entity`ListByTimeStamp(GetListByTimestampRequest request);
+
+		[OperationContract]
+		GetListResponse<`entity`> Get`entity`List(IDRequest request);
+
+		[OperationContract]
+		BusinessMessageResponse Save`entity`List(SaveListRequest<`entity`> request);
+
+		[OperationContract]
+		BusinessMessageResponse Save`entity`(SaveRequest<`entity`> request);
+
+		[OperationContract]
+		BusinessMessageResponse Delete`entity`(IDRequest request);
+
+		[OperationContract]
+		GetItemResponse<`entity`> Get`entity`(IDRequest request);
+
+		[OperationContract]
+		GetUpdateCountResponse Get`entity`UpdateCount(GetUpdateCountRequest request);
+		#endregion
+
+	}
+}
+#end
+
+#new `biz`\Control\`entity`\`entity`.cs
+//& `jira`
+using System;
+using FernBusinessBase;
+using FernBusinessBase.Errors;
+
+namespace Imarda`service`Business
+{
+	partial class Imarda`service`
+	{
+		public GetItemResponse<`entity`> Get`entity`(IDRequest request)
+		{
+			try
+			{
+				return GenericGetEntity<`entity`>(request);
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetItemResponse<`entity`>>(ex);
+			}
+		}
+
+		public GetUpdateCountResponse Get`entity`UpdateCount(GetUpdateCountRequest request)
+		{
+			try
+			{
+				var response = GenericGetEntityUpdateCount<`entity`>("`entity`", request.TimeStamp, true, request.ID, request.LastRecordID);
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+			}
+		}
+
+		public GetListResponse<`entity`> Get`entity`ListByTimeStamp(GetListByTimestampRequest request)
+		{
+			try
+			{
+				return GenericGetEntityListByTimestamp<`entity`>("`entity`", request.TimeStamp, request.Cap, true, request.ID, request.LastRecordID);
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetListResponse<`entity`>>(ex);
+			}
+		}
+
+		public GetListResponse<`entity`> Get`entity`List(IDRequest request)
+		{
+			try
+			{
+				return GenericGetEntityList<`entity`>(request);
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetListResponse<`entity`>>(ex);
+			}
+		}
+		
+		public BusinessMessageResponse Save`entity`(SaveRequest<`entity`> request)
+		{
+			try
+			{
+				`entity` entity = request.Item; 	
+				BaseEntity.ValidateThrow(entity);		   
+
+				var properties = new object[]
+				{
+						entity.ID,
+						entity.CompanyID,
+						entity.UserID,
+						entity.DateCreated,
+						entity.DateModified = DateTime.UtcNow,
+						entity.Active,
+						entity.Deleted
+
+`fields1`
+` `#if EntityProperty_NoDate
+						,entity.``field``
+` `#endif
+
+`fields2`
+` `#if EntityProperty_Date
+						,BusinessBase.ReadyDateForStorage(entity.``field``)
+` `#endif
+					};
+				var response = GenericSaveEntity<`entity`>(entity.Attributes, properties);
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle(ex);
+			}
+		}
+
+		public BusinessMessageResponse Save`entity`List(SaveListRequest<`entity`> request)
+		{
+			var response = new BusinessMessageResponse();
+			try
+			{
+				foreach (`entity` entity in request.List)
+				{
+					var properties = new object[]
+					{
+						entity.ID,
+						entity.CompanyID,
+						entity.UserID,
+						entity.DateCreated,
+						entity.DateModified = DateTime.UtcNow,
+						entity.Active,
+						entity.Deleted
+`fields1`
+` `#if EntityProperty_NoDate
+						,entity.``field``
+` `#endif
+
+`fields2`
+` `#if EntityProperty_Date
+						,BusinessBase.ReadyDateForStorage(entity.``field``)
+` `#endif
+					};
+					response = GenericSaveEntity<`entity`>(entity.Attributes, properties);
+				}
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle(ex);
+			}
+		}
+
+		public BusinessMessageResponse Delete`entity`(IDRequest request)
+		{
+			try
+			{
+				return GenericDeleteEntity<`entity`>("`entity`", request.ID);
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle(ex);
+			}
+		}
+	}
+}
+#end
+
+#put rx=<ItemGroup>\s*(?=<Compile\ Include)
+
+#after `rx` `biz`Interface\Imarda`service`BusinessInterface.csproj
+<Compile Include="View\`entity`\`entity`.cs" />
+    
+#end
+
+#after `rx` `biz`Interface\Imarda`service`BusinessInterface.csproj
+<Compile Include="Model\`entity`\`entity`.cs" />
+    
+#end
+
+#after `rx` `biz`\Imarda`service`Business.csproj
+<Compile Include="Control\`entity`\`entity`.cs" />
+    
+#end
+
+
+#put repo=`gitbase`
+#git git-output
+add `bizpath`Interface\Model\`entity`\`entity`.cs
+add `bizpath`Interface\View\`entity`\`entity`.cs
+add `bizpath`\Control\`entity`\`entity`.cs
+add `bizpath`Imarda`service`Business.csproj
+add `bizpath`Interface\Imarda`service`BusinessInterface.csproj
+add `sqlpath`
+status
+#end
+
+#write `git-output`
+
+#warn Where appropriate, please add [Valid...] attributes to the `entity` in the Model folder
+

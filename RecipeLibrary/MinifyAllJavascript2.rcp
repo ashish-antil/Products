@@ -1,0 +1,36 @@
+#tags minify
+#mode write
+#version 1.7.4+
+
+#put folder=C:\TeamImarda\Imarda360\Imarda360.Web\WebSite.Imarda360\Tracking\
+
+*** find the files ***
+#dir files=-r `folder`\*.js
+
+#esc rx=`folder`
+
+#with files
+append \r\n
+nomatch ext-jquery-adapter|ext-all
+subs /`rx`//i
+store aa
+subs #^([^\r\n]+)\r\n#%minify% "%folder%$1" -o "%folder%$1"\r\n#m
+#end
+
+%minify% %folder%\$1 -o %folder%\$1\r\n
+nomatch (?i)ext-all|ext\.
+
+
+#put f=c:\temp\minify-all.bat
+#newer `f`
+path %path%;C:\Program Files (x86)\Java\jre7\bin
+set minify=call java -jar C:\TeamImarda\yuicompressor-2.4.2.jar
+set folder=`folder`
+
+`files`
+#end
+
+#run {notepad++} `f`
+#warn Run on source tree?
+#run {`f`}
+

@@ -1,0 +1,69 @@
+#auto
+#tags stop start service
+
+#mode write
+
+#ask action
+Stop or start service?
+-
+stop
+start
+list
+#end
+
+#@ listing
+#ps list=gsv | ?{$_.Name -like 'Imarda*'}
+#mbox
+`list`
+#end
+#end listing
+
+#if action list
+## listing
+#stop
+#endif
+
+#if action stop
+#! filter=Running
+#else
+#! filter=Stopped
+#endif
+
+
+#ps a=gsv | ?{$_.Name -like 'Imarda*' -and $_.Status -eq '`filter`'} |ft -p Name
+#stop a ^$
+
+#with a
+match Imarda
+subs /^Imarda//m
+#end
+
+
+#ask s
+`action` which service?
+-
+`a`
+#end
+
+#! waction=w`action`
+
+====================
+#`waction` Imarda`s`
+====================
+
+
+#! fn=c:\i360.Logs\Archive\service-log.txt
+#new `fn`
+Ad hoc Stop/Start of services
+-----------------------------
+
+#end
+
+#append `fn`
+`timestamp` `action` `s`
+
+#end
+
+## listing
+
+end.

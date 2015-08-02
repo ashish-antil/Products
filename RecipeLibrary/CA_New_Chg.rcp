@@ -1,0 +1,111 @@
+#tags alkon
+
+#default subtype=NEW|CHG
+#require trackid
+#require order_code
+#require ticket_code
+
+#put now=`timestamp`
+#put date=`now`
+#find (\d{4})-(\d\d)-(\d\d) date
+$1$2$3
+#end
+
+#copy
+<cmdsig_xml_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<id>{`newseqguid`}</id>
+	<vehicle_unit_code>`trackid`</vehicle_unit_code>
+	<signal_unit_code> 10</signal_unit_code>
+	<transaction>
+		<date_time>`now`</date_time>
+		<category>TICK</category>
+		<type>CON</type>
+		<subtype>`subtype`</subtype>
+		<origin>SIG</origin>
+		<message>
+			<trip_packet d2p1:type="TripTransport" version="1.0" xmlns:d2p1="http://www.w3.org/2001/XMLSchema-instance">
+				<site_source version="1.0">
+					<id>1</id>
+					<type>P</type>
+					<gps version="1.0">
+						<latitude>3324.3254</latitude>
+						<latitude_hemisphere>N</latitude_hemisphere>
+						<longitude>08645.8127</longitude>
+						<longitude_hemisphere>W</longitude_hemisphere>
+						<satellites>0</satellites>
+						<heading>0</heading>
+						<antenna>0</antenna>
+						<speed>0</speed>
+						<speed_unit_of_measure />
+					</gps>
+					<address version="1.0">
+						<street />
+						<city />
+						<state_province />
+						<postal_code />
+						<country />
+						<full_address>1800 International DrPark Dr Birmingham AL</full_address>
+					</address>
+					<radius>300</radius>
+					<radius_unit_of_measure>M</radius_unit_of_measure>
+				</site_source>
+				<site_job version="1.0">
+					<id>ABC</id>
+					<type>J</type>
+					<gps version="1.0">
+						<latitude>4915.3920</latitude>
+						<latitude_hemisphere>N</latitude_hemisphere>
+						<longitude>12311.1333</longitude>
+						<longitude_hemisphere>W</longitude_hemisphere>
+						<satellites>0</satellites>
+						<heading>0</heading>
+						<antenna>0</antenna>
+						<speed>0</speed>
+						<speed_unit_of_measure />
+					</gps>
+					<address version="1.0">
+						<street>230 navajo pines drive</street>
+						<city>Alabaster</city>
+						<state_province>AL</state_province>
+						<postal_code>35007</postal_code>
+						<country />
+						<full_address>230 navajo pines drive alabaster al</full_address>
+					</address>
+					<radius>200</radius>
+					<radius_unit_of_measure>M</radius_unit_of_measure>
+				</site_job>
+				<site_destination version="1.0">
+					<id>1</id>
+					<type>P</type>
+					<gps version="1.0">
+						<latitude>3324.3254</latitude>
+						<latitude_hemisphere>N</latitude_hemisphere>
+						<longitude>08645.8127</longitude>
+						<longitude_hemisphere>W</longitude_hemisphere>
+						<satellites>0</satellites>
+						<heading>0</heading>
+						<antenna>0</antenna>
+						<speed>0</speed>
+						<speed_unit_of_measure />
+					</gps>
+					<address version="1.0">
+						<street />
+						<city />
+						<state_province />
+						<postal_code />
+						<country />
+						<full_address>1800 International DrPark Dr Birmingham AL</full_address>
+					</address>
+					<radius>300</radius>
+					<radius_unit_of_measure>M</radius_unit_of_measure>
+				</site_destination>
+				<job_information version="1.0">
+					<order_date>`date`</order_date>
+					<order_code>`order_code`</order_code>
+					<ticket_code>`ticket_code`</ticket_code>
+				</job_information>
+			</trip_packet>
+		</message>
+	</transaction>
+</cmdsig_xml_msg>
+#end

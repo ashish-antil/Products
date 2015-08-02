@@ -1,0 +1,66 @@
+This recipe creates sql INSERT statements
+to purge messages from Gateway memory queues.
+
+Make sure the clipboard contains lines like:
+
+84375252958390|88
+109581029835029|90
+1231324792837|558
+
+in general:
+queueID,queueJobID
+
+
+---------------------
+#cdata subroutine
+#putv r=i
+#find ([^,]+)\|([^\r\n]+) r
+` `#put TrackID=$1
+` `#put QJobID=$2
+
+#end
+
+#recipe r
+
+#put dt=`timestamp`
+
+The timestamp has a 'T' between date and time 
+which has to be replaced by a space for sql:
+
+#subs T dt
+ 
+#end
+
+Create the sql command:
+
+#put sql
+INSERT INTO [Imarda360.Tracking].dbo.[IncomingMessage]
+VALUES ('`newseqguid`',
+'<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>SYSTEM</ID><IsSenderTime>true</IsSenderTime><Parts><AtomPart i:type="d3p1:Name"><d3p1:Name>PurgeQueueJob</d3p1:Name><d3p1:Tag>99</d3p1:Tag></AtomPart><AtomPart i:type="d3p1:Name"><d3p1:Name>`TrackID`</d3p1:Name><d3p1:Tag>113</d3p1:Tag></AtomPart><AtomPart i:type="d3p1:ID"><d3p1:ID>`QJobID`</d3p1:ID></AtomPart></Parts><Seq>0</Seq><Time>`timestamp`</Time><Type>1</Type></Atom>',
+0,
+0,
+1,
+'`dt`',
+'`dt`',
+'SYSTEM',
+0
+)
+GO
+
+
+#end
+
+#append result
+`sql`
+#end
+#end subroutine
+---------------------
+
+#put i=`paste`
+
+#put result=
+#iter i subroutine
+
+Put result on clipboard for use in SSMS
+
+#copy `result`

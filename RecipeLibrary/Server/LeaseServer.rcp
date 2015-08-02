@@ -1,0 +1,32 @@
+Very simple lease server
+commands:
+/in?user=yourname
+/out?user=yourname
+
+#server 127.0.0.1:7712
+
+#put ignore=no
+
+#cdata /in
+#ifnot $lease .
+#put $lease=`q_user`
+#put $since=`timestamp`
+#endif
+#end /in
+
+#cdata /out
+#if $lease ^`q_user`$
+#forget $lease
+#forget $since
+#endif
+#end /out
+
+#cdata /favicon.ico
+#put ignore=yes
+#end /favicon.ico
+
+#recipe `query`
+
+#if ignore no
+#put post=`timestamp` request `query` => lease [`$lease`] since `$since`
+#endif

@@ -1,0 +1,58 @@
+#cdata list
+VehicleManagement\Data\Imarda360.FleetData.sql
+VehicleManagement\Data\Imarda360.VehicleTypeData.sql
+VehicleManagement\Data\Imarda360.VehicleData.sql
+VehicleManagement\Data\Imarda360.FatigueRuleData.sql
+VehicleManagement\Data\Imarda360.FatigueRuleSetData.sql
+VehicleManagement\Data\Imarda360.ServiceTypeData.sql
+Tracking\Data\Imarda360.CannedMessageData.sql
+Tracking\Data\Imarda360.CannedMessageProfileData.sql
+Tracking\Data\Imarda360.ChartDataData.sql
+Tracking\Data\Imarda360.CompanyGeofenceGroupData.sql
+Tracking\Data\Imarda360.UnitTypeData.sql
+Tracking\Data\Imarda360.UnitData.sql
+Tracking\Data\Imarda360.UnitCommandData.sql
+Security\SecurityObjectData\Imarda360.SecurityObjectData.sql
+Security\Data\Imarda360.SecurityEntityData.sql
+Security\Data\Imarda360.ApplicationPlanData.sql
+Report\Data\Imarda360.CategoryData.sql
+Report\Data\Imarda360.ReportTypeData.sql
+Report\Data\Imarda360.ReportTypeCategoryData.sql
+Metrics\Data\Imarda360.MetricChannelData.sql
+JobDispatch\Data\Imarda360.JobStatusData.sql
+CRM\Data\Imarda360.CompanyData.sql
+CRM\Data\Imarda360.NotificationItemData.sql
+CRM\Data\Imarda360.NotificationPlanData.sql
+CRM\Data\Imarda360.PersonData.sql
+Configuration\Data\Imarda360.ConfigurationData.sql
+Alerting\Data\Imarda360.ActionData.sql
+Alerting\Data\Imarda360.EventData.sql
+Alerting\Data\Imarda360.RuleData.sql
+Alerting\Data\Imarda360.AlertPlanData.sql
+Alerting\Data\Imarda360.EventPlanData.sql
+Alerting\Data\Imarda360.IXLParameterData.sql
+Alerting\Data\Imarda360.IXLParameterEventData.sql
+Alerting\Data\Imarda360.AlertPlanActionData.sql
+Alerting\Data\Imarda360.AlertPlanEventData.sql
+Alerting\Data\Imarda360.EventPlanEventData.sql
+Alerting\Data\Imarda360.AlertPlanRuleData.sql
+#end list
+
+#put file=c:\temp\tmpseed.sql
+#del `file`
+#new `file`
+
+#end
+
+#cdata make
+#load c=C:\TeamImarda\Imarda360\Imarda360.DatabaseScripts\Imarda360.`i`
+#append `file`
+`c`
+
+#end
+#end make
+
+#put i=`list`
+#iter i make
+
+#run {notepad++} `file`

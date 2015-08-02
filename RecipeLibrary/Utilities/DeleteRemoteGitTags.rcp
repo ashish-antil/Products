@@ -1,0 +1,53 @@
+#tags delete git tag remote
+
+#mode write
+
+#put tags
+13.4.0926.0634
+13.4.0926.0832.config
+13.4.0926.1030.config
+13.4.0930.0102.config
+13.4.1003.2344.config
+13.4.1007.0951.config
+13.4.1015.2030.config
+13.4.1015.2331.config
+13.4.1016.0924.config
+13.4.1016.1042.config
+13.4.1016.1114.config
+13.4.1021.1947.config
+13.4.1022.2050.config
+13.4.1023.0424.config
+13.4.1023.0555.config
+13.4.1023.2209.config
+13.4.1024.0346.config
+13.4.1024.2058.config
+13.4.1024.2340.config
+13.4.1025.0214.config
+13.4.1025.0233.config
+13.4.1028.2137.config
+13.4.1028.2238.config
+13.4.1028.2249.config
+13.4.1028.2337.config
+13.4.1029.0011.config
+13.4.1029.0201.config
+13.4.1029.0419.config
+13.4.1029.2241.config
+13.4.1102.0320.develop
+13.4.1102.0630.develop
+13.4.1102.0812.develop
+13.4.1102.1132.develop
+#end
+
+
+#with tags=trim
+#putv del=tags
+#putv push=tags
+
+#with del=prefix tag -d`sp`
+#with push=prefix push origin :refs/tags/
+
+#put repo=c:\teamimarda\imarda360
+#git output
+`del`
+`push`
+#end

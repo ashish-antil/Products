@@ -1,0 +1,27 @@
+#tags util unfinished search
+
+#warn not finished
+
+/gw?tag=red
+
+#put this=127.0.0.1:7711
+#put kb=c:\temp\knowledgebase
+
+#server `this`
+
+#put file=`query`
+#with file
+subs #/(.*)#`kb`\$1.txt#
+#end
+#load text=`file`
+
+#find \b`tag`% text
+$1
+
+#end
+
+#with text
+modify /\w/v/
+unique
+sort
+#end

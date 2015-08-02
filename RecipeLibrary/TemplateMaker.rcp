@@ -1,0 +1,38 @@
+#tags meta template
+
+This recipe creates a temporary template and allows multiple
+instantiations of it using a different parameter each time.
+
+#warn Make sure template is on clipboard, click OK to continue.
+
+1. Put template on clipboard
+
+2. Press F4 to change parameter "param"
+
+3. Execute part below to create template
+
+----------------------
+#require parameter
+#put template=`paste`
+#subs `parameter` template
+``replacement``
+#end
+----------------------
+
+
+4. Press F4 to change parameter "replacement"
+
+5. Execute part below for each instance
+
+--------------------------
+#require replacement
+#putv instance=template
+#exp instance
+#info `instance`
+#copy `instance`
+--------------------------
+
+Result is now on clipboard
+
+6. Repeat from step 4.
+

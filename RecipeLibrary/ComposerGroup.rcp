@@ -1,0 +1,43 @@
+#require Group
+#require Name
+
+#put file=C:\TeamImarda\Imarda360\Imarda360.Gateway\CommunicatorServices\V300b\V300bCommunicatorBusiness\Control\MessageComposer_`Group`.cs
+
+First create a new file for the method group.
+This file itself contains a template!
+
+#new `file`
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using CommunicatorBase;
+using ImardaAtomGatewayBusiness;
+using ImardaBatchProcessorInterface;
+
+namespace V300bCommunicator
+{
+	partial class MessageComposer//`Group`
+	{
+`empty`#if ComposerMethod
+		private void Add``Name``(List<OutboundMessage> list, Atom atom)
+		{
+			AddMessage(list, atom, "");
+		}
+
+`empty`#endif
+	}
+}
+#end
+
+#put rx=<ItemGroup>\s*(?=<Compile\ Include)
+
+#after `rx` C:\TeamImarda\Imarda360\Imarda360.Gateway\CommunicatorServices\V300b\V300bCommunicatorBusiness\V300bCommunicatorBusiness.csproj
+<Compile Include="Control\MessageComposer_`Group`.cs" />
+#end
+
+Now fill in the Name in the fill generated above:
+#name ComposerMethod
+#do `file`
+
+#run {`file`}
+#warn Add MessageComposer_`Group`.cs to Vault now!

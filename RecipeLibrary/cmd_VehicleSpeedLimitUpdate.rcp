@@ -1,0 +1,149 @@
+#tags vehicle speedlimit speed sql
+#mode write
+
+#ask company=Company GUID?
+#ask speed=Enter speed (km/h) or leave blank and click OK to edit speed individually.
+
+#csharp speedmps
+return Convert.ToString(`speed` / 3.6);
+#end
+
+#copy
+SELECT ut.Channel, u.TrackID, v.[SpeedLimit], v.[SpeedingRptDelay], v.[Description]
+FROM [Imarda360.Tracking].dbo.Unit u with (nolock)
+JOIN [Imarda360.Tracking].dbo.UnitType ut with (nolock) ON u.UnitType = ut.TypeNumber
+JOIN [Imarda360.Tracking].dbo.UnitOwner uo with (nolock) ON uo.UnitID = u.ID
+JOIN [Imarda360.VehicleManagement].dbo.Vehicle v with (nolock) ON v.ID = uo.OwnerID
+WHERE v.CompanyID = '`company`'
+--and v.SpeedLimit = 100
+and u.Deleted = 0 and v.Deleted = 0
+ORDER by v.[Description]
+#end
+
+#forget data
+
+#put prompt
+1. Run the sql on the clipboard in SQL Server Manager.
+2. Copy the result from the output table.
+3. Paste it in the box below.
+#end
+
+#ask data=`prompt`
+
+#ifnot speed .
+#put fn=c:\temp\speedingdata.txt
+#newer `fn`
+`data`
+#end
+
+#mbox Now edit the data and save.
+
+#cmd {notepad} `fn`
+
+#load data=`fn`
+#endif 
+
+#@ atom
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface">
+	<Addr>`1`</Addr>
+	<ID>`2`</ID>
+	<Parts>
+		<AtomPart i:type="d3p1:Quantity">
+			<d3p1:Tag>112</d3p1:Tag>
+			<d3p1:Unit>kph</d3p1:Unit>
+			<d3p1:Value>`3`</d3p1:Value>
+		</AtomPart>
+		<AtomPart i:type="d3p1:Count">
+			<d3p1:Tag>100</d3p1:Tag>
+			<d3p1:Value>`4`</d3p1:Value>
+		</AtomPart>
+	</Parts>
+	<Seq>0</Seq>
+	<Time>`timestamp`Z</Time>
+	<Type>-420</Type>
+</Atom>
+#end atom
+
+#if speed .
+#with atom
+subs /``bq``3``bq``/`speedmps`/
+#end
+#endif
+
+#with atom
+subs /^[\t ]*//m
+join
+#end
+
+#put dt=`ts:sql`
+
+
+
+#@ sql
+PRINT 'Channel `1`: Vehicle [`5`] TrackID [`2`] -> `3` km/h, delay `4`'
+
+INSERT INTO [Imarda360.Tracking].[dbo].[EventMessage]([ID],[EventTypeID],[EventData],[CompanyID],[UserID],[DateCreated],[DateModified],[Deleted],[Active],[Priority],[Status],[TrackID],[Channel])
+VALUES(
+  '`newseqguid`','-420',
+  '%ATOM%',
+  '`company`','00000000-0000-0000-0000-000000000000','`dt`','`dt`',0,1,0,0,
+  '`2`',`1`
+)
+
+UPDATE [Imarda360.VehicleManagement].dbo.Vehicle 
+SET [SpeedLimit] = `3`, [SpeedingRptDelay] = `4`, [DateModified] = '`dt`' WHERE 
+  [CompanyID] = '`company`' AND 
+  ID = (SELECT TOP 1 ID FROM [Imarda360.VehicleManagement].dbo.Vehicle WHERE [CompanyID] = '`company`' AND [Description] = '`5`')
+
+GO
+
+
+#end sql
+
+#if speed .
+#with sql
+subs /``bq``3``bq``/`speed`/
+#end
+#endif
+
+#subs %ATOM% sql
+`atom`
+#end
+
+#count count=data
+
+#with data
+subs /\t/|/
+#end
+
+#expn sql
+`data`
+#end
+
+Save expanded sql in temporary file speeddata.sql
+
+#put tmp=c:\temp\speeddata.sql
+
+#ifnot speed .
+#newer `tmp`
+`sql`
+#end
+
+Read that file and convert all occurrences of the speed in the Atom to meter per second
+
+#csharp sql
+string s = System.IO.File.ReadAllText(@"`tmp`");
+return System.Text.RegularExpressions.Regex.Replace(
+       s,
+       "(?<=:Unit><d3p1:Value>)[^<]+(?=</d3p1:Value>)", 
+       (m) => (double.Parse(m.Groups[0].Value) / 3.6).ToString());
+#end
+
+#del `tmp`
+#endif
+
+#copy `sql`
+
+#write number of records: `count`
+
+#mbox Result is on the clipboard, run in SQL Server Manager

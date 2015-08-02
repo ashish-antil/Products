@@ -1,0 +1,4077 @@
+
+#@ gfids
+%2313%|'1111 TUGGERAGH'
+%2368%|'1112 CESSNOCK'
+%2375%|'1164 SINGELTON'
+%2376%|'1236 MUSWELLBROOK'
+%2377%|'1345 SCONE'
+%2510%|'1085 BATEAU BAY'
+%2511%|'1369 BERESFIELD'
+%2512%|'1122 CARLINGFORD'
+%2513%|'1627 CHARLSTOWN'
+%2514%|'1607 CHERRYBROOK'
+%2515%|'1297 DURAL'
+%2516%|'1192 ERINA'
+%2517%|'1172 GLENDALE'
+%2520%|'1294 HORNSBY'
+%2521%|'1117 JESMOND'
+%2522%|'1347 KELLYVILLE'
+%2523%|'1207 KOTARA'
+%2524%|'1634 LAKE HAVEN'
+%2525%|'1129 MACQUARIE RYDE'
+%2526%|'1761 MARSFIELD'
+%2528%|'1165 MT HUTTON'
+%2529%|'1148 MAITLAND'
+%2530%|'1171 RAYMOND TERRACE'
+%2531%|'1245 RT. NORTH'
+%2535%|'1344 TORONTO'
+%2536%|'1342 UMINA'
+%2537%|'1753 WARABROOK'
+%2539%|'1341 WEST RYDE'
+%2540%|'1757 WINSTON HILLS'
+%2543%|'1937 WYONG RDC'
+%2592%|'1174 SALAMANDER BAY'
+%2593%|'1100 GOSFORD'
+%2594%|'1179 GREEN HILLS'
+%2596%|'1101 MAYFIELD'
+%2606%|'1159 WOY WOY'
+%2616%|'1979 MINCHINBURY RDC'
+%2791%|'2993 LARAPINTA RDC - Ambient'
+%3187%|'1253 Armidale'
+%3330%|'2000 Colgate'
+%3540%|'1208 RUTHERFORD'
+%12991%|'1893 MOOREBANK'
+%22208%|'1954 Erskine Park LDC'
+%22430%|'1302 Albion Park'
+%22431%|'1879 Alexandria (DM)'
+%22432%|'1213 Ashfield'
+%22433%|'1400 Auburn'
+%22434%|'1623 Avalon'
+%22435%|'1188 Balmain'
+%22436%|'1131 Bankstown'
+%22437%|'1147 Bass Hill'
+%22438%|'1105 Baulkham Hills'
+%22439%|'1370 Bexley North'
+%22440%|'1288 Blacktown'
+%22441%|'1900 Blacktown (DM)'
+%22442%|'1557 Bondi'
+%22443%|'1184 Bonnyrigg'
+%22444%|'1360 Boronia Park'
+%22445%|'1332 Burwood'
+%22446%|'1614 Burwood Plaza'
+%22447%|'1109 Cabramatta'
+%22448%|'1185 Camden'
+%22449%|'1107 Campbelltown'
+%22450%|'1535 Campbelltown (DM)'
+%22451%|'1633 Campbelltown Mall'
+%22452%|'1061 Campsie'
+%22453%|'1767 Caringbah'
+%22455%|'1758 Carnes Hill'
+%22457%|'1668 Castle Hill (DM)'
+%22458%|'1306 Cecil Hills'
+%22459%|'1630 Chatswood'
+%22461%|'1610 Chester Square'
+%22462%|'1104 Chullora'
+%22463%|'1558 Colyton (DM)'
+%22464%|'1755 Coogee'
+%22465%|'1065 Corrimal'
+%22466%|'1070 Crows Nest'
+%22467%|'1190 Dapto'
+%22468%|'1153 Dee Why'
+%22469%|'1054 Double Bay'
+%22471%|'1091 Eaglevale'
+%22472%|'1412 Eastgardens'
+%22473%|'1257 Eastlakes'
+%22474%|'1200 Eastwood'
+%22475%|'1723 Eastwood (DM)'
+%22476%|'1625 Emerton'
+%22477%|'1154 Emu Plains'
+%22478%|'1269 Engadine'
+%22479%|'1366 Ermington'
+%22480%|'1145 Fairfield'
+%22481%|'1356 Fairfield Heights'
+%22482%|'1293 Fairymeadow'
+%22483%|'1632 Figtree'
+%22484%|'1063 Frenchs Forest'
+%22485%|'1350 Glenmore Park'
+%22486%|'1613 Glenrose'
+%22487%|'1348 Glenwood'
+%22488%|'1160 Gordon'
+%22489%|'1759 Granville'
+%22490%|'1646 Green Valley'
+%22491%|'1283 Greystanes'
+%22492%|'1231 Hillsdale'
+%22494%|'1725 Hornsby (DM)'
+%22495%|'1612 Hurstville'
+%22496%|'1553 Hurstville (DM)'
+%22497%|'1204 Ingleburn'
+%22498%|'1291 Jannali'
+%22500%|'1524 Kellyville (DM)'
+%22501%|'1163 Kiama'
+%22502%|'1264 Kingsford (DM)'
+%22503%|'1338 Kings Langley'
+%22504%|'1766 Kogarah'
+%22505%|'1609 Lane Cove'
+%22506%|'1647 Leichhardt Marketplace'
+%22507%|'1144 Liverpool'
+%22509%|'1108 Marayong'
+%22510%|'1376 Maroubra Beach'
+%22511%|'1149 Marrickville'
+%22512%|'1649 Marrickville Metro'
+%22514%|'1092 Menai'
+%22515%|'1552 Menai (DM)'
+%22516%|'1216 Miller'
+%22517%|'1622 Minto'
+%22518%|'1182 Miranda'
+%22519%|'1795 Mittagong (DM)'
+%22520%|'1114 Mittagong West'
+%22521%|'1771 Mona Vale'
+%22522%|'1263 Mona Vale (DM)'
+%22523%|'1127 Moorebank'
+%22524%|'1388 Mt Annan'
+%22525%|'1143 Mt Druitt'
+%22526%|'1135 Narellan'
+%22527%|'1056 Narrabeen'
+%22528%|'1157 Neutral Bay'
+%22529%|'1113 Neutral Bay Village'
+%22530%|'1315 Newington'
+%22531%|'1289 North Strathfield'
+%22532%|'1199 Northbridge'
+%22533%|'1141 Support Office - Norwest'
+%22534%|'1119 Nowra'
+%22535%|'1648 Nowra Fair'
+%22537%|'1319 Padstow'
+%22538%|'1106 Parramatta'
+%22539%|'1368 Pemulwuy'
+%22540%|'1379 Pendle Hill'
+%22541%|'1087 Penrith'
+%22542%|'1568 Penrith (DM)'
+%22543%|'1189 Plumpton'
+%22544%|'1055 Potts Point'
+%22545%|'1323 Prospect'
+%22546%|'1631 Randwick'
+%22547%|'1402 Revesby'
+%22548%|'1210 Richmond'
+%22549%|'1097 Riverwood'
+%22550%|'1252 Rockdale'
+%22551%|'1123 RoseHill'
+%22552%|'1626 Roselands'
+%22553%|'1110 Rosemeadow'
+%22554%|'1738 ROSEVILLE BWS'
+%22555%|'1090 Rouse Hill'
+%22556%|'1175 Seven Hills'
+%22557%|'1197 Shell Harbour'
+%22558%|'1292 Shellharbour (DM)'
+%22559%|'1140 St Clair'
+%22560%|'1099 St Ives'
+%22561%|'1645 St Marys'
+%22562%|'1624 Strathfield'
+%22563%|'1233 Strathfield South (DM)'
+%22564%|'1256 Surry Hills'
+%22565%|'1615 Sylvania'
+%22566%|'1287 Tahmoor'
+%22567%|'1249 Thornleigh'
+%22568%|'1546 Thornleigh (DM)'
+%22569%|'1413 Toongabbie'
+%22570%|'1248 Town Hall'
+%22571%|'1387 Unanderra'
+%22572%|'1069 Warilla'
+%22573%|'1576 Warrawong'
+%22574%|'1621 Warriewood'
+%22575%|'1282 Warringah Mall'
+%22576%|'1183 Wentworthville'
+%22577%|'1801 Wentworthville (DM)'
+%22578%|'1384 West Pennant Hills'
+%22580%|'1386 Wetherill Park'
+%22581%|'1285 Willoughby (DM)'
+%22582%|'1629 Windsor'
+%22584%|'1030 Wollongong'
+%22779%|'1162 Bowral'
+%22780%|'1695 Homeshop'
+%22781%|'1899 Moorebank'
+%22782%|'1944 Sydney NDC'
+%22783%|'3001 Leederville DC'
+%22784%|'3010 Leederville Store'
+%22785%|'3011 Mt Hawthorn Store'
+%22786%|'3012 Marian St Store'
+%23328%|'3002 Melville DC'
+%23329%|'3020 Applecross'
+%23330%|'3021 Palmyra Rugby'
+%23331%|'3022 Auskick'
+%23332%|'3030 Carr St'
+%23333%|'3031 Roundabout'
+%23334%|'3023 Music'
+%23335%|'3024 Marmion St'
+%23336%|'3025 Vet'
+%23337%|'3026 Scrapbooking Shop'
+%23338%|'3027 Banana Skins'
+%23339%|'3028 Westpac'
+%23340%|'3029 KFC'
+%23341%|'3032 Canning Bridge'
+%23342%|'3033 Narrows'
+%23343%|'3004 North Suburbs DC'
+%23347%|'1235 Ronny Stsv'
+%23349%|'3034 Risely St'
+%23350%|'3003 Welshpool DC'
+%23351%|'3035 Cameraland'
+%23355%|'3099 canning bridge'
+%23356%|'1111 advf'
+%23357%|'3098 Mitchell Fwy'
+%23358%|'3097 Erindale Rd'
+%23359%|'3096 Karrinyup Rd'
+%23360%|'3095 Party'
+%23361%|'1953 Erskine Park LDC (Liq)'
+%23362%|'1986 Michinbury (Prod)'
+%23363%|'1987 Michinbury (Chill)'
+%23364%|'1983 Michinbury (Cars)'
+%23365%|'1948 Michinbury (SEA)'
+%23366%|'1988 Michinbury (Meat)'
+%23367%|'1947 Michinbury (Fresh)'
+%23368%|'1973 Sydney SNDC (Liq)'
+%23369%|'1414 Paddington Thomas Dux'
+%23370%|'1417 Lane Cove Thomas Dux'
+%23371%|'1242 Lithgow'
+%23372%|'1167 Bathurst'
+%23373%|'1224 Campbelltown Mall (NEW)'
+%23374%|'1008 Chester Hill (NEW)'
+%23377%|'1378 New Homeshop'
+%23379%|'1100 Gosford'
+%23380%|'1179 Green Hills'
+%23381%|'1101 Mayfield'
+%23382%|'1174 Salamander Bay'
+%23383%|'2001 Primo Carter Street'
+%23384%|'1147 Bass Hill'
+%23386%|'1069 Warilla'
+%23387%|'1144 Liverpool'
+%23388%|'1622 Minto'
+%23389%|'1758 Carnes Hill'
+%23391%|'1259 Glenn Innes'
+%23393%|'1933 Wyong'
+%23394%|'1938 Wyong'
+%23395%|'1943 Wyong'
+%23396%|'1946 Wyong'
+%23397%|'1959 Wyong'
+%23398%|'5767 Aberfoyle Hub BWS'
+%23399%|'5661 ABERFOYLE PARK'
+%23400%|'5759 Aldinga Beach BWS'
+%23401%|'5721 Anglevale BWS'
+%23402%|'5743 Ascot Park BWS'
+%23403%|'5694 ATHELSTONE'
+%23404%|'5650 BLACKWOOD'
+%23405%|'5758 Blair Athol BWS'
+%23406%|'5768 Bridgeport BWS'
+%23407%|'5739 CHRISTIES BEACH'
+%23408%|'5744 City BWS'
+%23409%|'5702 CLARE'
+%23410%|'5762 Collinswood BWS'
+%23411%|'5679 COLONNADES'
+%23412%|'5698 Craigmore BWS'
+%23413%|'5726 Croydon BWS'
+%23414%|'5655 CUMBERLAND PARK'
+%23415%|'5761 Cumberland Park BWS'
+%23416%|'5699 Dernancourt BWS'
+%23417%|'5745 Edwardstown BWS'
+%23418%|'5780 Elizabeth Tavern'
+%23419%|'5686 ELIZABETH WAY'
+%23420%|'5769 Enfield Drive In BWS'
+%23421%|'5770 Esplanade BWS'
+%23422%|'5771 Eureka BWS'
+%23423%|'5772 Exeter BWS'
+%23424%|'5678 FELIXSTOW'
+%23425%|'5631 FINDON'
+%23426%|'5809 Findon BWS'
+%23427%|'5773 Finsbury BWS'
+%23428%|'5727 Fulham Gardens BWS'
+%23429%|'5617 GAWLER'
+%23430%|'5774 Gepps X BWS'
+%23431%|'5705 GILLES PLAINS'
+%23432%|'5658 GLENELG'
+%23433%|'5621 GOLDEN GROVE'
+%23434%|'5668 GOOLWA'
+%23435%|'5707 Greenwith BWS'
+%23436%|'5666 HACKHAM'
+%23437%|'5782 Halfway Hotel'
+%23438%|'5747 Hallett Cove BWS'
+%23439%|'5748 Happy Valley BWS'
+%23440%|'5775 Hendon BWS'
+%23441%|'5783 Henley Beach Hotel'
+%23442%|'5784 Highbury Hotel'
+%23443%|'5626 HILTON'
+%23444%|'5731 HOLLYWOOD PLAZA'
+%23445%|'5610 KADINA'
+%23446%|'5648 KILKENNY'
+%23447%|'5786 Links Hotel'
+%23448%|'5703 Marden DM'
+%23449%|'5736 MARDEN'
+%23450%|'5639 MARION'
+%23451%|'5656 Marion DM'
+%23452%|'5616 MARRYATVILLE'
+%23453%|'5688 MAWSON LAKES'
+%23454%|'5728 McLaren Vale BWS'
+%23455%|'5690 Mile End BWS'
+%23456%|'5630 MITCHAM'
+%23457%|'5645 MODBURY HEIGHTS'
+%23458%|'5664 MORPHETT VALE'
+%23459%|'5682 MT BARKER'
+%23460%|'5749 Mt Barker BWS'
+%23461%|'5605 MURRAY BRIDGE'
+%23462%|'5756 Murray Bridge BWS'
+%23463%|'5757 Swanport BWS'
+%23464%|'5643 NEWTON'
+%23465%|'5725 Newton BWS'
+%23466%|'5689 NORTHGATE'
+%23467%|'5687 NORTHPARK'
+%23468%|'5813 OHalloran Hill BWS'
+%23469%|'5737 OLD REYNELLA'
+%23470%|'5612 PARA HILLS'
+%23471%|'5611 PARABANKS'
+%23472%|'5812 Parafield Gardens BWS'
+%23473%|'5613 PARALOWIE'
+%23474%|'5750 Parkside BWS'
+%23475%|'5713 Pasadena BWS'
+%23476%|'5787 Playford Taverner'
+%23477%|'5714 Plympton BWS'
+%23478%|'5723 Pooraka BWS'
+%23479%|'5733 PORT ADELAIDE'
+%23480%|'5715 Prospect BWS'
+%23481%|'5777 Ramsgate BWS'
+%23482%|'5628 REGENCY PLAZA'
+%23483%|'5716 Richmond BWS'
+%23484%|'5789 Rose & Crown Hotel'
+%23485%|'5740 Rose Park BWS'
+%23486%|'5811 North Adelaide BWS'
+%23487%|'5751 Royal Park BWS'
+%23488%|'5620 RUNDLE MALL - ADELAI'
+%23489%|'5790 Salisbury Hotel'
+%23490%|'5765 Salisbury Plain BWS'
+%23491%|'5752 Seacliff BWS'
+%23492%|'5646 SEAFORD'
+%23493%|'5657 SPRINGBANK PLAZA'
+%23494%|'5651 Glenunga DM'
+%23495%|'5718 St Peters DM'
+%23496%|'5670 STIRLING'
+%23497%|'5766 Stirling BWS'
+%23498%|'5778 Stockade BWS'
+%23499%|'5600 STRATHALBYN'
+%23500%|'5654 TEA TREE PLAZA'
+%23501%|'5619 UNLEY'
+%23502%|'5696 Unley'
+%23503%|'5653 VICTOR HARBOUR'
+%23504%|'5791 Village Taverner'
+%23505%|'5681 VIRGINIA'
+%23506%|'5722 Welland DM'
+%23507%|'5623 WEST LAKES'
+%23508%|'5717 Woodcroft BWS'
+%23509%|'5622 WOODCROFT'
+%23510%|'5310 HARBOUR TOWN'
+%23511%|'5202 Noarlunga DM'
+%23512%|'5719 Norwood DM'
+%23513%|'5760 Seacliff Hotel'
+%23514%|'5788 Rex Hotel'
+%23515%|'5793 Munno Para DM'
+%23516%|'5800 Dernancourt BWS'
+%23517%|'5998 Swire Cold Storage Freezer'
+%23518%|'5910 Gepps Cross Amb'
+%23519%|'5911 Gepps Cross Liq'
+%23520%|'5936 Gepps Cross Prod'
+%23521%|'5937 Gepps Cross Chill'
+%23522%|'5938 Gepps Cross Freezer'
+%23523%|'5939 Gepps Cross Fresh'
+%23524%|'5900 Gepps Cross DC'
+%23525%|'1933 Wyong'
+%23526%|'1326 Belmont'
+%23527%|'2005 AP Foods'
+%23529%|'5937 Gepps Cross Chiller'
+%23530%|'5910 Gepps Cross Amb'
+%23531%|'5911 Gepps Cross liq'
+%23533%|'5758 Blair Athol BWS'
+%23534%|'5600 Strathalbyn'
+%23535%|'3911 MNDC Amb Mulgrave'
+%23536%|'3902 MRDC Amb Broadmeadows'
+%23537%|'3377 YARRAWONGA'
+%23538%|'3193 YARRA JUNCTION'
+%23539%|'3278 WONTHAGGI'
+%23540%|'3363 WODONGA PLAZA'
+%23541%|'3256 WODONGA'
+%23542%|'3210 WILLIAMSTOWN'
+%23543%|'3146 WHEELERS HILL'
+%23544%|'3223 WERRIBEE PLAZA'
+%23545%|'3281 WERRIBEE CENTRAL'
+%23546%|'3367 WENDOUREE VILLAGE (BALLARAT)'
+%23547%|'3309 WENDOUREE (BALLARAT)'
+%23548%|'3130 WAVERLEY GARDENS (MULGRAVE)'
+%23549%|'3286 WAURN PONDS (GEELONG)'
+%23550%|'3054 WATERGARDENS SOUTH'
+%23551%|'3187 WATERGARDENS (TAYLORS LAKES)'
+%23552%|'3352 WARRNAMBOOL'
+%23553%|'3287 WARRAGUL'
+%23554%|'3263 WANGARATTA'
+%23555%|'3184 WALLAN'
+%23556%|'3306 VICTORIA HARBOUR'
+%23557%|'3173 VERMONT'
+%23558%|'3247 TRARALGON'
+%23559%|'3303 TORQUAY'
+%23560%|'3178 TOORAK'
+%23561%|'3107 THRIFT PARK'
+%23562%|'3301 THE PINES (DONCASTER EAST)'
+%23563%|'3133 THE GLEN - GLEN WAVERLEY'
+%23564%|'3155 TEMPLESTOWE'
+%23565%|'3802 TAYLOR LAKES'
+%23566%|'3201 SWAN HILL'
+%23567%|'3207 SUNSHINE PLAZA'
+%23568%|'3186 SUNSHINE'
+%23569%|'3105 SUNBURY'
+%23570%|'3151 STUD PARK'
+%23571%|'3106 STAWELL'
+%23572%|'3138 ST KILDA'
+%23573%|'3183 ST HELENA'
+%23574%|'3329 ST ALBANS'
+%23575%|'3192 SPRINGVALE'
+%23576%|'3336 SOUTHLAND (CHELTENHAM)'
+%23577%|'3227 SOUTH MORANG'
+%23578%|'3311 SOUTH MELBOURNE'
+%23579%|'3241 SOMERVILLE'
+%23580%|'3250 SHEPPARTON EAST'
+%23581%|'3203 SHEPPARTON'
+%23582%|'3272 SEYMOUR'
+%23583%|'3266 SEBASTOPOL (BALLARAT)'
+%23584%|'3176 SEAFORD'
+%23585%|'3282 SCORESBY'
+%23586%|'3213 SALE'
+%23587%|'3275 RYE'
+%23588%|'3111 ROXBURGH PARK'
+%23589%|'3341 ROSEBUD CENTRAL'
+%23590%|'3170 ROSEBUD  WEST'
+%23591%|'3374 RESERVOIR'
+%23592%|'3304 QV'
+%23593%|'3267 PRESTON SOUTH'
+%23594%|'3121 PRESTON'
+%23595%|'3246 PRAHRAN'
+%23596%|'3260 PORTLAND'
+%23597%|'3055 PLENTY VALLEY'
+%23598%|'3104 PATTERSON LAKES'
+%23599%|'3284 PAKENHAM'
+%23600%|'3604 OCEAN GROVE'
+%23601%|'3380 OAKLEIGH SOUTH'
+%23602%|'3368 OAKLEIGH'
+%23603%|'3292 NORTHLAND (EAST PRESTON)'
+%23604%|'3145 NIDDRIE'
+%23605%|'3120 NEWTOWN'
+%23606%|'3169 NEWMARKET PLAZA'
+%23607%|'3175 NEWCOMB'
+%23608%|'3382 MOUNTAIN GATE (FERNTREE GULLY)'
+%23609%|'3122 MOUNT WAVERLEY'
+%23610%|'3134 MOUNT ELIZA'
+%23611%|'3208 MORWELL'
+%23612%|'3142 MORNINGTON EAST'
+%23613%|'3154 MORNINGTON'
+%23614%|'3285 MORDIALLOC'
+%23615%|'3161 MOORABBIN'
+%23616%|'3135 MOONEE PONDS'
+%23617%|'3259 MONBULK'
+%23618%|'3290 MOE'
+%23619%|'3171 MILL PARK'
+%23620%|'3405 MIDDLE CAMBERWELL'
+%23621%|'3136 MIDDLE BRIGHTON'
+%23622%|'3129 MENTONE'
+%23623%|'3302 MELTON'
+%23624%|'3271 MARYBOROUGH'
+%23625%|'3162 MALVERN'
+%23626%|'3191 LILYDALE'
+%23627%|'3261 LEONGATHA'
+%23628%|'3103 LARA'
+%23629%|'3366 LANSELL PLAZA'
+%23630%|'3320 LANGWARRIN'
+%23631%|'3140 LALOR'
+%23632%|'3126 LAKES ENTRANCE'
+%23633%|'3222 KYNETON'
+%23634%|'3381 KYABRAM'
+%23635%|'3369 KILSYTH'
+%23636%|'3371 KEYSBOROUGH'
+%23637%|'3139 KEW'
+%23638%|'3330 KERANG'
+%23639%|'3244 KARINGAL HUB (FRANKSTON)'
+%23640%|'3158 KARINGAL (FRANKSTON)'
+%23641%|'3197 IVANHOE'
+%23642%|'3268 HORSHAM'
+%23643%|'3204 HOPPERS CROSSING'
+%23644%|'3189 HOGANS CORNER'
+%23645%|'3166 HIGHTON'
+%23646%|'3152 HIGHPOINT WEST (MARIBYRNONG)'
+%23647%|'3114 HEIDELBERG'
+%23648%|'3307 HAWTHORN'
+%23649%|'3403 HAWKSBURN'
+%23650%|'3310 HASTINGS'
+%23651%|'3123 HAMPTON PARK'
+%23652%|'3313 HAMPTON'
+%23653%|'3248 HAMILTON'
+%23654%|'3157 HADFIELD'
+%23655%|'3179 GREENSBOROUGH'
+%23656%|'3148 GOLDEN SQUARE (BENDIGO)'
+%23657%|'3153 GLEN HUNTLY'
+%23658%|'3174 GLADSTONE PARK'
+%23659%|'3218 GEELONG WEST (PAKINGTON STRAND)'
+%23660%|'3324 FRANKSTON'
+%23661%|'3113 FOUNTAIN GATE'
+%23662%|'3150 FOREST HILL'
+%23663%|'3332 FITZROY'
+%23664%|'3143 FERNTREE GULLY'
+%23665%|'3299 EPSOM'
+%23666%|'3242 EPPING'
+%23667%|'3168 ENDEAVOUR HILLS'
+%23668%|'3289 ELTHAM'
+%23669%|'3219 ECHUCA'
+%23670%|'3149 EASTLAND (RINGWOOD)'
+%23671%|'3117 EAST KEILOR'
+%23672%|'3102 DRYSDALE'
+%23673%|'3074 DROUIN'
+%23674%|'3317 DONCASTER SHOPPING TOWN'
+%23675%|'3128 DONCASTER'
+%23676%|'3109 DINGLEY'
+%23677%|'3147 DEER PARK'
+%23678%|'3349 DANDENONG'
+%23679%|'3216 CROYDON'
+%23680%|'3370 CRANBOURNE PARK'
+%23681%|'3144 CRANBOURNE NORTH'
+%23682%|'3159 CRAIGIEBURN'
+%23683%|'3308 CORIO'
+%23684%|'3214 COLAC'
+%23685%|'3384 COBURG STATION'
+%23686%|'3196 COBRAM'
+%23687%|'3283 CLARINDA'
+%23688%|'3165 CHIRNSIDE PARK'
+%23689%|'3156 CHELSEA'
+%23690%|'3335 CHADSTONE'
+%23691%|'3100 CARRUM DOWNS'
+%23692%|'3298 CARNEGIE NORTH'
+%23693%|'3251 CARNEGIE'
+%23694%|'3163 CARLTON'
+%23695%|'3112 CANTERBURY GARDENS'
+%23696%|'3319 CAMPERDOWN'
+%23697%|'3221 CAMBERWELL'
+%23698%|'3209 BURWOOD EAST'
+%23699%|'3340 BUNDOORA'
+%23700%|'3188 BRUNSWICK'
+%23701%|'3185 BROADMEADOWS'
+%23702%|'3360 BRAYBROOK'
+%23703%|'3202 BOX HILL'
+%23704%|'3108 BORONIA JUNCTION'
+%23705%|'3327 BLACKBURN SOUTH'
+%23706%|'3235 BLACKBURN NORTH'
+%23707%|'3167 BERWICK'
+%23708%|'3110 BENTLEIGH'
+%23709%|'3160 BENDIGO MARKET PLACE'
+%23710%|'3101 BENALLA'
+%23711%|'3211 BELLPOST'
+%23712%|'3364 BELLARINE (NEWCOMB)'
+%23713%|'3125 BELGRAVE'
+%23714%|'3141 BAYSWATER'
+%23715%|'3273 BAXTER'
+%23716%|'3362 BARKLY SQUARE'
+%23717%|'3245 BANNOCKBURN'
+%23718%|'3127 BALWYN'
+%23719%|'3280 BALLARAT CENTRAL'
+%23720%|'3115 BALACLAVA'
+%23721%|'3243 BAIRNSDALE'
+%23722%|'3205 ASHWOOD'
+%23723%|'3164 ARARAT'
+%23724%|'3194 ALTONA NORTH'
+%23725%|'3386 ALTONA GATE'
+%23726%|'3291 AIRPORT WEST'
+%23727%|'3760 York on Lilydale'
+%23728%|'3651 Williamstown (Rifle Club) Drive In'
+%23729%|'3326 Williamstown'
+%23730%|'3689 Wheelers Hill'
+%23731%|'3759 Westside'
+%23732%|'3681 Westmeadows Drive In'
+%23733%|'3758 Werribee Plaza'
+%23734%|'3688 Waltzing Matilda'
+%23735%|'3772 Swan Hill'
+%23736%|'3655 Sunbury Drive In'
+%23737%|'3675 Springvale'
+%23738%|'3659 Somerville Drive In'
+%23739%|'3757 Skyways'
+%23740%|'3338 Shoppingtown BWS (Shoppingtown Hotel)'
+%23741%|'3679 Shepparton Drive In'
+%23742%|'3756 Seaford'
+%23743%|'3755 Sands'
+%23744%|'3658 Sandringham Drive In'
+%23745%|'3652 Reservoir (Rose Shamrock & Thistle) Drive In'
+%23746%|'3631 Preston Drive In'
+%23747%|'3708 Powell'
+%23748%|'3753 Pascoe Vale Hotel'
+%23749%|'3657 Noble Park Drive In'
+%23750%|'3674 Narre Warren'
+%23751%|'3680 Mulgrave (Village Green) Drive In'
+%23752%|'3646 Morwell Drive In'
+%23753%|'3656 Moorabbin (Sandbelt Club) Drive In'
+%23754%|'3687 Monash'
+%23755%|'3645 Mitcham Drive In'
+%23756%|'3649 Mill Park (Plough) Drive In'
+%23757%|'3642 Melton (Macs) Drive In'
+%23758%|'3682 Melbourne (Young & Jacksons) Walk In'
+%23759%|'3752 Matthew Flinders'
+%23760%|'3701 Manningham Hotel'
+%23761%|'3707 Lyndhurst'
+%23762%|'3648 Lilydale (Olinda Creek) Drive In'
+%23763%|'3090 Lavington (Boomerang Hotel)'
+%23764%|'3641 Keysborough Drive In'
+%23765%|'3750 Hallam'
+%23766%|'3647 Glen Waverley Walk In'
+%23767%|'3632 Frankston (Daveys) Drive In'
+%23768%|'3749 Fountain Gate'
+%23769%|'3700 First & Last'
+%23770%|'3638 Ferntree Gully Hotel Drive In'
+%23771%|'3639 Ferntree Gully Drive In'
+%23772%|'3644 Fawkner Drive In'
+%23773%|'3653 Essendon Drive In'
+%23774%|'3637 Eltham Drive In'
+%23775%|'3636 Elsternwick Drive In'
+%23776%|'3230 Dromana'
+%23777%|'3650 Doveton (Prince Mark) Drive In'
+%23778%|'3634 Doncaster Drive In'
+%23779%|'3633 Deer Park Drive In'
+%23780%|'3698 Daiseys Club'
+%23781%|'3706 Croxton Park'
+%23782%|'3705 Courthouse Footscray'
+%23783%|'3212 COROWA'
+%23784%|'3747 Coolaroo'
+%23785%|'3748 Commercial'
+%23786%|'3328 Colac'
+%23787%|'3697 Cherry Hill'
+%23788%|'3683 Cheltenham (Tudor Inn) Drive In'
+%23789%|'3401 Cheltenham'
+%23790%|'3663 Castlemaine'
+%23791%|'3232 Carlton'
+%23792%|'3668 Campbellfield (Sylvania) Drive In'
+%23793%|'3746 Bundoora'
+%23794%|'3745 Braybrook Hotel -  DRIVE'
+%23795%|'3744 Boundary Taverner'
+%23796%|'3613 Blackburn Drive In'
+%23797%|'3225 Belmont'
+%23798%|'3612 Bayswater Drive In'
+%23799%|'3614 Ballarat (Blue Bell) Drive In'
+%23800%|'3704 Albion Charles'
+%23801%|'3220 Burvale Dan Murphy'
+%23802%|'3224 Rowville Dan Murphy'
+%23803%|'3237 Doveton DM'
+%23804%|'3346 Endeavour Hills DM'
+%23805%|'3372 Eltham D/Murphy'
+%23806%|'3375 Frankston D/Murphy'
+%23807%|'3379 Chelsea Hights D/Mur'
+%23808%|'3406 Traralgon Dan Murphy'
+%23809%|'3407 Thomastown DM'
+%23810%|'3408 Ringwood ALH DM'
+%23811%|'3419 QV Melbourne DM'
+%23812%|'3440 Brighton D/Murphy'
+%23813%|'3441 Ascot Vale D/Murphy'
+%23814%|'3446 Mulgrave DM'
+%23815%|'3600 Alphington D/Murphy'
+%23816%|'3605 Est Malvern D/Murphy'
+%23817%|'3606 Ballarat D/Murphy'
+%23818%|'3609 Coburg D/Murphy'
+%23819%|'3610 Prahran D/Murphy'
+%23820%|'3611 Geelong D/Murphy'
+%23821%|'3615 Berwick D/Murphy'
+%23822%|'3616 Richmond D/Murphy'
+%23823%|'3617 Boronia Dan Murphy'
+%23824%|'3620 Kew D/Murphy'
+%23825%|'3622 Bendigo Dan Murphy'
+%23826%|'3623 Watergardens DM'
+%23827%|'3625 Malvern D/Murphy'
+%23828%|'3626 Camberwell D/M'
+%23829%|'3630 Forest Hill D/Murphy'
+%23830%|'3635 Glen Waverly D/Murphy'
+%23831%|'3691 Preston Dan Murphy'
+%23832%|'3740 Parkdale DM'
+%23833%|'3342 Albury D/Murphy'
+%23834%|'3943 Wodonga RDC Liquor'
+%23836%|'3233 Niddrie BWS'
+%23837%|'3347 Richmond BWS'
+%23838%|'3799 Greengrocers( Market'
+%23839%|'3177 Maffra'
+%23840%|'3249 Woodend'
+%23841%|'3312 Southbank'
+%23842%|'3315 Churchill'
+%23843%|'3981 Laverton MLDC'
+%23846%|'3933 Wodonga RDC'
+%23847%|'3919 Produce Mulgrave'
+%23848%|'3985 MLDC NDC'
+%23850%|'1375 Windsor'
+%23851%|'1351 Campbelltown Market Fair'
+%23852%|'1378 New Homeshop Alexandria'
+%23853%|'1422 Norwest Circa Shopping Centre'
+%23855%|'1100 Gosford'
+%23856%|'1164 Singleton'
+%23858%|'1174 Salamander Bay'
+%23859%|'2000 Colgate Primary Freight'
+%23860%|'2005 Atlantic pacific Foods'
+%23862%|'1757 Winston hills'
+%23864%|'1753 Warabrook'
+%23865%|'1179 Green Hills'
+%23866%|'1369 Beresfield'
+%23867%|'1101 Mayfield'
+%23868%|'1326 Belmont'
+%23869%|'2004 Perfection Fresh'
+%23870%|'2006 Diageo'
+%23871%|'1757 Winston Hills'
+%23872%|'1418 Surry Hills Thomas Dux'
+%23873%|'1256 Surry Hills'
+%23877%|'9000 Inghams NSW DC'
+%23878%|'1255 Carnes Hill DM'
+%23879%|'1758 Carnes Hill'
+%23880%|'1758 Carnes Hill'
+%23881%|'3979 MLDC Ambient'
+%23882%|'3172 Beaconsfield'
+%23883%|'3344 Yarrum'
+%23884%|'3337 Laurimer'
+%23886%|'1417 Thomas Dux Lane Cove'
+%23887%|'2010 Montague Fresh'
+%23888%|'3991 Laverton MLDC Beer'
+%23889%|'3921 Mulgrave Recyling'
+%23891%|'2009 Rockdale Beef'
+%23892%|'1110 Rosemeadow'
+%23893%|'3349 Dandenong'
+%23894%|'1979 MINCHINBURY RDC'
+%23895%|'5672 Hallet Cove'
+%23896%|'1378 Home Shop'
+%23897%|'2011 RAND'
+%23898%|'1113 Neutral Bay Village'
+%23899%|'2013 Diageo Erskine Park'
+%23900%|'1339 Top Ryde'
+%23901%|'1115 Glenorie'
+%23902%|'1103 Lane Cove'
+%23903%|'1328 South Penrith'
+%23904%|'2014 Game Farm'
+%23905%|'4301 St Georges Tce'
+%23906%|'4302 Palmyra'
+%23907%|'4303 Booragoon'
+%23908%|'4305 Clarkson (Ocean Keys)'
+%23909%|'4306 Dog Swamp'
+%23910%|'4307 Kalamunda'
+%23911%|'4312 Mundaring'
+%23912%|'4313 Innaloo'
+%23913%|'4314 Noranda'
+%23914%|'4315 Bassendean'
+%23915%|'4317 Secret Harbour'
+%23916%|'4318 Willeton Southlands'
+%23917%|'4319 Stirling Heights (Balga)'
+%23918%|'4320 Woodvale'
+%23919%|'4321 Alexander Heights'
+%23920%|'4325 Kelmscott'
+%23921%|'4326 Northam'
+%23922%|'4327 Kingsway'
+%23923%|'4333 Victoria Park'
+%23924%|'4335 Kwinana'
+%23925%|'4336 Cannington'
+%23926%|'4337 Midland Gate (New)'
+%23927%|'4338 Maddington'
+%23928%|'4339 Glenview'
+%23929%|'4340 Mandurah Central'
+%23930%|'4341 Currambine'
+%23931%|'4342 Warnbro'
+%23932%|'4343 Forrestfield'
+%23933%|'4345 Beldon'
+%23934%|'4346 Mt Hawthorn'
+%23935%|'4348 Belmont'
+%23936%|'4350 Morley'
+%23937%|'4351 Mandurah Forum'
+%23938%|'4352 Miami'
+%23939%|'4356 Cottesloe'
+%23940%|'4357 Southern River'
+%23941%|'4358 Fremantle CBD'
+%23942%|'4359 Floreat'
+%23943%|'4360 Armadale'
+%23944%|'4361 Livingston'
+%23946%|'4365 Murray Street'
+%23947%|'4366 Dianella'
+%23948%|'4367 Spearwood'
+%23949%|'4368 Bentley'
+%23950%|'4369 Midland Centrepoint'
+%23951%|'4370 Whitfords City'
+%23952%|'4371 Karrinyup'
+%23953%|'4372 Bullcreek'
+%23954%|'4373 Mirrabooka'
+%23955%|'4379 Warwick'
+%23956%|'4382 Riverton'
+%23957%|'4384 Beechboro'
+%23958%|'4385 Ellenbrook'
+%23959%|'4387 Fremantle'
+%23960%|'4390 Joondalup'
+%23961%|'4391 Rockingham City'
+%23962%|'4392 Subiaco Square'
+%23963%|'4393 Waikiki'
+%23964%|'4394 Gateways'
+%23965%|'4398 Carramar'
+%23966%|'4933 Perth Ambient Whse'
+%23967%|'4936 Perth Produce Whse'
+%23968%|'4937 Perth Chiller Whse'
+%23969%|'4938 Perth Freezer Whse'
+%23970%|'4939 Perth Fresh DC'
+%23971%|'3666 Smiths Chips'
+%23972%|'1240 Cronulla'
+%23973%|'5000 Adelaide Rail Hub'
+%23974%|'1903 Versacold'
+%23975%|'9401 Inghams'
+%23976%|'5604 Alice Springs'
+%23977%|'5636 Katherine'
+%23978%|'5618 Casuarina'
+%23979%|'264 Casuarina (BIG W)'
+%23980%|'5627 Palmerston'
+%23981%|'5640 Humpty Doo'
+%23982%|'5652 Darwin City'
+%23983%|'5659 Leanyer'
+%23984%|'5676 Coolalinga'
+%23985%|'5677 Nightcliff'
+%23986%|'5615 Gove (Perkins Shipping)'
+%23987%|'5001 Berrimah Rail Terminal'
+%23988%|'5002 Alice Springs Rail Terminal'
+%23989%|'5003 Katherine Rail Terminal'
+%23991%|'5005 Monarto DC (BIG W)'
+%23992%|'4155 Bennet Springs'
+%23994%|'5691 Karama'
+%23995%|'9405 VERSACOLD'
+%23996%|'1915 Wyong Meat'
+%23997%|'9407 Freo Meat Centre'
+%23998%|'9402 Dorsogna'
+%23999%|'9402 Dorsognia'
+%24000%|'2054 Calamvale North'
+%24001%|'2762 Sunnybank Hills'
+%24002%|'2074 Coomera West'
+%24003%|'2683 Calamvale'
+%24004%|'2706 Acacia Ridge (1.2M)'
+%24005%|'2582 Sunnybank'
+%24006%|'2593 Browns Plains'
+%24007%|'2653 Underwood'
+%24008%|'2656 Browns Plains Westpoint'
+%24010%|'2646 Garden City'
+%24011%|'2615 Centrepoint'
+%24012%|'2621 Springwood'
+%24013%|'2554 Inala'
+%24014%|'2648 Forest Lake'
+%24015%|'2616 Mountain View'
+%24016%|'2602 Chatswood Hills'
+%24017%|'2635 Park Ridge'
+%24018%|'2552 Moorooka'
+%24019%|'2604 Sherwood'
+%24020%|'2719 Annerley FFL'
+%24021%|'2695 Darra'
+%24022%|'2614 Buranda'
+%24023%|'2732 Camp Hill'
+%24024%|'2536 Loganholme'
+%24025%|'2560 Carindale'
+%24026%|'2672 Mt Ommaney'
+%24027%|'2524 Indooroopilly'
+%24028%|'2681 Toowong'
+%24029%|'2745 Goodna'
+%24030%|'2711 Greenbank'
+%24031%|'2586 Kenmore'
+%24032%|'2596 Macarthur Chambers'
+%24033%|'2751 Cannon Hill (1.2M)'
+%24034%|'2742 Springfield'
+%24035%|'2637 Morningside'
+%24036%|'2696 Spring Hill'
+%24037%|'2770 Capalaba Park'
+%24038%|'2662 Capalaba'
+%24039%|'2332 Paddington'
+%24040%|'2697 Bulimba'
+%24041%|'2718 Kelvin Grove'
+%24042%|'2634 Redbank Plains'
+%24043%|'2636 Manly West'
+%24044%|'2668 Beenleigh'
+%24045%|'2661 Alexandra Hills'
+%24046%|'2644 Ashgrove'
+%24047%|'2500 Ascot'
+%24048%|'2544 Wynnum'
+%24049%|'2513 Birkdale'
+%24050%|'2523 Brisbane Airport'
+%24051%|'2583 Stafford'
+%24052%|'2760 Victoria Point'
+%24053%|'2700 Victoria Point East'
+%24054%|'2585 Cleveland'
+%24055%|'2626 Nundah'
+%24056%|'2556 Brookside'
+%24057%|'2633 Keperra'
+%24058%|'2666 Jimboomba'
+%24059%|'2608 Karalee'
+%24060%|'2548 Booval'
+%24061%|'2628 Chermside Central'
+%24062%|'2673 Chermside'
+%24063%|'2597 Ipswich Riverlink'
+%24064%|'2591 Ipswich'
+%24065%|'2657 Taigum'
+%24066%|'2650 Albany Creek'
+%24067%|'2766 Carseldine'
+%24068%|'2561 Brassall'
+%24069%|'2665 Yamanto'
+%24070%|'2605 Sandgate'
+%24071%|'2505 Bracken Ridge'
+%24072%|'2575 Strathpine'
+%24073%|'2076 Collingwood Park'
+%24074%|'2631 Warner'
+%24075%|'2579 Petrie'
+%24076%|'2712 Oxenford'
+%24077%|'2752 Kallangur Fair'
+%24078%|'2690 Margate'
+%24079%|'2508 Northlakes'
+%24080%|'2504 Beaudesert'
+%24081%|'2750 Redcliffe'
+%24082%|'2740 Kippa-Ring'
+%24083%|'2713 Helensvale'
+%24084%|'2691 Pacific Pines'
+%24085%|'2559 Deception Bay'
+%24086%|'2692 Runaway Bay'
+%24087%|'2759 Harbourtown'
+%24088%|'2606 Narangba'
+%24089%|'2655 Burpengary'
+%24090%|'2764 Nerang'
+%24091%|'2699 Ashmore'
+%24092%|'2577 Australia Fair (1.2m)'
+%24093%|'2620 Southport Park'
+%24094%|'2613 Surfers Paradise'
+%24095%|'2744 Morayfield'
+%24096%|'2629 Caboolture South'
+%24097%|'2515 Mermaid Waters(1.2M)'
+%24098%|'2592 Oasis'
+%24099%|'2512 Mudgeeraba'
+%24100%|'2534 Robina North Mall'
+%24101%|'2645 Robina'
+%24102%|'2674 Bribie Island'
+%24103%|'2564 Burleigh Heads'
+%24104%|'2603 Palm Waters'
+%24105%|'2746 Elanora'
+%24106%|'2685 Tweed Heads'
+%24107%|'2652 Tweed City'
+%24108%|'2607 Beerwah'
+%24109%|'2511 Kingscliff'
+%24110%|'2670 Caloundra'
+%24111%|'2624 Currimundi'
+%24112%|'2619 Maleny'
+%24113%|'2589 Chancellor Park'
+%24114%|'2570 Kawana Waters'
+%24115%|'2625 Mountain Creek'
+%24116%|'2702 Buderim'
+%24117%|'2643 Maroochydore Plaza'
+%24118%|'2763 Maroochydore Big Top'
+%24119%|'2574 Nambour'
+%24120%|'2617 Coolum'
+%24121%|'2651 Noosa'
+%24122%|'2756 Noosaville'
+%24123%|'2703 Tewantin'
+%24124%|'2055 Mission Beach (QRX)'
+%24125%|'2667 Innisfail (QRX)'
+%24126%|'2723 Ingham (QRX)'
+%24127%|'2558 Atherton (QRX)'
+%24128%|'2566 Earlville (QRX)'
+%24129%|'2537 Cairns (QRX)'
+%24130%|'2647 Raintrees (QRX)'
+%24131%|'2704 Redlynch (QRX)'
+%24132%|'2549 Smithfield (QRX)'
+%24133%|'2594 Woodlands (QRX)'
+%24134%|'2618 Townsville (QRX)'
+%24135%|'2057 The Avenues (QRX)'
+%24136%|'2547 Castletown (QRX)'
+%24137%|'2340 Vincent (QRX)'
+%24138%|'2501 Kirwan (QRX)'
+%24139%|'2622 Hermit Park (QRX)'
+%24140%|'2584 Willows (QRX)'
+%24142%|'2639 Fairfield Central (QRX)'
+%24143%|'2705 Mossman (QRX)'
+%24144%|'2563 Ayr (QRX)'
+%24145%|'2682 Charters Towers (QRX)'
+%24146%|'2562 Bowen (QRX)'
+%24147%|'2612 Cannonvale (QRX)'
+%24148%|'2761 Proserpine (QRX)'
+%24149%|'2553 Walkerston (QRX)'
+%24150%|'2538 Mt Pleasant (QRX)'
+%24151%|'2709 Andergrove (QRX)'
+%24152%|'2658 Caneland (QRX)'
+%24153%|'2518 Sarina (QRX)'
+%24154%|'2568 Emerald (QRX)'
+%24155%|'2698 Cloncurry (QRX)'
+%24156%|'2572 Blackwater (QRX)'
+%24157%|'2551 Weipa'
+%24158%|'2502 Yeppoon (QRX)'
+%24159%|'2627 Mt Isa FFL (QRX)'
+%24160%|'2539 Mt Isa (QRX)'
+%24161%|'2587 North Rockhampton (QRX)'
+%24162%|'2555 Northside Plaza (QRX)'
+%24163%|'2687 Allenstown (QRX)'
+%24164%|'2630 Gladstone Valley (QRX)'
+%24165%|'2654 Kinkora (QRX)'
+%24166%|'2569 Biloela (QRX)'
+%24167%|'2580 Boyne Island (QRX)'
+%24168%|'2588 Roma'
+%24169%|'2680 Sugarland'
+%24170%|'2686 Bundaberg'
+%24171%|'2519 Bargara'
+%24172%|'2509 Childers'
+%24173%|'2725 Eli Waters'
+%24174%|'2567 Hervey Bay'
+%24175%|'2590 Urangan'
+%24176%|'2664 Maryborough'
+%24177%|'2649 Maryborough FFL'
+%24178%|'2565 Kingaroy'
+%24179%|'2557 Gympie'
+%24180%|'2726 Cooloola Cove'
+%24181%|'2767 Dalby'
+%24182%|'2052 Woodford'
+%24183%|'2514 Highfield'
+%24184%|'2663 Wilsonton'
+%24185%|'2576 Clifford Gardens'
+%24186%|'2679 Pittsworth'
+%24187%|'2601 Range'
+%24188%|'2516 Kearneys Spring'
+%24189%|'2829 Central Lakes'
+%24190%|'2507 Plainland'
+%24191%|'2715 Fernvale'
+%24193%|'2641 Warwick FFL'
+%24194%|'2676 Warwick'
+%24195%|'2571 Stanthorpe'
+%24196%|'2694 MULLUMBIMBY'
+%24197%|'2540 Casino'
+%24198%|'2550 Lismore Central'
+%24199%|'2609 Lismore Square'
+%24200%|'2573 Byron Bay'
+%24201%|'2541 Ballina Fair'
+%24202%|'2671 Ballina'
+%24203%|'2689 Grafton'
+%24207%|'1015 Barden Produce'
+%24211%|'2986 LARAPINTA RDC - Produce'
+%24212%|'2987 LARAPINTA RDC - Chiller'
+%24213%|'2994 LARAPINTA RDC - Fresh'
+%24214%|'2984 BISBANE LIQ - Liquor'
+%24215%|'9403 SWAN'
+%24216%|'1903 Versa Cold'
+%24217%|'9402 Dorsogna'
+%24218%|'9402 Dorsogna'
+%24219%|'8000 Fuel Adelaide'
+%24221%|'2101 Allcoast'
+%24222%|'2100 Allcoast Truck Repairs'
+%24223%|'2100 All Coast'
+%24224%|'2004 Perfection Fresh'
+%24229%|'1903 Versa Cold'
+%24230%|'1228 Cardiff'
+%24231%|'8001 Winnellie Branch Fuel Depot'
+%24232%|'8002 11 Mile Depot FUEL'
+%24233%|'8004 Camerons Depot Berrimah'
+%24234%|'8005 AWH - Australian Wool Handlers'
+%24235%|'1380 Umina Beach'
+%24236%|'1244 Swansea'
+%24237%|'9406 SWIRES (Heinz Frozen)'
+%24238%|'2012 Sanitarium'
+%24239%|'9404 Heinz Dry'
+%24240%|'9405 VERSACOLD'
+%24241%|'9410 Golden Farm Eggs'
+%24242%|'3986 Produce'
+%24243%|'9405 Versacold/Simplot'
+%24244%|'8003 Wyuna Cold Stores'
+%24245%|'1205 Taree'
+%24246%|'8008 Shaws'
+%24247%|'9001 Top Class'
+%24248%|'1316 Charlestown'
+%24249%|'2920 BXDC'
+%24250%|'9409 Swan Valley Eggs'
+%24252%|'2016 Sanck Brands'
+%24254%|'9005 Collins Adelaide'
+%24255%|'9003 Acacia Hills'
+%24256%|'1397 Morriset'
+%24257%|'1474 Redfern'
+%24258%|'4363 Melville'
+%24259%|'9403 Swan'
+%24260%|'2511 Kingscliff'
+%24262%|'1311 Nambucca Heads'
+%24263%|'2074 Coomera West'
+%24264%|'2076 Colingwood Park'
+%24265%|'2523 Brisbane Airport'
+%24266%|'2824 Richlands'
+%24267%|'2075 Eight Mile Plains'
+%24268%|'3392 Watervale'
+%24269%|'3005 Corio Dan Murphys'
+%24270%|'3124 Chelsea New'
+%24271%|'3195 Abbotsford'
+%24272%|'3399 Thrift Park'
+%24273%|'3325 South Yarra'
+%24274%|'3345 Wyndhamvale'
+%24275%|'3618 Point Cook DM'
+%24276%|'3254 Fawkner DM'
+%24277%|'3296 Essendon Fields DM'
+%24278%|'2848 Holmview'
+%24279%|'2018 Baiada Beresfield'
+%24280%|'2018 Baiada Beresfield'
+%24281%|'3908 Versacold DC Laverton'
+%24282%|'1681 Leura'
+%24283%|'1317 Macquarie Fields'
+%24284%|'1415 Newcastle West'
+%24286%|'9979 SRDC Maintenance'
+%24287%|'3444 Port Melbourne TD'
+%24288%|'3002 Cowes'
+%24289%|'3052 Moe BWS'
+%24291%|'3058 Koo Wee Rup'
+%24292%|'3888 Poseidon Dips'
+%24293%|'3775 Cranbourne BWS'
+%24294%|'3059 Sth Morang BWS'
+%24295%|'3432 Epping DM'
+%24296%|'3217 Bacchus Marsh BWS'
+%24297%|'3238 Braybrook BWS'
+%24298%|'9979 SRDC Maintenance'
+%24299%|'2019 RTA WEST GOSFORD'
+%24300%|'9412 Karragullen C/S'
+%24301%|'9979 SRDC Maintenance'
+%24302%|'3239 St Albans BWS'
+%24303%|'3265 Geelong Latrobe BWS'
+%24304%|'3358 Rosebud BWS'
+%24305%|'3387 Belmont DM'
+%24306%|'3402 Doncastor East DM'
+%24307%|'3404 Diamond Creek BWS'
+%24308%|'3423 Morington East Dm'
+%24309%|'3442 Black Rock TD'
+%24310%|'3443 Glen Waverley TD'
+%24311%|'3262 Pakenham DM'
+%24312%|'3445 Richmond TD'
+%24313%|'6001 Inghams QLD - Primary Freight'
+%24314%|'2992 Jindalee'
+%24315%|'2854 Pelican Waters'
+%24316%|'6002 Hans QLD - Primary Freight'
+%24317%|'3447 Armadale TD'
+%24318%|'3619 Sth Melb DM'
+%24319%|'3660 Pascoe Vale BWS'
+%24320%|'3004 Emerald'
+%24321%|'3999 SRT Hub'
+%24322%|'3355 Epping North'
+%24323%|'2605 Sangate'
+%24324%|'2887 Carrara'
+%24325%|'1124 Park Beach'
+%24326%|'1132 Toormina'
+%24327%|'2945 Reedy Creek'
+%24328%|'2079 Chinchilla'
+%24329%|'2522 Gympie South'
+%24330%|'3354 Craigieburn Highlands'
+%24331%|'3395 Pakenham Market'
+%24332%|'1308 Leeton'
+%24333%|'1152 Griffith'
+%24334%|'1156 Griffith North'
+%24335%|'0999 RTA West Gosford'
+%24336%|'2600 Gracemere (QRX)'
+%24337%|'2426 Nathan Plaza (QRX)'
+%24338%|'2853 Rural View (QRX)'
+%24339%|'2082 Emerald East (QRX)'
+%24340%|'2894 Coorparoo'
+%24341%|'4049 Forest Lakes'
+%24342%|'2304 Northwest Plaza'
+%24343%|'3004 Emerald'
+%24344%|'4322 Yanchep South'
+%24345%|'9413 Worldlink International'
+%24346%|'3091 Mernda Village'
+%24347%|'3295 Oakleigh South'
+%24348%|'3086 Seaford DM'
+%24349%|'3089 Southern Cross Station'
+%24350%|'3054 Water Gardens Sth'
+%24351%|'2610 Surfers Paradise Circle'
+%24352%|'2941 Goonellabah'
+%24353%|'1353 Inverell'
+%24354%|'1335 Moree'
+%24355%|'1180 Coffs Horbour'
+%24356%|'1434 Macksville'
+%24357%|'8998 Wyee Flowers'
+%24358%|'3777 inghams'
+%24359%|'1258 Merrylands'
+%24360%|'1128 Wolli Creek'
+%24361%|'1251 Berala'
+%24362%|'8915 Brooklyn'
+%24363%|'456 RTS Refrigeration'
+%24364%|'1226 Fairfield Heights'
+%24365%|'1573 Balgowlah'
+%24367%|'6003 Pacific West Primary Freight'
+%24368%|'2640 Morayshire'
+%24370%|'3400 Officer Arena'
+%24371%|'3316 Pakenham Lakeside'
+%24372%|'3007 Pakenham Marriott Waters'
+%24373%|'9401 INGHAMS HAZELMERE'
+%24374%|'0998 Thermoking'
+%24375%|'1680 Gloucester'
+%24376%|'3304 The Avenue Cranbourne North'
+#end gfids
+
+
+#@ insert
+SELECT @geofenceid=[ID] FROM [Imarda360.Tracking].dbo.CompanyGeofences WHERE [GFTitle] = `1`
+INSERT INTO [Imarda360.Tracking].[dbo].[GeofencePolygons]
+	([ID],[GeofenceID],[Radius],[Point],[PointLat],[PointLng],[CompanyID],[UserID],[DateCreated],[DateModified],[Deleted],[Active])
+	VALUES('`newseqguid`',@geofenceid,NULL,`2`,`3`,`4`,@companyid,'11111111-1111-1111-1111-111111111111',@now,@now,0,1)
+
+
+#end insert
+
+#expn insert
+%2368%|1|-32.8336582748608|151.352774445022
+%2368%|2|-32.8326518553743|151.356090679723
+%2368%|3|-32.8359185940353|151.355711210081
+%2368%|4|-32.8354731296724|151.352906434463
+%2368%|5|-32.8348791771886|151.352922933143
+%2520%|1|-33.7041929265254|151.097933667857
+%2520%|2|-33.7046878869286|151.098907089984
+%2520%|3|-33.7053478341328|151.099319556986
+%2520%|4|-33.7053643328129|151.100754942155
+%2520%|5|-33.7034339872406|151.100309477793
+%2520%|6|-33.7030050215578|151.098032659938
+%2520%|7|-33.7030710162782|151.098049158618
+%2523%|1|-32.9394674025942|151.708665337681
+%2523%|2|-32.939434405234|151.711915577662
+%2523%|3|-32.9436415686609|151.712773509028
+%2523%|4|-32.9432620990185|151.708021889157
+%2523%|5|-32.9398798695969|151.707972393117
+%2524%|1|-33.2375726217883|151.502975713836
+%2524%|2|-33.2400969198445|151.502645740234
+%2524%|3|-33.241581801054|151.502810727035
+%2524%|4|-33.2417137904948|151.506423937978
+%2524%|5|-33.2399484317235|151.506341444577
+%2524%|6|-33.2380510835114|151.50683640498
+%2524%|7|-33.2380510835114|151.50683640498
+%2525%|1|-33.7767142402367|151.120032345353
+%2525%|2|-33.7782739497002|151.120562646571
+%2525%|3|-33.7790849986213|151.119065325486
+%2525%|4|-33.7787418625393|151.118067111429
+%2525%|5|-33.7778060368612|151.11803591724
+%2525%|6|-33.7767142402367|151.118067111429
+%2526%|1|-33.7780220769804|151.107866066978
+%2526%|2|-33.7793419713889|151.10811354718
+%2526%|3|-33.7796224489507|151.107024634293
+%2526%|4|-33.7791604859077|151.106183201608
+%2526%|5|-33.7775931112977|151.106199700288
+%2526%|6|-33.7776096099778|151.107371106575
+%2539%|1|-33.8057932682264|151.087693416557
+%2539%|2|-33.8073441441563|151.087709915237
+%2539%|3|-33.8076576190783|151.089557767409
+%2539%|4|-33.8057932682264|151.089887741011
+%2539%|5|-33.8057932682264|151.089887741011
+%2543%|1|-33.2352490286378|151.418330434816
+%2543%|2|-33.2321233043886|151.426560189801
+%2543%|3|-33.2383351867572|151.430358538256
+%2543%|4|-33.2430435561958|151.4221683494
+%2791%|1|-27.6433580461029|153.007370941831
+%2791%|2|-27.6440030306755|153.008619741748
+%2791%|3|-27.6449499229204|153.008180603316
+%2791%|4|-27.647818045807|153.007659126428
+%2791%|5|-27.6494099226245|153.006753403411
+%2791%|6|-27.6508371225298|153.006753403411
+%2791%|7|-27.6509469071379|153.00159352683
+%2791%|8|-27.6425346615421|153.001854265274
+%12991%|1|-33.9411504904657|150.938217091566
+%12991%|2|-33.9387581818504|150.938547065169
+%12991%|3|-33.9384777042886|150.934834862145
+%12991%|4|-33.9405400393018|150.934570883263
+%12991%|5|-33.9408535142238|150.93570929219
+%12991%|6|-33.9409855036647|150.936781706397
+%22437%|1|-33.8980424504443|150.993912048749
+%22437%|2|-33.8989602127046|150.995995059721
+%22437%|3|-33.9009297923867|150.994530764879
+%22437%|4|-33.9000739017395|150.992839607456
+%22445%|1|-33.8728808624769|151.104707920983
+%22445%|2|-33.8751635573365|151.104238521758
+%22445%|3|-33.8754400527702|151.106418334596
+%22445%|4|-33.8731573579106|151.106817002431
+%22449%|1|-34.0746875316815|150.79693541643
+%22449%|2|-34.073758488369|150.801978794413
+%22449%|3|-34.0786027856413|150.799987987314
+%22449%|4|-34.0775189017767|150.796869056194
+%22449%|5|-34.075616574994|150.796493014853
+%22449%|6|-34.075616574994|150.796515134932
+%22451%|1|-34.0687515721457|150.807977153512
+%22451%|2|-34.0714138687688|150.810515622385
+%22451%|3|-34.0680086056462|150.813817695716
+%22451%|4|-34.0649335498568|150.812187297009
+%22451%|5|-34.0649335498568|150.812187297009
+%22458%|1|-33.8830034019809|150.84490578148
+%22458%|2|-33.882900519959|150.850204205605
+%22458%|3|-33.8847266758467|150.853162063733
+%22458%|4|-33.8883789876221|150.851052982285
+%22458%|5|-33.8877102544801|150.845008663502
+%22466%|1|-33.8269785757709|151.201105099216
+%22466%|2|-33.8269923590485|151.202283569451
+%22466%|3|-33.8282018416577|151.202090603564
+%22466%|4|-33.8281639376443|151.201339414935
+%22466%|5|-33.827678077109|151.20097071226
+%22469%|1|-33.8770952815356|151.241696030549
+%22469%|2|-33.876263493388|151.244429048749
+%22469%|3|-33.8794718191003|151.24638969224
+%22469%|4|-33.8801253669305|151.243359606845
+%22469%|5|-33.8797094728567|151.240804828963
+%22472%|1|-33.9398949192153|151.224074135741
+%22472%|2|-33.9450144492662|151.222765383698
+%22472%|3|-33.9451299273877|151.227692450213
+%22472%|4|-33.9405492952368|151.228962709549
+%22473%|1|-33.9238202548891|151.210705606535
+%22473%|2|-33.9263057814886|151.210120776747
+%22473%|3|-33.926650413328|151.212282558285
+%22473%|4|-33.9244155280663|151.213065812466
+%22477%|1|-33.7515610901908|150.656405612392
+%22477%|2|-33.7515610901908|150.656405612392
+%22477%|3|-33.7536493909307|150.656235716739
+%22477%|4|-33.7536493909307|150.656235716739
+%22477%|5|-33.7531609409272|150.660893689237
+%22477%|6|-33.7531609409272|150.660893689237
+%22477%|7|-33.7512920887396|150.660511424017
+%22481%|1|-33.8577541530739|150.936972733115
+%22481%|2|-33.8570225229781|150.94088910598
+%22481%|3|-33.8625312672287|150.942739699752
+%22481%|4|-33.8712247542493|150.938823326886
+%22481%|5|-33.8702349017667|150.935466435858
+%22481%|6|-33.8630477120022|150.934261398054
+%22484%|1|-33.7460274213575|151.22215203462
+%22484%|2|-33.7460274213575|151.216299932343
+%22484%|3|-33.7553986932482|151.220451761661
+%22484%|4|-33.7517608999404|151.225750286696
+%22490%|1|-33.9063871438316|150.866105282574
+%22490%|2|-33.9084720718181|150.865690666213
+%22490%|3|-33.9085431489085|150.869896060731
+%22490%|4|-33.9068372987377|150.870168522911
+%22495%|1|-33.9662491488898|151.102741604259
+%22495%|2|-33.9675311207748|151.104270109199
+%22495%|3|-33.9668901348323|151.108148895928
+%22495%|4|-33.9645398530433|151.106193067026
+%22495%|5|-33.9654438075775|151.104204367051
+%22495%|6|-33.9654438075775|151.104204367051
+%22501%|1|-34.6636035745172|150.848536106874
+%22501%|2|-34.6684331330891|150.8564390209
+%22501%|3|-34.6725727547221|150.854620096243
+%22501%|4|-34.6710047162248|150.849288765352
+%22501%|5|-34.6673668669109|150.846842625296
+%22503%|1|-33.7404851013811|150.919897676703
+%22503%|2|-33.7445606994975|150.919433368057
+%22503%|3|-33.7443543400992|150.924953481961
+%22503%|4|-33.7420585917931|150.92564994493
+%22503%|5|-33.7407430506289|150.923379991549
+%22504%|1|-33.9607498095679|151.13317344319
+%22504%|2|-33.9648925506328|151.131641795965
+%22504%|3|-33.9652864027763|151.132706655464
+%22504%|4|-33.9614791653892|151.134734264647
+%22507%|1|-33.9148335564101|150.923390993281
+%22507%|2|-33.9147498047061|150.926221800875
+%22507%|3|-33.9188871388811|150.925367533494
+%22507%|4|-33.9184348796798|150.922704229309
+%22517%|1|-34.0276332984636|150.848149516736
+%22517%|2|-34.0287280117141|150.851590044095
+%22517%|3|-34.0319965127048|150.850370220758
+%22517%|4|-34.0300103900932|150.846898415878
+%22528%|1|-33.8289531142179|151.220143734792
+%22528%|2|-33.8290929846774|151.222241791684
+%22528%|3|-33.8304701707401|151.223963274263
+%22528%|4|-33.831212560102|151.222639884531
+%22528%|5|-33.8305777634012|151.220606383235
+%22533%|1|-33.7374446504313|150.952130620092
+%22533%|2|-33.7365082058584|150.952928726262
+%22533%|3|-33.7359548522471|150.951790094793
+%22533%|4|-33.7369019382356|150.950981347207
+%22534%|1|-34.8727147097114|150.602950772844
+%22534%|2|-34.8728596236598|150.603945848623
+%22534%|3|-34.8746468956897|150.603540089567
+%22534%|4|-34.8738063947891|150.602032984504
+%22534%|5|-34.8728982673793|150.602351795191
+%22534%|6|-34.8728209799402|150.60245806542
+%22535%|1|-34.8738061210699|150.606096077568
+%22535%|2|-34.8761637290267|150.605612841155
+%22535%|3|-34.8769105489384|150.609068713688
+%22535%|4|-34.8740257739851|150.609376227769
+%22535%|5|-34.8740111304575|150.609361584241
+%22539%|1|-33.8166729347745|150.931974850636
+%22539%|2|-33.8184136047372|150.931122277593
+%22539%|3|-33.8190648758117|150.933466853461
+%22539%|4|-33.8164124263447|150.933904981274
+%22541%|1|-33.7489690002737|150.688899225394
+%22541%|2|-33.7515560952415|150.688182799095
+%22541%|3|-33.7529093449169|150.693874408024
+%22541%|4|-33.7495733964162|150.694820980793
+%22545%|1|-33.7952713164043|150.904705426426
+%22545%|2|-33.7979534902425|150.904282692506
+%22545%|3|-33.7980263754011|150.905026121124
+%22545%|4|-33.7972392156878|150.905215622537
+%22545%|5|-33.7974724481954|150.906498401329
+%22545%|6|-33.7954753948485|150.906906558217
+%22546%|1|-33.9133137868877|151.239979545976
+%22546%|2|-33.9171159535497|151.241571150626
+%22546%|3|-33.9139106386312|151.244290141901
+%22546%|4|-33.9139106386312|151.244290141901
+%22550%|1|-33.955414989271|151.137934398124
+%22550%|2|-33.9601909373178|151.138470473926
+%22550%|3|-33.9611412535108|151.138275537271
+%22550%|4|-33.9612630889201|151.144099269838
+%22550%|5|-33.9577298620488|151.142905282826
+%22550%|6|-33.9555611917623|151.140395473393
+%22551%|1|-33.818020336194|151.021676933907
+%22551%|2|-33.822165334378|151.021158809134
+%22551%|3|-33.8217767407983|151.016657600169
+%22551%|4|-33.8175669770177|151.017823380908
+%22552%|1|-33.9340307559698|151.066338604601
+%22552%|2|-33.9321207608316|151.071364907596
+%22552%|3|-33.9365103987808|151.073274902734
+%22552%|4|-33.9359742597946|151.068985790845
+%22552%|5|-33.9363428553476|151.065936500361
+%22555%|1|-33.6880892075178|150.921336675091
+%22555%|2|-33.68658736745|150.925341581939
+%22555%|3|-33.6947849111536|150.933747714541
+%22555%|4|-33.696243536327|150.92769863649
+%22556%|1|-33.7767155803498|150.932683480647
+%22556%|2|-33.7741064177155|150.934863739835
+%22556%|3|-33.7727839654214|150.931646963984
+%22556%|4|-33.7755718378252|150.929395220889
+%22567%|1|-33.7306885317339|151.08214708863
+%22567%|2|-33.7330001813936|151.078679614141
+%22567%|3|-33.7358428857048|151.082115850121
+%22567%|4|-33.7315007329657|151.087176488565
+%22567%|5|-33.7315007329657|151.087176488565
+%22569%|1|-33.7873429830157|150.949039369539
+%22569%|2|-33.7878275223614|150.950941635118
+%22569%|3|-33.7884735748223|150.951085202332
+%22569%|4|-33.7905911912219|150.947729318715
+%22569%|5|-33.7889940059714|150.946150079367
+%22569%|6|-33.787271199409|150.948321533471
+%22572%|1|-34.5436560723588|150.861558259817
+%22572%|2|-34.5473515201583|150.860651195357
+%22572%|3|-34.5480906097182|150.865690442356
+%22572%|4|-34.5452350364186|150.865690442356
+%22572%|5|-34.5451678464586|150.865656847376
+%22575%|1|-33.7642775487668|151.262763773775
+%22575%|2|-33.7675365364697|151.262514823325
+%22575%|3|-33.7689397117307|151.266362239363
+%22575%|4|-33.7645264992163|151.270368078415
+%22575%|5|-33.7645264992163|151.270368078415
+%23339%|1|-32.022350284361|115.832264289096
+%23339%|2|-32.0210654279207|115.833259016663
+%23339%|3|-32.0202572117728|115.834854725467
+%23339%|4|-32.0196562305346|115.835953070489
+%23339%|5|-32.0211897688666|115.836636945691
+%23339%|6|-32.0227025837076|115.835662941615
+%23339%|7|-32.0229927125812|115.833880721392
+%23353%|1|-33.7404939444873|151.068509882517
+%23353%|2|-33.7402234864649|151.070355758519
+%23353%|3|-33.7390672784192|151.069794558123
+%23353%|4|-33.7393580207933|151.06782021456
+%23353%|5|-33.7394932498044|151.067718792801
+%23355%|1|-32.0111395053441|115.849611511212
+%23355%|2|-32.0082529698658|115.855637154023
+%23355%|3|-32.0115724856659|115.858523689501
+%23355%|4|-32.0146009316351|115.850621798629
+%23357%|1|-31.9089049294758|115.825902376579
+%23357%|2|-31.9100093281389|115.81242871289
+%23357%|3|-31.8962043448506|115.791666018025
+%23357%|4|-31.8594278693706|115.791445138292
+%23357%|5|-31.8519179584618|115.791334698426
+%23357%|6|-31.8522492780607|115.810219915564
+%23357%|7|-31.8922285096636|115.826454575911
+%23357%|8|-31.9006219395028|115.826565015777
+%23372%|1|-33.4199805999828|149.57603877156
+%23372%|2|-33.4219691787186|149.577706277687
+%23372%|3|-33.4200945289729|149.580057357755
+%23372%|4|-33.4181059502371|149.578348422904
+%23373%|1|-34.0671563788611|150.808383250455
+%23373%|2|-34.0699600641753|150.810832446822
+%23373%|3|-34.0679620355605|150.812862701705
+%23373%|4|-34.0649649926384|150.810993578162
+%23374%|1|-33.8812668508525|150.999668537816
+%23374%|2|-33.8826750437872|150.999279431873
+%23374%|3|-33.8829529766032|151.001113788459
+%23374%|4|-33.8812668508525|151.001484365548
+%23430%|1|-34.8483107537271|138.599941256411
+%23430%|2|-34.8484954611778|138.596415023261
+%23430%|3|-34.8522903597108|138.596448606434
+%23430%|4|-34.8521392354329|138.60027708814
+%23430%|5|-34.8521392354329|138.60027708814
+%23431%|1|-34.8546065727649|138.652367503276
+%23431%|2|-34.8569984916229|138.655532749283
+%23431%|3|-34.8559913678932|138.656971497469
+%23431%|4|-34.8552540094483|138.659201557156
+%23431%|5|-34.8534555742166|138.657529012391
+%23431%|6|-34.8527721688286|138.654273844621
+%23437%|1|-34.8865027356712|138.547856046153
+%23437%|2|-34.8881018285548|138.542559050975
+%23437%|3|-34.8932988804267|138.543158710807
+%23437%|4|-34.8956975197522|138.549221937991
+%23437%|5|-34.8923327618095|138.554418989863
+%23437%|6|-34.8870024521973|138.553319613505
+%23448%|1|-34.8932891504487|138.635629421728
+%23448%|2|-34.8932891504487|138.642323956818
+%23448%|3|-34.8980414438767|138.642365281109
+%23448%|4|-34.8980414438767|138.635546773147
+%23448%|5|-34.898000119586|138.635588097438
+%23467%|1|-34.8727741964486|138.601624151348
+%23467%|2|-34.8789704516328|138.602075961622
+%23467%|3|-34.8790027237952|138.598784201056
+%23467%|4|-34.8759045962031|138.596847871311
+%23467%|5|-34.8719028480633|138.597461042396
+%23468%|1|-35.0497750425356|138.556384517444
+%23468%|2|-35.0530072847062|138.555488450307
+%23468%|3|-35.0549274285699|138.557472598966
+%23468%|4|-35.0543193830131|138.560704841137
+%23468%|5|-35.049487020956|138.560448821955
+%23471%|1|-34.7618248669594|138.642503358223
+%23471%|2|-34.7602056780396|138.649187702225
+%23471%|3|-34.7619909376178|138.650184126176
+%23471%|4|-34.7629458439038|138.646572089355
+%23471%|5|-34.7631949498915|138.64275246421
+%23478%|1|-34.8219271259506|138.621681447097
+%23478%|2|-34.8225831589992|138.618729298378
+%23478%|3|-34.8250315680556|138.618764443006
+%23478%|4|-34.8255118779662|138.622009463621
+%23478%|5|-34.8226417333785|138.62388384376
+%23482%|1|-34.8723213146674|138.602139738632
+%23482%|2|-34.8787870107789|138.602695927545
+%23482%|3|-34.8787174871648|138.607805913181
+%23482%|4|-34.8748936883892|138.607319247882
+%23482%|5|-34.8706179861219|138.605754966565
+%23515%|1|-34.6885840364502|138.687965797013
+%23515%|2|-34.6888571844836|138.68570257045
+%23515%|3|-34.6916406930149|138.684453893726
+%23515%|4|-34.6936047574459|138.68604075373
+%23515%|5|-34.6935787433475|138.689916854395
+%23515%|6|-34.6892213818615|138.691113502923
+%23520%|1|-34.8366094435214|138.609624636688
+%23520%|2|-34.8433920279817|138.604643676225
+%23520%|3|-34.8469952759762|138.611956150097
+%23520%|4|-34.8466773423296|138.616689828835
+%23520%|5|-34.8383050896364|138.620540358554
+%23520%|6|-34.838234437715|138.620540358554
+%23522%|1|-34.8366182571923|138.609689766592
+%23522%|2|-34.8434144521518|138.604803853459
+%23522%|3|-34.8470880710488|138.612077618875
+%23522%|4|-34.8467207091591|138.616669642497
+%23522%|5|-34.838271385696|138.620416733772
+%23523%|1|-34.8364872932924|138.609597456435
+%23523%|2|-34.8433230425506|138.604772221664
+%23523%|3|-34.8470760029276|138.612144108119
+%23523%|4|-34.8464951876312|138.616567239992
+%23523%|5|-34.8383190953812|138.620588268968
+%23524%|1|-34.836461258211|138.609659442634
+%23524%|2|-34.8433377467589|138.604807697936
+%23524%|3|-34.8471198154602|138.612142619054
+%23524%|4|-34.846584977462|138.616650539324
+%23524%|5|-34.8381421776338|138.620585418882
+%23524%|6|-34.8381421776338|138.620585418882
+%23529%|1|-34.8364316043075|138.609365912391
+%23529%|2|-34.8432495147285|138.604384951928
+%23529%|3|-34.8470293925267|138.612121337328
+%23529%|4|-34.8466761329194|138.616643060302
+%23529%|5|-34.8384451840692|138.620281634257
+%23530%|1|-34.8355246190172|138.610089429747
+%23530%|2|-34.8433126910789|138.604358584268
+%23530%|3|-34.8470965185428|138.612036447763
+%23530%|4|-34.8467291566531|138.616812152329
+%23530%|5|-34.8375451094106|138.621881746407
+%23531%|1|-34.8356173074933|138.609950407265
+%23531%|2|-34.8434436808791|138.604309061981
+%23531%|3|-34.846979453627|138.611936796449
+%23531%|4|-34.8465821757901|138.616664402707
+%23531%|5|-34.8375242411101|138.62186874237
+%23531%|6|-34.8375242411101|138.62186874237
+%23533%|1|-34.8602882035214|138.597143365019
+%23533%|2|-34.8601560161018|138.600882380602
+%23533%|3|-34.8660477982323|138.601260058944
+%23533%|4|-34.8661422178177|138.597577695112
+%23534%|1|-35.2604346510987|138.889615043801
+%23534%|2|-35.2614898411315|138.890195305778
+%23534%|3|-35.2609579557022|138.891481256626
+%23534%|4|-35.2595642812227|138.89063293303
+%23535%|1|-37.9221976554266|145.181934145829
+%23535%|2|-37.9219346914216|145.182775630645
+%23535%|3|-37.9222853100949|145.185545518165
+%23535%|4|-37.9283159512774|145.184283290941
+%23535%|5|-37.9254584090892|145.180549202069
+%23536%|1|-37.6798948197276|144.9438502296
+%23536%|2|-37.6799713268402|144.95142443374
+%23536%|3|-37.6746158289629|144.949537258298
+%23536%|4|-37.6763244878094|144.943212670329
+%23538%|1|-37.7821779577634|145.612273014159
+%23538%|2|-37.7821659587233|145.612767974562
+%23538%|3|-37.7823699424046|145.612767974562
+%23538%|4|-37.7823639428846|145.612312011039
+%23542%|1|-37.8569485522884|144.879827681173
+%23542%|2|-37.8572892628658|144.883034804651
+%23542%|3|-37.8581854798191|144.88287555949
+%23542%|4|-37.8578447692418|144.87957214824
+%23543%|1|-37.9097864605254|145.189802122413
+%23543%|2|-37.9098104586056|145.190507066017
+%23543%|3|-37.9104464077296|145.190483067937
+%23543%|4|-37.910353415169|145.189607138011
+%23544%|1|-37.8741707464102|144.676822997623
+%23544%|2|-37.8741707464102|144.677188968345
+%23544%|3|-37.8743897288916|144.677176969305
+%23544%|4|-37.8743387329713|144.676769001943
+%23545%|1|-37.8985748149373|144.663204922622
+%23545%|2|-37.8990847741406|144.663501898864
+%23545%|3|-37.8994177475027|144.663195923342
+%23545%|4|-37.8990817743806|144.662559974218
+%23545%|5|-37.8986468091778|144.662550974938
+%23545%|6|-37.8983768307761|144.662952942781
+%23546%|1|-37.5322469978402|143.8235724982
+%23546%|2|-37.5324179841613|143.82512337413
+%23546%|3|-37.5332339188865|143.824952387809
+%23546%|4|-37.533161924646|143.824154451644
+%23546%|5|-37.5335878905687|143.824058459323
+%23546%|6|-37.5335068970482|143.823344516439
+%23547%|1|-37.54024400048|143.829969570435
+%23547%|2|-37.540405987521|143.831196472282
+%23547%|3|-37.5417018838493|143.83089049676
+%23547%|4|-37.5416298896088|143.829402615791
+%23547%|5|-37.540555975522|143.829465610751
+%23548%|1|-37.9349876412862|145.188109287899
+%23548%|2|-37.9350206386464|145.188919223104
+%23548%|3|-37.9353776100887|145.188817231263
+%23548%|4|-37.9351976244876|145.188022294858
+%23549%|1|-38.1990133957283|144.318758963283
+%23549%|2|-38.1990163954884|144.319127933765
+%23549%|3|-38.1992923734101|144.319049940005
+%23549%|4|-38.1991273866091|144.318677969763
+%23550%|1|-37.7062511133752|144.778104298794
+%23550%|2|-37.7001517590747|144.780094159062
+%23550%|3|-37.7000219855789|144.779596693995
+%23550%|4|-37.7002599036545|144.778407103618
+%23550%|5|-37.7004329349822|144.777866380719
+%23550%|6|-37.6991352000246|144.775616973459
+%23550%|7|-37.7008871422173|144.77384340235
+%23550%|8|-37.7008871422173|144.77384340235
+%23551%|1|-37.6990866609928|144.777785024723
+%23551%|2|-37.6991256578731|144.779506886974
+%23551%|3|-37.6999535916384|144.779470889853
+%23551%|4|-37.7002805654805|144.778159994725
+%23551%|5|-37.7000735820391|144.777632036962
+%23555%|1|-37.4104890157981|144.978651699797
+%23555%|2|-37.4109089663724|144.978082734503
+%23555%|3|-37.4128326109384|144.977879532612
+%23555%|4|-37.412995172451|144.979274852262
+%23555%|5|-37.4127106898039|144.979207118298
+%23556%|1|-37.820438987281|144.94196112071
+%23556%|2|-37.8206789680825|144.942078111351
+%23556%|3|-37.8210179409647|144.94190412527
+%23556%|4|-37.8214769042476|144.943697981762
+%23556%|5|-37.8199470266378|144.943679983201
+%23556%|6|-37.8201690088792|144.942714060475
+%23557%|1|-37.8375074969404|145.184577539992
+%23557%|2|-37.8375614926207|145.184937511194
+%23557%|3|-37.8377954739022|145.184856517674
+%23557%|4|-37.8376184880611|145.184454549831
+%23558%|1|-38.1959548022844|146.534097344305
+%23558%|2|-38.1960087979647|146.535000272071
+%23558%|3|-38.1963027744466|146.535015270871
+%23558%|4|-38.1962817761264|146.534088345025
+%23559%|1|-38.3298786369091|144.323124091673
+%23559%|2|-38.3310185457164|144.322896109911
+%23559%|3|-38.3311745332374|144.323724043677
+%23559%|4|-38.3299236333094|144.324036018719
+%23560%|1|-37.8402987576888|145.004919468735
+%23560%|2|-37.8409522832375|145.01051705713
+%23560%|3|-37.8376562413395|145.011170582679
+%23560%|4|-37.8370027157907|145.005601408438
+%23561%|1|-37.9834161075665|145.075588864498
+%23561%|2|-37.9847850414367|145.076919772427
+%23561%|3|-37.9834324043983|145.078125737979
+%23561%|4|-37.9827696665723|145.077158792627
+%23561%|5|-37.9826121305317|145.075844181529
+%23561%|6|-37.9826881824134|145.075018475385
+%23562%|1|-37.7616051523878|145.168039882409
+%23562%|2|-37.7616651475882|145.168702829374
+%23562%|3|-37.7619681233501|145.168612836573
+%23562%|4|-37.7620401175906|145.168249865611
+%23562%|5|-37.7618811303095|145.167943890089
+%23562%|6|-37.7617161435085|145.167832898968
+%23563%|1|-37.8739827477191|145.162140383764
+%23563%|2|-37.8744764307631|145.166697458016
+%23563%|3|-37.8801854321188|145.165621482151
+%23563%|4|-37.8795651636788|145.160975798121
+%23564%|1|-37.7726483669398|145.113594167385
+%23564%|2|-37.7732813163039|145.113603166665
+%23564%|3|-37.773311313904|145.114524092991
+%23564%|4|-37.7728073542208|145.114845067313
+%23564%|5|-37.7727473590204|145.114560090111
+%23564%|6|-37.7727473590204|145.114560090111
+%23565%|1|-37.7026492498859|144.799438720138
+%23565%|2|-37.7028322352471|144.800005674782
+%23565%|3|-37.7032582011698|144.799843687741
+%23565%|4|-37.7030032215682|144.799237736217
+%23567%|1|-37.7811399412176|144.832996707171
+%23567%|2|-37.7813987731843|144.835118204898
+%23567%|3|-37.7829841189808|144.834850128933
+%23567%|4|-37.7827899950057|144.832580727224
+%23568%|1|-37.7794802576141|144.831409012422
+%23568%|2|-37.7796783234767|144.832823768584
+%23568%|3|-37.7813477357473|144.832512522228
+%23568%|4|-37.7811213747615|144.830984585574
+%23569%|1|-37.5806803208788|144.725435176449
+%23569%|2|-37.5758377514211|144.728851713183
+%23569%|3|-37.577323202175|144.73182261469
+%23569%|4|-37.5824925707985|144.729119094318
+%23570%|1|-37.9201492323494|145.234819111132
+%23570%|2|-37.9206351934725|145.234768115211
+%23570%|3|-37.9207011881929|145.235497056896
+%23570%|4|-37.9201792299496|145.235488057616
+%23570%|5|-37.9200352414686|145.235119087134
+%23572%|1|-37.8675993969071|144.978804650643
+%23572%|2|-37.8681063563503|144.977934720237
+%23572%|3|-37.8686283145937|144.9784176816
+%23572%|4|-37.8692462651576|144.978978636724
+%23572%|5|-37.8687453052344|144.97988156449
+%23573%|1|-37.6856700359971|145.13647800336
+%23573%|2|-37.6856280393569|145.136915968323
+%23573%|3|-37.6858410223182|145.136957964963
+%23573%|4|-37.6860210079194|145.137056957043
+%23573%|5|-37.6861799952004|145.13657099592
+%23574%|1|-37.744439755606|144.800838882433
+%23574%|2|-37.7448783248297|144.80422213073
+%23574%|3|-37.7480485537895|144.803833683704
+%23574%|4|-37.7479984315925|144.802918953608
+%23574%|5|-37.7443645723105|144.800187293872
+%23575%|1|-37.9531946022299|145.150951808378
+%23575%|2|-37.95320960103|145.15135377622
+%23575%|3|-37.9535155765519|145.15128478174
+%23575%|4|-37.9534375827914|145.150963807418
+%23575%|5|-37.9533085931106|145.150882813897
+%23576%|1|-37.9567860012395|145.051912947162
+%23576%|2|-37.9622969329455|145.05589142727
+%23576%|3|-37.9559313647717|145.057188117083
+%23577%|1|-37.6558394724058|145.081744723418
+%23577%|2|-37.6567064030513|145.083103614707
+%23577%|3|-37.6577173221778|145.082998623106
+%23577%|4|-37.6577263214579|145.082404670623
+%23577%|5|-37.6569823809731|145.080739803812
+%23578%|1|-37.8300501175906|144.957338480922
+%23578%|2|-37.8300621166307|144.958247408207
+%23578%|3|-37.8305420782337|144.958199412047
+%23578%|4|-37.8303620926326|144.95712849772
+%23579%|1|-38.2240521381883|145.170705240368
+%23579%|2|-38.2243431149102|145.172013135737
+%23579%|3|-38.2250660570748|145.171842149416
+%23579%|4|-38.2248470745934|145.170447261007
+%23580%|1|-36.3883011598993|145.424390845002
+%23580%|2|-36.3883251579794|145.425401764129
+%23580%|3|-36.3889161107032|145.425395764609
+%23580%|4|-36.3887961203025|145.424429841882
+%23581%|1|-36.3835586550925|145.410890183984
+%23581%|2|-36.3839156265347|145.410857186624
+%23581%|3|-36.3839966200553|145.41180511079
+%23581%|4|-36.3835586550925|145.41184410767
+%23581%|5|-36.3833036754908|145.411490135988
+%23581%|6|-36.3832076831702|145.410953178945
+%23582%|1|-37.0241372031899|145.134885392424
+%23582%|2|-37.0232264582148|145.137327244893
+%23582%|3|-37.0227908845311|145.137327244893
+%23582%|4|-37.0224741036702|145.135162575677
+%23582%|5|-37.0241768007975|145.134779798804
+%23582%|6|-37.0241768007975|145.134779798804
+%23583%|1|-37.5864638948884|143.839711087113
+%23583%|2|-37.5864458963283|143.840431029517
+%23583%|3|-37.5868988600912|143.840413030957
+%23583%|4|-37.5868838612911|143.839681089513
+%23584%|1|-38.1098040028798|145.125807996161
+%23584%|2|-38.1086970914327|145.125903988481
+%23584%|3|-38.1088230813535|145.12719538517
+%23584%|4|-38.1096540148788|145.12719838493
+%23584%|5|-38.1099389920806|145.127048396929
+%23585%|1|-37.8986930333573|145.231503016559
+%23585%|2|-37.8986750347972|145.232351948644
+%23585%|3|-37.8991549964003|145.232444941205
+%23585%|4|-37.8991519966403|145.231428022558
+%23586%|1|-38.1061771034317|147.062137415407
+%23586%|2|-38.1061591048716|147.062818360931
+%23586%|3|-38.1064170842333|147.062815361171
+%23586%|4|-38.1065220758339|147.062290403168
+%23586%|5|-38.1063660883129|147.062002426206
+%23587%|1|-38.3718851235901|144.829237482601
+%23587%|2|-38.3719781161507|144.829999421646
+%23587%|3|-38.3723560859131|144.829900429566
+%23587%|4|-38.372176100312|144.8289675042
+%23588%|1|-37.640647890386|144.933301153099
+%23588%|2|-37.6404679047848|144.932089250051
+%23588%|3|-37.6389440266951|144.932770195575
+%23588%|4|-37.6388210365343|144.934015095983
+%23588%|5|-37.6403089175038|144.934072091424
+%23589%|1|-38.3562239164867|144.906999985601
+%23589%|2|-38.3561639212863|144.907812920566
+%23589%|3|-38.3569138612911|144.907824919606
+%23589%|4|-38.3564998944085|144.906664012479
+%23590%|1|-38.3601954201712|144.890981740254
+%23590%|2|-38.3601984199312|144.891641687458
+%23590%|3|-38.3605073952132|144.891656686258
+%23590%|4|-38.360480397373|144.890999738814
+%23590%|5|-38.3603424084121|144.890774756813
+%23591%|1|-37.7256759443245|145.025875968322
+%23591%|2|-37.7256819438445|145.026577912167
+%23591%|3|-37.7260119174466|145.026562913367
+%23591%|4|-37.7259639212863|145.025848970482
+%23592%|1|-37.8100385260316|144.966545960081
+%23592%|2|-37.8108754053207|144.966999860713
+%23592%|3|-37.8111165400312|144.966084967252
+%23592%|4|-37.8102512919525|144.965787094963
+%23592%|5|-37.8102087387684|144.965914754516
+%23593%|1|-37.7502833251379|145.003079806745
+%23593%|2|-37.7504963080993|145.005743593642
+%23593%|3|-37.750916274502|145.005542609721
+%23593%|4|-37.7526861329133|145.00530862844
+%23593%|5|-37.7525601429925|145.004174719152
+%23593%|6|-37.7522841650707|145.001750913057
+%23593%|7|-37.7522721660306|145.001696917377
+%23593%|8|-37.7519331931485|145.001969895538
+%23594%|1|-37.7368271533505|145.002539649977
+%23594%|2|-37.7369261454312|145.003526571023
+%23594%|3|-37.7373911082341|145.003508572463
+%23594%|4|-37.7371421281525|145.002479654777
+%23595%|1|-37.8466600815935|144.992178576914
+%23595%|2|-37.8469090616751|144.994056426686
+%23595%|3|-37.8481359635229|144.993867441805
+%23595%|4|-37.8479169810415|144.992082584593
+%23597%|1|-37.6497714185393|145.066772154579
+%23597%|2|-37.6509103749272|145.081806378899
+%23597%|3|-37.654782826646|145.081768413686
+%23597%|4|-37.6546309657943|145.066316572024
+%23598%|1|-38.0665250517582|145.140393863978
+%23598%|2|-38.0662241457906|145.14425093138
+%23598%|3|-38.0678928061563|145.144715967875
+%23598%|4|-38.0696435317858|145.139983537658
+%23598%|5|-38.0689870096747|145.14009295801
+%23599%|1|-38.078798541932|145.477157563404
+%23599%|2|-38.0797418234788|145.481762996838
+%23599%|3|-38.0773836196118|145.481180381765
+%23599%|4|-38.0767455173889|145.477407255578
+%23599%|5|-38.0767455173889|145.477407255578
+%23600%|1|-38.25772369625|144.548854115391
+%23600%|2|-38.2577506940902|144.549292080354
+%23600%|3|-38.2579306796914|144.549292080354
+%23600%|4|-38.2579306796914|144.548848115871
+%23601%|1|-37.9101099448044|145.085626976242
+%23601%|2|-37.9101879385649|145.086700890329
+%23601%|3|-37.9107458939285|145.086667892969
+%23601%|4|-37.9106169042477|145.085596978642
+%23601%|5|-37.9103049292057|145.085473988481
+%23602%|1|-37.9012973434125|145.090972311015
+%23602%|2|-37.901375337173|145.09178824574
+%23602%|3|-37.9017023110151|145.09173425006
+%23602%|4|-37.9015763210943|145.090927314615
+%23603%|1|-37.7357217520313|145.024329786439
+%23603%|2|-37.7365292526224|145.029185011513
+%23603%|3|-37.7403009958901|145.028909030298
+%23603%|4|-37.7400454577283|145.023563171954
+%23604%|1|-37.7379485272442|144.892312563576
+%23604%|2|-37.7383144979665|144.892282565976
+%23604%|3|-37.7382665018062|144.89287951822
+%23604%|4|-37.737924529164|144.8928885175
+%23605%|1|-38.1454020121244|144.335481762597
+%23605%|2|-38.1456179948458|144.337290617888
+%23605%|3|-38.1457379852465|144.338298537255
+%23605%|4|-38.1468448966936|144.338103552853
+%23605%|5|-38.1465059238115|144.336159708361
+%23605%|6|-38.1463529360505|144.335316775796
+%23605%|7|-38.1459149710877|144.335400769076
+%23606%|1|-37.7865702568783|144.927521386607
+%23606%|2|-37.7866422511188|144.928697292535
+%23606%|3|-37.7873891913636|144.928652296134
+%23606%|4|-37.7873321959232|144.927476390207
+%23607%|1|-38.169538821564|144.392572780354
+%23607%|2|-38.1695688191642|144.393310721319
+%23607%|3|-38.1700607798073|144.393265724919
+%23607%|4|-38.1699677872467|144.392404793793
+%23607%|5|-38.1696048162844|144.392236807232
+%23608%|1|-37.8839471003482|145.27782886863
+%23608%|2|-37.8840940885891|145.27783486815
+%23608%|3|-37.8840640909889|145.278176840792
+%23608%|4|-37.8838991041879|145.278176840792
+%23609%|1|-37.8781455665243|145.126991535528
+%23609%|2|-37.878250558125|145.127897463054
+%23609%|3|-37.8787125211679|145.127822469054
+%23609%|4|-37.8784875391665|145.126862545848
+%23610%|1|-38.1836048932695|145.089621018342
+%23610%|2|-38.1843848308745|145.090070982345
+%23610%|3|-38.1841568491131|145.09077592595
+%23610%|4|-38.183199925667|145.090616938668
+%23611%|1|-38.2368622824963|146.424570944587
+%23611%|2|-38.2345418458831|146.434626169911
+%23611%|3|-38.2393192153809|146.436355122682
+%23611%|4|-38.2408206743659|146.427073376229
+%23611%|5|-38.2391827191095|146.426072403572
+%23611%|6|-38.2391372203524|146.426072403572
+%23612%|1|-38.2453040772739|145.048265817135
+%23612%|2|-38.245334074874|145.049447722582
+%23612%|3|-38.2461380105592|145.049474720422
+%23612%|4|-38.2460210199184|145.048148826494
+%23613%|1|-38.2237326737834|145.039821534701
+%23613%|2|-38.2237506723435|145.039884529662
+%23613%|3|-38.223822666584|145.039860531582
+%23613%|4|-38.2238106675439|145.039821534701
+%23613%|5|-38.2237806699437|145.039815535181
+%23614%|1|-38.0080862231616|145.085989992926
+%23614%|2|-38.0079002380404|145.086337965088
+%23614%|3|-38.0081102212417|145.086505951649
+%23614%|4|-38.0082842073228|145.086148980207
+%23615%|1|-37.9336150011999|145.039191535877
+%23615%|2|-37.9337169930406|145.039974473242
+%23615%|3|-37.934100962323|145.039956474682
+%23615%|4|-37.9341489584833|145.039458514519
+%23615%|5|-37.9339569738421|145.039056546676
+%23616%|1|-37.7671800917569|144.92186848646
+%23616%|2|-37.7670751001562|144.920827569734
+%23616%|3|-37.7684159928848|144.920590588692
+%23616%|4|-37.768457989525|144.921724497979
+%23616%|5|-37.7671800917569|144.921922482141
+%23616%|6|-37.7671800917569|144.921922482141
+%23616%|7|-37.7671800917569|144.921904483581
+%23619%|1|-37.667394926461|145.059951121307
+%23619%|2|-37.6662842261509|145.061424795574
+%23619%|3|-37.6670174335451|145.062223338281
+%23619%|4|-37.6676707866687|145.062898469842
+%23619%|5|-37.6679684253139|145.062491939009
+%23619%|6|-37.6682007286467|145.062295933072
+%23619%|7|-37.6685346646876|145.062027332344
+%23620%|1|-37.8336598096206|145.074911865694
+%23620%|2|-37.8340956104778|145.079245663107
+%23620%|3|-37.8367951546767|145.078785651091
+%23620%|4|-37.8364561984544|145.074536592733
+%23621%|1|-37.9155894277008|144.994753650441
+%23621%|2|-37.9159044025028|144.995104622363
+%23621%|3|-37.9155804284207|144.995425596685
+%23621%|4|-37.9153254488191|144.994915637482
+%23621%|5|-37.9154124418597|144.99467865644
+%23622%|1|-37.9811267340802|145.060658545799
+%23622%|2|-37.981659302765|145.065954645498
+%23622%|3|-37.989381548695|145.066072994095
+%23622%|4|-37.9873400354032|145.058469096761
+%23623%|1|-37.6848266040558|144.563235911502
+%23623%|2|-37.6879521168456|144.563272538605
+%23623%|3|-37.6879399078112|144.567338147039
+%23623%|4|-37.6845213781974|144.567814299378
+%23623%|5|-37.6845213781974|144.567814299378
+%23625%|1|-37.8624859672261|145.026178701548
+%23625%|2|-37.8628189405883|145.027309611075
+%23625%|3|-37.8636948705139|145.027261614914
+%23625%|4|-37.8633199005115|145.025881725306
+%23626%|1|-37.7600739572834|145.349473347732
+%23626%|2|-37.7601009551236|145.350358276938
+%23626%|3|-37.7605119222462|145.350331279098
+%23626%|4|-37.7604909239261|145.349374355652
+%23627%|1|-38.4763101221891|145.944001565313
+%23627%|2|-38.4757971632258|145.944880494999
+%23627%|3|-38.4765381039506|145.945561440523
+%23627%|4|-38.4770120660336|145.944652513237
+%23627%|5|-38.4767210893118|145.944118555954
+%23628%|1|-38.0195165728049|144.404036430328
+%23628%|2|-38.0194294261476|144.411995825028
+%23628%|3|-38.0250649099862|144.411792482827
+%23628%|4|-38.0260525721023|144.403310208183
+%23629%|1|-36.8088132943286|144.240969607356
+%23629%|2|-36.8094372444126|144.244246845177
+%23629%|3|-36.8128689698746|144.244047361136
+%23629%|4|-36.8127159821136|144.242162011964
+%23629%|5|-36.8126289890731|144.239864195789
+%23630%|1|-38.1408641931802|145.206891371777
+%23630%|2|-38.1405282200581|145.207734304343
+%23630%|3|-38.1410351795013|145.208109274345
+%23630%|4|-38.1413351555032|145.207227344899
+%23631%|1|-37.6724076629117|145.013974221816
+%23631%|2|-37.6724316609919|145.014607171181
+%23631%|3|-37.6728096307543|145.0145231779
+%23631%|4|-37.6727466357939|145.013908227096
+%23632%|1|-37.8797445952074|147.98741602002
+%23632%|2|-37.8797415954474|147.987781990743
+%23632%|3|-37.8799695772089|147.987760992423
+%23632%|4|-37.8798615858482|147.987254032979
+%23633%|1|-37.2480733023734|144.453405806859
+%23633%|2|-37.2477343294912|144.450932504723
+%23633%|3|-37.2488112433381|144.450733020682
+%23633%|4|-37.2490692226998|144.453225821258
+%23635%|1|-37.8032258309996|145.311004003299
+%23635%|2|-37.8032384703307|145.311989871121
+%23635%|3|-37.8037440435728|145.31199935062
+%23635%|4|-37.8036366092588|145.310896568985
+%23636%|1|-37.9933150899928|145.172474216463
+%23636%|2|-37.9933270890329|145.172978176146
+%23636%|3|-37.9935790688745|145.172954178066
+%23636%|4|-37.9935580705544|145.172456217903
+%23637%|1|-37.8058210553202|145.030344261556
+%23637%|2|-37.8058240550802|145.030725231078
+%23637%|3|-37.8060280387615|145.030692233718
+%23637%|4|-37.8059770428412|145.030287266115
+%23639%|1|-38.1528891024718|145.164312342213
+%23639%|2|-38.1539660163187|145.167555082793
+%23639%|3|-38.1530030933525|145.168048543317
+%23639%|4|-38.1518631845452|145.164808802496
+%23640%|1|-38.1534915967387|145.16572580959
+%23640%|2|-38.1538245701008|145.166657235076
+%23640%|3|-38.1542265379434|145.166387256674
+%23640%|4|-38.1538125710607|145.165487328668
+%23643%|1|-37.8841691594249|144.699593290426
+%23643%|2|-37.8800982870892|144.708715968191
+%23643%|3|-37.8751936216245|144.705920308876
+%23643%|4|-37.8778911876301|144.696748584457
+%23643%|5|-37.8778911876301|144.696748584457
+%23644%|1|-37.8624542653193|144.687188556265
+%23644%|2|-37.8630722158833|144.687122561544
+%23644%|3|-37.8631322110836|144.68807648523
+%23644%|4|-37.8624302672391|144.688151479231
+%23645%|1|-38.1722941845709|144.322988364124
+%23645%|2|-38.1723931766515|144.324056278691
+%23645%|3|-38.1728851372946|144.32398428445
+%23645%|4|-38.1727141509735|144.322802379003
+%23646%|1|-37.7696719592257|144.886623747887
+%23646%|2|-37.7703551868094|144.892160996895
+%23646%|3|-37.7761688324303|144.891021249062
+%23646%|4|-37.7756533061626|144.885589589772
+%23647%|1|-37.7588988041483|145.068179046452
+%23647%|2|-37.7588988041483|145.068272039012
+%23647%|3|-37.7589977962289|145.068194045252
+%23647%|4|-37.7589527998286|145.068167047412
+%23648%|1|-37.8207259803216|145.036673426926
+%23648%|2|-37.8208819678426|145.037558356131
+%23648%|3|-37.8212269402448|145.037231382289
+%23648%|4|-37.8210319558435|145.036649428846
+%23648%|5|-37.8208039740821|145.036466443485
+%23649%|1|-37.8472350851932|145.004819541637
+%23649%|2|-37.8473880729542|145.005995447564
+%23649%|3|-37.8482760019199|145.005728468922
+%23649%|4|-37.8481170146388|145.004501567075
+%23652%|1|-37.936955025198|145.001193599712
+%23652%|2|-37.9370150203984|145.001649563235
+%23652%|3|-37.9373749916007|145.001430580754
+%23652%|4|-37.9372130045596|145.001055610751
+%23654%|1|-37.7063179063805|144.938581201425
+%23654%|2|-37.7072294818218|144.938447971168
+%23654%|3|-37.707509966573|144.940830338523
+%23654%|4|-37.7066018971911|144.940984605136
+%23655%|1|-37.7040029507974|145.096977341989
+%23655%|2|-37.7044082342919|145.100632540299
+%23655%|3|-37.7046223463268|145.100663127732
+%23655%|4|-37.7049358675207|145.100601952865
+%23655%|5|-37.7055093818998|145.100517837423
+%23655%|6|-37.7050735109717|145.096801464246
+%23656%|1|-36.7666714774246|144.264739987723
+%23656%|2|-36.7659005390996|144.265969889331
+%23656%|3|-36.7665034908635|144.266560842055
+%23656%|4|-36.7673014270286|144.265237947886
+%23657%|1|-37.8884930597552|145.040784487641
+%23657%|2|-37.8885350563955|145.041591423086
+%23657%|3|-37.889081012719|145.041723412527
+%23657%|4|-37.8893029949604|145.041360441565
+%23657%|5|-37.8892130021598|145.04064649868
+%23658%|1|-37.6869763356816|144.88438530335
+%23658%|2|-37.6870753277623|144.885495214557
+%23658%|3|-37.6877892706469|144.885495214557
+%23658%|4|-37.6877382747265|144.884250314149
+%23658%|5|-37.6872793114436|144.884004333828
+%23659%|1|-38.1367550484825|144.349032569932
+%23659%|2|-38.1380539445708|144.34877909021
+%23659%|3|-38.1377989649692|144.346568267076
+%23659%|4|-38.1364850700808|144.346863743438
+%23660%|1|-38.1401870392884|145.126593982709
+%23660%|2|-38.1404510181701|145.127262929193
+%23660%|3|-38.1409789759335|145.127061945272
+%23660%|4|-38.1404990143304|145.126285007427
+%23661%|1|-38.0161438524569|145.30097091087
+%23661%|2|-38.0161438524569|145.301945832876
+%23661%|3|-38.0170317814226|145.301912835516
+%23661%|4|-38.0170167826225|145.30092291471
+%23662%|1|-37.835523050156|145.16392399568
+%23662%|2|-37.8355350491961|145.164418956083
+%23662%|3|-37.8357720302376|145.164418956083
+%23662%|4|-37.8358410247181|145.164130979121
+%23662%|5|-37.8356820374371|145.163759008879
+%23663%|1|-37.8007750851932|144.983060050396
+%23663%|2|-37.8016120182386|144.982913062155
+%23663%|3|-37.8016900119991|144.983764994001
+%23663%|4|-37.8008380801536|144.983923981282
+%23664%|1|-37.888852813825|145.294953274975
+%23664%|2|-37.8896670580253|145.294953274975
+%23664%|3|-37.8896670580253|145.292103420274
+%23664%|4|-37.8891674081751|145.292103420274
+%23665%|1|-36.7032386291005|144.31654879469
+%23665%|2|-36.7046905129497|144.316269817008
+%23665%|3|-36.7051674747928|144.316176824447
+%23665%|4|-36.7057194306363|144.320670464956
+%23665%|5|-36.7038025839841|144.321163925479
+%23666%|1|-37.6529836294377|145.014653082931
+%23666%|2|-37.6541362892756|145.021082980581
+%23666%|3|-37.657274857027|145.018805435841
+%23666%|4|-37.6562471844004|145.012903261972
+%23667%|1|-37.9751982794027|145.258238147429
+%23667%|2|-37.9757913295393|145.263151991419
+%23667%|3|-37.9800838829094|145.26233301742
+%23667%|4|-37.980027401944|145.257193249569
+%23668%|1|-37.7143330093593|145.148406599472
+%23668%|2|-37.7134030837533|145.148706575474
+%23668%|3|-37.7137600551956|145.151928317735
+%23668%|4|-37.7147229781618|145.151757331414
+%23668%|5|-37.7144949964003|145.14960800336
+%23670%|1|-37.8109486154947|145.228801373181
+%23670%|2|-37.8109456157346|145.230313252231
+%23670%|3|-37.8123825007838|145.230337250311
+%23670%|4|-37.8123705017438|145.22860038926
+%23670%|5|-37.8115095706182|145.228156424777
+%23671%|1|-37.7496607761224|144.860194763844
+%23671%|2|-37.7497027727626|144.861118689929
+%23671%|3|-37.7506806945289|144.861118689929
+%23671%|4|-37.7506057005284|144.860005778962
+%23671%|5|-37.7505637038882|144.860017778002
+%23672%|1|-38.1726518619458|144.568271303362
+%23672%|2|-38.1719354541502|144.568398882833
+%23672%|3|-38.1717391780418|144.566632397857
+%23672%|4|-38.1724653996428|144.566495004581
+%23673%|1|-38.1353529541637|145.85732649868
+%23673%|2|-38.1358869114471|145.858223426926
+%23673%|3|-38.1364118694504|145.858082438205
+%23673%|4|-38.1361688888889|145.857452488601
+%23673%|5|-38.1356739284857|145.857050520758
+%23674%|1|-37.7865120422366|145.126324898008
+%23674%|2|-37.7862450635949|145.127461807055
+%23674%|3|-37.7872799808015|145.127518802496
+%23674%|4|-37.7872319846412|145.126231905448
+%23675%|1|-37.7892571982099|145.157548931773
+%23675%|2|-37.7892931953302|145.158463858578
+%23675%|3|-37.7897881557333|145.158424861698
+%23675%|4|-37.7896471670124|145.157449939692
+%23675%|5|-37.789416185491|145.157389944491
+%23676%|1|-37.9826510685338|145.131654227043
+%23676%|2|-37.9850550246045|145.13516562355
+%23676%|3|-37.981408574385|145.138109794468
+%23676%|4|-37.9788155431177|145.135057580581
+%23677%|1|-37.7504143428019|144.7729338036
+%23677%|2|-37.7504203423219|144.773605749844
+%23677%|3|-37.750741316644|144.773536755364
+%23677%|4|-37.7506273257633|144.772873808399
+%23679%|1|-37.8000659107271|145.282408560116
+%23679%|2|-37.8001409047276|145.282969515239
+%23679%|3|-37.8004528797696|145.282888521719
+%23679%|4|-37.8003808855292|145.282285569955
+%23680%|1|-38.1099151545711|145.280745156852
+%23680%|2|-38.1099151545711|145.281429102136
+%23680%|3|-38.110527105615|145.281423102616
+%23680%|4|-38.1104161144943|145.280673162611
+%23682%|1|-37.5969790539402|144.937756392922
+%23682%|2|-37.598190956988|144.937900381403
+%23682%|3|-37.5980679668272|144.938710316608
+%23682%|4|-37.5968440647394|144.938503333167
+%23682%|5|-37.5968440647394|144.938503333167
+%23683%|1|-38.0735642178901|144.35489406911
+%23683%|2|-38.0740018742941|144.3585516262
+%23683%|3|-38.076534029203|144.358468263076
+%23683%|4|-38.0761797359236|144.354373049581
+%23685%|1|-37.7429303731394|144.963632920038
+%23685%|2|-37.7430833609004|144.965048806767
+%23685%|3|-37.7448772173919|144.964748830766
+%23685%|4|-37.744739228431|144.963380940197
+%23687%|1|-37.9400604412035|145.103705691941
+%23687%|2|-37.9400636562667|145.104551253558
+%23687%|3|-37.9404333885327|145.104522317989
+%23687%|4|-37.9403562270163|145.103615670172
+%23688%|1|-37.7577361825792|145.313725690142
+%23688%|2|-37.7577871784996|145.314529625827
+%23688%|3|-37.7581591487419|145.314448632306
+%23688%|4|-37.7581051530616|145.313611699261
+%23689%|1|-38.0532419222462|145.115393532517
+%23689%|2|-38.0530919342453|145.11584649628
+%23689%|3|-38.0538178761699|145.116182469402
+%23689%|4|-38.0539348668107|145.115708507319
+%23689%|5|-38.0536648884089|145.115372534197
+%23690%|1|-37.8866820772565|145.080995668171
+%23690%|2|-37.8923329629491|145.087435783709
+%23690%|3|-37.8842196801391|145.089235227757
+%23690%|4|-37.8812837451145|145.081911174792
+%23691%|1|-38.1022190395315|145.182836745258
+%23691%|2|-38.1022250390516|145.183451696061
+%23691%|3|-38.1025520128936|145.183445696541
+%23691%|4|-38.1025520128936|145.182833745498
+%23692%|1|-37.8849339812815|145.057915507559
+%23692%|2|-37.8853629469642|145.057852512599
+%23692%|3|-37.8854319414447|145.058734442045
+%23692%|4|-37.8849789776818|145.058764439645
+%23693%|1|-37.884481069792|145.054412036702
+%23693%|2|-37.8849906322528|145.057667574646
+%23693%|3|-37.8890388229135|145.056874921929
+%23693%|4|-37.8876516806591|145.053534456908
+%23694%|1|-37.7974858233677|144.968686961491
+%23694%|2|-37.7975978205842|144.969442942702
+%23694%|3|-37.7986104620834|144.969204948617
+%23694%|4|-37.7985684631272|144.968462967058
+%23697%|1|-37.8291191312695|145.059176419486
+%23697%|2|-37.82920312455|145.059611384689
+%23697%|3|-37.8296440892729|145.059527391409
+%23697%|4|-37.8296230909527|145.059092426206
+%23697%|5|-37.829350112791|145.059047429806
+%23698%|1|-37.8528899544036|145.134129536837
+%23698%|2|-37.8529289512839|145.134732488601
+%23698%|3|-37.8533489176866|145.134696491481
+%23698%|4|-37.8532409263259|145.134021545476
+%23699%|1|-37.6946532352374|145.05836059608
+%23699%|2|-37.6947077013555|145.058820532188
+%23699%|3|-37.6950102909004|145.058735807116
+%23699%|4|-37.6949013586642|145.058257715635
+%23700%|1|-37.7700328794595|144.959925817499
+%23700%|2|-37.7700418787396|144.960261790621
+%23700%|3|-37.7702068655406|144.960240792301
+%23700%|4|-37.7701498701003|144.959883820859
+%23701%|1|-37.6798580830841|144.917772485773
+%23701%|2|-37.6800620667654|144.918411434657
+%23701%|3|-37.6806590190093|144.917967470174
+%23701%|4|-37.6801640586061|144.917445511931
+%23702%|1|-37.7822415598938|144.863228067668
+%23702%|2|-37.7823045548542|144.864706949358
+%23702%|3|-37.7831534869397|144.864715948638
+%23702%|4|-37.7830904919793|144.862967088547
+%23703%|1|-37.8178717776506|145.11881131752
+%23703%|2|-37.8185297347948|145.123526677054
+%23703%|3|-37.822450062779|145.122813890148
+%23703%|4|-37.8219017651588|145.117385743708
+%23704%|1|-37.8626246768773|145.285594726719
+%23704%|2|-37.8626126778372|145.285369744718
+%23704%|3|-37.8624326922361|145.283761873347
+%23704%|4|-37.8606658335848|145.28411284527
+%23704%|5|-37.8599668895003|145.283754373947
+%23704%|6|-37.8597329082188|145.284634803513
+%23704%|7|-37.8598378998195|145.284583807593
+%23704%|8|-37.8602488669421|145.284811789354
+%23704%|9|-37.8613887757494|145.285417740878
+%23704%|10|-37.8614457711898|145.285423740398
+%23704%|11|-37.8615237649502|145.285615725039
+%23704%|12|-37.8623546984756|145.285593226839
+%23704%|13|-37.8625016867165|145.285593226839
+%23705%|1|-37.8314856721601|145.146349682072
+%23705%|2|-37.8317640684931|145.148312376219
+%23705%|3|-37.8306922426113|145.148479414019
+%23705%|4|-37.8304973651782|145.146641998222
+%23705%|5|-37.8309149596776|145.146140884822
+%23705%|6|-37.8309149596776|145.146140884822
+%23706%|1|-37.8119018766499|145.152744413247
+%23706%|2|-37.8119468730502|145.154004312455
+%23706%|3|-37.8127568082553|145.153944317255
+%23706%|4|-37.8125708231342|145.152642421406
+%23706%|5|-37.8121598560115|145.152390441565
+%23707%|1|-38.0308524291384|145.343551180171
+%23707%|2|-38.0313064604939|145.346953467081
+%23707%|3|-38.0291719234719|145.346982949637
+%23707%|4|-38.0290893723164|145.343946246415
+%23707%|5|-38.0290893723164|145.343946246415
+%23708%|1|-37.9195769474442|145.041636493881
+%23708%|2|-37.9199309191265|145.04159149748
+%23708%|3|-37.9199309191265|145.041987465803
+%23708%|4|-37.9196009455244|145.042047461003
+%23708%|5|-37.9194839548836|145.041834478042
+%23709%|1|-36.7661566367015|144.278304199058
+%23709%|2|-36.7633222240652|144.282551231584
+%23709%|3|-36.764367929698|144.283757462204
+%23709%|4|-36.7646431153909|144.283950092189
+%23709%|5|-36.765138449638|144.284188586456
+%23709%|6|-36.767862787997|144.280157116056
+%23711%|1|-38.0898358085692|144.337336805451
+%23711%|2|-38.0898988035296|144.338059747616
+%23711%|3|-38.0902137783316|144.338008751695
+%23711%|4|-38.0900517912906|144.337303808091
+%23712%|1|-38.1687450280427|144.388971701851
+%23712%|2|-38.1688950160437|144.389565654335
+%23712%|3|-38.169257987006|144.389469662015
+%23712%|4|-38.168952011484|144.388830713131
+%23712%|5|-38.1687690261229|144.38877671745
+%23714%|1|-37.8406247706291|145.262919408507
+%23714%|2|-37.8406337699092|145.263216384749
+%23714%|3|-37.8410627355919|145.263192386669
+%23714%|4|-37.8410267384717|145.262949406108
+%23714%|5|-37.8407927571902|145.262868412587
+%23715%|1|-38.1941980417567|145.15928450444
+%23715%|2|-38.1944380225582|145.160217429806
+%23715%|3|-38.1949539812815|145.159974449244
+%23715%|4|-38.1946600047996|145.159131516679
+%23716%|1|-37.7759559971203|144.961202963763
+%23716%|2|-37.7759649964003|144.961616930645
+%23716%|3|-37.7761839788817|144.961556935445
+%23716%|4|-37.7761449820015|144.961130969522
+%23717%|1|-38.0446085289177|144.170592615791
+%23717%|2|-38.0443985457164|144.170790599952
+%23717%|3|-38.0447885145189|144.171474545236
+%23717%|4|-38.0450914902808|144.171264562035
+%23718%|1|-37.8114090699896|145.082671276507
+%23718%|2|-37.8115934777041|145.084141415787
+%23718%|3|-37.8129867804359|145.083890416398
+%23718%|4|-37.8127460259198|145.082317828388
+%23719%|1|-37.5643155387569|143.862601005519
+%23719%|2|-37.564333537317|143.86273599472
+%23719%|3|-37.5645945164387|143.86269399808
+%23719%|4|-37.5645105231582|143.862532011039
+%23720%|1|-37.8684269930406|144.990670009599
+%23720%|2|-37.8681600143989|144.99075400288
+%23720%|3|-37.86833400048|144.991308958483
+%23720%|4|-37.8686249772018|144.991164970002
+%23720%|5|-37.8685739812815|144.990706006719
+%23721%|1|-37.8251872492076|147.629928558026
+%23721%|2|-37.8250972564071|147.63041751891
+%23721%|3|-37.8255142230497|147.630567506911
+%23721%|4|-37.8255772180101|147.629715575065
+%23721%|5|-37.8252682427282|147.629598584424
+%23722%|1|-37.8658120686345|145.09281050156
+%23722%|2|-37.8661270434365|145.095538783297
+%23722%|3|-37.8671739596832|145.095361797456
+%23722%|4|-37.8668619846412|145.092728008159
+%23724%|1|-37.8309223767456|144.843377053814
+%23724%|2|-37.8314704369331|144.847934606951
+%23724%|3|-37.83640297862|144.847242320399
+%23724%|4|-37.8358549184325|144.842511695623
+%23725%|1|-37.8264345243639|144.84879064847
+%23725%|2|-37.830797827719|144.848132036643
+%23725%|3|-37.8301941002108|144.84316500578
+%23725%|4|-37.8259405654935|144.843741291129
+%23726%|1|-37.7148196676529|144.886478954704
+%23726%|2|-37.7148916618933|144.887612863991
+%23726%|3|-37.7154886141372|144.887570867351
+%23726%|4|-37.7153356263762|144.886262971982
+%23727%|1|-37.7960445304152|145.359881341744
+%23727%|2|-37.7964905423514|145.359681634907
+%23727%|3|-37.7966436509265|145.359648350435
+%23727%|4|-37.7968000879489|145.359458628939
+%23727%|5|-37.796953196524|145.360603614805
+%23727%|6|-37.796171011412|145.360924809968
+%23728%|1|-37.8579020206383|144.889179992801
+%23728%|2|-37.858004012479|144.889947931365
+%23728%|3|-37.8597408735301|144.89057788097
+%23728%|4|-37.8596868778498|144.8891049988
+%23728%|5|-37.8584569762419|144.889326981042
+%23728%|6|-37.8583789824814|144.889293983681
+%23728%|7|-37.8581120038397|144.889188992081
+%23728%|8|-37.8579770146388|144.889164994001
+%23729%|1|-37.8593464636833|144.900969991615
+%23729%|2|-37.859495476715|144.902109941308
+%23729%|3|-37.8596519403983|144.902035434792
+%23729%|4|-37.8599052625521|144.902005632186
+%23729%|5|-37.8600319236291|144.902005632186
+%23729%|6|-37.8601436834028|144.900865682493
+%23729%|7|-37.8593017597738|144.900582557733
+%23730%|1|-37.9059870650348|145.189225985121
+%23730%|2|-37.9060590592753|145.190221905448
+%23730%|3|-37.9068989920806|145.190065917927
+%23730%|4|-37.9067850011999|145.18905799856
+%23731%|1|-37.8440290112791|144.781068567315
+%23731%|2|-37.8441879985601|144.78188450204
+%23731%|3|-37.8447189560835|144.781701516679
+%23731%|4|-37.8444999736021|144.780830086393
+%23732%|1|-37.6778351231454|144.887560363527
+%23732%|2|-37.6781604908934|144.888225245447
+%23732%|3|-37.6794195226137|144.888097927632
+%23732%|4|-37.6791436673492|144.885693035582
+%23732%|5|-37.6786839085749|144.885693035582
+%23733%|1|-37.8768280585553|144.682992493401
+%23733%|2|-37.8775779985601|144.68286950324
+%23733%|3|-37.8775929973602|144.682674518838
+%23733%|4|-37.8775150035997|144.681993573314
+%23733%|5|-37.8767350659947|144.682029570434
+%23734%|1|-37.9621060067195|145.149650518359
+%23734%|2|-37.9621989992801|145.150322464603
+%23734%|3|-37.9628649460043|145.150157477802
+%23734%|4|-37.9627269570434|145.149479532037
+%23734%|5|-37.9623129901608|145.149194554836
+%23736%|1|-37.5797185490467|144.72936190917
+%23736%|2|-37.5776097177532|144.73088578726
+%23736%|3|-37.5768747765485|144.731425744064
+%23736%|4|-37.5770127655093|144.731704721745
+%23736%|5|-37.5775407232727|144.732157685508
+%23736%|6|-37.5777777043142|144.73243666319
+%23736%|7|-37.5803005024904|144.730617308738
+%23737%|1|-37.9337150203984|145.15569450204
+%23737%|2|-37.9336880225582|145.156198461723
+%23737%|3|-37.9347049412047|145.156135466763
+%23737%|4|-37.9347049412047|145.155505517159
+%23738%|1|-38.2236810487161|145.174756508279
+%23738%|2|-38.2251449316055|145.175323462923
+%23738%|3|-38.2248569546436|145.176586361891
+%23738%|4|-38.2236330525558|145.175395457163
+%23738%|5|-38.2237410439165|145.175107480202
+%23739%|1|-37.7116563913522|144.888530926881
+%23739%|2|-37.7117927456251|144.888536381052
+%23739%|3|-37.7119072832143|144.888607285274
+%23739%|4|-37.7120381833163|144.888765456231
+%23739%|5|-37.7123381627168|144.889136339853
+%23739%|6|-37.7128617631248|144.889529040159
+%23739%|7|-37.7132271925762|144.888869085478
+%23739%|8|-37.7126763213136|144.88822549331
+%23739%|9|-37.7119836416072|144.887789159637
+%23740%|1|-37.7842310271178|145.12425650588
+%23740%|2|-37.7852989416847|145.124454490041
+%23740%|3|-37.7863308591313|145.124652474202
+%23740%|4|-37.7866698320134|145.123499066475
+%23740%|5|-37.7843330189585|145.122674132469
+%23741%|1|-36.3781850707943|145.399936983441
+%23741%|2|-36.3790460019198|145.39975099832
+%23741%|3|-36.3792349868011|145.401127888169
+%23741%|4|-36.3783470578354|145.40131987281
+%23742%|1|-38.1125942466749|145.156343711983
+%23742%|2|-38.1127052377956|145.156985660627
+%23742%|3|-38.1130502101978|145.156901667347
+%23742%|4|-38.113083207558|145.156280717023
+%23743%|1|-38.1006350011999|145.182363530118
+%23743%|2|-38.1007099952004|145.183026477082
+%23743%|3|-38.100176037917|145.183128468923
+%23743%|4|-38.1000410487161|145.182354530838
+%23744%|1|-37.9483344950069|145.000529896291
+%23744%|2|-37.9484274875675|145.000517897251
+%23744%|3|-37.9489584450909|145.000643887172
+%23744%|4|-37.9507553013424|145.002485739824
+%23744%|5|-37.949753381496|145.002791715346
+%23745%|1|-37.7305499208063|145.015222107031
+%23745%|2|-37.7302409455244|145.014982126229
+%23745%|3|-37.7292150275978|145.01513211423
+%23745%|4|-37.728780062395|145.016368015358
+%23745%|5|-37.7284980849532|145.017054960403
+%23745%|6|-37.7289750467963|145.017549920806
+%23745%|7|-37.7293290184785|145.017012963762
+%23745%|8|-37.7295000047996|145.016745985121
+%23745%|9|-37.7296919894409|145.016455008399
+%23745%|10|-37.7297699832014|145.016338017758
+%23746%|1|-37.7402980105592|145.002679553636
+%23746%|2|-37.7409789560835|145.002583561315
+%23746%|3|-37.7410809479242|145.003480489561
+%23746%|4|-37.7403910031198|145.003591480682
+%23747%|1|-37.7911520038397|144.889483522918
+%23747%|2|-37.7907680345572|144.888499601632
+%23747%|3|-37.790099088073|144.888727583393
+%23747%|4|-37.790105087593|144.889684506839
+%23748%|1|-37.7294008812264|144.928026890076
+%23748%|2|-37.7288285300318|144.929334579892
+%23748%|3|-37.7304735659156|144.929076832334
+%23748%|4|-37.7303939674051|144.928333912903
+%23749%|1|-37.9556780561555|145.182191533478
+%23749%|2|-37.9564129973602|145.183007468203
+%23749%|3|-37.9556150611951|145.183481430286
+%23749%|4|-37.9550151091913|145.182660995921
+%23750%|1|-38.0253799760019|145.306954358051
+%23750%|2|-38.0261959107271|145.30671587713
+%23750%|3|-38.0248820158387|145.304794530838
+%23750%|4|-38.0242160691145|145.305286491481
+%23751%|1|-37.903311012719|145.159146189104
+%23751%|2|-37.9035569930406|145.161384010079
+%23751%|3|-37.9058578089753|145.160949044876
+%23751%|4|-37.9058458099352|145.158951204703
+%23752%|1|-38.2391730453564|146.408701519078
+%23752%|2|-38.2394760211183|146.409784432445
+%23752%|3|-38.2398419918406|146.409730436765
+%23752%|4|-38.2396410079194|146.40898949604
+%23752%|5|-38.2395030189585|146.408470537557
+%23753%|1|-37.9371840172786|145.066868639309
+%23753%|2|-37.9374329973602|145.06855600432
+%23753%|3|-37.9389838732901|145.068226030718
+%23753%|4|-37.9388668826494|145.066510167987
+%23754%|1|-37.9113990280778|145.122324550036
+%23754%|2|-37.9118969882409|145.123074490041
+%23754%|3|-37.9122869570434|145.123356467483
+%23754%|4|-37.9126499280058|145.123065490761
+%23754%|5|-37.9126079313655|145.122417542597
+%23754%|6|-37.9125419366451|145.122120566355
+%23755%|1|-37.816984012479|145.218494722822
+%23755%|2|-37.8170410079194|145.220428068155
+%23755%|3|-37.8188858603312|145.220447566595
+%23755%|4|-37.8188168658507|145.21820074634
+%23756%|1|-37.6666387401008|145.059208267339
+%23756%|2|-37.665729812815|145.060739644828
+%23756%|3|-37.6663297648188|145.061368094552
+%23756%|4|-37.6674006791457|145.059934209263
+%23756%|5|-37.6670527069834|145.059571238301
+%23757%|1|-37.6828950011999|144.588106520278
+%23757%|2|-37.6828710031198|144.588571483081
+%23757%|3|-37.6830149916007|144.588616479482
+%23757%|4|-37.6830239908807|144.588064523638
+%23757%|5|-37.6829549964003|144.588028526518
+%23758%|1|-37.8170982342261|144.967251658534
+%23758%|2|-37.8174399761689|144.967411753858
+%23758%|3|-37.8175231025874|144.967113114503
+%23758%|4|-37.8172029119383|144.966959176691
+%23759%|1|-37.8763070434365|145.09146650108
+%23759%|2|-37.8763940364771|145.092165445164
+%23759%|3|-37.8772609671226|145.092075452364
+%23759%|4|-37.8771769738421|145.091310513559
+%23760%|1|-37.7795983353136|145.078652978172
+%23760%|2|-37.7791633701109|145.078643978892
+%23760%|3|-37.7791333725107|145.080461833464
+%23760%|4|-37.7795293408332|145.080341843063
+%23761%|1|-37.761955099592|144.972429553636
+%23761%|2|-37.7620630909527|144.973326481881
+%23761%|3|-37.7621980801536|144.973344480442
+%23761%|4|-37.7642409167267|144.972975509959
+%23761%|5|-37.7637249580034|144.972108579314
+%23762%|1|-37.7563380705544|145.347427139744
+%23762%|2|-37.7566920422366|145.347166160623
+%23762%|3|-37.7570040172786|145.34834206655
+%23762%|4|-37.7565810511159|145.348417060551
+%23764%|1|-37.9922710559155|145.162236556276
+%23764%|2|-37.9923610487161|145.163019493641
+%23764%|3|-37.9929460019198|145.16290850252
+%23764%|4|-37.9928470098392|145.162161562275
+%23765%|1|-38.00628299976|145.272983522918
+%23765%|2|-38.0063069978402|145.27322950324
+%23765%|3|-38.0066639692825|145.27327449964
+%23765%|4|-38.0070059419246|145.273124511639
+%23765%|5|-38.0070209407247|145.272815536357
+%23765%|6|-38.0069549460043|145.272584554836
+%23766%|1|-37.8733209289189|145.16707863037
+%23766%|2|-37.8735789082806|145.169311951705
+%23766%|3|-37.8745628295669|145.169122966824
+%23766%|4|-37.8743648454056|145.166840149449
+%23767%|1|-38.1453020014399|145.12010949844
+%23767%|2|-38.1449900263979|145.120250487161
+%23767%|3|-38.1446210559155|145.120487468203
+%23767%|4|-38.1448640364771|145.121012426206
+%23767%|5|-38.1456169762419|145.120835440365
+%23768%|1|-38.0198469978402|145.30814049916
+%23768%|2|-38.0203359587233|145.308044506839
+%23768%|3|-38.0201919702424|145.307432555796
+%23768%|4|-38.0198589968802|145.307381559875
+%23768%|5|-38.0197690040797|145.307474552436
+%23769%|1|-37.7186946162148|144.962742233173
+%23769%|2|-37.7191823783161|144.962936474718
+%23769%|3|-37.719165112401|144.962522092756
+%23769%|4|-37.7191176311345|144.962042963612
+%23769%|5|-37.718729148045|144.961995482346
+%23769%|6|-37.7186989326935|144.962224255721
+%23770%|1|-37.8884267752628|145.295682356619
+%23770%|2|-37.8879408141397|145.29582334534
+%23770%|3|-37.8879288150996|145.297344223669
+%23770%|4|-37.8888137443053|145.29736822175
+%23770%|5|-37.8885617644637|145.296744271666
+%23770%|6|-37.8885227675834|145.296633280545
+%23770%|7|-37.888306784862|145.296528288944
+%23770%|8|-37.8882887863019|145.296333304543
+%23770%|9|-37.8883307829422|145.296111322301
+%23771%|1|-37.8825685201997|145.276291503631
+%23771%|2|-37.883058042442|145.276445441443
+%23771%|3|-37.882981073536|145.277135082841
+%23771%|4|-37.8827809543803|145.277406013391
+%23771%|5|-37.8827286155242|145.277165870404
+%23771%|6|-37.8826793554244|145.277021168861
+%23771%|7|-37.882725536768|145.276799498411
+%23772%|1|-37.6897187417073|144.957730276498
+%23772%|2|-37.6911272686898|144.957927470275
+%23772%|3|-37.6911272686898|144.956434431674
+%23772%|4|-37.6899159354849|144.956462602214
+%23772%|5|-37.6896905711677|144.956687966531
+%23772%|6|-37.6897187417073|144.956969671927
+%23773%|1|-37.7570629013679|144.916997571394
+%23773%|2|-37.757239887209|144.918669937605
+%23773%|3|-37.7577798440125|144.919038908087
+%23773%|4|-37.7585027861771|144.91949037197
+%23773%|5|-37.7591777321814|144.919908838493
+%23773%|6|-37.7591327357811|144.916859582433
+%23773%|7|-37.758478788097|144.916802586993
+%23774%|1|-37.7184974009137|145.146307875323
+%23774%|2|-37.7190403574772|145.146181885402
+%23774%|3|-37.7199372857229|145.146004899561
+%23774%|4|-37.7203032564452|145.146699344005
+%23774%|5|-37.7194633236399|145.147233301289
+%23774%|6|-37.7186143915544|145.14733379325
+%23775%|1|-37.8831150395968|144.996324521238
+%23775%|2|-37.8833190232781|144.996492507799
+%23775%|3|-37.8834990088793|144.996720489561
+%23775%|4|-37.883771987041|144.996819481641
+%23775%|5|-37.8837569882409|144.996420513559
+%23775%|6|-37.8837059923206|144.995973549316
+%23775%|7|-37.8833190232781|144.995955550756
+%23776%|1|-38.3097545524358|145.029376897048
+%23776%|2|-38.3097575521958|145.030018845692
+%23776%|3|-38.3106604799616|145.029823861291
+%23776%|4|-38.3111584401248|145.029049923206
+%23776%|5|-38.3104714950804|145.028503966883
+%23776%|6|-38.3100695272378|145.029202910967
+%23777%|1|-38.001230011999|145.234866522678
+%23777%|2|-38.0015959827214|145.234986513079
+%23777%|3|-38.0015509863211|145.234536549076
+%23777%|4|-38.0012960067195|145.234389560835
+%23777%|5|-38.001062025438|145.234494552436
+%23778%|1|-37.7869890769425|145.143759683852
+%23778%|2|-37.7861461443771|145.143885673773
+%23778%|3|-37.7863111311781|145.145144073101
+%23778%|4|-37.7866321055002|145.147158411954
+%23778%|5|-37.7873550476648|145.147041421313
+%23778%|6|-37.7873310495847|145.146834437872
+%23779%|1|-37.7710887212681|144.786561953592
+%23779%|2|-37.7706189093099|144.787094874619
+%23779%|3|-37.7704926911718|144.789677087359
+%23779%|4|-37.7708047304575|144.789708641894
+%23779%|5|-37.7711343000401|144.788481521108
+%23779%|6|-37.7716602089486|144.787512095686
+%23779%|7|-37.7716321604735|144.786575977829
+%23780%|1|-37.8111889466252|145.237547625074
+%23780%|2|-37.8112429423056|145.238261567958
+%23780%|3|-37.8114139286266|145.239101500764
+%23780%|4|-37.8123378547126|145.239035506043
+%23780%|5|-37.8123828511129|145.237358640192
+%23781%|1|-37.7632349268059|144.99984800336
+%23781%|2|-37.7608861147108|145.000246971442
+%23781%|3|-37.7610601007919|145.001818845692
+%23781%|4|-37.763414912407|145.00140187905
+%23782%|1|-37.8036638660907|144.89819850492
+%23782%|2|-37.8040508351332|144.898114511639
+%23782%|3|-37.8041318286537|144.898768459323
+%23782%|4|-37.8035618742501|144.898873450924
+%23784%|1|-37.6658951968513|144.941316095932
+%23784%|2|-37.6655713560674|144.941459090564
+%23784%|3|-37.665188635141|144.941496942084
+%23784%|4|-37.6652601324569|144.942497904507
+%23784%|5|-37.6659708998916|144.942380144222
+%23784%|6|-37.6659751056161|144.94223714959
+%23784%|7|-37.6659582827182|144.942060509162
+%23785%|1|-37.9045510434185|144.655597166485
+%23785%|2|-37.9033860226269|144.65771491539
+%23785%|3|-37.9042093039863|144.658382860644
+%23785%|4|-37.9043025056496|144.658432050411
+%23785%|5|-37.9052345222829|144.656692286029
+%23785%|6|-37.9051775657109|144.656340190856
+%23785%|7|-37.9050377632159|144.656107186698
+%23787%|1|-37.764235386235|145.172631560936
+%23787%|2|-37.7626305146247|145.173648479583
+%23787%|3|-37.7628764949463|145.175506830915
+%23787%|4|-37.7645953574373|145.175287848433
+%23787%|5|-37.7644633679965|145.174075945386
+%23787%|6|-37.7643223792756|145.172823545578
+%23788%|1|-37.9632929018123|145.056111094221
+%23788%|2|-37.9653897340657|145.057643971591
+%23788%|3|-37.9649817667031|145.058669889518
+%23788%|4|-37.9627019490885|145.05746998551
+%23789%|1|-37.9640407994879|145.055967647098
+%23789%|2|-37.9650607178944|145.056780582064
+%23789%|3|-37.9654326881368|145.056105636059
+%23789%|4|-37.9653846919765|145.055735165697
+%23791%|1|-37.7971864389579|144.967572713498
+%23791%|2|-37.7972254358381|144.967911686381
+%23791%|3|-37.7978793835223|144.96778869622
+%23791%|4|-37.7978853830424|144.967446723578
+%23792%|1|-37.6722989147185|144.952376585501
+%23792%|2|-37.6726234498831|144.955494441189
+%23792%|3|-37.6733188823787|144.955587165522
+%23792%|4|-37.674222944623|144.955691480396
+%23792%|5|-37.6752081406585|144.955772614188
+%23792%|6|-37.6756254001559|144.955818976354
+%23792%|7|-37.6755094947399|144.952260680085
+%23793%|1|-37.6950400527958|145.058773563715
+%23793%|2|-37.6952800335973|145.059655493161
+%23793%|3|-37.6959609791217|145.059328519318
+%23793%|4|-37.6961139668826|145.059295521958
+%23793%|5|-37.6959819774418|145.058296601872
+%23794%|1|-37.7790970170386|144.847190611951
+%23794%|2|-37.7791240148788|144.847451591073
+%23794%|3|-37.7791660115191|144.847946551476
+%23794%|4|-37.779627974562|144.847847559395
+%23794%|5|-37.7795919774418|144.847499587233
+%23794%|6|-37.7795679793616|144.847496587473
+%23794%|7|-37.7795289824814|144.847166613871
+%23794%|8|-37.7792560043196|144.847217609791
+%23795%|1|-37.921444786293|145.061150727969
+%23795%|2|-37.9218407546155|145.064231481509
+%23795%|3|-37.9230316593431|145.064183485349
+%23795%|4|-37.922695686221|145.060904747648
+%23796%|1|-37.8173929901608|145.150061615071
+%23796%|2|-37.8173569930406|145.151198524118
+%23796%|3|-37.8173389944804|145.151706983441
+%23796%|4|-37.8174829829614|145.153521838253
+%23796%|5|-37.8164600647948|145.153773818095
+%23796%|6|-37.8164210679146|145.150226601872
+%23797%|1|-38.1709173201435|144.346517237693
+%23797%|2|-38.1709203199035|144.347183184417
+%23797%|3|-38.1714152803067|144.347180184657
+%23797%|4|-38.1714002815066|144.346424245133
+%23797%|5|-38.1711752995052|144.346358250412
+%23798%|1|-37.8404159611231|145.267079102472
+%23798%|2|-37.8397260163187|145.268779966403
+%23798%|3|-37.8391410631149|145.270149356851
+%23798%|4|-37.8390810679146|145.271022287017
+%23798%|5|-37.8403619654428|145.270863299736
+%23798%|6|-37.8415888672906|145.270617319414
+%23798%|7|-37.8417148572114|145.269522407007
+%23798%|8|-37.8418948428126|145.268905956324
+%23799%|1|-37.5412440172786|143.839060571154
+%23799%|2|-37.5413490088793|143.83996649868
+%23799%|3|-37.542242937365|143.839759515239
+%23799%|4|-37.5421229469642|143.839036573074
+%23800%|1|-37.7762160403168|144.990035538757
+%23800%|2|-37.7763060331174|144.99056649628
+%23800%|3|-37.7766210079194|144.99050950084
+%23800%|4|-37.7765190160787|144.989957544996
+%23801%|1|-37.854711987041|145.169264530838
+%23801%|2|-37.8528041396688|145.16962150228
+%23801%|3|-37.8527711423086|145.166882721382
+%23801%|4|-37.854391012719|145.1665662467
+%23802%|1|-37.9275400191985|145.23312449964
+%23802%|2|-37.9279839836813|145.23304650588
+%23802%|3|-37.927929988001|145.232584542837
+%23802%|4|-37.9274980225582|145.232563544516
+%23803%|1|-38.0008650203984|145.233072548596
+%23803%|2|-38.0011289992801|145.233042550996
+%23803%|3|-38.0011979937605|145.233597506599
+%23803%|4|-38.0008980177586|145.23371449724
+%23804%|1|-37.9750140460763|145.258148552916
+%23804%|2|-37.9751310367171|145.259039481641
+%23804%|3|-37.9757009911207|145.25877850252
+%23804%|4|-37.9754970074394|145.258052560595
+%23805%|1|-37.7124241486222|145.149217558022
+%23805%|2|-37.71278752939|145.152026649348
+%23805%|3|-37.7137007210585|145.1519255347
+%23805%|4|-37.7133152214614|145.148800460097
+%23805%|5|-37.7126769352433|145.148926853407
+%23806%|1|-38.1400473315925|145.121502410415
+%23806%|2|-38.1402594499359|145.122283005919
+%23806%|3|-38.1413030721857|145.121689074558
+%23806%|4|-38.1428388089923|145.121018780592
+%23806%|5|-38.1426436601163|145.120178791952
+%23806%|6|-38.1417951867425|145.120840601184
+%23807%|1|-38.0280880393569|145.131196534677
+%23807%|2|-38.0286189968803|145.131490511159
+%23807%|3|-38.028741987041|145.130956553876
+%23807%|4|-38.0283730165587|145.130728572114
+%23808%|1|-38.1969821046316|146.540848080154
+%23808%|2|-38.1972760811135|146.540545104392
+%23808%|3|-38.1974650659947|146.54027212623
+%23808%|4|-38.197657050636|146.539813162947
+%23808%|5|-38.1979150299976|146.53876924646
+%23808%|6|-38.198137012239|146.537842320614
+%23808%|7|-38.1969371082314|146.537905315575
+%23809%|1|-37.6937580092942|145.000960961815
+%23809%|2|-37.6935195884435|145.001028017679
+%23809%|3|-37.6926776648144|145.001683675018
+%23809%|4|-37.6922678789773|145.001877391959
+%23809%|5|-37.6918133892306|145.001966799778
+%23809%|6|-37.6917016294568|144.999977475805
+%23809%|7|-37.6935866443078|144.999195157389
+%23810%|1|-37.8318031928498|145.210715904109
+%23810%|2|-37.8329011050169|145.21090188923
+%23810%|3|-37.8324301426938|145.213097713564
+%23810%|4|-37.8323551486934|145.213310696525
+%23810%|5|-37.8313322305268|145.213235702525
+%23811%|1|-37.8111864045267|144.964615809572
+%23811%|2|-37.8109237221596|144.965536997051
+%23811%|3|-37.8112727658529|144.965655743875
+%23811%|4|-37.8115318498313|144.964752548338
+%23812%|1|-37.9072754193998|145.00983425576
+%23812%|2|-37.9078303750033|145.010374212563
+%23812%|3|-37.907776379323|145.010485203684
+%23812%|4|-37.9078243754833|145.010827176326
+%23812%|5|-37.9069664441178|145.010995162887
+%23812%|6|-37.9068524532371|145.010491203204
+%23812%|7|-37.9068974496374|145.00983725552
+%23813%|1|-37.7755370794336|144.928393546916
+%23813%|2|-37.7775169210463|144.929702942165
+%23813%|3|-37.7775769162467|144.928092071034
+%23813%|4|-37.7756150731941|144.927196642669
+%23814%|1|-37.932153938085|145.155521447084
+%23814%|2|-37.9318719606432|145.155134478042
+%23814%|3|-37.9310890232781|145.154714511639
+%23814%|4|-37.9307650491961|145.155464451644
+%23814%|5|-37.9312360115191|145.156086901848
+%23815%|1|-37.7794027407705|145.032507317745
+%23815%|2|-37.7804406577371|145.032336331424
+%23815%|3|-37.7805306505377|145.032300334304
+%23815%|4|-37.7801796786154|145.034073192475
+%23815%|5|-37.7799396978139|145.0347991344
+%23815%|6|-37.7793217472499|145.034622148559
+%23815%|7|-37.7795497290114|145.033623228472
+%23816%|1|-37.8745589776818|145.039497568994
+%23816%|2|-37.8746099736021|145.039965531557
+%23816%|3|-37.8748169570434|145.0403824982
+%23816%|4|-37.8743039980802|145.040466491481
+%23816%|5|-37.8740520182385|145.039899536837
+%23816%|6|-37.8741960067195|145.039452572594
+%23817%|1|-37.5605922639397|143.861062298248
+%23817%|2|-37.5607602505008|143.862493183777
+%23817%|3|-37.5610392281826|143.862436188337
+%23817%|4|-37.5611292209832|143.863255122822
+%23817%|5|-37.5619091585882|143.863117133861
+%23817%|6|-37.5616601785066|143.860835816367
+%23817%|7|-37.5611982154636|143.860916809887
+%23818%|1|-37.7448678411048|144.964767698619
+%23818%|2|-37.7430840500389|144.965085309451
+%23818%|3|-37.7432096171119|144.966233878853
+%23818%|4|-37.7449823287301|144.965921807745
+%23819%|1|-37.8489139908807|144.992972560595
+%23819%|2|-37.8483110391169|144.993056553876
+%23819%|3|-37.8484400287977|144.993854490041
+%23819%|4|-37.8490099832013|144.99377649628
+%23820%|1|-38.1415228160089|144.348108689125
+%23820%|2|-38.1413578292078|144.346875787757
+%23820%|3|-38.1400319352793|144.346902785597
+%23820%|4|-38.1388020336714|144.347111268918
+%23820%|5|-38.1389970180727|144.348606649288
+%23820%|6|-38.1393059933547|144.348531655287
+%23820%|7|-38.1398399506381|144.348426663687
+%23821%|1|-38.0298600095992|145.345604142069
+%23821%|2|-38.0299919990401|145.346582063835
+%23821%|3|-38.0302259803216|145.346531067915
+%23821%|4|-38.0301149892009|145.345562145428
+%23822%|1|-37.8191425396784|145.010114291936
+%23822%|2|-37.8192595303191|145.011218203623
+%23822%|3|-37.8197844883225|145.011134210343
+%23822%|4|-37.8196704974417|145.010027298896
+%23823%|1|-37.8623769906407|145.282963486921
+%23823%|2|-37.8626049724022|145.284764842813
+%23823%|3|-37.8630519366451|145.284740844732
+%23823%|4|-37.8631089320854|145.284671850252
+%23823%|5|-37.8630849340053|145.284461867051
+%23823%|6|-37.8629079481641|145.282934989201
+%23824%|1|-37.8052929829614|145.034780542357
+%23824%|2|-37.8047890232781|145.036190429566
+%23824%|3|-37.8037391072714|145.035897952964
+%23824%|4|-37.8044380513559|145.034462567795
+%23824%|5|-37.8050440028798|145.034411571874
+%23825%|1|-36.7653498081323|144.277481585568
+%23825%|2|-36.7661477442974|144.278303519814
+%23825%|3|-36.7632829734791|144.282584177361
+%23825%|4|-36.7630639909977|144.282291700759
+%23825%|5|-36.7623860452333|144.281535761234
+%23826%|1|-37.6974772846741|144.781194467697
+%23826%|2|-37.6986531906016|144.780540520012
+%23826%|3|-37.6979812443573|144.777969725676
+%23826%|4|-37.6968503348301|144.778316197958
+%23827%|1|-37.8608200095992|145.028613513319
+%23827%|2|-37.8601090664747|145.02873650348
+%23827%|3|-37.8603430477562|145.030131391889
+%23827%|4|-37.8610239932805|145.030119392849
+%23828%|1|-37.8294570698344|145.054573575714
+%23828%|2|-37.8303120014399|145.05556949604
+%23828%|3|-37.8298890352772|145.056190446364
+%23828%|4|-37.8293040820734|145.055827475402
+%23828%|5|-37.8290341036717|145.055056537077
+%23829%|1|-37.8361760091193|145.184201036717
+%23829%|2|-37.8362989992801|145.185154960403
+%23829%|3|-37.8374689056875|145.184935977922
+%23829%|4|-37.8373639140869|145.183961055916
+%23830%|1|-37.880232896302|145.163754326959
+%23830%|2|-37.8807428555053|145.165588680211
+%23830%|3|-37.881948759033|145.16535319905
+%23830%|4|-37.882731696398|145.165224209369
+%23830%|5|-37.8834096421623|145.165101219208
+%23830%|6|-37.8832506548813|145.163697331519
+%23830%|7|-37.8831006668804|145.163421353597
+%23830%|8|-37.8828516867988|145.163322361517
+%23830%|9|-37.8827016987978|145.163331360797
+%23831%|1|-37.7466834120693|145.016847888924
+%23831%|2|-37.747259365993|145.021768995235
+%23831%|3|-37.7501541344115|145.021293533272
+%23831%|4|-37.7498391596095|145.018772234976
+%23831%|5|-37.7481592939987|145.019043713258
+%23831%|6|-37.7479073141571|145.016658904042
+%23832%|1|-37.9962890400768|145.083856515479
+%23832%|2|-37.9962830405568|145.084381473482
+%23832%|3|-37.9971409719222|145.084420470362
+%23832%|4|-37.9971739692825|145.083955507559
+%23836%|1|-37.7373167688412|144.894993206384
+%23836%|2|-37.7380371018669|144.896873397672
+%23836%|3|-37.73880627103|144.896336200161
+%23836%|4|-37.7381225651073|144.89461472632
+%23837%|1|-37.8254049892009|144.995254425246
+%23837%|2|-37.8255579769618|144.996460328774
+%23837%|3|-37.8262179241661|144.996352337413
+%23837%|4|-37.8260589368851|144.995140434365
+%23838%|1|-37.8063325138655|144.809664860883
+%23838%|2|-37.8062095237047|144.811904181738
+%23838%|3|-37.8076494085139|144.811901181978
+%23838%|4|-37.8077484005945|144.80916990048
+%23839%|1|-37.9657428080241|146.973610831193
+%23839%|2|-37.9660907801864|146.974192784637
+%23839%|3|-37.9664927480289|146.973775817994
+%23839%|4|-37.9661807729869|146.973213362991
+%23841%|1|-37.8241790112791|144.963231567075
+%23841%|2|-37.823846037917|144.963621535877
+%23841%|3|-37.8242510055196|144.96408649868
+%23841%|4|-37.8245539812815|144.963747525798
+%23842%|1|-38.3139784408089|146.419739248879
+%23842%|2|-38.3141014309697|146.420156215522
+%23842%|3|-38.3144224052918|146.419994228481
+%23842%|4|-38.3142034228104|146.419610259198
+%23846%|1|-36.0911160149686|146.700424576684
+%23846%|2|-36.0792208445012|146.734254878014
+%23846%|3|-36.056412673605|146.731090107889
+%23846%|4|-36.0678713240553|146.700097186672
+%23846%|5|-36.0678713240553|146.700097186672
+%23847%|1|-37.9221223325552|145.181919354387
+%23847%|2|-37.9218766051815|145.182779400195
+%23847%|3|-37.9222605542028|145.185543833149
+%23847%|4|-37.928311590779|145.184269122398
+%23847%|5|-37.9254550100603|145.180552495871
+%23859%|1|-33.987709386485|150.861487197748
+%23859%|2|-33.9888747756601|150.859412805016
+%23859%|3|-33.9864274583924|150.857501566769
+%23859%|4|-33.9836305243723|150.86269920249
+%23859%|5|-33.9868703062789|150.863608206047
+%23865%|1|-32.7603739013375|151.59343724568
+%23865%|2|-32.7639520054764|151.597068754358
+%23865%|3|-32.7689720321787|151.592262345813
+%23865%|4|-32.7634179600825|151.587562746347
+%23865%|5|-32.7634179600825|151.587589448617
+%23870%|1|-33.7941583771643|150.878773888001
+%23870%|2|-33.7948679448848|150.882938742013
+%23870%|3|-33.7986625896511|150.882290875833
+%23870%|4|-33.7978296188488|150.87803346951
+%23871%|1|-33.7711339703761|150.967934143864
+%23871%|2|-33.7736295992878|150.972901520071
+%23871%|3|-33.7753132532427|150.971731320869
+%23871%|4|-33.7731639077684|150.966728122237
+%23877%|1|-33.9401211435526|150.849105941736
+%23877%|2|-33.9364244154091|150.852402190998
+%23877%|3|-33.9397514707383|150.856283755548
+%23877%|4|-33.9420927318958|150.851478008962
+%23878%|1|-33.934920451663|150.843201428019
+%23878%|2|-33.935757134492|150.846981994876
+%23878%|3|-33.9402504311659|150.844688864159
+%23878%|4|-33.9386390420139|150.840815332544
+%23880%|1|-33.9357903591421|150.847681834535
+%23880%|2|-33.9350537561227|150.843806662129
+%23880%|3|-33.9396335053299|150.841084433579
+%23880%|4|-33.940466187004|150.84595241875
+%23882%|1|-38.0437313678686|145.369183861521
+%23882%|2|-38.0437493664288|145.369957799606
+%23882%|3|-38.0442413270719|145.369957799606
+%23882%|4|-38.0440853395509|145.369072870401
+%23883%|1|-38.5636676686383|146.676672686235
+%23883%|2|-38.5637246640786|146.677098652158
+%23883%|3|-38.5640516379207|146.676984661277
+%23883%|4|-38.5638656527995|146.676549696074
+%23883%|5|-38.5637396628787|146.676546696314
+%23884%|1|-37.5865984558959|145.127780794513
+%23884%|2|-37.5866734498964|145.128752716759
+%23884%|3|-37.5876303733425|145.1288547086
+%23884%|4|-37.587711366863|145.127609808192
+%23884%|5|-37.5870904165391|145.127174842989
+%23886%|1|-33.8117421040999|151.164398722787
+%23886%|2|-33.8136247439551|151.172512004068
+%23886%|3|-33.8217380252358|151.167895053947
+%23886%|4|-33.8181520445593|151.158840452739
+%23886%|5|-33.8134454449213|151.157719833777
+%23889%|1|-37.9221314885229|145.181769364808
+%23889%|2|-37.921945806864|145.183022716006
+%23889%|3|-37.9223635905966|145.185575838816
+%23889%|4|-37.9284910853409|145.18433796109
+%23889%|5|-37.9253190236677|145.18031485848
+%23893%|1|-37.9890448310009|145.217153802222
+%23893%|2|-37.9874854454081|145.219813930586
+%23893%|3|-37.9859260598154|145.218914990656
+%23893%|4|-37.9876780753931|145.216071405163
+%23893%|5|-37.9876780753931|145.216071405163
+%23894%|1|-33.7843259988395|150.812629595984
+%23894%|2|-33.7866872471509|150.810383530517
+%23894%|3|-33.7871767742398|150.814443725784
+%23894%|4|-33.7891636783067|150.813003940229
+%23894%|5|-33.7909202166846|150.813666241584
+%23894%|6|-33.7906034638624|150.822823277719
+%23894%|7|-33.7865144728842|150.823255213385
+%23895%|1|-35.0752953047726|138.514922266441
+%23895%|2|-35.0777563813785|138.513303483433
+%23895%|3|-35.0803227446841|138.514290546243
+%23895%|4|-35.0797436678357|138.518883678518
+%23895%|5|-35.0752031789103|138.518844196006
+%23895%|6|-35.0745188153622|138.516791105361
+%23896%|1|-33.8569713854924|151.073364838863
+%23896%|2|-33.8527500059818|151.08012686345
+%23896%|3|-33.8580267303701|151.084621850892
+%23896%|4|-33.8604501149039|151.079892342366
+%23896%|5|-33.8593165963316|151.077508044679
+%23897%|1|-33.850694983634|151.056947970525
+%23897%|2|-33.8480894587511|151.058369165915
+%23897%|3|-33.8495783301128|151.061685288494
+%23897%|4|-33.8524207208942|151.060297931088
+%23898%|1|-33.830287304624|151.224886114537
+%23898%|2|-33.8318667539144|151.222516940601
+%23898%|3|-33.8347509656621|151.2241650616
+%23898%|4|-33.8337895617462|151.227220952618
+%23900%|1|-33.8106616021626|151.106038492633
+%23900%|2|-33.813380084053|151.105011697616
+%23900%|3|-33.8147267004692|151.106955875067
+%23900%|4|-33.8117388952956|151.108538149356
+%23901%|1|-33.5999365654576|151.007997694538
+%23901%|2|-33.6004462167003|151.004911473124
+%23901%|3|-33.6044667987261|151.006383798936
+%23901%|4|-33.603305926451|151.010234497214
+%23901%|5|-33.600955867943|151.010206183256
+%23902%|1|-33.8149556829498|151.168856567451
+%23902%|2|-33.8166294507106|151.16882275396
+%23902%|3|-33.8166463574556|151.170885376858
+%23902%|4|-33.8146006413036|151.170648682427
+%23903%|1|-33.772962318781|150.695532541152
+%23903%|2|-33.7733540297467|150.698227037795
+%23903%|3|-33.7758348658633|150.697835326829
+%23903%|4|-33.7753007145464|150.693752036762
+%23903%|5|-33.7738169608881|150.693894477113
+%23904%|1|-33.8943226251805|151.075472860642
+%23904%|2|-33.8940533018973|151.076331328607
+%23904%|3|-33.8947434428106|151.077475952561
+%23904%|4|-33.8962920516893|151.077745275845
+%23904%|5|-33.8966960366142|151.07611250344
+%23966%|1|-31.9711008518736|115.968928437573
+%23966%|2|-31.9734129470008|115.973670859964
+%23966%|3|-31.9762373813892|115.972094431469
+%23966%|4|-31.9737939172206|115.967168092419
+%23967%|1|-31.9711008518736|115.968928437573
+%23967%|2|-31.9734129470008|115.973644586156
+%23967%|3|-31.9762373813892|115.972094431469
+%23967%|4|-31.9737807803165|115.967168092419
+%23968%|1|-31.9710877149695|115.968941574477
+%23968%|2|-31.9733998100967|115.973618312348
+%23968%|3|-31.9762636551975|115.972094431469
+%23968%|4|-31.9737807803165|115.967168092419
+%23969%|1|-31.9710877149695|115.968928437573
+%23969%|2|-31.9734392208091|115.973618312348
+%23969%|3|-31.9762505182933|115.972107568373
+%23969%|4|-31.9737676434124|115.967141818611
+%23970%|1|-31.9710877149695|115.968941574477
+%23970%|2|-31.9734260839049|115.97365772306
+%23970%|3|-31.9762636551975|115.972094431469
+%23970%|4|-31.9737676434124|115.967168092419
+%23973%|1|-34.8504505839111|138.57381977825
+%23973%|2|-34.8499340921466|138.581739318639
+%23973%|3|-34.873907918214|138.583547039815
+%23973%|4|-34.8743813689981|138.582083646482
+%23973%|5|-34.8744244099785|138.576746564916
+%23973%|6|-34.8674948121386|138.574852761779
+%23973%|7|-34.8674517711582|138.574766679819
+%23976%|1|-23.6970461487551|133.880324138281
+%23976%|2|-23.6983185055469|133.883208147009
+%23976%|3|-23.7022203997085|133.881240235171
+%23976%|4|-23.7009310781595|133.8782544379
+%23977%|1|-14.4652017407243|132.261132560517
+%23977%|2|-14.4622199649145|132.263532526413
+%23977%|3|-14.4655799171685|132.267808829281
+%23977%|4|-14.4689107789267|132.265525225368
+%23978%|1|-12.3713894114816|130.880254701137
+%23978%|2|-12.376945105059|130.878604701916
+%23978%|3|-12.3780729526273|130.882740143
+%23978%|4|-12.3716609303406|130.88466166108
+%23979%|1|-12.3715405108644|130.880412199754
+%23979%|2|-12.3769385175389|130.878892183434
+%23979%|3|-12.3779128869747|130.882575299901
+%23979%|4|-12.3718133343065|130.884426601829
+%23980%|1|-12.4810319504957|130.98309095189
+%23980%|2|-12.4783914093247|130.986082266058
+%23980%|3|-12.4814996478249|130.98953153386
+%23980%|4|-12.4852217390698|130.986140728224
+%23980%|5|-12.4843740376606|130.984133527186
+%23980%|6|-12.4826104289818|130.984221220435
+%23981%|1|-12.5715669632671|131.097485671423
+%23981%|2|-12.573475677348|131.097008492903
+%23981%|3|-12.5764618913133|131.101056813897
+%23981%|4|-12.5743222844|131.102580706591
+%23981%|5|-12.572629070296|131.102626885157
+%23982%|1|-12.4582093977298|130.840456075614
+%23982%|2|-12.4598802830162|130.84226272033
+%23982%|3|-12.4620315478225|130.839965253061
+%23982%|4|-12.4604442068004|130.838398798105
+%23983%|1|-12.3764377967775|130.895889850896
+%23983%|2|-12.3780918936477|130.895161731699
+%23983%|3|-12.3785271822978|130.896000651643
+%23983%|4|-12.3790416143387|130.896657541787
+%23983%|5|-12.3772134020085|130.897876350008
+%23984%|1|-12.5219826373688|131.042832747934
+%23984%|2|-12.5260918544784|131.037341670203
+%23984%|3|-12.5307465428858|131.044178243802
+%23984%|4|-12.5248918176234|131.047232883069
+%23985%|1|-12.3880914634171|130.848306442805
+%23985%|2|-12.38804003589|130.855737720477
+%23985%|3|-12.3938770602207|130.855930573704
+%23985%|4|-12.3939284877479|130.848087875814
+%23986%|1|-12.4615102801481|130.845858311827
+%23986%|2|-12.4654387487508|130.848162225745
+%23986%|3|-12.4659999585512|130.851972544916
+%23986%|4|-12.4579657971982|130.851603327942
+%23986%|5|-12.4580839466299|130.846286603517
+%23987%|1|-12.4704298848632|130.903153727791
+%23987%|2|-12.4625201325365|130.923911808771
+%23987%|3|-12.4672981047541|130.924795131366
+%23987%|4|-12.4727987954585|130.905964299684
+%23988%|1|-23.6904233563101|133.862859874863
+%23988%|2|-23.6937270137388|133.862171612899
+%23988%|3|-23.694071144721|133.866955033551
+%23988%|4|-23.6982695427034|133.875179764024
+%23988%|5|-23.6959638651229|133.875695960498
+%23988%|6|-23.6947249935871|133.874044131783
+%23988%|7|-23.6937958399353|133.874250610373
+%23988%|8|-23.6935205351496|133.872151411381
+%23989%|1|-14.513864568858|132.244416991463
+%23989%|2|-14.5072315030067|132.246558918977
+%23989%|3|-14.5155228353208|132.264696208414
+%23989%|4|-14.5254033396618|132.257234009332
+%23994%|1|-12.4007200938225|130.914432700357
+%23994%|2|-12.3998255390234|130.915897236975
+%23994%|3|-12.4010525832169|130.916799708188
+%23994%|4|-12.4020500514|130.915422252126
+%24000%|1|-27.6113808330281|153.051596321717
+%24000%|2|-27.6116733055974|153.054318566401
+%24000%|3|-27.611853288717|153.057693249894
+%24000%|4|-27.6169040650112|153.057097055811
+%24000%|5|-27.6149354996404|153.052091275296
+%24001%|1|-27.6111778016759|153.054634410864
+%24001%|2|-27.6114044250808|153.057807138533
+%24001%|3|-27.6113720503087|153.059425877139
+%24001%|4|-27.6094619387533|153.058746006924
+%24001%|5|-27.6084906955896|153.055087657674
+%24003%|1|-27.6323205817504|153.046263548178
+%24003%|2|-27.6307227216813|153.046364465656
+%24003%|3|-27.6284688980048|153.046078532801
+%24003%|4|-27.6276783777601|153.044749786007
+%24003%|5|-27.6285698154829|153.042109111998
+%24003%|6|-27.6322869425911|153.042815534344
+%24003%|7|-27.633430674009|153.046061713222
+%24004%|1|-27.5796858965499|153.026003894568
+%24004%|2|-27.5744357888622|153.025427473249
+%24004%|3|-27.574903157499|153.029587054117
+%24004%|4|-27.580075370414|153.03092684421
+%24004%|5|-27.579966317732|153.02788894807
+%24005%|1|-27.5680969222548|153.065124734635
+%24005%|2|-27.5716884211366|153.064530115615
+%24005%|3|-27.572140331592|153.067764843084
+%24005%|4|-27.5685964022317|153.068383246865
+%24006%|1|-27.6606701256946|153.038270369569
+%24006%|2|-27.6621843551328|153.047712035478
+%24006%|3|-27.667920612534|153.047729849942
+%24006%|4|-27.6648921536576|153.036257335139
+%24007%|1|-27.6058173185754|153.110066177371
+%24007%|2|-27.6085747730707|153.1115457871
+%24007%|3|-27.6113546458952|153.112218336977
+%24007%|4|-27.6120496141013|153.107667416143
+%24007%|5|-27.6071175816708|153.104865124989
+%24008%|1|-27.6601253984712|153.038394623773
+%24008%|2|-27.6615175136725|153.046941563613
+%24008%|3|-27.6546702493682|153.04658544112
+%24008%|4|-27.6574059176127|153.03934967955
+%24008%|5|-27.6575839788594|153.039301117392
+%24010%|1|-27.5659098345209|153.084165920856
+%24010%|2|-27.5647134460351|153.086957493989
+%24010%|3|-27.5636983285321|153.086268664255
+%24010%|4|-27.5627194652256|153.085017894475
+%24010%|5|-27.5622844148671|153.084165920856
+%24010%|6|-27.5617949832139|153.083205184648
+%24010%|7|-27.5612692973641|153.082262575538
+%24010%|8|-27.5603448153524|153.081247458035
+%24010%|9|-27.5607617386125|153.079398494011
+%24010%|10|-27.5627375923238|153.079162841734
+%24010%|11|-27.5627375923238|153.079162841734
+%24011%|1|-27.6391620680924|153.11831322046
+%24011%|2|-27.6427815110149|153.118334386793
+%24011%|3|-27.6458717956155|153.118080390798
+%24011%|4|-27.645956460947|153.110608675291
+%24011%|5|-27.6421253546956|153.113063969906
+%24012%|1|-27.6131048106218|153.124093813384
+%24012%|2|-27.6144973407002|153.125570230817
+%24012%|3|-27.6159737581328|153.125419233579
+%24012%|4|-27.6141953462254|153.12786874432
+%24012%|5|-27.6117793904266|153.125553453346
+%24012%|6|-27.6117793904266|153.125553453346
+%24013%|1|-27.5969588845459|152.972548103595
+%24013%|2|-27.5980422892523|152.976053236469
+%24013%|3|-27.6017003733788|152.974574707693
+%24013%|4|-27.6005787308592|152.971133304508
+%24014%|1|-27.6225871397735|152.969101626786
+%24014%|2|-27.6240215193432|152.967284745997
+%24014%|3|-27.6275596556151|152.966915905537
+%24014%|4|-27.6269039392403|152.970590649387
+%24014%|5|-27.6260706330141|152.970276451957
+%24014%|6|-27.6237619649448|152.969798325434
+%24015%|1|-27.5391924458442|153.08040071839
+%24015%|2|-27.5388188483637|153.081272445844
+%24015%|3|-27.53850751713|153.082953634506
+%24015%|4|-27.5382792075586|153.084593312337
+%24015%|5|-27.5376980559224|153.08631601183
+%24015%|6|-27.5371791705328|153.087457559687
+%24015%|7|-27.5392339566754|153.089034971271
+%24015%|8|-27.5429076652332|153.089221770012
+%24015%|9|-27.5417661173762|153.08185359748
+%24015%|10|-27.5411226994932|153.08185359748
+%24015%|11|-27.5411226994932|153.08185359748
+%24016%|1|-27.6324085032875|153.13364275276
+%24016%|2|-27.6383802406646|153.139774805235
+%24016%|3|-27.6345326783277|153.143862840218
+%24016%|4|-27.630364485796|153.134404249473
+%24016%|5|-27.630484722119|153.133803067858
+%24017%|1|-27.6998274396362|153.038926026403
+%24017%|2|-27.6996002456117|153.043644671527
+%24017%|3|-27.6925572308517|153.043749530308
+%24017%|4|-27.6923300368272|153.035151110303
+%24017%|5|-27.6971360642689|153.038279397256
+%24018%|1|-27.5304475941304|153.023586863334
+%24018%|2|-27.5315942388099|153.023779756832
+%24018%|3|-27.5319800258049|153.023965506125
+%24018%|4|-27.5321836356078|153.023819049951
+%24018%|5|-27.531408489516|153.022190171528
+%24018%|6|-27.5304297336214|153.022797428835
+%24019%|1|-27.5313493466905|152.979606651033
+%24019%|2|-27.5318044173011|152.982917682028
+%24019%|3|-27.5349428353052|152.982337074697
+%24019%|4|-27.5344406884245|152.979057427883
+%24020%|1|-27.5134881073911|153.031309335854
+%24020%|2|-27.5108293493872|153.032399877272
+%24020%|3|-27.5100001773995|153.032940641612
+%24020%|4|-27.5103066105254|153.03502258432
+%24020%|5|-27.5139477570799|153.034346628896
+%24021%|1|-27.5582761913955|152.948379688665
+%24021%|2|-27.561373795286|152.950183356753
+%24021%|3|-27.5604719612419|152.955065023643
+%24021%|4|-27.5569234403294|152.954927788028
+%24021%|5|-27.5575508031427|152.953888718369
+%24021%|6|-27.5584330320988|152.952692808006
+%24022%|1|-27.4995046503076|153.035590604906
+%24022%|2|-27.5010050371535|153.035213206988
+%24022%|3|-27.5012075433536|153.036322388674
+%24022%|4|-27.5014790857583|153.038135739648
+%24022%|5|-27.4998544337441|153.038255402402
+%24023%|1|-27.505625631011|153.075572364783
+%24023%|2|-27.5055772237995|153.081405433776
+%24023%|3|-27.5000588016822|153.081405433776
+%24023%|4|-27.4989212322107|153.076298472957
+%24023%|5|-27.5012205747596|153.07576599363
+%24023%|6|-27.5033020848564|153.07547555036
+%24024%|1|-27.6565250829986|153.166461149397
+%24024%|2|-27.6643009813032|153.173876310152
+%24024%|3|-27.6604531141009|153.176842374454
+%24024%|4|-27.6568858205488|153.176481636903
+%24024%|5|-27.6537193464969|153.17018877075
+%24024%|6|-27.6537193464969|153.17018877075
+%24025%|1|-27.5050808366872|153.099878255313
+%24025%|2|-27.5055806121585|153.102192030643
+%24025%|3|-27.5048031836476|153.102895418344
+%24025%|4|-27.5020266532512|153.103413704018
+%24025%|5|-27.5017860206169|153.103191581586
+%24025%|6|-27.5012122043349|153.102969459154
+%24025%|7|-27.5010641227138|153.102395642872
+%24025%|8|-27.500953061498|153.101914377604
+%24025%|9|-27.5008790206874|153.101599704159
+%24025%|10|-27.5012492247402|153.100600153216
+%24026%|1|-27.5516519161178|152.940724727922
+%24026%|2|-27.5496380579576|152.940966900739
+%24026%|3|-27.5476624376105|152.940610014482
+%24026%|4|-27.5470506325998|152.939297182897
+%24026%|5|-27.5486566207529|152.936684265664
+%24026%|6|-27.5500841657779|152.936174428155
+%24027%|1|-27.4982728876386|152.970291877095
+%24027%|2|-27.4974725910476|152.973948134069
+%24027%|3|-27.4974882831376|152.97424628378
+%24027%|4|-27.5023371389539|152.973383218829
+%24027%|5|-27.5020076050634|152.971060789506
+%24028%|1|-27.48522652259|152.990439023864
+%24028%|2|-27.4878137890287|152.989960130797
+%24028%|3|-27.4878635441525|152.990165370683
+%24028%|4|-27.4866694211808|152.991197789502
+%24028%|5|-27.4858484616378|152.992286182836
+%24028%|6|-27.4854939563806|152.992286182836
+%24029%|1|-27.6100247465682|152.898790104331
+%24029%|2|-27.6097349581337|152.898674188957
+%24029%|3|-27.6092906158676|152.895950177674
+%24029%|4|-27.6105463657501|152.895235366202
+%24029%|5|-27.6116089233431|152.897225246785
+%24030%|1|-27.739297831051|152.984411298876
+%24030%|2|-27.7356907306754|152.984538758253
+%24030%|3|-27.7352191309797|152.98047280412
+%24030%|4|-27.738698771978|152.980217885365
+%24031%|1|-27.5049310808081|152.949888013274
+%24031%|2|-27.5093719062418|152.948278723323
+%24031%|3|-27.5080681776741|152.945284221769
+%24031%|4|-27.5036273522404|152.94473421128
+%24032%|1|-27.4686011420793|153.029668438305
+%24032%|2|-27.4704757917906|153.027361177122
+%24032%|3|-27.4680243267836|153.024819584725
+%24032%|4|-27.4655187853426|153.027883915984
+%24032%|5|-27.466924772626|153.029253852311
+%24032%|6|-27.4677899955696|153.028857291795
+%24033%|1|-27.4700094293759|153.09676631282
+%24033%|2|-27.4704075435007|153.098478203557
+%24033%|3|-27.4711241489254|153.104290669779
+%24033%|4|-27.4715222630502|153.106958034416
+%24033%|5|-27.4784096374095|153.105325766504
+%24033%|6|-27.4789271857718|153.099154997569
+%24033%|7|-27.4772949178601|153.096686689995
+%24033%|8|-27.4751052901736|153.095731216096
+%24034%|1|-27.6749707912936|152.897306889402
+%24034%|2|-27.6752713279653|152.902443334337
+%24034%|3|-27.6749981128092|152.904874949227
+%24034%|4|-27.6792056262136|152.906924062898
+%24034%|5|-27.6804897374474|152.901924225541
+%24034%|6|-27.680025271682|152.896787780605
+%24035%|1|-27.4674701218851|153.084715502776
+%24035%|2|-27.4664892331132|153.07819547741
+%24035%|3|-27.4624502793464|153.080695782122
+%24035%|4|-27.4640466277399|153.083503816646
+%24035%|5|-27.4637388979291|153.087196574376
+%24036%|1|-27.4647340154134|153.029602727975
+%24036%|2|-27.4619752312787|153.032331525325
+%24036%|3|-27.4601010572742|153.029572741191
+%24036%|4|-27.4616153898699|153.026529082607
+%24037%|1|-27.5254808791276|153.192906778597
+%24037%|2|-27.5216856477984|153.190092133353
+%24037%|3|-27.5219035558173|153.189910543337
+%24037%|4|-27.5225754388755|153.189837907331
+%24037%|5|-27.5250995400945|153.189692635318
+%24037%|6|-27.5255171971308|153.191018242433
+%24037%|7|-27.5257351051497|153.191780920499
+%24037%|8|-27.5257169461481|153.192416485554
+%24038%|1|-27.5252603868619|153.193343760687
+%24038%|2|-27.5205056014564|153.189796539829
+%24038%|3|-27.5208452289853|153.19428717049
+%24038%|4|-27.5209773063577|153.195966439939
+%24038%|5|-27.5211093837301|153.197324950055
+%24038%|6|-27.5215244840433|153.198928746719
+%24038%|7|-27.5232792262762|153.198758932955
+%24038%|8|-27.524260372471|153.197041927114
+%24038%|9|-27.5244867908237|153.196457013036
+%24038%|10|-27.5245811318039|153.195117371117
+%24038%|11|-27.5246943409803|153.194532457039
+%24039%|1|-27.4582197277884|152.994952802293
+%24039%|2|-27.4584281355999|152.99636997541
+%24039%|3|-27.4591992445022|152.998443633134
+%24039%|4|-27.458521919115|152.999516933363
+%24039%|5|-27.4583656132565|152.999839965471
+%24039%|6|-27.4583135113036|153.000486029686
+%24039%|7|-27.4565420449064|153.000652755935
+%24039%|8|-27.4558751399098|152.997943454387
+%24039%|9|-27.456260694361|152.994317158468
+%24039%|10|-27.4583968744282|152.994140011828
+%24040%|1|-27.4483639344172|153.058772792583
+%24040%|2|-27.4537925842557|153.057815766168
+%24040%|3|-27.4531655669491|153.053261640468
+%24040%|4|-27.4475884130117|153.052733625894
+%24041%|1|-27.453429629954|153.011928699345
+%24041%|2|-27.4565782422817|153.013413045157
+%24041%|3|-27.4551838568223|153.016606637661
+%24041%|4|-27.4511206475804|153.016291776428
+%24042%|1|-27.6463422786397|152.871447689587
+%24042%|2|-27.6441390727388|152.871809284449
+%24042%|3|-27.6436261125863|152.867453327744
+%24042%|4|-27.6457620450245|152.8670833237
+%24043%|1|-27.4754995770903|153.154138117845
+%24043%|2|-27.4752746762098|153.154887787446
+%24043%|3|-27.4754845836983|153.156012291849
+%24043%|4|-27.4755295638744|153.156372133258
+%24043%|5|-27.4751097488974|153.157376690524
+%24043%|6|-27.472890726876|153.156357139866
+%24043%|7|-27.4739252709265|153.153208527538
+%24044%|1|-27.7121064305279|153.206200089273
+%24044%|2|-27.7198837494594|153.211972944562
+%24044%|3|-27.7205251778249|153.204636607632
+%24044%|4|-27.7152333938096|153.202712322535
+%24044%|5|-27.7152333938096|153.202752411808
+%24045%|1|-27.5226183584129|153.217757045551
+%24045%|2|-27.5237559278845|153.225695828246
+%24045%|3|-27.5250629225964|153.225574810217
+%24045%|4|-27.5280157625013|153.225477995794
+%24045%|5|-27.5287660742804|153.217055140984
+%24046%|1|-27.4454755214055|152.992280725179
+%24046%|2|-27.4452445150294|152.993039746129
+%24046%|3|-27.445343517762|152.993782266623
+%24046%|4|-27.4454755214055|152.994920798049
+%24046%|5|-27.4429179508129|152.99477229395
+%24046%|6|-27.4431819580999|152.990927687833
+%24046%|7|-27.4431819580999|152.990927687833
+%24047%|1|-27.4371731641471|153.070487006771
+%24047%|2|-27.4394101514654|153.06257016884
+%24047%|3|-27.4313884547537|153.061783727986
+%24047%|4|-27.4331535775595|153.070382147991
+%24048%|1|-27.4591243841528|153.151674290612
+%24048%|2|-27.4597659028186|153.152900723356
+%24048%|3|-27.4592564615252|153.153995078727
+%24048%|4|-27.4593130661133|153.155353588843
+%24048%|5|-27.4590677795646|153.156089448489
+%24048%|6|-27.4573130373316|153.156995121899
+%24048%|7|-27.4571998281553|153.157674376957
+%24048%|8|-27.4545205443157|153.157391354017
+%24048%|9|-27.4533129797683|153.156259262253
+%24048%|10|-27.453577134513|153.15584416194
+%24048%|11|-27.4551620629815|153.154844147549
+%24048%|12|-27.4567092550579|153.153768660374
+%24048%|13|-27.4586715474475|153.152410150258
+%24049%|1|-27.4919133524397|153.219082090671
+%24049%|2|-27.492542505123|153.216845103353
+%24049%|3|-27.489536553414|153.215796515548
+%24049%|4|-27.4885403949988|153.221039454575
+%24049%|5|-27.490812335244|153.223171583113
+%24051%|1|-27.4093657881787|153.007881892927
+%24051%|2|-27.4105965255891|153.016668423301
+%24051%|3|-27.4168436863689|153.015655791254
+%24051%|4|-27.4173889497786|153.006339576426
+%24051%|5|-27.4126373686369|153.007274313699
+%24052%|1|-27.5854680903601|153.281818739723
+%24052%|2|-27.5860213655111|153.281969632946
+%24052%|3|-27.5882596149855|153.2816678465
+%24052%|4|-27.5896679517334|153.282145675039
+%24052%|5|-27.5932893890853|153.284006691456
+%24052%|6|-27.5913026283159|153.276738667882
+%24052%|7|-27.5848393685976|153.280284658622
+%24052%|8|-27.5848393685976|153.281466655536
+%24053%|1|-27.5852956793505|153.282303797565
+%24053%|2|-27.5862904969959|153.282473128228
+%24053%|3|-27.5872006493098|153.282240298566
+%24053%|4|-27.5884917956155|153.2821979659
+%24053%|5|-27.588936288606|153.285267084168
+%24053%|6|-27.587158316644|153.289500350744
+%24053%|7|-27.5845971903655|153.290622166387
+%24053%|8|-27.5822477274157|153.289627348741
+%24053%|9|-27.5820360640869|153.285457581164
+%24053%|10|-27.5826922204062|153.28109731659
+%24054%|1|-27.525006016806|153.265691786331
+%24054%|2|-27.5252622493815|153.271655017179
+%24054%|3|-27.5306664273375|153.271445372345
+%24054%|4|-27.530456782503|153.26331581154
+%24055%|1|-27.4013213062203|153.059002071595
+%24055%|2|-27.4039312447929|153.060112683753
+%24055%|3|-27.4070224486342|153.06064947963
+%24055%|4|-27.4063745915417|153.065850846573
+%24055%|5|-27.4040978366167|153.067461234202
+%24055%|6|-27.3998775104142|153.066258071031
+%24055%|7|-27.3988224288636|153.062056255031
+%24056%|1|-27.4082714600326|152.978035153963
+%24056%|2|-27.4095936306082|152.977786428805
+%24056%|3|-27.4097114477882|152.978558785874
+%24056%|4|-27.4099078097548|152.978676603054
+%24056%|5|-27.4099732637437|152.978977691403
+%24056%|6|-27.4101827165081|152.979016963796
+%24056%|7|-27.4103921692726|152.979894047248
+%24056%|8|-27.4099470821481|152.981163854632
+%24056%|9|-27.4088736367304|152.981216217823
+%24057%|1|-27.4142934722251|152.946407773049
+%24057%|2|-27.4153713415415|152.950759171401
+%24057%|3|-27.4150918939409|152.954232305865
+%24057%|4|-27.4204013983516|152.955669464954
+%24057%|5|-27.4221579261265|152.949202249055
+%24057%|6|-27.4184053440619|152.943493533786
+%24058%|1|-27.8325127412343|153.027750248047
+%24058%|2|-27.8285534712986|153.028447833703
+%24058%|3|-27.8279124466423|153.023809831778
+%24058%|4|-27.8318717165781|153.023300782786
+%24059%|1|-27.5668170933889|152.795744227448
+%24059%|2|-27.5724760448537|152.794656821088
+%24059%|3|-27.5735856431801|152.801469754812
+%24059%|4|-27.5676825800835|152.802224281674
+%24060%|1|-27.6147016630712|152.789139180494
+%24060%|2|-27.6209244583638|152.788197352017
+%24060%|3|-27.6214626460647|152.791998302655
+%24060%|4|-27.6140962019076|152.793108314789
+%24061%|1|-27.3868376104697|153.031605800194
+%24061%|2|-27.3881150852151|153.042264730101
+%24061%|3|-27.3753802588468|153.040747728841
+%24061%|4|-27.3739031786724|153.029689588076
+%24062%|1|-27.3744412613938|153.023731034269
+%24062%|2|-27.3754448793296|153.023828158586
+%24062%|3|-27.3803820320786|153.022921664966
+%24062%|4|-27.3805439059392|153.029250932917
+%24062%|5|-27.3786985439281|153.028894810423
+%24062%|6|-27.3766103711261|153.027243697045
+%24062%|7|-27.374748821729|153.02496127561
+%24063%|1|-27.6090127212284|152.761766666911
+%24063%|2|-27.6081628257465|152.759837174466
+%24063%|3|-27.6076000571166|152.759641928206
+%24063%|4|-27.6072784750424|152.759756778947
+%24063%|5|-27.6069109526719|152.758608271539
+%24063%|6|-27.6087600495987|152.75723006265
+%24063%|7|-27.6101267734141|152.758883913317
+%24063%|8|-27.6107584524885|152.760514793836
+%24063%|9|-27.610976668896|152.761491025133
+%24064%|1|-27.6142072147698|152.760648733923
+%24064%|2|-27.6114795840971|152.761209555182
+%24064%|3|-27.6101285146984|152.757538725118
+%24064%|4|-27.6133404910046|152.756417082599
+%24065%|1|-27.352019465343|153.05251802646
+%24065%|2|-27.3465682393655|153.053515636443
+%24065%|3|-27.3455884438467|153.047298388514
+%24065%|4|-27.3510752987521|153.046318592995
+%24066%|1|-27.3579829198256|152.969370986428
+%24066%|2|-27.3629331344641|152.972524752205
+%24066%|3|-27.3656078472123|152.969929881629
+%24066%|4|-27.3648094254964|152.968333038197
+%24066%|5|-27.3659671369845|152.966895879108
+%24066%|6|-27.360617711488|152.963582428987
+%24067%|1|-27.3456595030041|153.012117256509
+%24067%|2|-27.3411087414347|153.010699112206
+%24067%|3|-27.3406854147771|153.005005368661
+%24067%|4|-27.3447705170231|153.005979019973
+%24068%|1|-27.5949066917153|152.746033553473
+%24068%|2|-27.5986793260252|152.74534560251
+%24068%|3|-27.5991453573223|152.749273580586
+%24068%|4|-27.5960828659413|152.749340156486
+%24069%|1|-27.6629249810645|152.739049393239
+%24069%|2|-27.6609111229043|152.73938078762
+%24069%|3|-27.6598149722601|152.741292678279
+%24069%|4|-27.6617013710431|152.742873174556
+%24069%|5|-27.6639956398332|152.742057434542
+%24072%|1|-27.310836938502|152.991382928758
+%24072%|2|-27.3099114283699|152.99560325496
+%24072%|3|-27.3044509185904|152.996639826308
+%24072%|4|-27.305302387912|152.989976153357
+%24074%|1|-27.2915566277399|152.9534005358
+%24074%|2|-27.2931145099071|152.954323725232
+%24074%|3|-27.2944800609426|152.955977772965
+%24074%|4|-27.2963456729206|152.954631455043
+%24074%|5|-27.2971919299003|152.952073450991
+%24074%|6|-27.2960571762229|152.950034740994
+%24074%|7|-27.2930568105676|152.949938575428
+%24074%|8|-27.2909604012315|152.949784710523
+%24075%|1|-27.268801304343|152.973422908044
+%24075%|2|-27.2685313399796|152.974328082675
+%24075%|3|-27.2686742622897|152.975026813968
+%24075%|4|-27.2701193656468|152.977869379912
+%24075%|5|-27.2706592943736|152.978329907356
+%24075%|6|-27.2713421454105|152.97936212404
+%24075%|7|-27.2735495010879|152.978822195313
+%24075%|8|-27.2736130221145|152.974883891658
+%24075%|9|-27.2707069351436|152.972136607254
+%24077%|1|-27.2490769945382|153.002237279237
+%24077%|2|-27.2565857432093|153.000923738346
+%24077%|3|-27.2532724833518|152.995983256192
+%24077%|4|-27.2509198728021|152.993081703181
+%24077%|5|-27.250488560868|152.995669574785
+%24078%|1|-27.2491639708319|153.106173668612
+%24078%|2|-27.241118839959|153.107630533358
+%24078%|3|-27.2418472723318|153.112713372581
+%24078%|4|-27.2494715311671|153.110463325919
+%24079%|1|-27.2455703868981|153.017363310005
+%24079%|2|-27.2395986750258|153.009201970446
+%24079%|3|-27.2376081044018|153.01198876932
+%24079%|4|-27.2391209380761|153.016407836105
+%24079%|5|-27.2416688684749|153.020747280066
+%24081%|1|-27.2311398414089|153.117221208143
+%24081%|2|-27.2300453237902|153.109859452653
+%24081%|3|-27.2253973722589|153.110729069391
+%24081%|4|-27.226251995605|153.118780520915
+%24082%|1|-27.2262595286925|153.085237724268
+%24082%|2|-27.2271670537415|153.091078885492
+%24082%|3|-27.2213918943388|153.09213491464
+%24082%|4|-27.2214413957051|153.086524759792
+%24082%|5|-27.2227944330509|153.086508259336
+%24082%|6|-27.2260780236827|153.084907715159
+%24083%|1|-27.9206506448028|153.34033841477
+%24083%|2|-27.9241574899606|153.337389476796
+%24083%|3|-27.9273853815263|153.332726966757
+%24083%|4|-27.9321674431052|153.33491874498
+%24083%|5|-27.9328050513157|153.341454229138
+%24083%|6|-27.9224040673817|153.342251239401
+%24083%|7|-27.9224040673817|153.342251239401
+%24084%|1|-27.9414152706361|153.32813435289
+%24084%|2|-27.949459708334|153.32571920568
+%24084%|3|-27.9497502523592|153.319000375098
+%24084%|4|-27.9424321747243|153.320089915192
+%24085%|1|-27.1946148636708|153.027653603536
+%24085%|2|-27.1976743183538|153.03093369197
+%24085%|3|-27.1949384598392|153.032845851147
+%24085%|4|-27.1928792114948|153.030580677968
+%24085%|5|-27.1925261974929|153.027830110537
+%24086%|1|-27.9126730278703|153.398459462095
+%24086%|2|-27.9125933306574|153.399694768896
+%24086%|3|-27.9129121195092|153.401129318729
+%24086%|4|-27.9128722709027|153.402284928317
+%24086%|5|-27.9127128764768|153.402842808808
+%24086%|6|-27.9201247172827|153.404038267002
+%24086%|7|-27.923113362769|153.401248864549
+%24086%|8|-27.9227547253107|153.399375980044
+%24087%|1|-27.9341863638341|153.39024801057
+%24087%|2|-27.9328751855631|153.390345134887
+%24087%|3|-27.9311107604823|153.389843325919
+%24087%|4|-27.9296538957367|153.389212017862
+%24087%|5|-27.9273390995298|153.388224587313
+%24087%|6|-27.9262545446636|153.387787527889
+%24087%|7|-27.9282941553074|153.384889985784
+%24087%|8|-27.9298481443694|153.383141748089
+%24087%|9|-27.9324057513673|153.382057193223
+%24088%|1|-27.1750093732316|152.942057490862
+%24088%|2|-27.1741740591591|152.940949791765
+%24088%|3|-27.1736474481134|152.939660502654
+%24088%|4|-27.1733750630898|152.939351799627
+%24088%|5|-27.1734658580977|152.938952301592
+%24088%|6|-27.1734113810929|152.937463263463
+%24088%|7|-27.1737200841197|152.936192133353
+%24088%|8|-27.1700156477984|152.936555313384
+%24088%|9|-27.1697977397795|152.939551548644
+%24088%|10|-27.1702517148188|152.941440084808
+%24088%|11|-27.1716862759433|152.942602260909
+%24089%|1|-27.1538134491278|152.97637921415
+%24089%|2|-27.1544983266256|152.976471765163
+%24089%|3|-27.1580152651277|152.977378765092
+%24089%|4|-27.1601624486342|152.977878540564
+%24089%|5|-27.1602920200527|152.969808092212
+%24089%|6|-27.1549795918943|152.969197255524
+%24089%|7|-27.1547204490573|152.971955275718
+%24090%|1|-27.9980094661669|153.338493961818
+%24090%|2|-27.998472722089|153.339581606157
+%24090%|3|-28.0012589714757|153.339339907415
+%24090%|4|-28.0006950077444|153.337278754254
+%24090%|5|-27.9989561195729|153.336593941152
+%24091%|1|-27.9866553818569|153.38222819452
+%24091%|2|-27.9866553818569|153.382564586113
+%24091%|3|-27.9878495720138|153.390856638893
+%24091%|4|-27.9950819912742|153.390099757808
+%24091%|5|-27.9955193003457|153.383085993083
+%24091%|6|-27.9943082906091|153.383220549721
+%24091%|7|-27.9922899410481|153.382800060229
+%24091%|8|-27.9908770963554|153.382144096621
+%24091%|9|-27.9891783188082|153.381740426709
+%24092%|1|-27.9679843082247|153.41368779101
+%24092%|2|-27.9665947800344|153.416110558111
+%24092%|3|-27.9697835690866|153.418319551644
+%24092%|4|-27.9721528927958|153.419424048411
+%24092%|5|-27.9724735531474|153.418248293789
+%24092%|6|-27.9731148738506|153.417553529693
+%24092%|7|-27.9727407701071|153.413652162082
+%24092%|8|-27.9727407701071|153.413634347618
+%24093%|1|-27.9843909618708|153.410894853479
+%24093%|2|-27.9855712969732|153.411149079501
+%24093%|3|-27.9865518830583|153.41171200855
+%24093%|4|-27.989130461282|153.412347573605
+%24093%|5|-27.9906376584127|153.412402050609
+%24093%|6|-27.9898205033418|153.406264308077
+%24093%|7|-27.9869150630898|153.406137195066
+%24093%|8|-27.985752886989|153.407608074194
+%24094%|1|-27.9989892260534|153.428655256362
+%24094%|2|-27.9992999553757|153.430723213576
+%24094%|3|-28.0037465991259|153.431108946528
+%24094%|4|-28.0038323175596|153.428901696859
+%24094%|5|-28.0034894438247|153.428762404404
+%24094%|6|-28.0028786999843|153.428730259992
+%24094%|7|-28.0007143095324|153.428333812236
+%24094%|8|-27.9998035511739|153.428665971166
+%24095%|1|-27.1055650201232|152.94785870437
+%24095%|2|-27.106194367013|152.951449683683
+%24095%|3|-27.0992530410221|152.954059622255
+%24095%|4|-27.0988828369693|152.949043357339
+%24096%|1|-27.0978771189884|152.94935229064
+%24096%|2|-27.0978371504748|152.956047016657
+%24096%|3|-27.0902031643898|152.956666528617
+%24096%|4|-27.0902231486466|152.95065126733
+%24097%|1|-28.0471135208706|153.413353599704
+%24097%|2|-28.0490669067593|153.40765290211
+%24097%|3|-28.0463959505441|153.407054926838
+%24097%|4|-28.0403763328054|153.408171147346
+%24097%|5|-28.0442831045828|153.414629280284
+%24098%|1|-28.0278735550034|153.429935562681
+%24098%|2|-28.0269014322486|153.434768401519
+%24098%|3|-28.0339007160836|153.436004386165
+%24098%|4|-28.035345012748|153.433685179021
+%24098%|5|-28.0335674168534|153.431240984666
+%24099%|1|-28.0770109406795|153.36521488728
+%24099%|2|-28.0784634194562|153.366384939628
+%24099%|3|-28.0792057974976|153.367256426894
+%24099%|4|-28.0803516418659|153.367643754568
+%24099%|5|-28.0814732782547|153.366005681281
+%24099%|6|-28.0809568413563|153.363641368605
+%24100%|1|-28.0773578968033|153.388756781116
+%24100%|2|-28.0779928097154|153.385798664139
+%24100%|3|-28.0794646532844|153.384009364114
+%24100%|4|-28.0767662734079|153.382811687484
+%24100%|5|-28.0760159217845|153.382854977001
+%24100%|6|-28.0754820177448|153.381873747955
+%24100%|7|-28.0746739467657|153.381801598761
+%24100%|8|-28.0756407459728|153.384831864932
+%24100%|9|-28.0754531580669|153.386707743991
+%24101%|1|-28.0795695560187|153.384070652309
+%24101%|2|-28.0782660200392|153.385770199219
+%24101%|3|-28.0775234995446|153.388789782564
+%24101%|4|-28.0781175159403|153.389086790762
+%24101%|5|-28.0788600364349|153.388558776188
+%24101%|6|-28.0794870537415|153.388047262069
+%24101%|7|-28.0799820674046|153.387189238386
+%24101%|8|-28.0801800728698|153.386644723357
+%24101%|9|-28.0803450774242|153.385687696942
+%24101%|10|-28.0800480692263|153.384384160962
+%24103%|1|-28.0966702012902|153.442870109928
+%24103%|2|-28.0981221213617|153.442549159176
+%24103%|3|-28.0994976245872|153.441020822258
+%24103%|4|-28.100445193476|153.439171534588
+%24103%|5|-28.1010106781354|153.437459797241
+%24103%|6|-28.1011482284579|153.436435811506
+%24103%|7|-28.098504205591|153.4361912776
+%24103%|8|-28.0959824496774|153.439339651649
+%24103%|9|-28.0953099814338|153.440394204122
+%24103%|10|-28.0953558315413|153.441815557455
+%24104%|1|-28.1174577265575|153.451319479811
+%24104%|2|-28.119003284317|153.457107100357
+%24104%|3|-28.1214038314753|153.461316278936
+%24104%|4|-28.1248895574861|153.4538515638
+%24104%|5|-28.12022|153.447241838062
+%24105%|1|-28.1313783733328|153.468439978637
+%24105%|2|-28.1363422379184|153.471527964164
+%24105%|3|-28.1380882484267|153.46852655767
+%24105%|4|-28.1331965330356|153.466852696357
+%24107%|1|-28.1987036901194|153.544023897865
+%24107%|2|-28.1995949897541|153.550682430429
+%24107%|3|-28.2055719402452|153.549092072258
+%24107%|4|-28.2055544637817|153.544775385792
+%24108%|1|-26.8534611681183|152.950009926374
+%24108%|2|-26.853538100571|152.958876391548
+%24108%|3|-26.8578847841486|152.959684182301
+%24108%|4|-26.8602889232955|152.958780225982
+%24108%|5|-26.859461899429|152.951606274768
+%24108%|6|-26.8561922701892|152.949182902508
+%24110%|1|-26.8034581592532|153.119943745874
+%24110%|2|-26.8042251844796|153.121381918173
+%24110%|3|-26.8045767377084|153.123938668928
+%24110%|4|-26.8059829506235|153.123203603086
+%24110%|5|-26.8076288589219|153.122995867087
+%24110%|6|-26.8076128792297|153.11904888311
+%24111%|1|-26.7737409432592|153.124048349302
+%24111%|2|-26.774329299929|153.121518415622
+%24111%|3|-26.7723141783349|153.119253242443
+%24111%|4|-26.7693429771523|153.119238533527
+%24111%|5|-26.7695783198203|153.1204446647
+%24111%|6|-26.76953419307|153.120988894619
+%24111%|7|-26.7690929255677|153.122136190125
+%24113%|1|-26.7162159653868|153.050288785296
+%24113%|2|-26.7171399908913|153.051130308524
+%24113%|3|-26.720720589721|153.051377815355
+%24113%|4|-26.7219911247896|153.045701658685
+%24113%|5|-26.7202420765133|153.046279174625
+%24113%|6|-26.7177010063761|153.047764215615
+%24113%|7|-26.7164964731293|153.048968748861
+%24114%|1|-26.7008526329164|153.125771500388
+%24114%|2|-26.7018706940618|153.127566990044
+%24114%|3|-26.7029813062203|153.128640581797
+%24114%|4|-26.7040548979736|153.12956609193
+%24114%|5|-26.705535714185|153.130158418414
+%24114%|6|-26.7029627960177|153.133231112053
+%24114%|7|-26.7001307350134|153.133231112053
+%24114%|8|-26.6977614290752|153.128436969568
+%24115%|1|-26.6931927419561|153.093266836565
+%24115%|2|-26.6954550807586|153.089016381845
+%24115%|3|-26.6916616641807|153.088833566589
+%24115%|4|-26.6892165101215|153.093221132751
+%24116%|1|-26.6848839082101|153.046702523042
+%24116%|2|-26.6859468905148|153.050800148377
+%24116%|3|-26.6897530529605|153.053200431001
+%24116%|4|-26.6907988903893|153.049359978803
+%24116%|5|-26.6892215618082|153.047354028325
+%24116%|6|-26.6869070035642|153.046805392297
+%24116%|7|-26.686495526543|153.04666823329
+%24117%|1|-26.6560819735399|153.089884761598
+%24117%|2|-26.657030813106|153.087715985447
+%24117%|3|-26.657121178779|153.087143669518
+%24117%|4|-26.6561120954309|153.087384644646
+%24117%|5|-26.6553138653197|153.08947811607
+%24118%|1|-26.6538491059193|153.090597044944
+%24118%|2|-26.6560796631577|153.092149010121
+%24118%|3|-26.6562430279132|153.092280958577
+%24118%|4|-26.6564755085268|153.092701936986
+%24118%|5|-26.656682856101|153.09326114711
+%24118%|6|-26.6541381358713|153.093204597772
+%24118%|7|-26.6540501702338|153.092664237427
+%24118%|8|-26.6535286596682|153.092507155931
+%24119%|1|-26.6236047830478|152.965256083722
+%24119%|2|-26.6290050102459|152.965378418966
+%24119%|3|-26.6290923925631|152.959086892133
+%24119%|4|-26.6235523536576|152.958125686645
+%24120%|1|-26.5409496276865|153.075496689995
+%24120%|2|-26.5413875532238|153.084732937691
+%24120%|3|-26.5349779158142|153.085369920291
+%24120%|4|-26.5362916924261|153.078721414406
+%24120%|5|-26.5369286750258|153.077367826382
+%24120%|6|-26.5364907494885|153.075974426945
+%24120%|7|-26.535614898414|153.075138387283
+%24120%|8|-26.5356547098264|153.074143101971
+%24120%|9|-26.5358935783013|153.074143101971
+%24121%|1|-26.4154478033924|153.052426130565
+%24121%|2|-26.416041412933|153.052164942367
+%24121%|3|-26.4165637893286|153.052853529434
+%24121%|4|-26.4181784072789|153.052378641802
+%24121%|5|-26.4190806937806|153.051666310353
+%24121%|6|-26.41848708424|153.045753959329
+%24121%|7|-26.4118624017675|153.046300080106
+%24121%|8|-26.4128121770324|153.04810465311
+%24121%|9|-26.4132395759016|153.048270863781
+%24121%|10|-26.4133108090464|153.049196894664
+%24121%|11|-26.4136669747708|153.04971927106
+%24121%|12|-26.4141418624032|153.050051692403
+%24121%|13|-26.4141418624032|153.050692790707
+%24122%|1|-26.3961382697449|153.069390493955
+%24122%|2|-26.403020531342|153.068046727838
+%24122%|3|-26.402294171279|153.064977856572
+%24122%|4|-26.4018401962396|153.06426965551
+%24122%|5|-26.4015496522144|153.061945303309
+%24122%|6|-26.4000787730868|153.062163211328
+%24122%|7|-26.3983718269387|153.062508232358
+%24122%|8|-26.3961201107434|153.069390493955
+%24123%|1|-26.3927146324933|153.040070703947
+%24123%|2|-26.392473999859|153.037294173551
+%24123%|3|-26.3915484897268|153.03749778578
+%24123%|4|-26.3911227550661|153.037442255172
+%24123%|5|-26.3909931836476|153.037109071524
+%24123%|6|-26.3893827960177|153.037312683753
+%24123%|7|-26.3892717348018|153.040292826379
+%24123%|8|-26.3918076325638|153.041884703806
+%24189%|1|-27.0826076038904|152.961007078115
+%24189%|2|-27.080431439132|152.968927533632
+%24189%|3|-27.0753733264501|152.967339521511
+%24189%|4|-27.0757458231205|152.960791422148
+%24211%|1|-27.6433814294236|153.00739664102
+%24211%|2|-27.6440126081792|153.008644319956
+%24211%|3|-27.6449667156005|153.008174605533
+%24211%|4|-27.64784371644|153.007660855383
+%24211%|5|-27.6493996454654|153.006750783689
+%24211%|6|-27.6508087887338|153.006765462265
+%24211%|7|-27.6509555744909|153.001583925038
+%24211%|8|-27.6425447506081|153.001877496553
+%24212%|1|-27.6433786078482|153.007371926423
+%24212%|2|-27.6440231100978|153.008633505295
+%24212%|3|-27.6449555814377|153.008180982438
+%24212%|4|-27.6478078467126|153.007673608327
+%24212%|5|-27.6493848203022|153.006741136987
+%24212%|6|-27.6508109529396|153.006768562615
+%24212%|7|-27.6509480810779|153.001598831804
+%24212%|8|-27.642542126205|153.001859375267
+%24213%|1|-27.6425431643856|153.001918591445
+%24213%|2|-27.6433787913096|153.007401476876
+%24213%|3|-27.6440091765329|153.008632927079
+%24213%|4|-27.6449620844286|153.008149143071
+%24213%|5|-27.6478501283587|153.007650698941
+%24213%|6|-27.6493894411133|153.006741771409
+%24213%|7|-27.6508114728961|153.006756431531
+%24213%|8|-27.6509580741108|153.001610728894
+%24214%|1|-27.7298552129355|153.239254798113
+%24214%|2|-27.7333645360623|153.238678640585
+%24214%|3|-27.734586688395|153.245243344544
+%24214%|4|-27.730518667059|153.244492593825
+%24219%|1|-34.8469154419779|138.568954198025
+%24219%|2|-34.8490685900385|138.569129965213
+%24219%|3|-34.8491564736329|138.569613324982
+%24219%|4|-34.8493175935558|138.570023448422
+%24219%|5|-34.8492150626957|138.573172610552
+%24219%|6|-34.8468275583836|138.573011490629
+%24231%|1|-12.4526179994512|130.839847353887
+%24231%|2|-12.4525846977962|130.841834352633
+%24231%|3|-12.454283082199|130.841484685256
+%24231%|4|-12.4540111186835|130.839469935131
+%24232%|1|-12.4550570474379|130.965632324772
+%24232%|2|-12.4565290976427|130.967382673025
+%24232%|3|-12.4588140710948|130.96555176481
+%24232%|4|-12.4577521443302|130.963537765774
+%24233%|1|-12.4385689429182|130.926676542092
+%24233%|2|-12.4385846414688|130.928058014553
+%24233%|3|-12.4398091284231|130.928081562379
+%24233%|4|-12.4398169776985|130.926590200063
+%24234%|1|-34.8345886398198|138.515835709733
+%24234%|2|-34.8280576150582|138.51939251195
+%24234%|3|-34.8294067469338|138.522397396582
+%24234%|4|-34.8359377716954|138.518687283924
+%24242%|1|-37.9221569494698|145.181762255388
+%24242%|2|-37.9217969782675|145.182950160356
+%24242%|3|-37.9223009379508|145.185577950133
+%24242%|4|-37.9284444464701|145.184330049965
+%24242%|5|-37.9252998367573|145.180309510326
+%24246%|1|-12.4719714191313|130.912663747181
+%24246%|2|-12.470717722925|130.916234881829
+%24246%|3|-12.4739469404261|130.917678532006
+%24246%|4|-12.4744028299557|130.915171139594
+%24246%|5|-12.4744028299557|130.913461553858
+%24246%|6|-12.4729211889846|130.913233609093
+%24247%|1|-12.4726048531788|130.912481676374
+%24247%|2|-12.4736746949016|130.9090344086
+%24247%|3|-12.4737935662042|130.907073032108
+%24247%|4|-12.4746851009732|130.906954160806
+%24247%|5|-12.4745067940194|130.912868008107
+%24247%|6|-12.473080338389|130.912749136804
+%24247%|7|-12.473080338389|130.912749136804
+%24249%|1|-27.5972495672565|153.028359787741
+%24249%|2|-27.5966476370172|153.028115902213
+%24249%|3|-27.5954437765386|153.028364976794
+%24249%|4|-27.5956876620666|153.030191523727
+%24249%|5|-27.5975090199458|153.030051419275
+%24252%|1|-33.8438341366442|150.938764192912
+%24252%|2|-33.8404097385947|150.940029731322
+%24252%|3|-33.8419358290298|150.946804083985
+%24252%|4|-33.8456580008227|150.945538545575
+%24254%|1|-34.8402805804903|138.572547320967
+%24254%|2|-34.8401845461536|138.574542701075
+%24254%|3|-34.8439085443234|138.574820133603
+%24254%|4|-34.8440686015513|138.572557991448
+%24255%|1|-12.7510775955437|131.162953230353
+%24255%|2|-12.7552180816155|131.163088983994
+%24255%|3|-12.7550823279738|131.173066876659
+%24255%|4|-12.7508739650812|131.172931123017
+%24255%|5|-12.7508060882603|131.172795369376
+%24258%|1|-32.0459662279171|115.793332515097
+%24258%|2|-32.0485598342334|115.793475282417
+%24258%|3|-32.0485836287867|115.796092683287
+%24258%|4|-32.0448240893558|115.796925492654
+%24258%|5|-32.0445147601621|115.794688804638
+%24260%|1|-28.2546714371935|153.574604976576
+%24260%|2|-28.2578060805695|153.571706274099
+%24260%|3|-28.2600980778766|153.575110564217
+%24260%|4|-28.2572667870854|153.57858226602
+%24263%|1|-27.8547110911019|153.302019498582
+%24263%|2|-27.8507941672163|153.30308775055
+%24263%|3|-27.8501265097358|153.297390406717
+%24263%|4|-27.8554900248292|153.296989812229
+%24263%|5|-27.8548223673487|153.302019498582
+%24264%|1|-27.6233479868467|152.854718747094
+%24264%|2|-27.6237605158364|152.857581698283
+%24264%|3|-27.6278032999358|152.856839146102
+%24264%|4|-27.6274155226854|152.854306218105
+%24265%|1|-27.410882222288|153.078677316444
+%24265%|2|-27.4139054694589|153.078151534327
+%24265%|3|-27.4175421290992|153.082226345731
+%24265%|4|-27.4166658255714|153.085863005371
+%24265%|5|-27.410882222288|153.086038266077
+%24266%|1|-27.5973692162145|152.955939808399
+%24266%|2|-27.5959897000877|152.955618714128
+%24266%|3|-27.5953118344047|152.959459952998
+%24266%|4|-27.5956210362951|152.95949563014
+%24266%|5|-27.5957161753384|152.959638338704
+%24266%|6|-27.5982135752231|152.959697800606
+%24266%|7|-27.5982254676035|152.958187468295
+%24267%|1|-27.5901068734904|153.08500933429
+%24267%|2|-27.5889327672251|153.085225325537
+%24267%|3|-27.5895142821206|153.089129782693
+%24267%|4|-27.590693926623|153.088941482632
+%24268%|1|-37.722903520266|144.752312490474
+%24268%|2|-37.7241110118151|144.752181241393
+%24268%|3|-37.7239010132848|144.750763751314
+%24268%|4|-37.7233760169591|144.750711251681
+%24268%|5|-37.7228247708171|144.750842500763
+%24268%|6|-37.7226935217357|144.751314997456
+%24269%|1|-38.0792950944965|144.364654997621
+%24269%|2|-38.0794057791997|144.365263763489
+%24269%|3|-38.080249750062|144.365153078786
+%24269%|4|-38.080111394183|144.364212258808
+%24269%|5|-38.0797931756611|144.364212258808
+%24269%|6|-38.0793089300844|144.364654997621
+%24270%|1|-38.0537019025021|145.116289150015
+%24270%|2|-38.0539711910365|145.115615928679
+%24270%|3|-38.0535941870883|145.115265853584
+%24270%|4|-38.0531363965798|145.115319711291
+%24270%|5|-38.0530017523126|145.11593907492
+%24270%|6|-38.0532979697005|145.116127576894
+%24271%|1|-37.8079760339838|144.995124630056
+%24271%|2|-37.8081182925237|144.996860184243
+%24271%|3|-37.8100530086664|144.996689473995
+%24271%|4|-37.8099961052505|144.995978181295
+%24271%|5|-37.8090856505951|144.995124630056
+%24272%|1|-37.9847871785093|145.0769588435
+%24272%|2|-37.9834121142671|145.078190671884
+%24272%|3|-37.9827532293177|145.07713072653
+%24272%|4|-37.9825813462874|145.075812956632
+%24272%|5|-37.9826386406309|145.074982188652
+%24272%|6|-37.9847298841658|145.076930196328
+%24273%|1|-37.8366405080992|144.996292060946
+%24273%|2|-37.8367765234726|144.997231803525
+%24273%|3|-37.8391011498535|144.996935042711
+%24273%|4|-37.839200070125|144.995859284758
+%24273%|5|-37.8388662142086|144.995859284758
+%24274%|1|-37.8861639562745|144.607339331565
+%24274%|2|-37.8923977282722|144.607289461389
+%24274%|3|-37.890402921233|144.587889962932
+%24274%|4|-37.8804787562126|144.580858268118
+%24274%|5|-37.8797307035729|144.58704216994
+%24274%|6|-37.882174342196|144.589884769971
+%24275%|1|-37.8825062061074|144.733348324547
+%24275%|2|-37.8827648418084|144.735331198255
+%24275%|3|-37.8844890798147|144.735072562554
+%24275%|4|-37.8844244208895|144.733132794797
+%24275%|5|-37.8843382089891|144.733046582896
+%24276%|1|-37.6895215479298|144.954941393073
+%24276%|2|-37.6897187417073|144.957814788117
+%24276%|3|-37.6911554392294|144.958068322974
+%24276%|4|-37.6910427570708|144.95437798228
+%24276%|5|-37.6899159354849|144.9543216412
+%24277%|1|-37.7334957603212|144.901501879359
+%24277%|2|-37.7327633262903|144.902713212564
+%24277%|3|-37.7345380702882|144.904262592245
+%24277%|4|-37.7349324578433|144.902206142851
+%24278%|1|-27.7097670338654|153.160739879044
+%24278%|2|-27.7109974041857|153.160066104821
+%24278%|3|-27.7124328362262|153.160359050135
+%24278%|4|-27.7140733299867|153.159392330598
+%24278%|5|-27.7150400495241|153.159333741535
+%24278%|6|-27.716973488599|153.158279138403
+%24278%|7|-27.72045953784|153.159538803255
+%24278%|8|-27.722803100355|153.172721342402
+%24278%|9|-27.7120813018489|153.171139437704
+%24278%|10|-27.711817651066|153.164196633753
+%24278%|11|-27.7109681096543|153.161911660301
+%24281%|1|-37.8149267720646|144.799800212249
+%24281%|2|-37.8151907509463|144.803687901234
+%24281%|3|-37.8201103573778|144.80296795883
+%24281%|4|-37.8198463784961|144.800688141215
+%24281%|5|-37.8194384111335|144.799176262165
+%24282%|1|-33.7142972058187|150.330561334662
+%24282%|2|-33.7120129363784|150.330765027478
+%24282%|3|-33.7119983868915|150.333573078446
+%24282%|4|-33.7147627893989|150.333398484604
+%24282%|5|-33.7147773388858|150.333383935117
+%24282%|6|-33.7147627893989|150.333383935117
+%24282%|7|-33.7147627893989|150.333383935117
+%24283%|1|-33.9844315419899|150.894158050205
+%24283%|2|-33.9844168947242|150.89417269747
+%24283%|3|-33.9841532439412|150.890012874006
+%24283%|4|-33.9873317006022|150.889573456035
+%24283%|5|-33.9876392931823|150.89386510489
+%24283%|6|-33.9876392931823|150.89386510489
+%24287%|1|-37.8419311567833|144.939320254845
+%24287%|2|-37.8422646633909|144.939849515331
+%24287%|3|-37.8435261883851|144.93897224795
+%24287%|4|-37.8430984299101|144.938261733873
+%24287%|5|-37.8428809256007|144.938464737895
+%24288%|1|-38.4481252558517|145.239015328724
+%24288%|2|-38.4522799876417|145.239005864642
+%24288%|3|-38.4486173880911|145.243472911123
+%24304%|1|-38.3538430412824|144.911284290004
+%24304%|2|-38.355532435807|144.911836796389
+%24304%|3|-38.3531524083006|144.914397450983
+%24304%|4|-38.3531417831778|144.914386825861
+%24313%|1|-27.4439106578052|153.115227270581
+%24313%|2|-27.4451747607972|153.114994575006
+%24313%|3|-27.4465960905294|153.116692623801
+%24313%|4|-27.4441810877985|153.117113991465
+%24314%|1|-27.5308291451377|152.940068492566
+%24314%|2|-27.5312329520985|152.942911966582
+%24314%|3|-27.5317040602196|152.943181171223
+%24314%|4|-27.5340596008246|152.942508159622
+%24314%|5|-27.5332519869029|152.939715161476
+%24316%|1|-27.4429990957221|153.1174507347
+%24316%|2|-27.4444222717738|153.117190661918
+%24316%|3|-27.4446751203109|153.119011171386
+%24316%|4|-27.4432519442592|153.119249571435
+%24323%|1|-27.317933001393|153.062909828323
+%24323%|2|-27.3204121100281|153.063996179298
+%24323%|3|-27.3214427506966|153.070235733615
+%24323%|4|-27.3199664275768|153.069957182083
+%24323%|5|-27.3181558426186|153.068313728044
+%24323%|6|-27.3177658704738|153.067979466206
+%24324%|1|-28.0272185626733|153.386388916969
+%24324%|2|-28.0315351234939|153.386923712115
+%24324%|3|-28.0318789203734|153.387764104487
+%24324%|4|-28.0313441252275|153.392475395058
+%24324%|5|-28.0292940771682|153.392360796099
+%24327%|1|-28.1051093240241|153.405284031291
+%24327%|2|-28.1068746593396|153.406359945714
+%24327%|3|-28.1078252245095|153.405910777557
+%24327%|4|-28.1082117180401|153.404887091989
+%24327%|5|-28.1075954175453|153.403717165626
+%24327%|6|-28.1057674076032|153.404061876073
+%24340%|1|-27.4967999053543|153.054514374732
+%24340%|2|-27.4943728609116|153.058975853487
+%24340%|3|-27.4904348623305|153.056358452617
+%24340%|4|-27.4929570849867|153.051861282032
+%24342%|1|-27.3952851392267|152.997491767336
+%24342%|2|-27.3949019235328|152.994923186469
+%24342%|3|-27.3920951275047|152.995378902429
+%24342%|4|-27.3922608423993|152.99697390829
+%24342%|5|-27.3927579870833|152.997046408557
+%24342%|6|-27.3933172748527|152.997854268668
+%24351%|1|-27.9987802960333|153.427183365734
+%24351%|2|-28.0010626547608|153.426774029658
+%24351%|3|-28.0014223743428|153.426649988423
+%24351%|4|-28.0016456485662|153.428250120357
+%24351%|5|-28.0005912980671|153.428064058504
+%24351%|6|-27.9996733929267|153.428423778086
+%24351%|7|-27.9989787620096|153.428398969839
+%24367%|1|-27.4459270218383|153.117129008879
+%24367%|2|-27.4461610031198|153.118061934245
+%24367%|3|-27.4469679385649|153.117737960163
+%24367%|4|-27.4468809455244|153.116871029518
+%24367%|5|-27.4461910007199|153.116874029278
+%24367%|6|-27.4459270218383|153.116949023278
+%24367%|7|-27.4459240220782|153.116949023278
+%24368%|1|-27.1155998011069|152.952551153063
+%24368%|2|-27.1171496831672|152.951393409837
+%24368%|3|-27.1206042395667|152.950702498557
+%24368%|4|-27.1233865579641|152.952065647839
+%24368%|5|-27.1240587959662|152.95645386813
+%24368%|6|-27.1224528940724|152.956061729296
+%24368%|7|-27.1217246362368|152.956117749129
+%24368%|8|-27.1217246362368|152.956117749129
+#end
+
+#map gfids insert
+
+#put f=c:\temp\ww_polygons.sql
+
+#newer `f`
+DECLARE @geofenceid uniqueidentifier
+DECLARE @companyid uniqueidentifier = '78c46d66-b886-44d0-a3c2-3aa9b12c4d98'
+DECLARE @now datetime = getutcdate()
+
+`insert`
+#end
+
+#run {`f`}

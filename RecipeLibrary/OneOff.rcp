@@ -1,0 +1,14 @@
+#tags oneoff datachange sql maintain
+
+#name OneOff
+
+#require jira
+#require notes
+#default script=-- Put your script here
+
+#put file=C:\TeamImarda\Imarda360\Imarda360.Deployment\DatabaseScripts\DataChange.sql
+
+#do `file`
+
+#warn Edit the generated script: `file`?
+#run {notepad++} `file`

@@ -1,0 +1,36 @@
+#tags alter column drop sql
+
+
+#ask table=Table name? (short name)
+#with table
+delblank
+trim []
+#end
+
+
+#ask column=Column name in [`table`]? (short name)
+#with column
+delblank
+trim []
+#end
+
+#put clip
+-- Added by `username` on `timestamp`
+IF EXISTS(
+	SELECT object_id FROM sys.columns 
+	WHERE OBJECT_NAME(object_id) ='`table`' 
+	AND name ='`column`'
+	)
+BEGIN
+	ALTER TABLE [`table`] DROP COLUMN [`column`]
+	PRINT '`table`.`column` dropped by `username` on `timestamp`'
+END
+#end
+
+#put msg
+On clipboard:
+`clip`
+#end
+
+#copy `clip`
+#mbox `msg`

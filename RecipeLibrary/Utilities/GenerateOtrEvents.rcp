@@ -1,0 +1,31 @@
+
+
+#@ t
+INSERT INTO [Imarda360.Alerting].dbo.[Event]
+	([ID],[Active],[Deleted],[DateCreated],[DateModified],[UserID],[Name],[Description],[Template],[CompanyID], [CategoryID], [DataProvider])
+VALUES
+	('`1`',1,0,'`datetime`', '`datetime`' ,'11111111-1111-1111-1111-111111111111','`2`','`2`',1,'01001cb8-17b0-445a-8693-0fe26229f284', 'e9f4f44c-3a6a-4002-87a0-6e7f4f38ff69' /*OTR Vehicle*/,2)
+
+
+#end t
+
+#put datetime=`ts:sql`
+
+#expn t
+1dcaec79-be70-4b04-9505-244438f405e2|Out of sequence
+c5ffdd34-3890-4c61-8791-d2d635eae96d|Door open while moving
+7826730c-7db1-470e-8113-bbd62ce7fd81|Unauthorized door open while stationary
+4e148d65-497d-455d-8ee0-f39637bfa7c0|Load start
+acabb4c7-8cc4-453c-ba49-552b9ced02d0|Load completed
+bcafa269-e532-4186-b11e-39ad1c6c851e|Store entry
+f68e775c-cb4d-4c85-b8e9-e8acc2fac745|Last Store Exit Complete
+c951a592-5d55-4523-8025-08d03f7e5857|Last Store Exit Partial
+0ae9fc10-832c-40af-adb1-da15e1750252|Intermediate Store Exit Complete
+a63b96bc-b3a1-4df4-ab74-08d03f7c0c04|Intermediate Store Exit Partial
+#end
+
+#newer C:\TeamImarda\Imarda360\Imarda360.DatabaseScripts\Imarda360.Alerting\Data\Woolworths\w_eventdata.sql
+USE [Imarda360.Alerting]
+
+`t`
+#end

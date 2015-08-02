@@ -1,0 +1,24 @@
+#tags average
+
+#ask list=Paste list of values here, one per line.
+
+#with list
+delblank
+chomp
+#end
+
+#count n=list
+
+#putv s=list
+#with s
+join +
+#end
+
+#info `s`
+
+#csharp sum
+double sum = (`s`)/`n`.0;
+return sum.ToString();
+#end
+
+#info `sum`

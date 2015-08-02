@@ -1,0 +1,12 @@
+#tags child entity
+
+#cdata template
+		#region `child`s
+		private List<`child`> _`child`s;
+		public bool Has`child`s { get { return _`child`s != null && _`child`s.Count > 0; } }
+		public IList<`child`> `child`s { get { return _`child`s = (_`child`s ?? new List<`child`>()); } }
+		#endregion `child`s
+#end template
+#require child
+#exp template
+#copy `template`

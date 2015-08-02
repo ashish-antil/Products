@@ -1,0 +1,25 @@
+#tags file collector
+
+#mode write
+
+Edit the attach list below
+Put one full path name per file that has to be
+attached to the email.
+
+#put attach
+file1
+file2
+#end
+
+#with attach
+join ;
+#end
+
+#put smtp-host=smtp.imardainc.com
+#put smtp-sender=`username`@imarda.com
+
+#email maurice.verheijen@imarda.com `attach`
+`attach`
+
+on `computername` by `username`
+#end

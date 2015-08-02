@@ -1,0 +1,474 @@
+Generate a service project
+
+
+#version 1.7.2+
+
+#require name
+#default base=c:\temp\installer
+#require csproj  full path to included csproj
+#default framework=4.0
+
+#load projfile=`csproj`
+
+#putv projguid=projfile
+#extract <ProjectGuid>([^<]+) projguid
+$1
+#end
+
+#putv projname=projfile
+#extract <AssemblyName>([^<]+) projname
+$1
+#end
+
+
+#mkdir `base`
+#end
+
+#newer `base`\Program.cs
+using System.ServiceProcess;
+
+namespace `name`Service
+{
+	static class Program
+	{
+		static void Main()
+		{
+			ServiceBase.Run(new ServiceBase[] { new `name`Service() });
+		}
+	}
+}
+#end
+
+#newer `base`\ProjectInstaller.cs
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Configuration.Install;
+using System.ServiceProcess;
+
+namespace `name`Service
+{
+	[RunInstaller(true)]
+	public partial class ProjectInstaller : Installer
+	{
+		public ProjectInstaller()
+		{
+			InitializeComponent();
+		}
+
+		protected override void OnAfterInstall(IDictionary savedState)
+		{
+			base.OnAfterInstall(savedState);
+			using (var serviceController = new ServiceController(serviceInstaller1.ServiceName, Environment.MachineName))
+			{
+				serviceController.Start();
+			}
+		}
+	}
+}
+#end
+
+#newer `base`\ProjectInstaller.Designer.cs
+namespace `name`Service
+{
+	partial class ProjectInstaller
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary> 
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Component Designer generated code
+
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
+			this.serviceInstaller1 = new System.ServiceProcess.ServiceInstaller();
+			// 
+			// serviceProcessInstaller1
+			// 
+			this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
+			this.serviceProcessInstaller1.Password = null;
+			this.serviceProcessInstaller1.Username = null;
+			// 
+			// serviceInstaller1
+			// 
+			this.serviceInstaller1.ServiceName = "`name` Service";
+			this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
+			// 
+			// ProjectInstaller
+			// 
+			this.Installers.AddRange(new System.Configuration.Install.Installer[] {
+		            this.serviceProcessInstaller1,
+		            this.serviceInstaller1});
+
+		}
+
+		#endregion
+
+		private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
+		private System.ServiceProcess.ServiceInstaller serviceInstaller1;
+	}
+}
+#end
+
+
+#newer `base`\ProjectInstaller.resx
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="serviceProcessInstaller1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 17</value>
+  </metadata>
+  <metadata name="serviceInstaller1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>196, 17</value>
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+</root>
+#end
+
+#newer `base`\`name`Service.cs
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.ServiceProcess;
+using System.Text;
+
+namespace `name`Service
+{
+	public partial class `name`Service : ServiceBase
+	{
+		private static readonly object _LogSync = new object();
+		private int _LogLevel = 3;
+		private string _ProgPath;
+
+		public `name`Service()
+		{
+			InitializeComponent();
+			_ProgPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+			Log(0, "ProgPath={0}", _ProgPath);
+		}
+
+		private void Initialize`name`()
+		{
+			try
+			{
+				//TODO
+			}
+			catch (ApplicationException)
+			{
+				Log(0, "`name` Exit {0}");
+			}
+			catch (Exception ex)
+			{
+				Log(1, "{0}", ex);
+			}
+		}
+
+
+		private void Log(int level, string fmt, params object[] args)
+		{
+			if (level <= _LogLevel)
+			{
+				lock (_LogSync)
+				{
+					const string source = "`name`Service";
+					if (!EventLog.SourceExists(source)) EventLog.CreateEventSource(source, "Application");
+
+					EventLogEntryType type;
+					switch (level)
+					{
+						case 1:
+							type = EventLogEntryType.Error;
+							break;
+						case 2:
+							type = EventLogEntryType.Warning;
+							break;
+						default:
+							type = EventLogEntryType.Information; // note case 0 also is information, but has highest level (0)
+							break;
+					}
+					string msg = string.Format(fmt, args);
+					EventLog.WriteEntry(source, msg, type);
+				}
+			}
+		}
+
+
+		protected override void OnStart(string[] args)
+		{
+			Initialize`name`();
+		}
+
+		protected override void OnStop()
+		{
+
+		}
+	}
+}
+#end
+
+#newer `base`\Main.Designer.cs
+namespace `name`Service
+{
+	partial class `name`Service
+	{
+		/// <summary> 
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Component Designer generated code
+
+		/// <summary> 
+		/// Required method for Designer support - do not modify 
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			components = new System.ComponentModel.Container();
+			this.ServiceName = "`name`1";
+		}
+
+		#endregion
+	}
+}
+#end
+
+#newer `base`\App.config
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<appSettings>
+
+	</appSettings>
+</configuration>
+#end
+
+#newer `base`\AssemblyInfo.cs
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("`name`Service")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("`name`Service")]
+[assembly: AssemblyCopyright("Copyright ©  `ts:yyyy`")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("`newguid`")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers 
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+#end
+
+#newer `base`\`name`Service.csproj
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{`newguid`}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>`name`Service</RootNamespace>
+    <AssemblyName>`name`Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>`framework`</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>`framework`</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>`framework`</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="`name`Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>`name`Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="`csproj`">
+      <Project>`projguid`</Project>
+      <Name>`projname`</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
+#end

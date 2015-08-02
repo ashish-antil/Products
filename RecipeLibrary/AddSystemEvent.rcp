@@ -1,0 +1,42 @@
+#name AddSystemEvent
+
+#default event=`newseqguid`
+#require jira
+#require description
+#require recurrence - e.g. T0:10 = every 10min, D1 = daily
+#require secSinceMidnight
+
+#put datetime=`timestamp`
+#put date=`datetime`
+
+#subs T datetime
+ 
+#end
+
+
+#find \d{4}-\d\d-\d\d date
+$0
+#end
+
+#put id=`newseqguid`
+
+#name AddSystemEvent
+
+#do C:\TeamImarda\Imarda360\Imarda360.Application\Imarda360.Libraries\Imarda360TaskExec\Imarda360TaskExecBusiness\Control\i360TaskManager_SystemEvent.cs
+
+--- prepare parameters for OneOff recipe ---
+#put notes=`description`
+#put script
+INSERT INTO [Imarda360.Task].[dbo].[ScheduledTask] ([ID],[CompanyID],[UserID],[DateCreated],[DateModified],[Deleted],[Active],[ManagerID],[OwnerID],[Status],[StartTime],[DueTime],[Recurrence],[AlgorithmID],[ProgramID],[Arguments],[ExternalID],[QueueID],[TimeZoneID],[TimeOfDay])
+	VALUES(
+	'`id`','11111111-1111-1111-1111-111111111111','11111111-1111-1111-1111-111111111111',
+	'`datetime`', '`datetime`', 0, 1, 1, '11111111-1111-1111-1111-111111111111', 0, '`date` 00:00:00', '`date` 00:00:00', '`recurrence`', 40, 4, 
+	'<SystemEventTask.Args xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Imarda360Application.Task"><EventID>`event`</EventID></SystemEventTask.Args>',
+	NULL,NULL,'UTC',`secSinceMidnight`)
+
+#end
+
+--- add a one-off entry ---
+#recipe C:\TeamImarda\Imarda360\Imarda360.Recipes\OneOff.rcp
+
+

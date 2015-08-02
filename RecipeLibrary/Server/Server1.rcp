@@ -1,0 +1,26 @@
+#server 209.81.83.146:80
+
+#cdata /dlls
+#put base=`ProgramFiles(x86)`
+
+#ifnot base P
+#put base=`ProgramFiles`
+#endif
+
+#put base=`base`\imarda
+
+#ps a
+ls "`base`" -r -i "*.dll" | ft -h -a -p FullName | Out-String -wi 200
+#end
+
+#with a
+delblank
+trim
+#end
+
+#put post=`a`
+#put mime=text/plain
+
+#end /dlls
+
+#recipe `query`

@@ -1,0 +1,68 @@
+#tags ixl otr sql
+
+#ask companyID=Company Guid?
+
+#with companyID
+trim
+#end
+
+#ask source
+Source of the data?
+-
+0|IXLParameterEvent table
+1|unit entity/attributes
+2|driver entity/attributes
+4|vehicle entity/attributes
+8|service plan
+16|job
+32|metrics
+64|location
+128|fleet
+256|custom
+#end
+
+
+#put datetime=`ts:sql`
+
+#@ inserts
+INSERT INTO [IXLParameter]([ID],[CompanyID],[UserID],[DateCreated],[DateModified],[Active],[Deleted],[VarName],[Description],[GroupID],[VarType],[Format],[SystemUseOnly],[SourceID])
+     VALUES ('`newseqguid`','`companyID`','11111111-1111-1111-1111-111111111111','`datetime`','`datetime`',1,0,'`1`','`3`','A2F24D03-9625-45E2-B36C-6EA355E7507B','`2`',NULL,0,`source`)
+GO
+
+#end inserts
+
+#expn inserts
+OtrStatus|$|Load delivery status
+OtrHist|$|Visited waypoints
+OtrToStoreNo|!Store number bound for
+OtrToStoreName|$|Store name bound for
+OtrToPSN|!|Stop number bound for
+OtrToPPSN|!|Planned stop number bound for
+OtrToDWS|@|Delivery window start
+OtrToDWE|@|Delivery window end
+OtrStoreNo|!|Store number
+OtrStoreName|$|Store name
+OtrPSN|!|Stop number
+OtrPPSN|!|Planned stop number
+OtrDWS|@|Delivery window start
+OtrDWE|@|Deliver window end
+OtrLoad|!|Load ID
+OtrCarrier|$|Load carrier
+OtrRoute|$|Route ID
+OtrTrailer|$|Trailer ID
+#end
+
+
+#put file=C:\TeamImarda\Imarda360\Imarda360.DatabaseScripts\Imarda360.Alerting\Data\Woolworths\w_IXLParameterData.sql
+#newer `file`
+USE [Imarda360.Alerting]
+
+--delete from [Imarda360.Alerting].dbo.IXLParameter where CompanyID = '01001cb8-17b0-445a-8693-0fe26229f284'
+
+
+`inserts`
+
+#end
+
+
+#run {notepad++} `file`

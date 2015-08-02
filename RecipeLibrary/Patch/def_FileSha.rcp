@@ -1,0 +1,35 @@
+#def FileSha %list
+  %list: contains name of macro that is a list of file paths
+
+#put output=
+
+#iter `%list`
+#load s=`_`
+#with s
+sha1utf8
+#end
+#append output
+`_`;`s`
+
+#end
+#next
+
+#return `output`
+#enddef
+
+
+Test program:
+
+#forget newlist
+
+#@ list
+c:\temp\textfiles\a.txt
+c:\temp\textfiles\b.txt
+c:\temp\textfiles\c.txt
+#end list
+
+#FileSha newlist
+list
+#end
+
+#info `newlist`

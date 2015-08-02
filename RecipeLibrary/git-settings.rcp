@@ -1,0 +1,25 @@
+#tags git settings install config
+
+#put gitconfig=%userprofile%\.gitconfig
+#del `gitconfig`
+#new `gitconfig`
+[user]
+	name = `username`
+	email = `username`@imarda.com
+[difftool "TortoiseDiff"]
+	path = C:/Program Files/TortoiseGit/bin/TortoiseGitIDiff.exe
+	cmd = \"C:/Program Files/TortoiseGit/bin/TortoiseGitIDiff.exe\" \"$LOCAL\" \"$REMOTE\"
+[mergetool "TortoiseMerge"]
+	path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
+	cmd = \"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe\" /base:\"$BASE\" /mine:\"$LOCAL\" /theirs:\"$REMOTE\" /merged:\"$MERGED\"
+[alias]
+	st = status
+	unstage = "reset HEAD -- "
+	co = checkout
+	ci = commit
+	br = branch
+[push]
+
+	default = simple
+#end
+

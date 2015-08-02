@@ -1,0 +1,29 @@
+#tags template singleton c#
+
+#require ClassName
+#put code
+		#region `ClassName` is a Singleton
+
+		public static `ClassName` Instance
+		{
+			get { return _Instance ?? (_Instance = new BaseExtensionLib()); }
+		}
+
+		private static `ClassName` _Instance;
+
+		static `ClassName`() // required for threadsafety
+		{
+		}
+
+		/// <summary>
+		/// Constructs the one and only `ClassName`.
+		/// </summary>
+		private `ClassName`()
+		{
+			//TODO
+		}
+
+		#endregion
+#end
+
+#copy `code`

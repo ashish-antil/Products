@@ -1,0 +1,4 @@
+#name NewAuthToken
+#require jira
+#require authtoken
+#do C:\TeamImarda\Imarda360\Imarda360.Common\Imarda.Common\GlobalIDs\AuthToken.cs

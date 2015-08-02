@@ -1,0 +1,16 @@
+#tags minify
+
+#dir a=-r c:\teamimarda\imarda360\*.js
+
+#put p=call java -jar C:\TeamImarda\yuicompressor-2.4.2.jar`sp`
+
+#with a
+prefix `p`
+#end
+
+#put f=c:\temp\YUIMinify1.bat
+#newer `f`
+`a`
+#end
+
+#run {notepad} `f`

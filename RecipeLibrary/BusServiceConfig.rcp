@@ -1,0 +1,228 @@
+#name BusServiceConfig
+
+#require database - As in hosts file: e.g. "I360DB-TRACKING"
+#require server - AU, NY, etc.
+#require service - Tracking, VehicleManager, JobDispatch etc.
+#require endpoint - Business endpoint port, e.g. I360SVC-BUSJobDispatch:7019
+
+#new C:\TeamImarda\Imarda360\Imarda360.Business\Services\Imarda`service`\Imarda`service`Service\App_`server`.config
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<configSections>
+		<section name="dataConfiguration"
+				 type="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.DatabaseSettings, Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+		<section name="cachingConfiguration"
+				 type="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CacheManagerSettings, Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+		<section name="log4net"
+				 type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
+	</configSections>
+	<dataConfiguration defaultDatabase="Imarda`service`BusinessInterface" />
+	<log4net debug="true">
+		<appender name="RollingLogFileAppender" type="log4net.Appender.RollingFileAppender">
+			<file value="C:\\I360.Logs\\Business\\Imarda`service`\\Event\\TestLog.txt" />
+			<appendToFile value="true" />
+			<rollingStyle value="Date" />
+			<datePattern value="yyyyMMdd'.txt'"/> 
+			<staticLogFileName value="true" />
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%-5p %d %5rms %-22.22c{1} %-18.18M - %m%n" />
+			</layout>
+		</appender>
+		<appender name="SelfLogFileAppender" type="log4net.Appender.RollingFileAppender">
+			<file value="C:\\I360.Logs\\Business\\Imarda`service`\\Event\\SelfLog.txt" />
+			<appendToFile value="true" />
+			<rollingStyle value="Date" />
+			<datePattern value="yyyyMMdd'.txt'"/> 
+			<staticLogFileName value="true" />
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%-5p %d %5rms %-22.22c{1} %-18.18M - %m%n" />
+			</layout>
+		</appender>
+		<appender name="EventLogAppender" type="log4net.Appender.EventLogAppender">
+			<applicationName value="Imarda360" />
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+			</layout>
+		</appender>
+		<appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender">
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%date [%thread] %-5level %logger [%ndc] - %message%newline" />
+			</layout>
+		</appender>
+		<appender name="StartupLogFileAppender" type="log4net.Appender.RollingFileAppender">
+			<file value="C:\\I360.Logs\\Business\\Imarda`service`\\Startup\\StartupLog.txt" />
+			<appendToFile value="true" />
+			<rollingStyle value="Date" />
+			<datePattern value="yyyyMMdd'.txt'"/> 
+			<staticLogFileName value="true" />
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%d %m%n" />
+			</layout>
+		</appender>
+		<appender name="EventLogFileAppender" type="log4net.Appender.RollingFileAppender">
+			<file value="C:\\I360.Logs\\Business\\Imarda`service`\\Event\\EventLog.txt" />
+			<appendToFile value="true" />
+			<rollingStyle value="Date" />
+			<datePattern value="yyyyMMdd'.txt'"/> 
+			<staticLogFileName value="true" />
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%d %m%n" />
+			</layout>
+		</appender>
+		<appender name="DebugAppender" type="log4net.Appender.RollingFileAppender">
+			<file value="C:\\I360.Logs\\Gateway\\Imarda360Gateway\\Debug\\DebugLog.txt" />
+			<appendToFile value="true" />
+			<rollingStyle value="Date" />
+			<datePattern value="yyyyMMdd'.txt'"/> 
+			<staticLogFileName value="true" />
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%utcdate{MM/dd HH:mm:ss.fff} [%thread] = %message%newline" />
+			</layout>
+		</appender>
+		<appender name="DeviceQueueAppender" type="log4net.Appender.RollingFileAppender">
+			<file value="C:\\I360.Logs\\Gateway\\Imarda360Gateway\\Debug\\DeviceQ-Fail.txt" />
+			<appendToFile value="true" />
+			<rollingStyle value="Date" />
+			<maxSizeRollBackups value="-1" />
+			<datePattern value="yyyyMMdd'.txt'"/> 
+			<staticLogFileName value="true" />
+			<countDirection value="1" />
+			<layout type="log4net.Layout.PatternLayout">
+				<conversionPattern value="%utcdate{MM/dd HH:mm:ss.fff} [%thread] = %message%newline" />
+			</layout>
+		</appender>
+		<root>
+			<level value="DEBUG" />
+			<appender-ref ref="RollingLogFileAppender" />
+			<!--appender-ref ref="EventLogAppender" /-->
+		</root>
+		<logger name="DebugLogger">
+			<level value="INFO" />
+			<appender-ref ref="DebugAppender" />
+		</logger>
+		<logger name="DeviceQueueCache">
+			<level value="INFO" />
+			<appender-ref ref="DeviceQueueAppender" />
+		</logger>
+		<logger name="DefaultErrorLogger">
+			<level value="ERROR" />
+			<appender-ref ref="EventLogAppender" />
+		</logger>
+		<logger name="ErrorHandlerSelfLogger">
+			<level value="ERROR"/>
+			<appender-ref ref="SelfLogFileAppender" />
+		</logger>
+		<logger name="StartupLogger">
+			<level value="INFO" />
+			<appender-ref ref="StartupLogFileAppender" />
+		</logger>
+		<logger name="EventLogger">
+			<level value="INFO" />
+			<appender-ref ref="EventLogFileAppender" />
+		</logger>
+		<!-- You can add specialized handlers this way:
+		<logger name="ImardaReportBusiness.ImardaReport">
+		  <level value="ERROR" />
+		  <appender-ref ref="EventLogAppender"/>
+		</logger>
+    -->
+	</log4net>
+	<connectionStrings>
+		<add name="Imarda`service`BusinessInterface"
+			 connectionString="Integrated Security=False;Persist Security Info=False;Data Source=`database`;User ID=application;Password=imarda;Initial Catalog=Imarda360.`service`"
+			 providerName="System.Data.SqlClient" />
+		<add name="ImardaDBConnection"
+			 connectionString="Integrated Security=False;Persist Security Info=False;Data Source=`database`;User ID=application;Password=imarda;Initial Catalog=Imarda360.`service`"
+			 providerName="System.Data.SqlClient" />
+	</connectionStrings>
+	<cachingConfiguration defaultCacheManager="Cache Manager">
+		<cacheManagers>
+			<add name="Cache Manager"
+				 expirationPollFrequencyInSeconds="60"
+				 maximumElementsInCacheBeforeScavenging="1000"
+				 numberToRemoveWhenScavenging="10"
+				 backingStoreName="Null Storage"
+				 type="Microsoft.Practices.EnterpriseLibrary.Caching.CacheManager, Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+	  />
+		</cacheManagers>
+		<backingStores>
+			<add name="Null Storage"
+				 encryptionProviderName=""
+				 type="Microsoft.Practices.EnterpriseLibrary.Caching.BackingStoreImplementations.NullBackingStore, Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+      />
+		</backingStores>
+	</cachingConfiguration>
+	<system.serviceModel>
+		<services>
+			<service name="Imarda`service`Business.Imarda`service`"
+
+					 behaviorConfiguration="debugTrue">
+				<endpoint name="`service`TcpEndpoint"
+						  address="net.tcp://`endpoint`/Imarda`service`"
+						  behaviorConfiguration="NonStupidlyParanoidBehavior"
+						  binding="netTcpBinding"
+						  bindingConfiguration="DefaultBinding"
+						  contract="Imarda`service`Business.IImarda`service`" />
+
+			</service>
+		</services>
+		<behaviors>
+			<serviceBehaviors>
+				<behavior name ="debugTrue">
+					<serviceDebug includeExceptionDetailInFaults ="true"/>
+					<serviceThrottling maxConcurrentCalls="250" maxConcurrentSessions="250" maxConcurrentInstances="1" />
+				</behavior>
+				<behavior name="debugTrueMeta">
+					<!-- To avoid disclosing metadata information, 
+          set the value below to false and remove the metadata endpoint above before deployment -->
+					<serviceMetadata httpGetEnabled="True"/>
+					<!-- To receive exception details in faults for debugging purposes, 
+          set the value below to true.  Set to false before deployment 
+          to avoid disclosing exception information -->
+					<serviceDebug includeExceptionDetailInFaults="False" />
+				</behavior>
+			</serviceBehaviors>
+			<endpointBehaviors>
+				<behavior name="NonStupidlyParanoidBehavior">
+					<dataContractSerializer maxItemsInObjectGraph="16777216" />
+				</behavior>
+			</endpointBehaviors>
+		</behaviors>
+		<bindings>
+			<basicHttpBinding>
+				<binding name="HugeBufferBindingConfig"
+						 closeTimeout="00:02:00"
+						 openTimeout="00:02:00"
+						 receiveTimeout="00:02:00"
+						 sendTimeout="00:02:00"
+						 bypassProxyOnLocal="true"
+						 maxBufferSize="32768000"
+						 maxReceivedMessageSize="32768000">
+					<readerQuotas maxDepth="32"
+								  maxStringContentLength="32768000"
+								  maxArrayLength="500000"
+								  maxBytesPerRead="4096"
+								  maxNameTableCharCount="16384" />
+				</binding>
+			</basicHttpBinding>
+			<netTcpBinding>
+				<binding name="DefaultBinding"
+						 closeTimeout="00:00:10"
+						 receiveTimeout="00:20:00"
+						 sendTimeout="00:01:00"
+						 maxBufferPoolSize="524288"
+						 maxBufferSize="104857600"
+						 maxReceivedMessageSize="104857600">
+					<readerQuotas maxStringContentLength="104857600" />
+					<security mode="None">
+						<transport protectionLevel="None" />
+					</security>
+				</binding>
+			</netTcpBinding>
+		</bindings>
+	</system.serviceModel>
+	<appSettings>
+		<add key="dbCheck" value="localhost" />
+	</appSettings>
+</configuration>
+#end

@@ -1,0 +1,22 @@
+#require sql
+#exp sql
+
+#put file=c:\temp\tmp_script_`newguid`.sql
+#new `file`
+`sql`
+#end
+
+#call r
+@sqlcmd.exe -S I360-SQL-GREEN\GREEN -U application -P imarda -i "`file`" -s "|" -y 4000
+#end
+
+#del `file`
+
+#with r
+nomatch \(\d+\ rows?\ affected\)|-{7,}
+delblank
+#end
+
+#put sqlresult=`r`
+
+

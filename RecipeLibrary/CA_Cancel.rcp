@@ -1,0 +1,40 @@
+#tags alkon
+
+#require trackid
+#require order_code
+#require ticket_code
+
+#put now=`timestamp`
+#put date=`now`
+#find (\d{4})-(\d\d)-(\d\d) date
+$1$2$3
+#end
+
+#copy
+<cmdsig_xml_msg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<id>{`newseqguid`}</id>
+	<vehicle_unit_code>`trackid`</vehicle_unit_code>
+	<signal_unit_code> 10</signal_unit_code>
+	<transaction>
+		<date_time>`now`</date_time>
+		<category>TICK</category>
+		<type>CON</type>
+		<subtype>CAN</subtype>
+		<origin>SIG</origin>
+		<order_date>2011-10-31T00:00:00</order_date>
+		<order_code>         100</order_code>
+		<message>
+			<trip_packet d2p1:type="TripTransport" version="1.0" xmlns:d2p1="http://www.w3.org/2001/XMLSchema-instance">
+				<site_source version="1.0"></site_source>
+				<site_job version="1.0"></site_job>
+				<site_destination version="1.0"></site_destination>
+				<job_information version="1.0">
+					<order_date>`date`</order_date>
+					<order_code>`order_code`</order_code>
+					<ticket_code>`ticket_code`</ticket_code>
+				</job_information>
+			</trip_packet>
+		</message>
+	</transaction>
+</cmdsig_xml_msg>
+#end

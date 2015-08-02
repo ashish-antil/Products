@@ -1,0 +1,89 @@
+#name TaskHandler
+
+#warn Buggy recipe, don't use.
+
+#require ProgramName
+#require ProgramNumber
+#require Task
+
+#put base=C:\TeamImarda\Imarda360\Imarda360.Application\Imarda360.Libraries\Imarda360Task
+
+#do `base`\Imarda360TaskBusinessInterface\View\enums.cs
+#do `base`\Imarda360TaskBusinessInterface\Model\AppTask\AppTask.cs
+
+#new `base`Exec\Imarda360TaskExecBusiness\Control\i360TaskManager_`Task`.cs
+using System;
+using System.ServiceModel;
+using FernBusinessBase;
+using FernBusinessBase.Errors;
+using ImardaAlertingBusiness;
+
+namespace Imarda360Application.Task
+{
+	/// <summary>
+	/// This is the task handing program: `ProgramName`.
+	/// </summary>
+	partial class i360TaskManager
+	{
+		private void Run`Task`(`Task`Task task)
+		{
+			_Log.InfoFormat("Run `Task` {0}", task.ID);
+
+			`Task`Task.Args args = task.Arguments;
+
+			BusinessMessageResponse resp = null;
+			//TODO fill in the body of the program here
+			ErrorHandler.Check(resp);
+		}
+	}
+}
+
+#end
+
+#new `base`\BusinessInterface\Model\AppTask\`Task`Task.cs
+using System;
+using System.Runtime.Serialization;
+
+namespace Imarda360Application.Task
+{
+	[DataContract]
+	public class `Task`Task : AppTask
+	{
+		public `Task`Task()
+		{
+			Arguments = new Args();
+		}
+
+		[DataMember]
+		public Args Arguments { get; set; }
+
+		[DataContract]
+		public class Args
+		{
+			public Args()
+			{
+			}
+
+			//[DataMember]
+			//public Type Name { get; set; }
+			//
+			//...more properties...
+
+		}
+	}
+}
+
+#end
+
+#put rx=<ItemGroup>\s*(?=<Compile\ Include)
+
+#after `rx` `base`Business\Imarda360TaskBusiness.csproj
+<Compile Include="i360TaskManager_`Task`.cs" />
+    
+#end
+
+
+#after `rx` `base`BusinessInterface\Imarda360TaskBusinessInterface.csproj
+<Compile Include="Model\AppTask\`Task`Task.cs" />
+    
+#end

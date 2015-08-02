@@ -1,0 +1,42 @@
+#tags simulator playback replay generate
+
+#require configPath
+
+#require prefix
+#require instances
+#require subfolder
+#require interval
+
+
+#new `configPath`
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceList>
+	<Name>Test Settings</Name>   Name of the file, just documentation
+	<Devices>
+	</Devices>
+</DeviceList>
+#end
+
+
+#before \t</Devices> `configPath`
+		<DeviceGroup
+			ID="`prefix`"
+			Address="127.0.0.1"
+			Port="2011"
+			Delay="`interval`"
+			Variation = "3"
+			StartupDelayMin = "0"
+			StartupDelayMax = "10"
+			Loop="false"
+			RealTime="true"
+			Renumber="true"
+			DataFolder="c:\Playback\`subfolder`"
+			Instances = "`instances`"
+			>
+			<Replacements>
+				<Tag Key="[UnitID]" Value="`prefix`~" />
+			</Replacements>
+		</DeviceGroup>		
+#end
+
+

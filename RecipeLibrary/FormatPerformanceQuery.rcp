@@ -1,0 +1,58 @@
+#tags sql performance format
+
+#mode int+ write
+
+#cdata query
+SELECT      
+   creation_time,    
+   last_execution_time,    
+   total_physical_reads,    
+   total_logical_reads,    
+   total_logical_writes,    
+   execution_count,    
+   total_worker_time,    
+   total_elapsed_time,    
+   total_elapsed_time / execution_count avg_elapsed_time,    
+   SUBSTRING(st.text, (qs.statement_start_offset/2) + 1,    
+	((CASE statement_end_offset      
+	WHEN -1 THEN DATALENGTH(st.text) ELSE qs.statement_end_offset END - qs.statement_start_offset)/2) + 1) AS statement_text       
+FROM sys.dm_exec_query_stats 
+AS qs    
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st    
+order by total_elapsed_time desc
+#end query
+
+#warn Query will be copied to your clipboard. Proceed?
+
+#copy `query`
+
+#ask data=Paste records below, except the stament_text column:
+#ask text=Paste statement_text column below:
+
+#with data
+subs /\t/,/
+suffix ,LINENUMBER
+num LINENUMBER
+subs /\A/creation_time,last_execution_time,total_physical_reads,total_logical_reads,total_logical_writes,execution_count,total_worker_time,total_elapsed_time,avg_elapsed_time,statement_text\r\n/
+table /,/|/nz
+#end
+
+#write `data`
+
+#with text
+subs /[\t ]+/ /
+subs /^/$0------ LINENUMBER -------\r\n/m
+num LINENUMBER
+wrap 80
+#end
+
+#write `text`
+
+#! fn=c:\temp\perf_`ts:yyyyMMdd_HHmmss`.txt
+#newer `fn`
+`data`
+
+`text`
+#end
+
+#run {notepad++} "`fn`"

@@ -1,0 +1,102 @@
+#tags app method
+#version 1.5+
+
+#marker NewAppMethod
+
+#require jira
+#put base=C:\TeamImarda\Imarda360\
+#default service=`service`|CRM|Gateway|JobDispatch|Security|Solution|Task|Tracking|VehicleManagement|Alerting|Notification|Metrics|GIS
+#require entity -- solution entity class name
+#require file -- the name of the ...\folder\file.cs
+#require method
+
+
+#default return=Other|SolutionMessageResponse|Get360ItemResponse<`entity`>|Get360ListResponse<`entity`>|SimpleResponse<>|BusinessMessageResponse|GetItemResponse<`entity`>|GetListResponse<`entity`>
+#default reqtype=IDRequest|GenericRequest
+#default globalize=GlobalizeRequest(request, session);|GlobalizeObject(request.Item, session);|GlobalizeObjectList(request.List, session);
+#default localize=LocalizeObject(response.Item, session);|LocalizeObjectList(response.List, session);
+#put globalize=TimeZoneConverter.`globalize`
+#put localize=TimeZoneConverter.`localize`
+
+#exp return
+
+#do `base`Imarda360.Application\Imarda360.Solution\Imarda360Business\Control\Imarda360.cs
+
+#put view=`base`Imarda360.Application\Imarda360.Libraries\Imarda360`service`\Imarda360`service`BusinessInterface\View\`file`\`file`.Extra.cs
+#new `view`
+//& `jira`
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.ServiceModel;
+using FernBusinessBase;
+
+namespace Imarda360Application.`service`
+{
+	partial interface IImarda`service`
+	{
+	}
+}
+#end
+
+
+#put EOF=}\s*}\s*\z
+#before `EOF` `view`
+	[OperationContract]
+		`return` `method`(`reqtype` request);
+
+#end
+
+#put control=`base`Imarda360.Application\Imarda360.Libraries\Imarda360`service`\Imarda360`service`Business\Control\`file`\`file`.Extra.cs
+#new `control`
+//& `jira`
+using System;
+using System.Collections.Generic;
+using System.Text;
+using FernBusinessBase;
+using FernBusinessBase.Errors;
+using Imarda`service`Business;
+using System.ServiceModel;
+using Imarda360Base;
+using Imarda.Lib;
+
+namespace Imarda360Application.`service`
+{
+	partial class Imarda`service`
+	{
+	}
+}
+#end
+
+
+
+#before `EOF` `control`
+//& `jira`
+	public `return` `method`(`reqtype` request)
+		{
+			try
+			{
+				`return` appResponse = null;
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;
+					var response = service.`method`(request);
+					ErrorHandler.Check(response);
+					//TODO more stuff here...?
+					appResponse = new `return`(...);
+				});
+				return appResponse;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<`return`>(ex);
+			}
+		}
+//. `jira`
+
+#end
+
+#marker NewAuthToken
+#put authtoken=`method`
+#do `base`Imarda360.Common\Imarda.Common\GlobalIDs\AuthToken.cs

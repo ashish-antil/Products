@@ -1,0 +1,51 @@
+#name AddAppSetting
+
+#require key
+#require value
+
+#default cfgpath=C:\TeamImarda\Imarda360\Imarda360.Application\Imarda360.Solution\Imarda360Service\
+
+#before </appSettings> `cfgpath`App.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_alpha.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_AU.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_beta.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_dev.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_NY.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_NZ.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_test.config
+	<add key="`key`" value="`value`" />
+	
+#end
+
+#before </appSettings> `cfgpath`App_US.config
+	<add key="`key`" value="`value`" />
+	
+#end

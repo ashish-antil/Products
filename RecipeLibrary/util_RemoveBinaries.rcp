@@ -1,0 +1,28 @@
+#tags util del remove clean
+
+#require f
+--#put f=C:\TeamImarda\Imarda360\Imarda360.Tools\Recipe
+#dir a=-r `f`\*.dll
+#dir b=-r `f`\*.obj
+#dir c=-r `f`\*.exe
+#dir d=-r `f`\*.pdb
+
+
+#put list
+`a`
+`b`
+`c`
+`d`
+#end
+
+#with list
+delblank
+#end
+
+#put i=`list`
+
+#cdata delete
+#del `i`
+#end delete
+
+#iter i delete

@@ -1,0 +1,31 @@
+#tags sql insert
+
+#require TrackID
+#require AtomXml
+#require AtomTypeNumber
+#require Channel
+
+#subs <Type>[-\d]+</Type> AtomXml
+<Type>`AtomTypeNumber`</Type>
+#end
+
+#put dt=`ts:sql`
+
+#put sql
+INSERT INTO [Imarda360.Tracking].dbo.[IncomingMessage]
+VALUES ('`newseqguid`',
+'`AtomXml`',
+0,
+0,
+`AtomTypeNumber`,
+'`dt`',
+'`dt`',
+'`TrackID`',
+`Channel`
+)
+
+#end
+
+Put on clipboard, for easy pasting into ssms
+
+#copy `sql`

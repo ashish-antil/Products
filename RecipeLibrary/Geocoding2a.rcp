@@ -1,0 +1,63 @@
+Used for: Action Installations Customer Locations.xlsx
+See: \\imardainc.com\common\Auckland\Software Engineering\Development\Misc\Geofence Import Tool.docx
+And: C:\TeamImarda\Imarda360\Imarda360.Tools\ExtractGeofences
+
+#tags geocoding coordinates maps google
+#version 1.5+
+
+Put addresses in the section below between #put and #end,
+one per line.
+Then run this script either in Test or Write mode.
+The result will be printed in the Log window.
+Alternatively look click F7 and double-click "result"
+
+
+#require csvPath
+#load addr=`csvPath`
+#require outfile
+
+#put addr-test
+BUDGET PETROL EAST LAKES,102 MALONEY STREET,EAST LAKES  ,NSW
+#end
+
+#with addr
+modify /(?<=\w|')\w+/lower/
+modify /(?<=Ma?c)\w/upper/
+subs /\|/,/
+subs / *,/,/
+subs /&/and/
+modify /,Nsw|,Vic|,Sa|,Act|,Vic|,Qld/^/
+#end
+
+
+#@ rcp
+#info `i`
+#load json=http://maps.googleapis.com/maps/api/geocode/json?address=`i`&sensor=false
+#put ll=`json`
+#extract "location"\s*:\s*\{\s*"lat"\s*:\s*(-?\d+\.\d+),\s*"lng"\s*:\s*(-?\d+\.\d+) ll
+$1,$2#
+#end
+#append result
+`ll`|`i`
+
+#end
+#pause 750
+#end rcp
+
+#put result=
+#put i=`addr`
+#iter i rcp
+
+#extract (?m)^([^#]+).*\|([^\r\n]*) result
+$1|$2
+
+#end
+
+#with result
+modify /-?\d+\.\d+/#|#.0000000/
+subs /\|([^,]+), /|$1|/m
+#end
+
+#newer `outfile`
+`result`
+#end

@@ -1,0 +1,7 @@
+Add a configuration file key/value pair to all communicators
+
+#name AddCommunicatorConfigKeyValue
+#require key
+#require value
+#do -r C:\TeamImarda\Imarda360\Imarda360.Gateway\CommunicatorServices\App*.config
+

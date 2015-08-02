@@ -1,0 +1,20 @@
+After a tortoise git pull, if there are conflicts, select the text 
+with the conflicting files form the tortoise window and copy
+them on the clipboard. Then paste them when asked by this recipe.
+
+It will *delete* these files from disk. Then do a pull again.
+
+
+#tags delete git merge conflict tortoise
+
+#ask paths=Paste conflict paths in box below, hit OK and they will be deleted.
+
+#with paths
+crlf
+trim
+prefix del c:\teamimarda\imarda360\
+#end
+
+#cmd a
+`paths`
+#end

@@ -1,0 +1,47 @@
+#tags alter column sql
+
+#ask table=Table name? (short name)
+#with table
+delblank
+trim []
+#end
+
+
+#ask column=Column name in [`table`]? (short name)
+#with column
+delblank
+trim []
+#end
+
+#ask type=Old type of column [`column`]? e.g. varchar, int, decimal.`nl`Do not add length/precision.
+
+
+#ask length=length of (n)varchar, if applicable.
+
+#ask newtype=New type replacing `type`, including constraints, e.g.`nl`nvarchar(max) NULL
+
+
+
+#put clip
+-- Added by `username` on `timestamp`
+IF EXISTS(
+	SELECT object_id from sys.columns 
+	WHERE OBJECT_NAME(object_id) ='`table`' 
+	AND name ='`column`'
+	AND TYPE_NAME(user_type_id) = '`type`'
+	AND max_length = '`length`'
+	)
+	
+BEGIN
+	ALTER TABLE [`table`] ALTER COLUMN [`column`] `newtype`
+	PRINT '`table`.`column` changed to `newtype` by `username` on `timestamp`'
+END
+#end
+
+#put msg
+On clipboard:
+`clip`
+#end
+
+#copy `clip`
+#mbox `msg`

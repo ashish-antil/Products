@@ -1,0 +1,50 @@
+#tags cookbook chapter add
+
+Run this recipe to add a snippet to a cookbook chapter
+
+#version 1.9.7+
+
+#mode write int+ log-
+
+#put dir=C:\TeamImarda\ImardaTools\RecipeLibrary\Cookbook
+
+#dir chapters=`dir`\*.rcp
+#with chapters
+nomatch _AddRecipe
+path noext
+delblank
+append \r\n<new>
+#end
+
+#ask ch
+Chapter?
+-
+`chapters`
+#end
+
+#if ch <new>
+#ask ch=Enter new chapter (file name without extension):
+#with ch=modify /./v/
+#endif
+
+#ask tags=Enter some tags:
+
+#ask snippet=Enter snippet with comments:
+
+#new `dir`\`ch`.rcp
+`ch`
+
+#end
+
+#append `dir`\`ch`.rcp
+___________________________________________________________
+` `#tags `tags`
+`timestamp` `username`
+
+`snippet`
+
+#end
+
+#run {notepad++} "`dir`\`ch`.rcp"
+
+end.

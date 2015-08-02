@@ -1,0 +1,52 @@
+#tags lesson #mode #put #new #newer #append
+
+Lesson 01: Creating a new file with a text in it
+
+#mode write
+
+This commands sets the mode to Write, alternatively you
+can do this with Run>Test Only (uncheck) or pressing F9 once.
+Write mode enables writing to disk. In Test mode no
+files on disk will be modified.
+
+
+1. Put something in the dictionary
+
+#put greeting=hello world
+
+the key (greeting) is called a 'macro' because it will be usually be expanded somewhere, 
+i.e. replace by its value (hello world)
+
+2. Now create a new file unless that file already exists.
+Put the greeting in it (`greeting`)
+and also some environment variables (`computername`, `username`)
+and a build-in macro.
+The path of the new file is after the #new command. 
+Only full paths are guaranteed to work.
+
+#new c:\temp\lesson01.txt
+Here is the greeting:
+`greeting`
+This was executed on computer `computername` by user `username` at `timestamp` UTC.
+#end
+
+3. Now we want to overwrite this file with a new one.
+The #new command won't work, it will skip if the file already exists.
+Either use #del first and then do a #new or use #newer which will overwrite or
+create a new file.
+
+#newer c:\temp\lesson01.txt
+`greeting`
+`greeting`
+`greeting`
+#end
+
+4. Now let's append some text to the file.
+
+#append c:\temp\lesson01.txt
+
+End of file.
+#end
+
+End of lesson.
+

@@ -1,0 +1,58 @@
+#tags geocoding coordinates maps google
+#version 1.5+
+
+Put addresses in the section below between #put and #end,
+one per line.
+Then run this script either in Test or Write mode.
+The result will be printed in the Log window.
+Alternatively look click F7 and double-click "result"
+
+#require outfile
+#default addrsuffix=, NSW, Australia
+
+#put addr
+ABBOTSLEIGH (SNR)	1666 PACIFIC HIGHWAY	WAHROONGA
+ABBOTSLEIGH JUNIOR SCHOOL	22 WOONONA AVENUE	WAHROONGA
+ABERMAIN PUBLIC SCHOOL	GOULBURN STREET	ABERMAIN
+ACE PERFORMING ARTS SCHOOL	4-22 SHOWGROUNDS ROAD	CASTLE HILL
+#end
+
+#with addr
+modify /(?<=\w|')\w+/lower/
+modify /(?<=Ma?c)\w/upper/
+subs /\t/, /
+subs /&/and/
+suffix `addrsuffix`
+#end
+
+#@ rcp
+#load json=http://maps.googleapis.com/maps/api/geocode/json?address=`i`&sensor=false
+#put ll=`json`
+#extract "location"\s*:\s*\{\s*"lat"\s*:\s*(-?\d+\.\d+),\s*"lng"\s*:\s*(-?\d+\.\d+) ll
+$1,$2#
+#end
+#append result
+`ll`|`i`
+
+#end
+#pause 750
+#end rcp
+
+#put result=
+#put i=`addr`
+#iter i rcp
+
+#extract (?m)^([^#]+).*\|([^\r\n]*) result
+$1|$2
+
+#end
+
+#with result
+modify /-?\d+\.\d+/#|#.0000000/
+subs ~`addrsuffix`~~
+subs /\|([^,]+), /|$1|/m
+#end
+
+#newer `outfile`
+`result`
+#end

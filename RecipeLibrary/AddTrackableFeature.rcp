@@ -1,0 +1,7 @@
+#name TrackableFeature
+
+#require jira
+#require feature
+
+#do C:\TeamImarda\Imarda360\Imarda360.Business\Services\ImardaVehicleManagement\ImardaVehicleManagementBusinessInterface\Model\VehicleType\TrackableFeatures.cs
+#do C:\TeamImarda\Imarda360\Imarda360.Business\Services\ImardaVehicleManagement\ImardaVehicleManagementBusinessInterface\Model\VehicleType\VehicleType.cs

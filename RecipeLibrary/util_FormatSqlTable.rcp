@@ -1,0 +1,22 @@
+#tags util format sql
+
+
+Format an ssms result grid.
+
+1. run a query in ssms.exe
+2. copy in the top left corner of the result grid to select all
+3. right click > Copy with Headers
+4. run this recipe (in Test or Write mode, doesn't matter)
+5. the clipboard has been formatted, paste anywhere you want
+
+
+#put data=`paste`
+
+#with data
+subs /\t+/|/
+table /|/ | /nz
+delblank
+#end
+
+#copy `data`
+

@@ -1,0 +1,61 @@
+#tags c# pattern enum class
+
+Generate code to encapsulate an range of values, much like an enumeration, but
+this class is extensible and can have more methods.
+
+#require NameSpace
+#require ClassName
+#default UnderlyingType=int
+
+
+#copy
+namespace `NameSpace`
+{
+	public struct `ClassName`
+	{
+		private readonly `UnderlyingType` _Key;
+
+		public `ClassName`(`UnderlyingType` key)
+		{
+			_Key = key;
+		}
+
+		public `UnderlyingType` Key { get { return _Key; } }
+
+		public static readonly `ClassName` None = new `ClassName`(...);
+		//TODO add the symbols here
+
+		public override bool Equals(object obj)
+		{
+			if (obj is `ClassName`)
+			{
+				var c = (`ClassName`)obj;
+				return c._Key == _Key;
+			}
+			return false;
+		}
+
+		public override int GetHashCode()
+		{
+			return _Key.GetHashCode();
+		}
+		
+		public override string ToString() 
+		{
+			return "`ClassName`(" + _Key + ")";
+		}
+	
+
+		public static bool operator ==(`ClassName` key1, `ClassName` key2)
+		{
+			return key1._Key == key2._Key;
+		}
+
+		public static bool operator !=(`ClassName` key1, `ClassName` key2)
+		{
+			return key1._Key != key2._Key;
+		}
+		
+	}
+}
+#end

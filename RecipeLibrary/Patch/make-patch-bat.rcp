@@ -1,0 +1,76 @@
+This recipe copies files from the tsclient and creates a file patch.bat in the c:\i360.patch\PP-xxx folder.
+The batch file copies assemblies to their folders.
+This only works for dlls to be replaced, not for new dlls.
+
+#mode write
+
+#ask pp=Patch number?
+#require pp
+
+#put pdir=c:\i360.patch\PP-`pp`
+
+#exists exists=`pdir`
+
+
+#if exists dir
+#ask copy-tsc
+Copy PP-`pp` again from tsc?
+-
+yes
+no
+#end
+#else
+#put copy-tsc=yes
+#endif
+
+#if copy-tsc yes
+#mkdir `pdir`
++\\tsclient\c\i360.patch\PP-`pp`\*.dll
++\\tsclient\c\i360.patch\PP-`pp`\*.pdb
++\\tsclient\c\i360.patch\PP-`pp`\*.exe
+#end
+#endif
+
+
+#dir list=`pdir`\*
+
+#extract (?i)(?<=\\)[\w.-]+\.(dll|exe|pdb) list
+$0
+
+#end
+
+#put batch=
+
+#@ makebat
+#append batch
+copy /y "`pdir`\`_`" "`i`"
+
+#end
+#mkdir `pdir`\old
++`i`
+#end
+#end makebat
+
+#iter list
+#dir oldfiles=-r c:\program files (x86)\imarda\`_`
+#iter oldfiles makebat i
+#next
+
+#put pbat=`pdir`\patch.bat
+#newer `pbat`
+`batch`
+pause
+#end
+
+#put unpbat=`pdir`\unpatch.bat1
+#newer `unpbat`
+`batch`
+#end
+
+#esc rx="`pdir`
+#subs `rx` `unpbat`
+$0\old
+#end
+
+#run {`pdir`}
+#run {notepad} `pbat`

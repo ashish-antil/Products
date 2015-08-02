@@ -1,0 +1,42 @@
+#tags patch
+
+#require pp
+
+
+#ask files=Paste the files paths here:
+
+e.g. 
+I360JS\I360Common.js
+VehicleTracking.aspx
+VehicleTracking\js\VehicleTracking.js
+
+#with files
+subs #Imarda360\.Web\\WebSite\.Imarda360\\Tracking\\##
+#end
+
+#@ bak
++C:\Inetpub\wwwroot\Imarda360\`1`
+
+#end bak
+
+#expn bak
+`files`
+#end
+
+#dir c:\i360.patch\PP-`pp`\bak
+`bak`\bak
+#end
+
+#put copy=`files``nl`
+#with copy
+subs #(.*?)([\w.]+)\r\n#copy /y "c:\\i360.patch\\PP-`pp`\\$2" "c:\\inetpub\\wwwroot\\Imarda360\\$1$2"\r\n#m
+delblank
+#end
+
+#warn ok to run?
+#cmd r
+`copy`
+#end
+
+#info `r`
+

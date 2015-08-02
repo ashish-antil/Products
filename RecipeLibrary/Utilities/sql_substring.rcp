@@ -1,0 +1,13 @@
+#tags sql substring
+
+#require Variable
+#require StartString
+#require EndString
+
+#putv s=StartString
+#putv e=EndString
+#putv v=Variable
+
+#copy
+CASE WHEN CHARINDEX('`s`',`v`) > 1 THEN SUBSTRING(SUBSTRING(`v`,CHARINDEX ('`s`',`v`)+LEN('`s`'),LEN(`v`)-(CHARINDEX ('`s`',`v`)+LEN('`s`')-1)),0,CHARINDEX ('`e`',SUBSTRING(`v`,CHARINDEX ('`s`',`v`)+LEN('`s`'),LEN(`v`)-(CHARINDEX ('`s`',`v`)+LEN('`s`')-1)))) ELSE '' END
+#end

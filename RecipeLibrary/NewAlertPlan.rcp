@@ -1,0 +1,254 @@
+#require File
+#require CompanyID
+#require PlanName
+#default Atom=Ack|AllGeofences|CannedMessage|ChangedGeofences|CommunicatorAddress|ConnectionTest|DateTime|DeleteAllMessages|DigitalInput|Distance|GeneralExport|GeofenceDownloadInfo|GetAPN|GetConfig|GetFatigueSettings|GetMaxGeofence|GetMDTVersion|GetStatus|Initialize|JobsStatusUpdate|Literal|LogOffDriver|Nak|Poll|RouteMessage|SetDeviceTimers|SetOdometer|TestMessageResponse|TextMessage|Time|InitializeFollowUp|ToggleDriverID|UpdateGeofences|ValidateDriver|JobCompleted|JobCreated|JobChanged|JobCancelled
+#require Parts
+#default Target=XML|Device
+#default Event=Accelerometer|After_Ignition_On|Analog|Attributes_Changed|Corrupt_File|DeleteAllMessages|Device_Error|Device_UI_Event|Digital_Off|Digital_On|Distance|Driver_Log_Off|Driver_Log_On|Driver_UI_Event|Fatigue_Breach|Fatigue_Break|Fatigue_UI_Event|First_time_customer_unit_reports|First_Time_Run|Fleet_UI_Event|GPS_Antenna_Short|GPS_Connected|GPS_Disconnected|Harsh_Braking|Idle_Start|Idle_Stop|Ignition_Off|Ignition_On|Impact_Accident|Invalid_Fatigue_Break|Job_Complete|Job_Create|Job_Delete|Job_Modified|Job_State_Change|Job_Cancelled|Location_Entered|Location_Exited|Location_Speeding|Location_Timeout|Location_UI_Event|Low_Battery|Low_Vehicle_Battery|Low_Volts|MDT_Connected|MDT_Disconnected|MDT_Read|MDT_Test|MDT_Text|Memory_Low|Message_UI_Event|Msg_Overflow|No_NMEA|Permission|Poll|Power_Removed|Read_Receipt|Restart|Restart_Loss_MDT_Comms|Restart_Loss_Server_Comms|Roll|Service_Due|Service_Due_-_Reminder|Service_Overdue|Service_Overdue_-_Reminder|Service_UI_Event|SOS|Speeding|Suspend_Position_Update|Text_Delivery_Confirmed|Undefined_Attribute|User_Log_On|User_UI_Event|Vehicle_UI_Event|Wake_Position_Update
+#default Rule=Channel8|NotChannel8|JobLocation|NoRule
+
+----
+** TARGET **
+#put XML=-1
+#put Device=0
+#putv TargetID=`Target`
+----
+** EVENTS **
+#put Ack='E8F92486-8964-4A82-BA2F-84444AB2B9BB'
+#put Accelerometer='08E65BA5-CB38-4693-A1C9-6DFDEA65BE18'
+#put After_Ignition_On='ECA363D9-8B78-4672-B1CC-0A2EA489E54B'
+#put Analog='10E4CBF0-1931-4628-9579-515123777277'
+#put Attributes_Changed='ED742AEC-00CC-4C17-A7A5-08CE19F03EBB'
+#put Corrupt_File='2DF52C15-F8A5-4BC4-90B3-6AA33CA557CA'
+#put DeleteAllMessages='D60C28BD-EBE5-424D-9046-EF14AA6B86F0'
+#put Device_Error='22245CE6-34F0-47D8-8F0B-08CE31C002C7'
+#put Device_UI_Event='DBD9496A-D54E-4548-B294-1B30F3D4969C'
+#put Digital_Off='C6BD8777-DBE8-4C59-8FE4-05CEE1F967E9'
+#put Digital_On='6A77BAEE-E23A-49FD-96DE-87325DE8824D'
+#put Distance='0aaf63d2-8ac6-4739-98a9-5343af383e71'
+#put Driver_Log_Off='12AB81F6-D476-4B2F-BA7C-4B84C575AE86'
+#put Driver_Log_On='773E87A7-9F58-45FE-91F3-C6B6AE852DAB'
+#put Driver_UI_Event='FA1D33F0-5DAF-47ED-81D6-91657F714453'
+#put Fatigue_Breach='1B0667CE-8428-4737-BDCD-3498524B21DA'
+#put Fatigue_Break='C6F05607-1DAB-4FCA-9316-AB06132A474D'
+#put Fatigue_UI_Event='398BA4F3-C22D-42E6-BEE2-F61E3C56D9D8'
+#put First_time_customer_unit_reports='2D8BC395-4FBC-4AAC-A7E1-08CE15A6F246'
+#put First_Time_Run='181D9E53-E721-49D1-BA52-E3498FD1E524'
+#put Fleet_UI_Event='DF754294-694A-4AC8-BD00-A4EB7AA4A75A'
+#put GPS_Antenna_Short='74A4F91B-6EC2-4B83-BFCB-4EE666FC0284'
+#put GPS_Connected='85D7D252-7EB6-4B2A-A7FE-A14A30793FD9'
+#put GPS_Disconnected='477D9235-2690-449C-9353-BB94CD4ABF77'
+#put Harsh_Braking='D4830894-4A58-495A-9181-267F77A0CF71'
+#put Idle_Start='FEB9A243-0354-41EC-9F4B-03AD86FE7A79'
+#put Idle_Stop='21A48131-BF56-452A-BECA-238E69895BDB'
+#put Ignition_Off='68336385-0C71-4998-8262-624325453B75'
+#put Ignition_On='3B29E221-7203-470E-8CD1-D1FC42CBC238'
+#put Impact_Accident='DE90AF26-6A2D-45C6-8121-A1C54BE9415F'
+#put Invalid_Fatigue_Break='4B7635EC-3C21-4126-AD8F-C9DD87B9D9CE'
+#put Job_Complete='7E826AEE-0BDC-483F-AF36-FCD7CEC13FA3'
+#put Job_Create='14428605-C44C-4BBB-9C28-63CA30F4874C'
+#put Job_Delete='A7380F7D-419D-4870-B5D7-83D746CE81D0'
+#put Job_Modified='5C228652-B2E0-4FD8-90DF-F7BC992DF95E'
+#put Job_State_Change='9F52021C-75A8-45C5-BEBE-41EEB2AB7939'
+#put Job_Cancelled='2D8603EA-9DEE-4691-9A48-EFE4C0C43F3B'
+#put Location_Entered='B9CD1F7A-A1D4-42DF-AA8C-EF276A5D0C53'
+#put Location_Exited='6A6F5CEC-28C0-4E6B-AC0E-26AFF1C5169F'
+#put Location_Speeding='616A0F36-4CAA-4F37-9808-D21BF8F3F4F1'
+#put Location_Timeout='B6680D39-1902-4DBE-85EF-24158ACED710'
+#put Location_UI_Event='8BB9CE8D-AAF9-46F3-9951-262B3E50EEEA'
+#put Low_Battery='A93F7737-507B-4D9C-9453-D4FD4163C919'
+#put Low_Vehicle_Battery='35FA5A89-E617-438F-8BEC-FCE607BE2015'
+#put Low_Volts='3752D772-5467-45A0-A83C-5BBF2B7B503F'
+#put MDT_Connected='8C245165-3490-4070-82D8-68F4B56C809D'
+#put MDT_Disconnected='74A6B6E9-934E-4A48-83FE-C8BFBF8E9CEB'
+#put MDT_Read='91A4AC94-128F-42D3-BB1F-F21E72A5649C'
+#put MDT_Test='EC7F94EF-5FDF-4F67-A7A5-D8ACB8F11A53'
+#put MDT_Text='CD647599-5FF1-4B92-B356-2ABCD9615703'
+#put Memory_Low='970B0966-CCE1-401F-94D7-49C1C114A8A6'
+#put Message_UI_Event='F4CD6EBF-BD20-4E73-9DBE-4DE36A63797D'
+#put Msg_Overflow='6BB1F011-EC88-4079-860E-7FFAD53D3D9F'
+#put No_NMEA='E443805F-A9E4-417C-AF67-2530EE65439E'
+#put Permission='393E1B1B-77C6-41D1-9C50-3A446982F73C'
+#put Poll='797B6E04-6F37-45D7-8A82-B968B027C020'
+#put Power_Removed='087AD97F-3C18-45D8-832B-2C3EB101DCE2'
+#put Read_Receipt='AF89CD1B-66FC-4AAB-8317-08CE66FD5DFF'
+#put Restart='331EC4B6-91E2-4B78-B6BB-472EBCC1D845'
+#put Restart_Loss_MDT_Comms='313BCBD0-31F7-40DD-A6D9-379239E16937'
+#put Restart_Loss_Server_Comms='32FBDE1F-28FC-479C-A16D-82E9C75C6E58'
+#put Roll='AEC23914-3031-4DF4-B755-0D7A33055270'
+#put Service_Due='656F47FB-C69C-435E-BF10-1F4043C4AF77'
+#put Service_Due_-_Reminder='841BC26C-101A-4624-A493-84E151354F57'
+#put Service_Overdue='B82F40E8-B83A-4B34-8FD8-1DE3EE76DCAF'
+#put Service_Overdue_-_Reminder='767F7931-8358-4895-8DB8-4C3F5AB36D1F'
+#put Service_UI_Event='AD8D391E-53C4-49C1-A8D2-C9E5A53EB443'
+#put SOS='E91330E8-9122-4FF7-B868-D0DBE5874605'
+#put Speeding='6E88B87E-D451-467E-B327-3D727ADA6753'
+#put Suspend_Position_Update='10209A10-8E4A-4471-AF1A-4C15998E5ECD'
+#put Text_Delivery_Confirmed='CCB6A825-466D-43B3-8B7E-08CE66FB1334'
+#put Time='33b5096c-0551-4215-b790-5b1acaf2715c'
+#put Undefined_Attribute='8883C3D1-F61E-4FB5-9C9F-64D1E75DC03E'
+#put User_Log_On='4C2F21CB-FCDD-4D6B-A6BD-A928680BEE05'
+#put User_UI_Event='8C85995B-CA88-4E83-A9D8-D371DC18FFA0'
+#put Vehicle_UI_Event='F24EA4D2-E421-439E-B9C0-3B5474206AB9'
+#put Wake_Position_Update='134A1274-8D04-4FC1-A8B0-61815CE80889'
+
+#putv EventID=`Event`
+------------
+
+** ATOM TYPES **
+#put Ack=-370
+#put AllGeofences=-130
+#put CannedMessage=-110
+#put ChangedGeofences=-140
+#put CommunicatorAddress=-180
+#put ConnectionTest=-1
+#put DeleteAllMessages=-400
+#put DateTime=-340
+#put DigitalInput=-200
+#put GeneralExport=-350
+#put GeofenceDownloadInfo=-210
+#put GetAPN=-320
+#put GetConfig=-300
+#put GetFatigueSettings=-240
+#put GetMaxGeofence=-290				
+#put GetMDTVersion=-260
+#put GetStatus=-230
+#put Initialize=-220
+#put JobsStatusUpdate=-330
+#put Literal=-100
+#put LogOffDriver=-160
+#put Nak=-380
+#put Poll=-190
+#put RouteMessage=-175
+#put SetDeviceTimers=-250
+#put SetOdometer=-120
+#put TestMessageResponse=-310
+#put TextMessage=-170
+#put tInitializeFollowUp=-221
+#put ToggleDriverID=-270
+#put UpdateGeofences=-280			
+#put ValidateDriver=-150
+#put JobCompleted=420
+#put JobCreated=400
+#put JobChanged=405
+#put JobCancelled=410
+#put JobStateChange=415
+
+#putv AtomType=`Atom`
+---------
+
+#put datetime=`ts:sql`
+
+#put AlertPlanID='`newseqguid`'
+#put ActionID='`newseqguid`'
+#put systemguid='11111111-1111-1111-1111-111111111111'
+
+----
+** RULE **
+#put AlertPlanRuleSQL
+DELETE FROM [Imarda360.Alerting].[dbo].[AlertPlanRule] WHERE AlertPlanID=`AlertPlanID` AND RuleID=@RuleID
+INSERT INTO [Imarda360.Alerting].[dbo].[AlertPlanRule]
+	([ID],[AlertPlanID],[RuleID],[Type],[CompanyID],[UserID],[DateCreated],[DateModified],[Active],[Deleted])
+VALUES 
+	('`newseqguid`',`AlertPlanID`,@RuleID,0,@CompanyID,`systemguid`,`datetime`,`datetime`,1,0)
+#end
+
+#put Channel8
+DECLARE @RuleID uniqueidentifier
+SET @RuleID=(select TOP(1) ID FROM [Imarda360.Alerting].[dbo].[Rule] WHERE Content = 'Channel=8')
+IF @RuleID IS NULL
+BEGIN
+	SET @RuleID = '`newseqguid`'
+	INSERT INTO [Imarda360.Alerting].dbo.[Rule](ID,Name,[Description],Content,Template,CompanyID,UserID,DateCreated,DateModified,Active,Deleted)
+	VALUES (@RuleID,'From Integration Channel','Data coming from integration channel','Channel=8',1,`systemguid`,`systemguid`,`datetime`,`datetime`,1,0)
+END
+
+`AlertPlanRuleSQL`
+
+#end
+
+#put NotChannel8
+DECLARE @RuleID uniqueidentifier
+SET @RuleID=(select ID FROM [Imarda360.Alerting].[dbo].[Rule] WHERE Content = 'Channel<>8')
+IF @RuleID IS NULL
+BEGIN
+	SET @RuleID = '`newseqguid`'
+	INSERT INTO [Imarda360.Alerting].dbo.[Rule](ID,Name,[Description],Content,Template,CompanyID,UserID,DateCreated,DateModified,Active,Deleted)
+	VALUES (@RuleID,'From Device','Data coming from device','Channel<>8',1,`systemguid`,`systemguid`,`datetime`,`datetime`,1,0)
+END
+
+`AlertPlanRuleSQL`
+
+#end
+
+#put NoRule
+
+#end
+
+#put JobLocation
+DECLARE @RuleID uniqueidentifier
+SET @RuleID=(select ID FROM [Imarda360.Alerting].[dbo].[Rule] WHERE Content = 'GFT<>"normal"')
+IF @RuleID IS NULL
+BEGIN
+	SET @RuleID = NEWID()
+	INSERT INTO [Imarda360.Alerting].dbo.[Rule](ID,Name,[Description],Content,Template,CompanyID,UserID,DateCreated,DateModified,Active,Deleted)
+	VALUES (@RuleID,'Is Job Location','Enter/exit of job related location','GFT<>"normal"',1,`systemguid`,`systemguid`,`datetime`,`datetime`,1,0)
+END
+
+`AlertPlanRuleSQL`
+
+#end
+#putv RuleSQL=`Rule`
+#put IfRule=`Rule`
+#subs (?:Not)?Channel IfRule
+if $0
+#end
+
+----
+
+
+#new `File`
+
+#end
+
+#put AlertPlanActionID='`newseqguid`'
+#put AlertPlanEventID='`newseqguid`'
+
+#append `File`
+DECLARE @CompanyID uniqueidentifier
+SET @CompanyID = '`CompanyID`'
+ 
+
+DELETE FROM [Imarda360.Alerting].[dbo].[AlertPlan] WHERE ID = `AlertPlanID`
+INSERT INTO [Imarda360.Alerting].[dbo].[AlertPlan]
+	([ID],[Name],[Description],[CompanyID],[UserID],[DateCreated],[DateModified],[Active],[Deleted],[Scope], Schedule)
+VALUES
+	(`AlertPlanID`,'`PlanName`','Integration: `Atom` `Target` [`IfRule`]',@CompanyID,`systemguid`,`datetime`,`datetime` ,1,0,0,NULL)
+
+DELETE FROM [Imarda360.Alerting].[dbo].[Action] WHERE ID = `ActionID`
+INSERT INTO [Imarda360.Alerting].dbo.[Action]
+	([ID],[Active],[Deleted],[DateCreated],[DateModified],[UserID],[Name],[Description],[Phrase],[Link1],[Link2],[Link3],[Link4],[Args],[Template],[CompanyID])
+VALUES
+	(`ActionID`,1,0,`datetime` ,`datetime`,`systemguid`,'Send `Atom` to `Target`','Send Atom (type=`AtomType`)',13,NULL,NULL,NULL,NULL,'`AtomType`,`TargetID`,`Parts`',0,@CompanyID)
+
+DELETE FROM [Imarda360.Alerting].[dbo].[AlertPlanAction] WHERE ID = `AlertPlanActionID`
+INSERT INTO [Imarda360.Alerting].[dbo].[AlertPlanAction]
+	([ID],[AlertPlanID],[ActionID],[Type],[CompanyID],[UserID],[DateCreated],[DateModified],[Active],[Deleted])
+VALUES
+	(`AlertPlanActionID`,`AlertPlanID`,`ActionID`,0,@CompanyID,`systemguid`,`datetime`,`datetime`,1,0)
+
+DELETE FROM [Imarda360.Alerting].[dbo].[AlertPlanEvent] WHERE ID = `AlertPlanEventID`
+INSERT INTO [Imarda360.Alerting].[dbo].[AlertPlanEvent]
+	([ID],[AlertPlanID],[EventID],[Type],[CompanyID],[UserID],[DateCreated],[DateModified],[Active],[Deleted])
+VALUES
+	(`AlertPlanEventID`,`AlertPlanID`,`EventID`,0,@CompanyID,`systemguid`,`datetime`,`datetime`,1,0)
+
+`RuleSQL`
+GO
+-----------------
+
+#end
+
+	
+	
+	

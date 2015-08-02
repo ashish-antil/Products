@@ -1,0 +1,7 @@
+#mode write
+
+
+
+#subs (?<=TargetDir\)\ ")[^"]+ -r c:\teamimarda\imarda360\*Service.csproj
+`filename`
+#end

@@ -1,0 +1,40 @@
+#require sql
+
+First interpret the sql file as a recipe, execute any #-statements
+inside /*...*/ comments
+Typically you can initialize any parameters with default values: #default q_myparameter=hello
+
+#recipe sql
+
+Expand the macros, some of which may just have been set up by executing #recipe `file`
+#exp sql
+
+#put file=c:\temp\tmp_script_`newguid`.sql
+#new `file`
+`sql`
+#end
+
+Next execute the sql code contained in the file and assign to 'r'
+#call r
+@sqlcmd.exe -S I360-SQL-GREEN\GREEN -U application -P imarda -i "`file`" -s "|"
+#end
+
+We no longer need the temporary file
+#del `file`
+
+Do some formatting on the data.
+Note: very wide columns may have been truncated by sqlcmd.
+
+#with r
+nomatch \(\d+\ rows?\ affected\)|-{7,}
+subs /[ \t]+/ /m
+subs /11111111-1111-1111-1111-111111111111/111.../
+subs /00000000-0000-0000-0000-000000000000/000.../
+delblank
+table /|/|/nz
+etrim
+#end
+
+#put sqlresult=`r`
+
+

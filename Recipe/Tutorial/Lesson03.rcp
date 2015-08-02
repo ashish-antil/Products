@@ -1,0 +1,98 @@
+#tags lesson #run #cmd #ps #csharp
+
+Lesson 03: Invoking programs and scripts from within a recipe.
+
+
+Switch to write mode, or the scripts will not get executed.
+#mode write
+
+1. #run
+To run a command asynchronously, use #run. Provide the
+program path in braces, and then optional arguments. If
+the program is in the command shell path, then you 
+don't have to specify the full path.
+
+#run {iexplore} http://bing.com/
+#run {firefox}
+
+#put fn=c:\temp\lesson03a.txt
+#newer `fn`
+This file was created in Recipe Tutorial Lesson 03.
+#end
+
+#run {notepad} `fn`
+
+The execution of the command does not pause after #run.
+
+You can also specify a file name in braces, then
+the system will launch the associated program:
+
+#put fn2=c:\temp\lesson03b.txt
+#newer `fn2`
+second file of lesson 03...
+#end
+#run {`fn2`}
+
+#mbox Close all the programs that were launched before proceeding.
+
+2. #cmd
+This has two functions: running a program and waiting
+for it to finish, and running an inline command batch file.
+
+Run a batch file and assign output to a variable
+#cmd result
+@echo off
+echo This is your config
+ipconfig
+#end
+#info `result`
+
+#put fn=c:\temp\lesson03c.txt
+#cmd a
+echo Recipe execution suspended until you close this > `fn`
+#end
+#cmd {notepad} `fn`
+#mbox done.
+
+3. #ps
+Inline PowerShell scripts can be executed this way:
+
+#ps list
+gsv | ?{$_.Status -eq 'Running'} | Out-String
+#end
+
+#info `list`
+
+For a single list it can also be written as this:
+#ps list=gsv | ?{$_.Status -eq 'Stopped'}
+The Out-String will be appended automatically in this case.
+#info `list`
+
+PowerShell can also be used for calculations:
+
+#put calc=398+9483+91
+#ps sum
+`calc`
+#end
+#info `calc` = `sum`
+
+4. #csharp
+A C# method body can be executed from within a recipe. 
+The only libraries that can be used are System.dll 
+and System.Core.dll
+
+#put min=1
+#put max=10
+#csharp result
+var sb = new StringBuilder();
+for (int i=`min`; i<=`max`; i++) 
+{
+	sb.AppendFormat("{0}^2={1}", i, i*i);
+	sb.AppendLine();
+}
+return sb.ToString();
+#end
+
+#info `result`
+
+End of lesson.

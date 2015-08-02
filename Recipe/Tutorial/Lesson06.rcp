@@ -1,0 +1,68 @@
+#tags lesson #recipe ## #return
+
+Lesson 06: Creating and invoking recipes
+
+#mode write
+
+We can run invoke a recipe within a recipe by using #recipe
+or its alias, ## . The recipe script can be contained inside
+a file or inside a macro. By convention, the recipe file
+should have extension .rcp, although this is not required.
+
+
+To create a recipe inside a recipe, we can use #cdata (#@)
+because it allows us to use #-commands and `...` literally
+without executing/expanding them.
+
+#cdata myrecipe
+#put greeting=hello world again
+#mbox I'm inside the invoked recipe
+#run {notepad}
+#end myrecipe
+
+#mbox So far we have only defined the recipe, but now we are going to run it.
+
+#recipe myrecipe
+
+#mbox The greeting created in the recipe is: "`greeting`"
+
+Write mode is not required to run a recipe, but it is enabled in 
+this lesson to show that we can invoke #run inside the called
+recipe.
+
+Note:
+- The invoked recipe uses the same macro dictionary as its caller.
+- You cannot define formal parameters. Put them in the dictioary.
+- The changes made to the recipe will be visible to the caller.
+- The #return command is only a convenience, you can also just
+  put the return value in the dictionary and use it in the caller
+
+Now let's create a file with a recipe and invoke it.
+Let's use some aliases (#@=#cdata, #!=#put, ##=#recipe)
+
+Create the recipe in the dictionary
+
+#@ recipe2
+#mbox Executing this #mbox in the invoked recipe.
+#return the UTC time is `ts:d` `ts:t`
+#end recipe2
+
+#mbox 
+We just created recipe2:
+`recipe2`
+#end
+
+Create the file
+
+#! fn=c:\temp\lesson06.rcp
+#newer `fn`
+`recipe2`
+#end
+
+Execute the file and assign return value to 'a'
+
+#recipe a=`fn`
+
+#mbox a=`a`
+
+End of lesson.

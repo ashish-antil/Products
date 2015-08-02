@@ -1,0 +1,25 @@
+#require FilePath
+#require NumberOfGuids
+#require GuidMarker
+
+#cdata a
+`newseqguid`
+
+#end a
+
+#with a
+repeat `NumberOfGuids`
+#end
+
+#exp a
+
+#copy `a`
+
+
+#load f=`FilePath`
+
+#with f
+sclip paste `GuidMarker`
+#end
+
+

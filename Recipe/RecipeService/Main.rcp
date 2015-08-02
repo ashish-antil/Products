@@ -1,0 +1,11 @@
+﻿#server 0.0.0.0:7711
+
+#with query
+strim /
+#end
+
+#default QueryFolder=.
+
+#ifnot query favicon
+#recipe `QueryFolder`\`query`.rcp
+#endif

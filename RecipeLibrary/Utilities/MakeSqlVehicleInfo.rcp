@@ -1,0 +1,19 @@
+#tags sql vehicle
+
+#require Vehicles  semicolon separated list of vehicle descriptions
+#putv p=Vehicles
+
+#with p
+enclose ;[]
+subs /;([^;]+)/'$1',/
+etrim ,
+#end
+
+#copy
+SELECT TOP 100 v.ID 'VehicleID', v.Description, u.TrackID FROM [Imarda360.Tracking].dbo.Unit u
+join [Imarda360.Tracking].dbo.UnitOwner uo on uo.UnitID= u.ID
+join [Imarda360.VehicleManagement].dbo.Vehicle v on v.id = uo.OwnerID
+where v.Description in (`p`)
+#end
+
+

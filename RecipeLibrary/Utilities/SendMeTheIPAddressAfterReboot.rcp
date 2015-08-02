@@ -1,0 +1,22 @@
+#auto
+
+#tags ipaddress startup
+
+#cmd t
+ipconfig
+#end
+
+#with t
+xmatch IPv4\sAddress[^:]*:\s(172\.18\.1\.\d+)
+first (.*)\b
+#end
+
+#put smtp-sender=maurice.verheijen@imardainc.com
+#put smtp-host=smtp.imardainc.com
+#email maurice.verheijen@imardainc.com
+IP address after start up
+`computername` = `t`
+`timestamp`
+#end
+
+#exit

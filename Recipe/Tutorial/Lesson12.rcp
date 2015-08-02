@@ -1,0 +1,64 @@
+#tags lesson control flow #if #ifnot #endif #exists
+
+#mode write
+
+Lesson 12: Control flow I: conditional execution
+
+With #if and #ifnot conditional execution is provided.
+
+The conditional starts with #if or #ifnot followed by a macro and a regex.
+Then any number of lines up until #else or #endif are the THEN-part and
+will be executed only if a match of the regex is found in the macro contents in 
+the case of #if , or if it is not found in the case of #ifnot .
+The optional ELSE-part can be found between #else and #endif and is executed 
+if the condition is false.
+
+#ask input=Enter a word...
+
+#if input (?i)^[aeiouy]
+#mbox The input starts with a vowel
+#else
+#mbox The input does NOT start with a vowel.
+#endif
+
+#ifnot input .{10,}
+#mbox The input has less than 10 characters.
+#endif
+
+NOTE 1: 
+The #if statements CANNOT be nested syntactically.
+If you need to nest conditions, you can isolate each #if-#endif in 
+a #cdata block and invoke it in the THEN or ELSE part by using the #recipe command
+from lesson 6.
+
+NOTE 2:
+Also make sure the commands between #if .. #else .. #endif are NOT indented.
+All commands have to start in column 1 or they will be skipped.
+
+The result of #exists from Lesson 7 can be tested with #if to do something
+depending on existence of the file, folder or macro, which can be quite useful.
+
+#put f=c:\temp\lesson12.txt
+
+Lets ensure the file exists...
+#new `f`
+Lesson 12
+#end
+
+Now check if it exists...
+
+#exists x=`f`
+"file" will be assigned to x because the given file exists.
+
+#if x file
+#append `f`
+
+bla bla bla
+....
+#end
+#endif
+
+Open it in an editor:
+#run {`f`}
+
+End of lesson.

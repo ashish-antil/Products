@@ -1,0 +1,35 @@
+#tags sql cursor
+
+#default col1=id
+#default type1=uniqueidentifier
+#default col2=name
+#default type2=varchar(max)
+
+#copy
+create table #tmp
+(
+  [`col1`] `type1`,
+  [`col2`] `type2`
+)
+
+insert into #tmp([`col1`], [`col2`])
+
+declare c cursor
+for select [`col1`], [`col2`] from #tmp
+open c
+declare @`col1` `type1`
+declare @`col2` `type2`
+
+fetch next from c into @`col1`, @`col2`
+while @@FETCH_STATUS = 0
+begin
+	-- do stuff
+	fetch next from c into @`col1`, @`col2`
+end
+
+close c
+deallocate c
+
+drop table #tmp
+
+#end

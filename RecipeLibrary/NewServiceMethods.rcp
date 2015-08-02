@@ -1,0 +1,17 @@
+Create new business service and application service methods with the same name and parameter
+
+#tags business service method
+
+#put base=C:\TeamImarda\Imarda360\
+#default service=Alerting|CRM|Gateway|JobDispatch|Security|Solution|Task|Tracking|VehicleManagement
+#require entity
+#require method
+#default return=|SolutionMessageResponse|Get360ItemResponse<`entity`>|Get360ListResponse<`entity`>|SimpleResponse<>|BusinessMessageResponse|GetItemResponse<`entity`>|GetListResponse<`entity`>
+#default reqtype=IDRequest|GenericRequest
+#default globalize=TimeZoneConverter.GlobalizeObject(request.Item, (ConfiguredSessionObject)session);|TimeZoneConverter.GlobalizeObjectList(request.List, (ConfiguredSessionObject)session);
+#default localize=TimeZoneConverter.LocalizeObject(response.Item, session);|TimeZoneConverter.LocalizeObjectList(response.List, session);
+#default file=`entity`
+
+
+#recipe `base`Imarda360.Recipes\NewBusMethod.rcp
+#recipe `base`Imarda360.Recipes\NewAppMethod.rcp

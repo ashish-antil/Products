@@ -1,0 +1,24 @@
+Recursively find all files below a certain root folder 
+that match the filePattern (wildcard), and concatenate them
+into a destination file. The destination file will
+be overwritten. 
+
+#require root
+#default filePattern=*.cs
+#default destination=c:\temp\all.txt
+#default filter=(?s)(.*)
+This filter is a regex that by default selects the whole contents
+of the result file. In general it selects $1 (group 1) of the match.
+
+#load p=-r `root`\`filePattern`
+#del `destination`
+#new `destination`
+`p`
+#end
+
+#find `filter` `destination`
+$1
+
+#end 
+
+#run {notepad++} `destination`

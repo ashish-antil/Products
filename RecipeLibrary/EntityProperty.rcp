@@ -1,0 +1,47 @@
+#tags field property entity 
+
+#name EntityProperty
+
+Recipe file.
+
+----------------------------------
+Adding a field to a BusinessEntity
+----------------------------------
+
+Parameters:
+
+-required
+#require service e.g. Tracking
+#require entity e.g. UnitOwner
+#require field e.g. OwnerActive
+#require sqltype e.g. bit
+#require cstype e.g. bool. If DateTime, then set datatime=_Date
+#default tier=Business|Infrastructure
+
+-optional
+sourcetree: e.g. c:\teamimarda_joe
+database: e.g. Tracking, default same as service
+datetime: "NoDate" or "Date", default is NoDate
+constraint: after sqltype, e.g. 'NULL' or 'NOT NULL DEFAULT 1'
+
+#default database=`service`
+#default datetime=NoDate
+#default sourcetree=C:\TeamImarda\Imarda360\
+#default constraint=|NULL|NOT NULL|NOT NULL DEFAULT 0|NOT NULL DEFAULT 1
+
+#put sql=`sourcetree`Imarda360.DatabaseScripts\Imarda360.`database`\Imarda360.`database`All.sql
+Append an ALTER TABLE at the end of the sql file
+#do `sql`
+In the same file, add parameter to SP
+#name EntityProperty_`entity`
+#do `sql`
+
+Add new property to C# model and control
+#name EntityProperty(?:_`datetime`)?
+#do `sourcetree`Imarda360.`tier`\Services\Imarda`service`\Imarda`service`BusinessInterface\Model\`entity`\`entity`.cs
+#do `sourcetree`Imarda360.`tier`\Services\Imarda`service`\Imarda`service`Business\Control\`entity`\`entity`.cs
+
+
+
+
+

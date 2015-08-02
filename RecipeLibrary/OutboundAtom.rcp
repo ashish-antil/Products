@@ -1,0 +1,6 @@
+#tags maintain outbound atom v300 gateway
+
+#name OutboundAtom
+#require Name
+#do C:\TeamImarda\Imarda360\Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\View\OutboundAtomTypes.cs
+#do C:\TeamImarda\Imarda360\Imarda360.Gateway\CommunicatorServices\V300b\V300bCommunicatorBusiness\Control\MessageComposer.cs

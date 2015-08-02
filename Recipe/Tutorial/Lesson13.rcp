@@ -1,0 +1,113 @@
+#tags lesson control flow #for #iter #next
+
+Lesson 13: Control flow II: iterations
+
+Quite often iterations will not be necessary in recipes. For instance
+operations on files with #subs #after #before #indentxml #extract etc. 
+work on sets of files.
+
+1. #for .. #next
+This is a simple loop, using macro `_` as loop variable to store a
+number that is incremented with each iteration. The arguments are:
+  #for <format-string> <initial-value> <step> <final-value>
+  ... commands
+  #next
+All arguments are required. Format strings are common .NET number format strings.
+The final-value has to be greater than the initial-value or else the loop won't happen.
+A step that is less than 1 can result in an infinite loop, so be careful.
+
+
+The following shows a counter and a random number on each text that is output with #info .
+
+#rand x 000 1 1000
+#for 00 1 1 10
+#info Random number `_` : `&x`
+#next
+
+Note the use of `_` to show the loop variable
+
+
+Here is an infinite loop. Execution can be stopped with #stop, but this is not just
+breaking out of the loop, it stops the execution of the recipe stack.
+
+#for # 1 0 1
+#ask ans
+Infinite loop. Continue?
+-
+yes
+no
+#end
+...
+#stop ans no
+#next
+
+NOTE: the block between #for and #next is expanded with each iteration.
+That means any macro assigned inside the loop will not have the new value
+when used in `...` after the assignment. The `...` expressions will be
+expanded at the beginning of each iteration.
+
+If we were to add a line 
+  #info `ans`
+at the dots ... then the value of ans BEFORE the #ask would be shown.
+
+4. #iter (.. #next)
+
+The #iter command works on a macro contents line by line. Each iteration happens for the next line
+in the macro. The loop finishes when all lines have had their iteration. In practice, this loop
+construct is the most useful.
+
+Ther are three formats. 
+
+a.  #iter <macro>
+    <commands>
+    #next
+
+This works by assigning each line of the macro contents 
+one by one to the loop variable `_` and doing an iteration per line.
+
+#@ list
+one
+two
+three
+#end list
+
+#iter list
+#info line = `_`
+#next
+
+b.  #iter <macro> <recipe>
+
+This is the 'destructive' form of the command, where the macro name itself
+is used as the loop variable and at the end it is removed from the dictionary.
+
+#@ rcp
+#info second format, line `list`
+#end rcp
+
+#iter list rcp
+
+#exists a=list
+#ifnot a macro
+#info the list is gone
+#endif
+
+It is possible to first assign the list to another variable like #putv loopvar=list
+but is easier to use the third format:
+
+c.  #iter <macro> <recipe> <loop-variable>
+
+#@ list2 
+UNO
+DOS
+TRES
+#end list2
+
+#@ rcp2
+#info the line is now `i`
+#end rcp2
+
+#iter list2 rcp2 i
+
+
+
+End of lesson.

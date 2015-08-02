@@ -1,0 +1,30 @@
+Add a new vehicle type to the seed data and C# enumeration.
+
+#name VehicleType
+
+#require jira
+#require name
+#require flags
+
+Add a combination of flags:
+
+	DeviceAttachable = 1,   can attach a device (true most of the time)
+	Mover = 2,   can pull a Dependent vehicle
+	Dependent = 4,  depends for moving on a mover
+	Drivable = 8,   can have a driver
+	Engine = 16,  has engine
+
+
+#put file=C:\TeamImarda\Imarda360\Imarda360.DatabaseScripts\Imarda360.VehicleManagement\Data\Imarda360.VehicleTypeData.sql
+
+#put datetime=`timestamp`
+#put date=`datetime`
+#subs T datetime
+ 
+#end
+
+#do `file`
+
+
+
+

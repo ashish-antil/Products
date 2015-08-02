@@ -1,0 +1,1387 @@
+#name CreateCommunicator
+This recipe creates a skeleton of a new Communicator.
+
+------------------------
+#require Name - name of the Communicator: e.g. V300
+#default EPPort=91xx
+#default EPControlPort=92xx
+#default HostPort=2yy1
+#default DestinationPort=2yy0
+#require CommID - communicator ID, 1=V300b, 2=SMDPb, 3=Orionb, ...
+#default ServerAckRequired=true
+------------------------
+
+#put base=C:\TeamImarda\Imarda360\Imarda360.Gateway\CommunicatorServices\`Name`
+#put bizbase=`base`\`Name`CommunicatorBusiness
+#put bizintfbase=`base`\`Name`CommunicatorBusinessInterface
+#put svcbase=`base`\`Name`CommunicatorService
+
+#put bizguid=`newguid`
+#put bizintfguid=`newguid`
+#put svcguid=`newguid`
+
+Get all the Atom Types from the gateway by searching for pattern in app.config, use in creating new configs
+#put rx1=(?s)<add\stype="ImardaBatchProcessorInterface\.AtomPart.*?</add>
+#put knowntypes=`C:\TeamImarda\Imarda360\Imarda360.Gateway\AtomGateway\AtomGatewayService\App.config`
+#find `rx1` knowntypes
+$0
+#end
+
+#new `bizbase`\`Name`CommunicatorBusiness.csproj
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{`bizguid`}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>`Name`Communicator</RootNamespace>
+    <AssemblyName>`Name`CommunicatorBusiness</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Control\CommunicatorControl.cs" />
+    <Compile Include="Control\Communicator.cs" />
+    <Compile Include="Control\MessageComposer.cs" />
+    <Compile Include="Control\GatewayAdapter.cs" />
+    <Compile Include="Control\LoggerAdapter.cs" />
+    <Compile Include="Control\MessageParser.cs" />
+    <Compile Include="Control\MessageQueueAdapter.cs" />
+	<Compile Include="Control\QueueLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Imarda360.Business\Base\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Imarda360.Common\Imarda.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\AtomGateway\AtomGatewayBusinessInterface\AtomGatewayBusinessInterface.csproj">
+      <Project>{54A5017A-7A98-4D0C-91CF-DDD0B1141895}</Project>
+      <Name>AtomGatewayBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Base\CommInterfaces\CommInterfaces.csproj">
+      <Project>{B78E7A73-F586-49F9-BFD1-33BC52A81787}</Project>
+      <Name>CommInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Base\CommPersistence\CommPersistence.csproj">
+      <Project>{9300A604-829C-4E83-A0FC-0C226943B7F6}</Project>
+      <Name>CommPersistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Base\Communicator\Communicator.csproj">
+      <Project>{7B3C885A-50F3-4143-B7E3-8C299BE8A905}</Project>
+      <Name>Communicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda360Gateway.Libraries\Batch\BatchProcessorHelpers\ImardaBatchProcessorHelpers.csproj">
+      <Project>{138E6E60-7433-42CD-B988-292962007126}</Project>
+      <Name>ImardaBatchProcessorHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda360Gateway.Libraries\Batch\BatchProcessorInterface\ImardaBatchProcessorInterface.csproj">
+      <Project>{D831A002-EDA2-4C2A-AFCB-F18246BBCCE4}</Project>
+      <Name>ImardaBatchProcessorInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda360Gateway.Libraries\ImardaCommunicatorControlInterface\ImardaCommunicatorControlInterface.csproj">
+      <Project>{D5CE7677-E8FA-408A-9CFC-2BE07FF7B54B}</Project>
+      <Name>ImardaCommunicatorControlInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\`Name`CommunicatorBusinessInterface\`Name`CommunicatorBusinessInterface.csproj">
+      <Project>{`bizintfguid`}</Project>
+      <Name>`Name`CommunicatorBusinessInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
+#end
+
+#new `bizbase`\Control\Communicator.cs
+using System;
+using System.ServiceModel;
+using CommPersistence;
+using CommunicatorBase;
+using FernBusinessBase;
+using Imarda.Lib;
+using ImardaAtomGatewayBusiness;
+using ImardaBatchProcessorHelpers;
+using ImardaBatchProcessorHelpers.SenderPolicies;
+using ImardaBatchProcessorInterface;
+
+namespace `Name`Communicator
+{
+	[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
+	public class Communicator : IAtomGatewayOutbound
+	{
+		public static readonly Guid InstanceID = SequentialGuid.NewDbGuid();
+		public const string Description = "Communicator - " + Name;
+		private static int _SenderID;
+
+		internal const string Name = "`Name`";
+		private readonly BatchProcessor _BatchProcessor;
+		private readonly ActiveDeadlinePolicy _DeadlinePolicy;
+		private readonly Proxy<IAtomGatewayInbound> _GatewayProxy;
+		private readonly long _Interval;
+		private readonly Receiver _Receiver;
+		private readonly Transporter _Transporter;
+
+		public Communicator()
+		{
+			string dir = ConfigUtils.GetString("CommunicatorLogFolder") ?? @"c:\i360.Logs\Gateway\Communicator." + Name;
+			string combinedInOutLog = ConfigUtils.GetString("CombinedInOutLog");
+			Perimeter.InLog = new LoggerAdapter(dir, combinedInOutLog ?? "Inbound");
+			Perimeter.OutLog = new LoggerAdapter(dir, combinedInOutLog ?? "Outbound");
+			Perimeter.MessageQ = new MessageQueueAdapter(ConfigUtils.GetString("InboundQueue." + Name, "InboundQueue"));
+
+
+			if (ConfigUtils.GetFlag("Persistence"))
+			{
+				var persistenceDir = ConfigUtils.GetString("CommunicatorPersistenceFolder") ?? @"c:\Persistence\Communicator." + Name;
+				var mgr = new PersistenceManager(persistenceDir);
+				Perimeter.PBatchIn = mgr.BatchInMgr;
+				Perimeter.PDeviceInfo = mgr.DeviceInfoMgr;
+				Perimeter.POutboundMessage = mgr.OutboundMessageMgr;
+			}
+			else
+			{
+				var transient = new TransientStorage();
+				Perimeter.PBatchIn = transient;
+				Perimeter.PDeviceInfo = transient;
+				Perimeter.POutboundMessage = transient;
+			}
+
+			try
+			{
+				_Transporter = new Transporter();
+				_Transporter.SetUpUDP(Name);
+
+				// ----------------- Configure Inbound --------------------------------------------
+
+				_GatewayProxy = new Proxy<IAtomGatewayInbound>("AtomGatewayTcpEndpoint");
+				_DeadlinePolicy = new ActiveDeadlinePolicy(() => _Receiver.Builder.CheckSend());
+
+				int atomCount = ConfigUtils.GetInt("AtomCount." + Name, "AtomCount");
+				var atomCountPol = new AtomCountPolicy(atomCount);
+				ISenderPolicy policy = new CombinedPolicy(Oper.Any, atomCountPol, _DeadlinePolicy);
+				Perimeter.Gateway = new GatewayAdapter(_GatewayProxy);
+				_SenderID = ConfigUtils.GetInt("CommID." + Name, "CommID");
+				var sendToGateway = new BatchSender<IAtomGatewayInbound>(_SenderID, _GatewayProxy, policy);
+
+				_Receiver = new Receiver(_Transporter);
+				_Receiver.MessageParser = new MessageParser();
+
+				bool serverAckRequired = ConfigUtils.GetFlag("ServerAckRequired." + Name, "ServerAckRequired");
+				if (!serverAckRequired) _Receiver.MessageParser.DefaultAckPoint = AckPoint.Never;	// if ack is required, then the default is to send ack at validation time
+
+				_Receiver.Builder = new BatchBuilder<IAtomGatewayInbound>(sendToGateway);
+
+				_Interval = ConfigUtils.GetInt("BatchTimeout." + Name, "BatchTimeout");
+				_DeadlinePolicy.SetDeadline(DateTime.UtcNow + TimeSpan.FromMilliseconds(_Interval));
+				_Receiver.Builder.PreviewAtomAdded += PreviewAtomAdded;
+				_Receiver.Recover();
+
+				// ----------------- Configure Outbound --------------------------------------------
+
+				DeviceManager dmgr = DeviceManager.Instance;
+				dmgr.UseChecksum = true;
+				dmgr.EnqueueFilter = new EnqueueControl(QueueLogic.CheckEnqueueOutbound);
+				dmgr.Presend = new PresendControl(QueueLogic.InsertSequenceNumber);
+				dmgr.Sender = new Sender(_Transporter, Transporter.UDPScheme); // e.g. "udp", "tcp", "http", "mailto"
+				dmgr.Recover();
+				dmgr.Receiver = _Receiver;
+
+				_BatchProcessor = new BatchProcessor {Composer = new MessageComposer()};
+
+				
+				// ---------------------------------------------------------------------------------
+
+				_Transporter.Start();
+				StartInbound();
+				StartOutbound();
+			}
+			catch (Exception ex)
+			{
+				Perimeter.InLog.LogFormat(LogLevel.Err, "Communicator constructor: {0}", ex);
+			}
+		}
+
+		#region IAtomGatewayOutbound Members
+
+		public void SendDirectMessage(string trackID, byte[] data)
+		{
+			DeviceManager.Instance.SendDirect(trackID, data);
+		}
+
+		public string Test()
+		{
+			return GetType().Name;
+		}
+
+		public BatchMessageResponse ProcessBatch(BatchMessage batch)
+		{
+			Perimeter.OutLog.Log(LogLevel.Dbg, "Received outbound batch");
+			return _BatchProcessor.ProcessBatch(batch);
+		}
+
+		#endregion
+
+		private void PreviewAtomAdded(object sender, AtomEventArgs e)
+		{
+			if (_Receiver.Builder.AtomCount != 0) return;
+
+			DateTime time = DateTime.UtcNow + TimeSpan.FromMilliseconds(_Interval);
+			_DeadlinePolicy.SetDeadline(time);
+		}
+
+		public void StartInbound()
+		{
+			_Receiver.Start();
+			Perimeter.InLog.Log(LogLevel.Dbg, "After Receiver Start");
+		}
+
+		public void StartOutbound()
+		{
+			DeviceManager.Instance.Start();
+			Perimeter.OutLog.Log(LogLevel.Dbg, "After DeviceManager Start");
+		}
+
+		public static void SendToGatewayDirect(Atom atom)
+		{
+			var service = Perimeter.Gateway.ProxyChannel;
+			ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+			{
+				channel = service as IClientChannel;
+
+				var batch = new BatchMessage(_SenderID, atom);
+				service.ProcessBatch(batch);
+			});
+		}
+	}
+}
+#end
+
+
+#new `bizbase`\Control\MessageComposer.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using CommunicatorBase;
+using Imarda.Lib;
+using ImardaAtomGatewayBusiness;
+using ImardaBatchProcessorInterface;
+
+namespace `Name`Communicator
+{
+	public partial class MessageComposer : ComposerBase
+	{
+		private static readonly char[] _EscapeChars = @",!*$\".ToCharArray(); //TODO change for this communicator
+
+		private static readonly string _CommunicatorAddress;
+
+		static MessageComposer()
+		{
+			string host = null;
+			_CommunicatorAddress = ConfigUtils.GetString("CommunicatorAddress") ?? String.Join(" ", DNSUtil.GetAddress(ref host)).Replace(',', ' ');
+		}
+
+		public override List<OutboundMessage> Compose(Atom atom)
+		{
+			var list = new List<OutboundMessage>();
+			//TODO analyze atom and construct a list of OutboundMessages targetted at the device.
+			//Each OutboundMessage must have data that can be interpreted by the device.
+			switch (atom.Type)
+			{
+				case OutboundAtomTypes.Xxx: //TODO
+					AddXMessages(list, atom);
+					break;
+					
+				//TODO
+			}
+			return list;
+		}
+		
+		private static void AddXxxMessages(ICollection<OutboundMessage> list, Atom atom)
+		{
+			//TODO logic here to compose a message
+			AddMessage(list, atom, TODO);
+		}
+		
+		private static OutboundMessage AddMessage(ICollection<OutboundMessage> list, Atom atom, string messageType, params object[] more)
+		{
+			OutboundMessage msg = OutboundMessage.CreateOutboundMessage(atom);
+			msg.Data = GetMessageData(atom.ID, "0", null, messageType, true, more);
+			Perimeter.POutboundMessage.Save(msg);
+			list.Add(msg);
+			return msg;
+		}
+		
+		internal static byte[] GetMessageData(string trackID, string devType, int? seq, string messageType, bool escape, params object[] more)
+		{
+			//TODO replace with message analyzing code
+			/* ample code
+			StringBuilder sb = new StringBuilder(`Name`Char.MessageStart).Append('0')
+				.Append(`Name`Char.FieldDelimiter).Append(trackID)
+				.Append(`Name`Char.FieldDelimiter).Append(devType)
+				.Append(`Name`Char.FieldDelimiter);
+			if (seq.HasValue) sb.Append(seq.Value);
+			sb.Append(`Name`Char.FieldDelimiter).Append(messageType);
+
+			foreach (object item in more)
+			{
+				sb.Append(`Name`Char.FieldDelimiter);
+				if (item is bool)
+					sb.Append((bool)item ? '1' : '0');
+				else
+				{
+					if (item != null) sb.Append(escape ? EscapeField(item.ToString()) : item.ToString());
+				}
+			}
+			sb.Append(`Name`Char.MessageEnd).Append("__\r\n");
+			byte[] data = Encoding.ASCII.GetBytes(sb.ToString());
+			return data;
+			*/
+		}	
+
+		private static string EscapeField(string s)
+		{
+			return StringUtils.EscapeField(_EscapeChars, s);
+		}	
+
+		public static void SetXorChecksum(byte[] data, int start, byte checksum)
+		{
+			const string hex = "0123456789ABCDEF";
+			data[start] = (byte)hex[checksum >> 4];
+			data[start + 1] = (byte)hex[checksum & 0xF];
+		}		
+	}
+}
+#end
+
+#new `bizbase`\Control\GatewayAdapter.cs
+using CommunicatorBase;
+using FernBusinessBase;
+using ImardaAtomGatewayBusiness;
+
+
+namespace `Name`Communicator
+{
+	public class GatewayAdapter : IGatewayInbound
+	{
+		private readonly Proxy<IAtomGatewayInbound> _GatewayProxy;
+
+		public GatewayAdapter(Proxy<IAtomGatewayInbound> proxy)
+		{
+			_GatewayProxy = proxy;
+		}
+
+		public Proxy<IAtomGatewayInbound> Proxy
+		{
+			get { return _GatewayProxy; }
+		}
+
+		public IAtomGatewayInbound ProxyChannel
+		{
+			get { return _GatewayProxy.GetChannel(); }
+		}
+	}
+}
+#end
+
+#new `bizbase`\Control\LoggerAdapter.cs
+using CommunicatorBase;
+using Imarda.Lib;
+
+namespace `Name`Communicator
+{
+	public class LoggerAdapter : ILogger
+	{
+		private ErrorLogger _Logger;
+
+		public LoggerAdapter(string folder, string name)
+		{
+			_Logger = ErrorLogger.GetLogger(folder, name);
+		}
+
+		#region ILogger Members
+
+		public void Log(LogLevel level, object item)
+		{
+			_Logger.Log((int)level, "{0}", item);
+		}
+
+		public void LogFormat(LogLevel level, string fmt, params object[] items)
+		{
+			_Logger.Log((int)level, fmt, items);
+		}
+		
+		public LogLevel MaxLevel
+		{
+			get { return (LogLevel) _Logger.MaxLevel; }
+			set { _Logger.MaxLevel = (int)value; }
+		}		
+
+		#endregion
+	}
+}
+#end
+
+#new `bizbase`\Control\MessageParser.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using CommunicatorBase;
+using ImardaBatchProcessorInterface;
+
+namespace `Name`Communicator
+{
+	public partial class MessageParser : ParserBase
+	{
+		private static readonly DateTime _PastDate = new DateTime(2010, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+		/// <summary>
+		/// Test the message and return the result.
+		/// </summary>
+		/// <param name="e">incoming message</param>
+		/// <returns></returns>
+		public override ValidationResult Validate(MessageEventArgs e)
+		{
+			// First test minimum length
+			byte[] data = e.Data;
+			int len = Array.LastIndexOf(data, (byte)`Name`Char.MessageEnd[0]) - 1;
+			if (len <= 0)
+			{
+				return new ValidationResult(); // rubbish
+			}
+
+			// Are the start/end markers there?
+			if (data[0] != `Name`Char.MessageStart[0] || data[len + 1] != `Name`Char.MessageEnd[0])
+			{
+				return new ValidationResult(); // not a valid message
+			}
+
+			// Test 8 bit checksum
+			string xx = NumberUtils.XorChecksum(data, 1, len).ToString("X2");
+			char[] delim = `Name`Char.FieldDelimiters;
+			if (data[len + 2] != xx[0] || data[len + 3] != xx[1])
+			{
+				// data unreliable
+				return new ValidationResult { LogMessage = CreateLogMessage(e, " -- validation failed") };
+			}
+			// Read header fields
+			int p = 1;
+			string trackID = ;
+			string devType = ;
+			int seq = ;
+			string messageType = ;
+
+			// Is this an ack/nak from device?
+			if (messageType == `Name`MessageType.ACK || messageType == `Name`MessageType.NAK)
+			{
+				bool retry = false;
+				if (messageType == `Name`MessageType.NAK)
+				{
+					string reason = ;
+					if (reason == ) retry = true; // busy
+				}
+
+				return new ValidationResult
+								{
+									TrackID = trackID,
+									Address = e.Uri.Host,
+									CommSeqNum = seq,
+									ReplyMessage = null,
+									LogMessage = CreateLogMessage(e, string.Empty),
+									IsDeviceAckNak = !retry
+								};
+			}
+			var result = new ValidationResult
+										{
+											TrackID = trackID,
+											CommSeqNum = seq,
+											Address = e.Uri.Host,
+											LogMessage = CreateLogMessage(e, string.Empty)
+										};
+
+			if (DefaultAckPoint == AckPoint.Validated)
+			{
+				//TODO create Ack message for the device and assign to result.ReplyMessage
+				/*
+				byte[] rdata = MessageComposer.GetMessageData(trackID, devType, seq, (AckCode), false);
+				byte chk = NumberUtils.XorChecksum(rdata, 1, -6);
+				MessageComposer.SetXorChecksum(rdata, rdata.Length - 4, chk);
+				result.ReplyMessage = OutboundMessage.CreateOutboundMessage(trackID, result.Address, seq, rdata);
+				*/
+			}
+			return result;
+		}
+
+		/// <summary>
+		/// Create an Atom to send to the Gateway for processing
+		/// </summary>
+		/// <param name="msg"></param>
+		/// <returns></returns>
+		public override List<Atom> Parse(InboundMessage msg)
+		{
+			int len = Array.LastIndexOf(msg.Data, (byte)`Name`Char.MessageEnd[0]) - 1;
+			string data = Encoding.ASCII.GetString(msg.Data, 1, len);
+			string[] items = data.Split(`Name`Char.FieldDelimiters); 
+
+			string trackID = ;
+			int seq;
+			int.TryParse(..., out seq);
+
+			var atom = new Atom	{ ID = trackID, SeqNum = seq, Address = msg.Address, Time = msg.ReceiveTime };
+			int type = ;
+			
+			switch (type)
+			{
+				case `Name`MessageType.Xxx:
+					ParseXxxMessage(msg, items, atom);
+					break;
+					
+				//TODO add a case for each message type, set atom=null if no atom is to be returned 
+			}
+			if (atom == null) return new List<Atom>();
+			CheckDateTime(atom);
+			return new List<Atom> { atom };
+		}
+
+		private void CheckDateTime(Atom atom)
+		{
+			DateTime dt = atom.Time;
+			if (dt < _PastDate) 
+			{
+				// the time is way into the past
+				var now = DateTime.UtcNow;
+				byte[] data1 =  ; //TODO create a message to send to the unit to set its date and time.
+				DeviceManager.Instance.SendDirect(atom.ID, data1);
+				atom.Time = now;
+				atom.IsSenderTime = false;
+			}
+		}
+
+		public override uint? Checksum(byte[] data)
+		{
+			return Crc32(data);
+		}
+
+		public override void ProcessCancelledOutbound(InboundMessage ack, OutboundMessage[] cancelled)
+		{
+			//TODO code to handle an outbound message after it has been Ack'd.
+		}
+
+		private static string UnescapeField(string s)
+		{
+			return StringUtils.UnescapeField(s);
+		}
+
+		private static string CreateLogMessage(MessageEventArgs e, string comment)
+		{
+			return e.Uri.Host + "|" + Encoding.ASCII.GetString(e.Data) + comment;
+		}
+
+		/*
+		private static DateTime StringToDateTime(string date, string time)
+		{
+			try
+			{
+				string dateString = date + ":" + time; 
+				const string format = "ddMMyy:HHmmss";
+
+				return DateTime.SpecifyKind(DateTime.ParseExact(dateString, format, null), DateTimeKind.Utc);
+			}
+			catch
+			{
+				return DateTime.UtcNow;
+			}
+		}
+		*/
+	
+		public static void ParseTracking(string[] items, out IgnitionPart ignition, out GPSPart gps, out OdometerPart odometer)
+		{
+			//TODO create various AtomParts with tracking information
+		}
+
+	}
+}
+#end
+
+#new `bizbase`\Control\MessageQueueAdapter.cs
+using System.Messaging;
+using CommunicatorBase;
+using Imarda.Lib;
+
+namespace `Name`Communicator
+{
+	public class MessageQueueAdapter : IMessageQueue<InboundMessage>
+	{
+		private readonly IMessageFormatter _Formatter;
+		private readonly ImardaMSMQueue _Q;
+		private readonly bool _MessageQueueCounterEnabled;
+		private readonly ErrorLogger _Log;
+
+		public MessageQueueAdapter(string queueName)
+		{
+			_Q = new ImardaMSMQueue(queueName);
+			_Formatter = new XmlMessageFormatter(new[] {typeof (InboundMessage)});
+			_MessageQueueCounterEnabled = ConfigUtils.GetFlag("MessageQueueCounterEnabled");
+			if (_MessageQueueCounterEnabled) _Log = ErrorLogger.GetLogger("MessageQueue");
+		}
+
+		#region IMessageQueue<InboundMessage> Members
+
+		public void Send(InboundMessage message)
+		{
+			var qmsg = new Message(message);
+			_Q.Send(qmsg);
+			CheckQueue();
+		}
+
+		public InboundMessage Receive()
+		{
+			var qmsg = (Message) _Q.Receive();
+			CheckQueue();
+			qmsg.Formatter = _Formatter;
+			return (InboundMessage) qmsg.Body;
+		}
+
+		public InboundMessage Peek()
+		{
+			var qmsg = (Message) _Q.Peek();
+			qmsg.Formatter = _Formatter;
+			return (InboundMessage) qmsg.Body;
+		}
+
+		#endregion
+
+		private void CheckQueue()
+		{
+			if (_MessageQueueCounterEnabled)
+			{
+				int count = _Q.Count;
+				_Log.Info(count);
+			}
+		}
+	}
+}
+
+#end
+
+
+#new `bizbase`\Control\QueueLogic.cs
+using System.Text;
+using CommunicatorBase;
+using Imarda.Lib;
+
+namespace `Name`Communicator
+{
+	internal static class QueueLogic
+	{
+		/// <summary>
+		/// Decide whether to enqueue the message
+		/// </summary>
+		/// <param name="qh">queue handler allows access to queues</param>
+		/// <param name="job">contains OutboundMessage to add</param>
+		/// <returns>true to add, false to drop the job</returns>
+		internal static bool CheckEnqueueOutbound(IJobQueueControl<int> qh, SendJob job)
+		{
+			return true; //TODO remove this method if not used
+		}
+
+
+		internal static void InsertSequenceNumber(OutboundMessage msg, DeviceInfo dev)
+		{
+		/*
+			int num = dev.GetNextSeqNum();
+			byte[] data = ArrayUtils.InsertByteArray(msg.Data, Encoding.ASCII.GetBytes(num.ToString()), separator, offset);
+			byte chk = NumberUtils.XorChecksum(data, start, offset);
+			MessageComposer.SetXorChecksum(data, data.Length - 2, chk);
+			msg.Data = data;
+		*/
+		}
+	}
+}
+#end
+
+#new `bizbase`\Control\CommunicatorControl.cs
+using System;
+using System.ServiceModel;
+using CommunicatorBase;
+using Imarda.Lib;
+using System.Text;
+
+namespace `Name`Communicator
+{
+	[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
+	public class CommunicatorControl : ControlBase
+	{
+		protected override string GetMessageType(OutboundMessage msg)
+		{
+			//TODO
+			return "";
+		}
+
+		public override void BlockMessage(bool block, string trackID, string type)
+		{
+			//TODO
+		}
+
+		protected override string GetCommunicatorName()
+		{
+			return Communicator.Name;
+		}
+	}
+}
+#end
+
+#new `bizbase`\Properties\AssemblyInfo.cs
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("`Name`CommunicatorBusiness")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("`Name`CommunicatorBusiness")]
+[assembly: AssemblyCopyright("Copyright ? Microsoft 2011")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("`newguid`")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers 
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+#end
+
+#new `bizintfbase`\`Name`CommunicatorBusinessInterface.csproj
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>`bizintfguid`</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>`Name`Communicator</RootNamespace>
+    <AssemblyName>`Name`CommunicatorBusinessInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Model\Types.cs" />  
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Imarda360.Common\Imarda.Common\Imarda.Lib.csproj">
+      <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
+      <Name>Imarda.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
+#end
+
+#new `bizintfbase`\Model\Types.cs
+namespace `Name`Communicator
+{
+	public static class `Name`Char
+	{
+		public const string MessageStart = ; // max 1 char
+		public const string MessageEnd = ; // max 1 char
+		public const string FieldDelimiter = ; // max 1 char
+		public static char[] FieldDelimiters = { FieldDelimiter[0], MessageEnd[0] };
+	}
+
+	public static class `Name`MessageType
+	{
+		public const string ACK = ;
+		public const string NAK = ;
+		public const string Update = ;
+		public const string MDT = ;
+		public const string Config = ;
+		public const string Reset  = ;
+		public const string Status = ;
+		public const string Alert  = ;
+		public const string Error  = ;
+		public const string Notification = ;
+		public const string Action = ;
+		public const string Heartbeat = ;
+	}
+
+}
+#end
+
+#new `bizintfbase`\Properties\AssemblyInfo.cs
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("`Name`CommunicatorBusinessInterface")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Imarda")]
+[assembly: AssemblyProduct("`Name`CommunicatorBusinessInterface")]
+[assembly: AssemblyCopyright("Copyright (c) 2012")]
+[assembly: AssemblyTrademark("i360")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("`newguid`")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers 
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+#end
+
+#new `svcbase`\Properties\AssemblyInfo.cs
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("`Name`CommunicatorService")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Imarda")]
+[assembly: AssemblyProduct("`Name`CommunicatorService")]
+[assembly: AssemblyCopyright("Copyright (c) 2012")]
+[assembly: AssemblyTrademark("i360")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("`newguid`")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers 
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+#end
+
+#new `svcbase`\`Name`CommunicatorService.csproj
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{`svcguid`}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>`Name`CommunicatorService</RootNamespace>
+    <AssemblyName>`Name`CommunicatorService</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="`Name`CommunicatorService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Imarda360.Business\Base\BusinessBase\BusinessBase.csproj">
+      <Project>{4561499A-CDDD-4E8A-A6BB-CBBFDFCA5CDC}</Project>
+      <Name>BusinessBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Imarda360.Common\FernServiceBase\FernServiceBase.csproj">
+      <Project>{FA0C7382-3840-4025-BB4F-D128D602CC90}</Project>
+      <Name>FernServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\AtomGateway\AtomGatewayBusinessInterface\AtomGatewayBusinessInterface.csproj">
+      <Project>{54A5017A-7A98-4D0C-91CF-DDD0B1141895}</Project>
+      <Name>AtomGatewayBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Base\Communicator\Communicator.csproj">
+      <Project>{7B3C885A-50F3-4143-B7E3-8C299BE8A905}</Project>
+      <Name>Communicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda360Gateway.Libraries\Batch\BatchProcessorInterface\ImardaBatchProcessorInterface.csproj">
+      <Project>{D831A002-EDA2-4C2A-AFCB-F18246BBCCE4}</Project>
+      <Name>ImardaBatchProcessorInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Imarda360Gateway.Libraries\ImardaCommunicatorControlInterface\ImardaCommunicatorControlInterface.csproj">
+      <Project>{D5CE7677-E8FA-408A-9CFC-2BE07FF7B54B}</Project>
+      <Name>ImardaCommunicatorControlInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\`Name`CommunicatorBusinessInterface\`Name`CommunicatorBusinessInterface.csproj">
+      <Project>{`bizintfguid`}</Project>
+      <Name>`Name`CommunicatorBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\`Name`CommunicatorBusiness\`Name`CommunicatorBusiness.csproj">
+      <Project>{`bizguid`}</Project>
+      <Name>`Name`CommunicatorBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="App_alpha.config" />
+    <None Include="App_AU.config" />
+    <None Include="App_beta.config" />
+    <None Include="App_Boral.config" />
+    <None Include="App_dev.config" />
+    <None Include="App_NY.config" />
+    <None Include="App_test.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+	</PostBuildEvent>
+  </PropertyGroup>
+</Project>
+#end
+
+#new `svcbase`\`Name`CommunicatorService.cs
+using System.ServiceProcess;
+using Imarda.Lib;
+
+namespace `Name`Communicator
+{
+	public class `Name`CommunicatorService : FernServiceBase.FernServiceBase
+	{
+		public `Name`CommunicatorService()
+			: base("`Name`Communicator")
+		{
+			RegisterHost(new ImardaServiceHost(typeof(Communicator)));
+			RegisterHost(new ImardaServiceHost(typeof(CommunicatorControl)));
+		}
+
+		/// <summary>
+		/// Main program entry point
+		/// </summary>
+		public static void Main()
+		{
+			var servicesToRun = new ServiceBase[] {new `Name`CommunicatorService()};
+			Run(servicesToRun);
+		}
+	}
+}
+#end
+
+#new `svcbase`\App.config
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<configSections></configSections>
+	<appSettings>
+		<add key="dbCheck" value="localhost" />
+		<add key="HostAddress" value="127.0.0.1" />
+		<add key="HostPort" value="`HostPort`" />
+		<add key="DestinationPort" value="`DestinationPort`" />
+		<add key="InboundQueue" value=".\private$\inbound.`Name`" />
+		<add key="BatchTimeout" value="100000000" />
+		<add key="AtomCount" value="1" />
+		<add key="CommID" value="`CommID`" />
+		<add key="ServerAckRequired" value="true" />
+		<add key="DebugLogFolder" value="c:\i360.logs\gateway\Communicator.`Name`" />
+		<add key="UDPLogFolder" value="c:\i360.logs\gateway\Communicator.`Name`" />
+		<add key="Persistence" value="1" />
+		<add key="Inbound_MaxLevel" value="3" />
+		<add key="Outbound_MaxLevel" value="3" />
+	</appSettings>
+	<system.serviceModel>
+		<services>
+			<service name="`Name`Communicator.Communicator">
+				<endpoint address="http://I360COM-`Name`:`EPPort`/`Name`Communicator" behaviorConfiguration="NonStupidlyParanoidBehavior" binding="basicHttpBinding" bindingConfiguration="HugeBufferBindingConfig" name="`Name`CommunicatorTcpEndpoint" contract="ImardaAtomGatewayBusiness.IAtomGatewayOutbound" />
+			</service>
+			<service name="`Name`Communicator.CommunicatorControl">
+				<endpoint address="http://I360COM-`Name`:`EPControlPort`/`Name`Control" behaviorConfiguration="NonStupidlyParanoidBehavior" binding="basicHttpBinding" bindingConfiguration="HugeBufferBindingConfig" name="`Name`ControlTcpEndpoint" contract="ImardaCommunicatorControlInterface.ICommunicatorControl" />
+			</service>
+		</services>
+		<client>
+			<endpoint name="AtomGatewayTcpEndpoint" address="http://I360GATE-ATOM:10100/AtomGatewayInbound" behaviorConfiguration="NonStupidlyParanoidBehavior" binding="basicHttpBinding" bindingConfiguration="HugeBufferBindingConfig" contract="ImardaAtomGatewayBusiness.IAtomGatewayInbound" />
+		</client>
+		<behaviors>
+			<serviceBehaviors>
+				<behavior name="debugTrue">
+					<serviceDebug includeExceptionDetailInFaults="true" />
+					<serviceThrottling maxConcurrentCalls="250" maxConcurrentSessions="250" maxConcurrentInstances="1" />
+				</behavior>
+			</serviceBehaviors>
+			<endpointBehaviors>
+				<behavior name="NonStupidlyParanoidBehavior">
+					<dataContractSerializer maxItemsInObjectGraph="16777216" />
+				</behavior>
+			</endpointBehaviors>
+		</behaviors>
+		<bindings>
+			<basicHttpBinding>
+				<binding name="HugeBufferBindingConfig" closeTimeout="00:02:00" openTimeout="00:02:00" receiveTimeout="00:02:00" sendTimeout="00:02:00" bypassProxyOnLocal="true" maxBufferSize="32768000" maxReceivedMessageSize="32768000">
+					<readerQuotas maxDepth="32" maxStringContentLength="32768000" maxArrayLength="500000" maxBytesPerRead="4096" maxNameTableCharCount="16384" />
+				</binding>
+			</basicHttpBinding>
+			<netTcpBinding>
+				<binding name="BusinessNetTCPBinding" receiveTimeout="00:20:00" sendTimeout="00:20:00" maxBufferSize="32768000" maxConnections="10000" maxReceivedMessageSize="32768000">
+					<readerQuotas maxDepth="32" maxStringContentLength="32768000" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384" />
+					<reliableSession ordered="false" inactivityTimeout="00:01:00" enabled="false" />
+					<security mode="None" />
+				</binding>
+			</netTcpBinding>
+		</bindings>
+	</system.serviceModel>
+	<system.runtime.serialization>
+		<dataContractSerializer>
+			<declaredTypes>
+				`knowntypes`
+			</declaredTypes>
+		</dataContractSerializer>
+	</system.runtime.serialization>
+	<system.web>
+		<membership defaultProvider="ClientAuthenticationMembershipProvider">
+			<providers>
+				<add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+			</providers>
+		</membership>
+		<roleManager defaultProvider="ClientRoleProvider" enabled="true">
+			<providers>
+				<add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+			</providers>
+		</roleManager>
+	</system.web>
+</configuration>
+#end
+
+#put config
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<configSections></configSections>
+	<appSettings>
+		<add key="dbCheck" value="localhost" />
+		<add key="HostAddress" value="``ipaddress``" />
+		<add key="HostPort" value="`HostPort`" />
+		<add key="DestinationPort" value="`DestinationPort`" />
+		<add key="InboundQueue" value=".\private$\inbound.`Name`" />
+		<add key="BatchTimeout" value="100000000" />
+		<add key="AtomCount" value="1" />
+		<add key="CommID" value="1" />
+		<add key="ServerAckRequired" value="true" />
+		<!--<add key="DebugLogFolder" value="c:\i360.logs\gateway\Communicator.`Name`" />-->
+		<!--<add key="UDPLogFolder" value="c:\i360.logs\gateway\Communicator.`Name`" />-->
+		<add key="Persistence" value="1" />
+		<add key="Inbound_MaxLevel" value="3" />
+		<add key="Outbound_MaxLevel" value="3" />
+		<add key="MaxLogLevel" value="4" />
+	</appSettings>
+	<system.serviceModel>
+		<services>
+			<service name="`Name`Communicator.Communicator">
+				<endpoint address="net.tcp://I360COM-`Name`:`EPPort`/`Name`Communicator" behaviorConfiguration="NonStupidlyParanoidBehavior" binding="netTcpBinding" bindingConfiguration="DefaultBinding" name="`Name`CommunicatorTcpEndpoint" contract="ImardaAtomGatewayBusiness.IAtomGatewayOutbound" />
+			</service>
+			<service name="`Name`Communicator.CommunicatorControl">
+				<endpoint address="net.tcp://I360COM-`Name`:`EPControlPort`/`Name`Control" behaviorConfiguration="NonStupidlyParanoidBehavior" binding="netTcpBinding" bindingConfiguration="DefaultBinding" name="`Name`ControlTcpEndpoint" contract="ImardaCommunicatorControlInterface.ICommunicatorControl" />
+			</service>
+		</services>
+		<client>
+			<!-- TCP -->
+			<endpoint name="AtomGatewayTcpEndpoint" address="net.tcp://I360GATE-ATOM:10100/AtomGatewayInbound" behaviorConfiguration="NonStupidlyParanoidBehavior" binding="netTcpBinding" bindingConfiguration="DefaultBinding" contract="ImardaAtomGatewayBusiness.IAtomGatewayInbound" />
+		</client>
+		<behaviors>
+			<serviceBehaviors>
+				<behavior name="debugTrue">
+					<serviceDebug includeExceptionDetailInFaults="true" />
+					<serviceThrottling maxConcurrentCalls="250" maxConcurrentSessions="250" maxConcurrentInstances="1" />
+				</behavior>
+			</serviceBehaviors>
+			<endpointBehaviors>
+				<behavior name="NonStupidlyParanoidBehavior">
+					<dataContractSerializer maxItemsInObjectGraph="16777216" />
+				</behavior>
+			</endpointBehaviors>
+		</behaviors>
+		<bindings>
+			<basicHttpBinding>
+				<binding name="HugeBufferBindingConfig" closeTimeout="00:02:00" openTimeout="00:02:00" receiveTimeout="00:02:00" sendTimeout="00:02:00" bypassProxyOnLocal="true" maxBufferSize="32768000" maxReceivedMessageSize="32768000">
+					<readerQuotas maxDepth="32" maxStringContentLength="32768000" maxArrayLength="500000" maxBytesPerRead="4096" maxNameTableCharCount="16384" />
+				</binding>
+			</basicHttpBinding>
+			<netTcpBinding>
+				<binding name="DefaultBinding" closeTimeout="00:00:10" receiveTimeout="00:20:00" sendTimeout="00:01:00" maxBufferPoolSize="524288" maxBufferSize="104857600" maxReceivedMessageSize="104857600">
+					<readerQuotas maxStringContentLength="104857600" />
+					<security mode="None">
+						<transport protectionLevel="None" />
+					</security>
+				</binding>
+			</netTcpBinding>
+		</bindings>
+		<diagnostics wmiProviderEnabled="true" performanceCounters="All" />
+	</system.serviceModel>
+	<system.runtime.serialization>
+		<dataContractSerializer>
+			<declaredTypes>
+				`knowntypes`
+			</declaredTypes>
+		</dataContractSerializer>
+	</system.runtime.serialization>
+</configuration>
+
+#end
+
+#put ipaddress=10.48.26.4
+#put inst=`config`
+#exp inst
+#new `svcbase`\App_alpha.config
+`inst`
+#end
+
+#put ipaddress=192.168.0.76
+#put inst=`config`
+#exp inst
+#new `svcbase`\App_AU.config
+`inst`
+#end
+
+#put ipaddress=10.48.26.5
+#put inst=`config`
+#exp inst
+#new `svcbase`\App_beta.config
+`inst`
+#end
+
+#put ipaddress=10.67.35.22
+#put inst=`config`
+#exp inst
+#new `svcbase`\App_Boral.config
+`inst`
+#end
+
+#put ipaddress=192.168.1.64
+#put inst=`config`
+#exp inst
+#new `svcbase`\App_dev.config
+`inst`
+#end
+
+#put ipaddress=0.0.0.0
+#put inst=`config`
+#exp inst
+#new `svcbase`\App_NY.config
+`inst`
+#end
+
+#put ipaddress=10.168.30.34
+#put inst=`config`
+#exp inst
+#new `svcbase`\App_test.config
+`inst`
+#end
+
+#before </appSettings> `svcbase`\App*.config
+	<!--template AddCommunicatorConfigKeyValue
+<add key="``key``" value="``value``" />
+	-->
+#end
+
+#put rx=([\t\ ]*)</Communicators>
+#before `rx` C:\TeamImarda\Imarda360\Imarda360.Business\Tools\AllHost\App.config
+$1	<Communicator ID="`CommID`" Name="`Name`" Endpoint="`Name`CommunicatorTcpEndpoint" AllowAll="true"/>
+
+#end
+
+#warn Add the new files to Vault! Also create private queue with the name "inbound.`Name`"
+

@@ -1,0 +1,28 @@
+#name GatewayAccess
+
+Use this recipe to add a method to the i360 application facade which 
+calls through to the Gateway. Basically this is "Sideways" message which
+is not meant for enqueuing outbound messages.
+
+Methods like this are created typically to modify and save cached Unit or GatewayData.
+
+#require Name  --method name
+#default Request=IDRequest
+#default Return=BusinessMessageResponse
+
+
+#put base=C:\TeamImarda\Imarda360\
+
+#do `base`Imarda360.Application\Imarda360.Solution\Imarda360Business\Control\Imarda360.cs
+#do `base`Imarda360.Gateway\Imarda360.Gateway\ImardaGatewayBusiness\Control\Imarda360Gateway.cs
+#do `base`Imarda360.Gateway\Imarda360.Gateway\ImardaGatewayBusinessInterface\View\Receiver\ImardaGatewayReceiver.cs
+#do `base`Imarda360.Application\Imarda360.Libraries\Imarda360Gateway\Imarda360GatewayBusinessInterface\View\Imarda360GatewayInterface.cs
+#do `base`Imarda360.Application\Imarda360.Libraries\Imarda360Gateway\Imarda360GatewayBusiness\Control\Imarda360Gateway.cs
+
+
+#put authtoken=`Name`
+#name NewAuthToken
+#do `base`Imarda360.Common\Imarda.Common\IDs\AuthToken.cs
+
+
+

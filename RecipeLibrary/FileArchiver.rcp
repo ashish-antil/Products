@@ -1,0 +1,78 @@
+#tags file watcher zip 7z
+
+#version 1.8.22+
+
+*******************
+Watch a directory for file creation of new files
+and collect a batch of these files, zip them then delete them
+*******************
+
+--test--
+put folder=c:\temp\a1
+put wildcard=*
+put archive=c:\temp\ARCHIVE.7z
+put batch-size=8
+--------
+
+
+#mode write log-
+
+#put zip=C:\Program Files\7-Zip\7z.exe
+
+#exists x=`zip`
+#ifnot x file
+#mbox `zip` not found. Please install.
+#stop
+#endif
+
+Top folder to watch
+#require folder
+
+File pattern e.g. *.xml
+#require wildcard
+
+Number of file to list in the email
+#default batch-size=5
+
+Full path of archive to add the files to.
+#require archive
+
+-----------------
+
+#put n=0
+#put m=1
+#put list=
+
+#cdata action
+#cmd a
+"`zip`" a "`archive`" `list` -y
+del `list`
+#end
+#end action
+
+#watch C -r `folder`\`wildcard`
+
+#ps n
+(`n` + 1) % `m`
+#end
+
+#put m=`batch-size`
+
+#append list
+`arg0`
+
+#end
+#count z=list lines
+#write n=`n`,  z=`z`
+
+#if n ^0$
+#with list
+unique
+delblank
+enclose "[]"
+join `sp`
+#end
+#recipe action
+#put list=
+#endif
+

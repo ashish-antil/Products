@@ -1,0 +1,72 @@
+#tags geocoding coordinates maps google
+#version 1.5+
+
+Put address in the section below between #put and #end,
+one per line.
+Then run this script either in Test or Write mode.
+The result will be printed in the Log window.
+Alternatively look click F7 and double-click "result"
+
+#put base=C:\Users\maurice.verheijen\Documents\Sanitarium Store Addresses
+#load addr=`base`.txt
+
+#put addr
+CLENDON NEW WORLD|451 ROSCOMMON ROAD,CLENDON SHOPPING CENTRE, Auckland
+#end
+
+#cdata rcp
+#forget addrll
+#if i ^~
+
+#putv addrll=i
+#with addrll
+subs /~/#group /
+#end
+
+#else
+
+#put a=`i`
+#with a
+col /|/2
+append ,New Zealand
+subs / /+/
+subs /&/%26/
+#end
+
+#put b=`i`
+#with b
+col /|/1
+#end
+
+#load json=http://maps.googleapis.com/maps/api/geocode/json?address=`a`&sensor=false
+#putv addrll=json
+#extract (?s)"formatted_address"\s*:\s*"([^"]+).*?"lat"\s*:\s*([0-9-.]+).*?"lng"\s*:\s*([0-9-.]+) addrll
+$2,$3|`b`|$1
+
+#end
+#with addrll
+first (?s)^([^\r\n]*)
+#end
+
+#info ``addrll``
+
+#pause 1000
+#endif
+
+#write ``addrll``
+
+#append `base`.data
+`addrll`
+
+#end
+
+#end rcp
+
+#newer `base`.data
+#end
+
+#put i=`addr`
+#iter i rcp
+
+#run {notepad.exe} `base`.data
+

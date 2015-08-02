@@ -1,0 +1,75 @@
+#version 1.5+
+#tags database db update sql
+
+#put log=c:\i360.PatchLog\PatchLog.txt
+
+#ask issue=Issue Code? e.g. IM-1234
+
+#ask usercode
+Updating the database requires a UserID in the modified records.
+Who are you?
+-
+0001|db amdin
+0002|Maurice Verheijen
+0003|Dave Jollie
+x|somebody else
+#end
+
+#if usercode x
+#ask user=User number? (4 digits, > 0003)
+#endif
+
+#ask table=Full table name?
+#ask condition=What is the WHERE condition?
+
+#if condition ^\s*$
+#mbox Condition cannot be empty
+#stop
+#endif
+
+#ask set=SET what? e.g. "Active=1, Deleted=0"
+
+#if condition ^\s*$
+#mbox SET clause cannot be empty
+#stop
+#endif
+
+#put userid=`newseqguid`
+#with userid
+xmatch (\w{12})
+delblank
+prefix 00000000-0000-`usercode`-0000-
+#end
+
+#put sql
+UPDATE `table`
+SET DateModified='`ts:sql`', UserID='`userid`', 
+`set`
+WHERE 1=0 AND (
+`condition`
+) 
+
+#end
+
+#copy `sql`
+
+#put msg
+SQL on clipboard:
+
+
+`sql`
+
+Replace 1=0->1=1 when ready to run.
+Continue with this? (It will be written to `log`)
+
+#end
+
+#warn `msg`
+
+#append `log`
+`timestamp` | `issue` | `usercode`
+
+`sql`
+----------
+
+#end

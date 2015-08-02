@@ -1,0 +1,22 @@
+This recipe changes an existing AlertPlan Action for trailer updates
+see IM-2763
+
+
+#require ActionGuid   ... [Imarda360.Alerting].dbo.Action.[ID]
+#require TrailerName  ... vehicle name
+#require Attributes   ... space separated list of valid attributes
+
+#with Attributes
+subs /\s*,\s*/ /
+#end
+
+
+#put result
+UDPATE [Imarda360.Alerting].dbo.Action
+SET [Args] = '`TrailerName`/385,0,KeyValue::Data=/`Attributes`/'
+WHERE [ID] = '`ActionGuid`'
+#end
+
+#info `result`
+#copy `result`
+

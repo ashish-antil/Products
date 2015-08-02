@@ -1,0 +1,68 @@
+#name NewMeasurement
+
+#require Name
+
+#new C:\TeamImarda\Imarda360\Imarda360.Common\Imarda.Common\MeasurementUnit\`Name`.cs
+using System;
+using System.Runtime.Serialization;
+
+namespace Imarda.Lib
+{
+	/// <summary>
+	/// `Name` measurement.
+	/// </summary>
+	[DataContract]
+	public struct `Name` : IMeasurement
+	{
+		public const double Conversion = ...;
+
+		public static readonly MUnit Unit = new MUnit(0, 0, 0, 0, 0, 0, 0);  ...fill in exponents: m, kg, s, K, A, ?, rad
+
+		[DataMember]
+		private double _SI;
+
+		public `Name`(double si)
+		{
+			_SI = si;
+		}
+
+		public static implicit operator Measurement(`Name` x)
+		{
+			return new Measurement(x._SI, `Name`.Unit);
+		}
+
+		public static explicit operator `Name`(Measurement x)
+		{
+			if (x.Unit != `Name`.Unit) throw new ArgumentException();
+			return new `Name`(x.Value);
+		}
+
+		public Guid NameID
+		{
+			get { return new Guid(`newguid`); }
+		}
+
+		public string MetricSymbol
+		{
+			get { return ""; } ... defaultl metric symbol
+		}
+
+
+		public string ToString(string format, IFormatProvider formatProvider)
+		{
+			return Measurement.DefaultFormatHandler(format, this, formatProvider);
+		}
+
+		public string SpecificFormat(string format, IFormatProvider formatProvider)
+		{
+			return AsMeasurement().ToString();
+		}
+
+
+		public Measurement AsMeasurement()
+		{
+			return (Measurement)this;
+		}
+	}
+}
+#end

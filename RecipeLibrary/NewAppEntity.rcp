@@ -1,0 +1,212 @@
+#name NewAppEntity
+#require service : Short name of existing service, such as CRM, JobDispatch
+#require entity : Name of new entity
+
+#default tier=|360
+
+#put base=C:\TeamImarda\Imarda360\
+
+#do `base`Imarda360.Common\Imarda.Common\GlobalIDs\AuthToken.cs
+#do `base`Imarda360.Application\Imarda360.Solution\Imarda360Business\Control\Imarda360.cs
+
+#new `base`Imarda360.Application\Imarda360.Libraries\Imarda360`service`\Imarda360`service`Business\Control\`entity`\`entity`.cs
+using System;
+using System.Collections.Generic;
+using System.Text;
+using FernBusinessBase;
+using FernBusinessBase.Errors;
+using Imarda`service`Business;
+using System.ServiceModel;
+
+namespace Imarda360Application.`service`
+{
+	partial class Imarda`service`
+	{
+		public Get`tier`ItemResponse<`entity`> Get`entity`(IDRequest request)
+		{
+			try
+			{
+				var response = new Get`tier`ItemResponse<`entity`>();
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;
+					response = service.Get`entity`(request);
+				});
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetItemResponse<`entity`>>(ex);
+			}
+		}
+
+		public GetUpdateCountResponse Get`entity`UpdateCount(GetUpdateCountRequest request)
+		{
+			try
+			{
+				var response = new GetUpdateCountResponse();
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;
+					response = service.Get`entity`UpdateCount(request);
+				});
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+			}
+		}
+
+		public Get`tier`ListResponse<`entity`> Get`entity`ListByTimeStamp(GetListByTimestampRequest request)
+		{
+			try
+			{
+				var response = new Get`tier`ListResponse<`entity`>();
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;				
+					response = service.Get`entity`ListByTimeStamp (request);
+				});
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetListResponse<`entity`>>(ex);
+			}
+		}
+
+		public Get`tier`ListResponse<`entity`> Get`entity`List(IDRequest request)
+		{
+			try
+			{
+				var response = new Get`tier`ListResponse<`entity`>();
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;
+					response = service.Get`entity`List(request);
+				});
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle<GetListResponse<`entity`>>(ex);
+			}
+		}
+
+		public BusinessMessageResponse Save`entity`(Save`tier`Request<`entity`> request)
+		{
+			try
+			{
+				var response = new BusinessMessageResponse();
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;
+					response = service.Save`entity`(request);
+				});
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle(ex);
+			}
+		}
+
+		public BusinessMessageResponse Save`entity`List(Save`tier`ListRequest<`entity`> request)
+		{
+			try
+			{
+				var response = new BusinessMessageResponse();
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;
+					response = service.Save`entity`List(request); 
+				});
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle(ex);
+			}
+		}
+
+		public BusinessMessageResponse Delete`entity`(IDRequest request)
+		{
+			try
+			{
+				var response = new BusinessMessageResponse();
+				var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+				ChannelInvoker.Invoke(delegate(out IClientChannel channel)
+				{
+					channel = service as IClientChannel;
+					response = service.Delete`entity`(request);
+				});
+				return response;
+			}
+			catch (Exception ex)
+			{
+				return ErrorHandler.Handle(ex);
+			}
+		}
+	}
+}
+#end
+
+#new `base`Imarda360.Application\Imarda360.Libraries\Imarda360`service`\Imarda360`service`BusinessInterface\View\`entity`\`entity`.cs
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.ServiceModel;
+using FernBusinessBase;
+using Imarda`service`Business;
+
+
+namespace Imarda360Application.`service`
+{
+	partial interface IImarda`service` 
+	{
+
+		#region Operation Contracts for `entity`
+		[OperationContract]
+		Get`tier`ListResponse<`entity`> Get`entity`ListByTimeStamp(GetListByTimestampRequest request);
+
+		[OperationContract]
+		Get`tier`ListResponse<`entity`> Get`entity`List(IDRequest request);
+
+		[OperationContract]
+		BusinessMessageResponse Save`entity`List(Save`tier`ListRequest<`entity`> request);
+
+		[OperationContract]
+		BusinessMessageResponse Save`entity`(Save`tier`Request<`entity`> request);
+
+		[OperationContract]
+		BusinessMessageResponse Delete`entity`(IDRequest request);
+
+		[OperationContract]
+		Get`tier`ItemResponse<`entity`> Get`entity`(IDRequest request);
+
+		[OperationContract]
+		GetUpdateCountResponse Get`entity`UpdateCount(GetUpdateCountRequest request);
+		#endregion
+
+	}
+}
+#end
+
+#put rx=<ItemGroup>\s*(?=<Compile\ Include)
+
+#after `rx` `base`Imarda360.Application\Imarda360.Libraries\Imarda360`service`\Imarda360`service`BusinessInterface\Imarda360`service`BusinessInterface.csproj
+<Compile Include="View\`entity`\`entity`.cs" />
+    
+#end
+
+#after `rx` `base`Imarda360.Application\Imarda360.Libraries\Imarda360`service`\Imarda360`service`Business\Imarda360`service`Business.csproj
+<Compile Include="Control\`entity`\`entity`.cs" />
+    
+#end

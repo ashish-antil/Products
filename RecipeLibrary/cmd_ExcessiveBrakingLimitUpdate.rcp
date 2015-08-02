@@ -1,0 +1,67 @@
+#tags vehicle speedlimit speed sql
+#mode write
+
+#ask company=Company GUID?
+
+#copy
+SELECT u.TrackID, v.[Description] as 'Vehicle', ut.Name
+FROM [Imarda360.Tracking].dbo.Unit u with (nolock)
+JOIN [Imarda360.Tracking].dbo.UnitType ut with (nolock) ON u.UnitType = ut.TypeNumber
+JOIN [Imarda360.Tracking].dbo.UnitOwner uo with (nolock) ON uo.UnitID = u.ID
+JOIN [Imarda360.VehicleManagement].dbo.Vehicle v with (nolock) ON v.ID = uo.OwnerID
+WHERE v.CompanyID = '`company`'
+and u.Deleted = 0 and v.Deleted = 0 and u.UnitType in (1,10,11,12,19)
+ORDER by v.[Description]
+#end
+
+#ask list=Run the query from the clipboard in SSMS.`nl`Then select and copy the track IDs below
+#ask value=Excessive Braking value (number)?
+
+
+#@ atom
+<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" 
+xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface">
+	<Addr>1</Addr>
+	<ID>`1`</ID>
+	<Parts>
+		<AtomPart i:type="d3p1:Name">
+			<d3p1:Name>15,22,`value`</d3p1:Name>
+			<d3p1:Tag>0</d3p1:Tag>
+		</AtomPart>
+	</Parts>
+	<Seq>0</Seq>
+	<Time>`timestamp`Z</Time>
+	<Type>-100</Type>
+</Atom>
+#end atom
+
+#with atom
+subs /^[\t ]*//m
+join
+#end
+
+#put dt=`ts:sql`
+
+#@ sql
+INSERT INTO [Imarda360.Tracking].[dbo].[EventMessage]([ID],[EventTypeID],[EventData],[CompanyID],[UserID],[DateCreated],[DateModified],[Deleted],[Active],[Priority],[Status],[TrackID],[Channel])
+VALUES(
+  '`newseqguid`','-100',
+  '%ATOM%',
+  '`company`','00000000-0000-0000-0000-000000000000','`dt`','`dt`',0,1,0,0,
+  '`1`',1
+)
+GO
+
+
+#end sql
+
+#subs %ATOM% sql
+`atom`
+#end
+
+#expn sql
+`list`
+#end
+
+#copy `sql`

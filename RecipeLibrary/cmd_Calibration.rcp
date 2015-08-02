@@ -1,0 +1,28 @@
+This recipe generates a odometer calibration command
+Run the generated SQL to insert the command in the IncomingMessage table
+
+#require trackID
+#require odo
+
+#put dt=`ts:sql`
+
+Create the sql command:
+
+#put sql
+INSERT INTO [Imarda360.Tracking].dbo.[IncomingMessage]
+VALUES ('`newseqguid`',
+'<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>0</Addr><ID>`trackID`</ID><Parts><AtomPart i:type="d3p1:Calibration"><d3p1:Km>`odo`</d3p1:Km></AtomPart></Parts><Seq>0</Seq><Time>`timestamp`</Time><Type>1780</Type></Atom>',
+0,
+0,
+1780,
+'`dt`',
+'`dt`',
+'`trackID`',
+0
+)
+
+#end
+
+Put on clipboard, for easy pasting into ssms
+
+#copy `sql`

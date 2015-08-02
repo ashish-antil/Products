@@ -1,0 +1,17 @@
+#tags convert match xml
+
+#require file
+
+#load c=`file`
+
+#with c
+subs /&lt;/</
+subs /&gt;/>/
+subs /<match file='//
+subs !'  />!!
+subs /' _1='/|/
+#end
+
+#new `file`.txt
+`c`
+#end

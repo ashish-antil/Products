@@ -1,0 +1,8 @@
+#name AlertAction
+
+#require Jira
+#require Name
+#require Number
+
+#do C:\TeamImarda\Imarda360\Imarda360.Application\Imarda360.Libraries\Imarda360TaskExec\Imarda360TaskExecBusiness\Control\i360TaskManager_AlertHandler.cs
+#do C:\TeamImarda\Imarda360\Imarda360.Business\Services\ImardaAlerting\ImardaAlertingBusinessInterface\Model\Action\Action.cs

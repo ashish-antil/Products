@@ -1,0 +1,76 @@
+#require namespace
+#require nparams
+
+#copy
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace `namespace`
+{
+	static class Program
+	{
+		/// <summary>
+		/// Global find and replace on a line by line basis for large files.
+		/// </summary>
+		/// <param name="args"></param>
+		/// <returns></returns>
+		[STAThread]
+		public static int Main(string[] args)
+		{
+			if (args.Length != `nparams`)
+			{
+				ErrorMsg();
+				return 1;
+			}
+			try
+			{
+				string input = args[0];
+				string output = args[1];
+				string mapping = args[2];
+
+				var map = new Dictionary<string, string>();
+
+
+				char[] split = { ',', '=', ':', '\t' };
+				foreach (string line in File.ReadAllLines(mapping))
+				{
+					string[] parts = line.Split(split, 2, StringSplitOptions.None);
+					map[parts[0]] = parts[1];
+				}
+
+				using (TextReader reader = File.OpenText(input))
+				{
+					using (TextWriter writer = File.CreateText(output))
+					{
+						writer.WriteLine("USE [Imarda360.Tracking]");
+						int i = 0;
+						string line;
+						while ((line = reader.ReadLine()) != null)
+						{
+							string[] parts = line.Split(',');
+							string x;
+							if (map.TryGetValue(parts[...], out x))
+							{
+								writer.WriteLine(...);
+							}
+						}
+					}
+				}
+				Console.WriteLine("Done. Output in: {0}", output);
+				return 0;
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+				return 2;
+			}
+		}
+
+		private static void ErrorMsg()
+		{
+			Console.WriteLine("Required parameters: inputFile outputFile");  //TODO
+		}
+	}
+}
+#end

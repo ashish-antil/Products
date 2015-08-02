@@ -1,0 +1,74 @@
+#tags ixl ixlparameter attribute
+
+#name IXLParam
+
+Run this recipe to add a new IXL Parameter to various places.
+Read comments below...
+
+The "name" is the one used in alert rules.
+#require jira
+#require name
+
+The longname is becomes the property name if UnitAttributes to be updated
+#default longname=`name`
+#require description
+
+You can select a common datatype for the property or enter one that is not in the list
+#default datatype=string|int|short|byte|bool|double|float|DateTime|Length|Mass|Duration|Volume|TODO
+
+The IXLParameter ID:
+#put id=`newseqguid`
+
+attribute type...
+#default type=string|number|bool|date/time
+#put string=$
+#put number=!
+#put bool=?
+#put date/time=@
+#putv typesymbol=`type`
+
+
+#default format=NULL
+#put fmt='`format`'
+#subs 'NULL' fmt
+NULL
+#end
+this makes sure that any value entered is enclosed in quotes, except NULL
+
+
+#default system only=no|yes
+#put yes=1
+#put no=0
+#putv system=`system only`
+
+The "source indicates" where the values for the parameter 
+come from. You can indicate multiple sources by taking the OR of the numbers below...
+
+#default source=0
+explicit=0   IXLParameterEvent table defines which event provides this IXLParameter
+unit=1 unit entity/attributes
+driver=2 driver entity/attributes
+vehicle=4  vehicle entity/attributes
+service=8  service plan
+update=4096 update message 
+alert=8192  alert message
+mdt=16384  mdt message
+security=32768  security system message
+
+
+#put datetime=`ts:sql`
+
+
+#append C:\TeamImarda\Imarda360\Imarda360.DatabaseScripts\Imarda360.Alerting\Data\Imarda360.IXLParameterData.sql
+--& `jira`
+--- Added by `username` on `timestamp`
+INSERT INTO [IXLParameter]([ID],[CompanyID],[UserID],[DateCreated],[DateModified],[Active],[Deleted],[VarName],[Description],[GroupID],[VarType],[Format],[SystemUseOnly],[SourceID])
+     VALUES ('`id`','11111111-1111-1111-1111-111111111111','11111111-1111-1111-1111-111111111111','`datetime`','`datetime`',1,0,'`name`','`description`','A2F24D03-9625-45E2-B36C-6EA355E7507B','`typesymbol`',`fmt`,`system`,`source`)
+GO
+--. `jira`
+
+#end
+
+#warn Add to UnitAttributes? click OK to add, Cancel to skip
+
+#do C:\TeamImarda\Imarda360\Imarda360.Business\Services\ImardaTracking\ImardaTrackingBusinessInterface\Model\Unit\UnitAttributes.cs

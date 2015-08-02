@@ -1,0 +1,27 @@
+This recipe creates sql INSERT statements
+to purge messages from Gateway memory queues.
+
+It reads a file c:\temp\purge.txt that has lines like
+
+84375252958390,88
+109581029835029,90
+1231324792837,558
+
+in general:
+queueID,queueJobID
+
+This recipe calls cmd_PurgeQueue_2.rcp
+
+---------------------
+
+
+#put i=`paste`
+
+#load exe=C:\TeamImarda\Imarda360\Imarda360.Recipes\cmd_PurgeQueueJob_2.rcp
+
+#put result=
+#iter i exe
+
+Put result on clipboard for use in SSMS
+
+#copy `result`

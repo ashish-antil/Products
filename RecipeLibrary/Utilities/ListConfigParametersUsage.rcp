@@ -1,0 +1,33 @@
+#tags config ConfigUtils
+
+#dir files=-r C:\TeamImarda\Imarda360\*.cs
+
+#with files
+nomatch (?i)_resharper|assembly\.cs|designer\.|vault
+#end
+
+#put list=
+
+#cdata process1
+#load a=`f`
+#find ConfigUtils\.Get[^(]*\(([^)]*)\) a
+$1  ($2)
+
+#end
+#if a .
+#append list
+`f`
+`a`
+
+#end
+#endif
+#end process1
+
+#putv f=files
+#iter f process1
+
+#put output=c:\temp\ConfigUtils_Usage.txt
+#del `output`
+#new `output`
+`list`
+#end

@@ -1,0 +1,39 @@
+#tags js patch
+
+Apply a patch for a single js file to the web server.
+
+#require PP#
+#require jsfile
+
+#put PP=PP-`PP#`
+
+#dir c:\i360.patch\`PP`
++\\tsclient\c\i360.patch\`PP`\* .js
+#end
+
+#dir old=-r c:\inetpub\`jsfile`
+#warn Continue with `old` ?
+
+#put bak=c:\i360.Patch\`PP`\bak
+#dir `bak`
++`old`
+#end
+
+#run {c:\i360.Patch\`PP`\}
+
+#warn Overwrite `jsfile` now?
+
+#call
+copy /y c:\i360.Patch\`PP`\`jsfile` `old`
+#end
+
+#default release=13.1
+#load revision=C:\Tools1\Recipe\revision.txt
+
+#put rx="([^?"]+`jsfile`)\?(?:\d+\.\d+\.\d+|<%=cacheVersion\ ?%>)"
+
+#subs `rx` -r c:\inetpub\wwwroot\Imarda360\*.aspx
+"$1?`release`.`revision`"
+#end
+
+

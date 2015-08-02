@@ -1,0 +1,82 @@
+
+ * This recipe generates a sorted list of commands with summary, replacing the Help.cs file.
+ * Check if the path below is correct.
+
+#mode write
+
+#ask drive
+Drive letter?
+-
+C
+D
+#end
+
+#! Help.cs=`drive`:\TeamImarda\ImardaTools\Recipe\RecipeLib\Recipe.cs
+#load list=`Help.cs`
+
+#extract (?s)_COMMANDS_BEGIN_(.*?)_COMMANDS_END_ list
+$1
+#end
+
+#extract case\ "([^"]+)":\s+//\ *([^\r\n]+) list
+$1^$2
+
+#end
+
+#with list
+table /^/ | /
+etrim
+sort
+delblank
+enclose `tab``tab``tab`@"#[]",
+#end
+
+----- Script Operations -----
+
+#! Script.cs=`drive`:\TeamImarda\ImardaTools\Recipe\RecipeLib\Script.cs
+
+#load text=`Script.cs`
+
+#with text=subs /"/""/
+
+#extract (?s)//@\s*([^\r\n]+)\s*//\s*([^\r\n]+) text
+`tab``tab``tab`{"$1", @"$2"},
+
+#end
+
+#with text
+sort
+twocol @
+#end
+
+#newer `drive`:\TeamImarda\ImardaTools\Recipe\RecipeLib\RecipeHelp.cs
+using System.Collections.Generic;
+
+namespace RecipeLib
+{
+	public static class RecipeHelp
+	{
+		public static readonly string[] Commands = {
+`list`
+		};
+
+		public static readonly Dictionary<string, string> ScriptOperations = new Dictionary<string, string> {
+`text`
+		};
+	}
+}
+#end
+
+#ask ver=Version?
+#ask desc=Description of version?
+
+#put fn=`drive`:\TeamImarda\ImardaTools\Recipe\RecipeLib\Recipe.cs
+#after (\t*)/\*version\*/\s* `fn`
+"`ver`   `desc`",
+$1
+#end
+
+#put fn=`drive`:\TeamImarda\ImardaTools\Recipe\RecipeLib\Properties\AssemblyInfo.cs
+#subs (Assembly(?:File)?Version\()("[^"]+") `fn`
+$1"`ver`.0"
+#end

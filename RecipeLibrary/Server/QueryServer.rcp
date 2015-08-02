@@ -1,0 +1,29 @@
+#server 209.81.83.138:80
+
+#cdata /sql
+#load sql=C:\Tools1\Recipe\SQL\`q_q`.sql
+#write `timestamp` `q_q`
+#recipe C:\Tools1\Recipe\RunSqlScript.rcp
+#recipe C:\Tools1\Recipe\Rcp\`q_fmt`.rcp
+#put post=`sqlresult`
+#put mime=text/plain
+#end /sql
+
+#cdata /time
+#put post=It's `ts:sql` on `computername`
+#end /time
+
+#cdata /ua
+#load sql=C:\Tools1\Recipe\SQL2\ua-by-veh.sql
+#write `timestamp` /ua
+#recipe C:\Tools1\Recipe\RunSqlScriptRaw.rcp
+#recipe C:\Tools1\Recipe\Rcp\kvstring.rcp
+#put post=`sqlresult`
+#put mime=text/plain
+#end /ua
+
+#cdata /
+#recipe c:\tools1\recipe\Index.rcp
+#end /
+
+#recipe `query`

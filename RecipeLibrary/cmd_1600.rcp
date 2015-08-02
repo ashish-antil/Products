@@ -1,0 +1,25 @@
+#tags sql insert 1600
+
+#default TrackID=Q1
+#put dt=`ts:sql`
+
+
+
+#put sql
+INSERT INTO [Imarda360.Tracking].dbo.[IncomingMessage]
+VALUES ('`newseqguid`',
+'<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>2</Addr><ID>`TrackID`</ID><Parts><AtomPart i:type="d3p1:Bool"><d3p1:FieldName>IncludeDeleted</d3p1:FieldName><d3p1:Tag>100</d3p1:Tag><d3p1:Value>false</d3p1:Value></AtomPart><AtomPart i:type="d3p1:IPAddress"><d3p1:Address i:nil="true" /><d3p1:Tag>105</d3p1:Tag></AtomPart></Parts><Seq>0</Seq><Time>`timestamp`Z</Time><Type>1600</Type></Atom>',
+0,
+0,
+1600,
+'`dt`',
+'`dt`',
+'`TrackID`',
+2
+)
+
+#end
+
+Put on clipboard, for easy pasting into ssms
+
+#copy `sql`

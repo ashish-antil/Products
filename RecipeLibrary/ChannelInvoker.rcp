@@ -1,0 +1,11 @@
+#require service
+
+#copy
+var service = ImardaProxyManager.Instance.IImarda`service`Proxy;
+ChannelInvoker.Invoke(
+delegate(out IClientChannel channel)
+{
+	channel = service as IClientChannel;
+});
+
+#end

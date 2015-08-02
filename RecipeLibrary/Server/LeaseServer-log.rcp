@@ -1,0 +1,48 @@
+/in?user=joe
+/out?user=joe
+/log
+
+#put log=c:\userlog.txt
+#new `log`
+User log `timestamp`
+
+#end
+
+#server 127.0.0.1
+
+#put do_log=1
+
+#cdata /in
+#ifnot $user .
+#put $user=`q_user`
+#endif
+#end /in
+
+#cdata /out
+#if $user ^`q_user`$
+#forget $user
+#endif
+#end /out
+
+#cdata /log
+#load post=`log`
+#put do_log=0
+#end /log
+
+#cdata /favicon.ico
+#put do_log=0
+#end /favicon.ico
+
+#recipe `query`
+
+#cdata log_it
+#put post=`timestamp` `$user`
+#append `log`
+`post` `query`
+
+#end
+#end log_it
+
+#if do_log 1
+#recipe log_it
+#endif

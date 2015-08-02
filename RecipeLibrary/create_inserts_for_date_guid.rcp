@@ -1,0 +1,17 @@
+#tags insert sql guid datetime
+
+#load data=c:\temp\dateguid.txt
+
+
+#@ insert
+INSERT INTO [DateGuidMap] ([Date], [Guid]) VALUES ('`dt`', '`id`')
+
+#end insert 
+
+#expn insert
+`data`
+#end
+
+#newer c:\temp\dataguid.sql
+`insert`
+#end

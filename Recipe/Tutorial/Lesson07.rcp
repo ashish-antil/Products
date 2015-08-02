@@ -1,0 +1,163 @@
+#tags lesson #default #exists #forget #load #putm
+
+Lesson 07: Dictionary operations II
+
+1. Optional macros #default
+There is a command similar to #require that allows you to define one or more defaults
+for a value. If the macro alread exists in the dictionary then this command is 
+skipped, but if the macro is not yet defined, it will use the provided default value.
+
+#default name=foo
+#info `name`
+
+This will print 'foo'. 
+
+#put age=100
+#default age=77
+#info `age`
+
+This will print '100'.
+
+Just like #require, this default item will show up in the RecipeGUI parameter
+entry window when F4 is pressed. Try it.
+
+--------------------------------------
+2. Removing a macro
+Both #require and #default do not get wiped out between runs of a loaded recipe.
+To start with a clean dictionary before running a recipe, go Run>Clear Macros (Ctrl-Del).
+
+During execution, a macro can be removed from the dictionary with #forget.
+
+#put city=Auckland
+#forget city
+#info city=[`city`]
+This will show an empty text between [ and ].
+
+--------------------------------------
+3. Testing existence
+There is a way of testing the existence of a macro before it is used:
+
+#exists a=city
+#info a=`a`
+
+`a` will be empty
+
+#put city=Wellington
+#exists b=city
+#info b=`b`
+
+`b` will be the word 'macro'
+
+Another use of #exists is with a file path:
+
+#mode write
+#put fn=c:\temp\lesson07a.txt
+
+#new `fn`
+Lorem ipsum ei sea dictas
+aperiam, cu vivendum erroribus
+mel. Quot fastidii ne vel,
+veniam vocibus iudicabit cu
+his, an pro nonumy aliquid
+#end
+
+#exists c=`fn`
+#info c=`c`
+
+`c` will be te word 'file'
+
+Finally it can be used to test the existence of a directory
+#exists d=c:\temp
+#info d=`d`
+
+`d` will be the word 'dir'
+
+This is also the order in which testing happens by #exists: macro, file, directory.
+
+The resulting macro can be used in an #if expression. See a later lesson for that.
+
+--------------------------------------
+4. Loading external contents into a macro.
+
+An entire text file can be loaded into a macro with #load:
+
+#load a=c:\temp\lesson07b.txt
+#info `a`
+
+If the file is not found, then nothing happens.
+Multiple files can be loaded all into the same macro
+
+#put fn=c:\temp\lesson07-
+#newer `fn`02.txt
+three
+four
+#end
+#newer `fn`03.txt
+five
+six
+#end
+#newer `fn`01.txt
+one
+two
+#end
+
+
+#load all=`fn`*.txt
+#info `all`
+It will load the files in alphabetic order. A new line separates the texts.
+
+If you want to load all .txt files recursively under a given folder, 
+then put '-r ' before the path:
+#load allrec=-r c:\temp\lesson*.txt
+
+The #load command can also be used to load a webpage
+try this:
+#load page=http://google.com
+#! fn=c:\temp\lesson07.html
+#newer `fn`
+`page`
+#end
+#run {notepad} `fn`
+
+--------------------------------------
+5. Defining multipe macros at once
+
+Let's say we have a settings file with lines like:
+key1=value1
+key2=value2
+key3=value3
+...
+
+and we want to put the keys with their values in the dictionary
+so we can use them elsewhere in templates.
+
+The quickest way to do this is with #putm <filename>
+
+Example:
+
+#put fn=c:\temp\kv1.txt
+#newer `fn`
+key1=value1
+key2=value2
+key3 = value3
+#end
+
+#putm `fn`
+
+#info `key1`
+#info `key2`
+#info `key3`
+
+Instead of a file path, a macro with key=value lines can be used.
+
+#put translations
+one=uno
+two=dos
+three=tres
+#end
+
+#putm translations
+
+#info `three`
+
+End of lesson.

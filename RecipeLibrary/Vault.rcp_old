@@ -1,0 +1,31 @@
+This recipe adds a new file or folderto the Vault repository
+Normal use case is after a #new command in a recipe
+    #put LocalFolder=c:\teamimarda\imarda360\imarda360.MyFolder
+    #put LocalFile=MyNewFile.cs
+    #new `LocalFolder`\`LocalFile`
+      ...
+    #end
+    #recipe c:\teamimarda\imarda360\imarda360.tools\recipes\vault.rcp
+
+    
+
+#require VaultUser
+#require VaultPwd
+
+#require LocalFolder
+#require LocalFile
+
+#default VaultExe=C:\Program Files\SourceGear\Vault Client\vault.exe
+
+#putv RepFolder=LocalFolder
+#subs \\ RepFolder
+/
+#end
+#subs (?i)c:/teamimarda RepFolder
+$
+#end
+
+
+#call {`VaultExe`} ADD -host 172.18.1.18 -user `VaultUser` -password `VaultPwd` -repository "i360" "`RepFolder`" "`LocalFolder`\`LocalFile`"
+
+#tags vault obsolete

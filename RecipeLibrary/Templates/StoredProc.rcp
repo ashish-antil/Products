@@ -1,0 +1,19 @@
+#require Name
+
+#copy
+----- Added on `timestamp` by `username` ------
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SP`Name`]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SP`Name`]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SP`Name`]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE SP`Name`
+	@id uniqueidentifier
+AS
+	--TODO: body
+'
+END
+GO
+
+#end

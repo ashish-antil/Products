@@ -1,0 +1,31 @@
+#tags sql odometer
+
+Get Odometer Info
+
+#require TrackID
+
+#put t='`TrackID`'
+
+#copy
+select u.id, v.id, u.TrackID, v.Description, v.Odometer [Veh Odo] from [Imarda360.Tracking].dbo.Unit u with (nolock)
+join [Imarda360.Tracking].dbo.UnitOwner o on u.ID = o.UnitID 
+join [Imarda360.VehicleManagement].dbo.Vehicle v on v.ID = o.OwnerID 
+where u.TrackID = '`TrackID`'
+order by v.Description
+
+select top 20 Odometer [UnitTrace Odo], DevOdometer, OdoEvent, DateCreated from [Imarda360.Tracking].dbo.UnitTrace with (nolock)
+where TrackID = '`TrackID`'
+order by ID desc
+
+select SUBSTRING(ea.Attributes , CHARINDEX('ODO|', ea.Attributes)+4, CHARINDEX('||',SUBSTRING(ea.Attributes,CHARINDEX('ODO|', ea.Attributes)+4,100))-1) [Unit Attr Odo]
+from [Imarda360.Tracking].dbo.Unit u with (nolock)
+join [Imarda360.Tracking].dbo.EntityAttributes ea on u.ID = ea.id
+where u.TrackID = '`TrackID`'
+
+
+select odometer [UnitPos Odo] from [Imarda360.Tracking].dbo.UnitPosition p
+join [Imarda360.Tracking].dbo.Unit u on u.ID = p.ID
+where u.TrackID = '`TrackID`'
+#end
+
+

@@ -1,0 +1,34 @@
+#default col1=id
+#default type1=uniqueidentifier
+#default col2=name
+#default type2=varchar(max)
+
+#copy
+DECLARE @tmp TABLE
+(
+  [`col1`] `type1`,
+  [`col2`] `type2`
+)
+
+INSERT INTO @tmp([`col1`], [`col2`])
+
+DECLARE c CURSOR
+FOR SELECT [`col1`], [`col2`] FROM @tmp
+OPEN c
+DECLARE @`col1` `type1`
+DECLARE @`col2` `type2`
+
+FETCH NEXT FROM c INTO @`col1`, @`col2`
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	-- do stuff
+	FETCH NEXT FROM c INTO @`col1`, @`col2`
+END
+
+CLOSE c
+DEALLOCATE c
+
+
+#end
+
+

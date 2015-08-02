@@ -1,0 +1,32 @@
+#mode write int- log-
+
+#put path=c:\i360.logs\Gateway\stats_`ts:yyMMdd-HHmmss`.txt
+
+#new `path`
+#end
+
+
+#@ append-stats
+#append `path`
+`timestamp`|`stats`
+
+#end
+#end append-stats
+
+#until `ts:ddd` Sat
+
+#load stats=http://localhost:7711/sql?q=in
+
+#with stats
+delblank
+match Success|Fail|Timed Out
+col /|/2
+chomp
+join |
+#end
+
+## append-stats
+
+#pause 1200000
+
+#loop

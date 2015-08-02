@@ -1,0 +1,54 @@
+#tags config git request
+#mode write
+
+#load head=C:\TeamImarda\Imarda360\.git\HEAD
+
+#load ga=C:\TeamImarda\Imarda360\.gitattributes
+#with ga
+match ^\*
+#end
+
+#load gi=C:\TeamImarda\Imarda360\.gitignore
+
+#load cfg=C:\TeamImarda\Imarda360\.git\config
+#extract (?s)\[core\](.*?)\[ cfg
+$1
+#end
+
+#put smtp-host=smtp.imardainc.com
+#put smtp-sender=`username`@imarda.com
+
+#put data
+`head`
+---
+`ga`
+---
+`gi`
+---
+`cfg`
+#end
+
+#with data
+crlf
+#end
+
+#put fn=c:\temp\git-settings.txt
+
+#newer `fn`
+`data`
+#end
+
+#put msg
+If you're in the Imarda network, click OK to send email,
+or else take the file `fn` and send it to 
+maurice.verheijen@imarda.com.
+Thanks you.
+#end
+
+#warn `msg`
+
+#email maurice.verheijen@imarda.com
+Here is the configuration of `username` at `timestamp` on `computername`:
+
+`data`
+#end

@@ -1,0 +1,61 @@
+This recipe finds all *.js to be minified and invokes the java minify utility on these files.
+The resulting files get copied to a new destination.
+
+#tags minify
+#mode write
+#version 1.7.4+
+
+#put folder=C:\TeamImarda\Imarda360\Imarda360.Web\WebSite.Imarda360\Tracking
+
+*** find the files ***
+#dir files=-r `folder`\*.js
+
+#esc rx=`folder`
+
+
+*** change each line ***
+
+#with files
+append \r\n
+subs /`rx`//i
+subs /^([^\r\n]+)\r\n/%minify% %tracking%$1 %opt% %outputfolder%$1%opt2%\r\n/m
+#end
+
+
+*** generate the .bat file ***
+
+#put f=C:\TeamImarda\Imarda360\Imarda360.BuildScripts\YUIMinify.bat
+#newer `f`
+path %path%;C:\Program Files (x86)\Java\jre7\bin
+set deployloc=%~1
+set outputfolder=C:\TeamImarda\Imarda360\Imarda360.Builds\Last\%deployloc%\Solution
+
+set minify=call java -jar C:\TeamImarda\yuicompressor-2.4.2.jar
+set opt=-o
+set opt2= --charset utf-8
+
+set tracking=`folder`
+echo.
+echo.
+echo -----------------------------------------------------------------------
+echo -----------------------------------------------------------------------
+echo Minifying web scripts...
+echo.
+`files`
+#end
+
+
+*** Find the zip file in the \Last\ folder and find out the deployloc ***
+
+#dir dest=C:\TeamImarda\Imarda360\Imarda360.Builds\Last\*.zip
+
+#extract Last\\(\w+)\.zip dest
+$1
+#end
+
+#warn Click OK to run the minification now for: `dest`
+
+*** minify the files ***
+
+#run {`f`} `dest` > minify_result.txt
+

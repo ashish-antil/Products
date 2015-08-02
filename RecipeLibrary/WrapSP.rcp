@@ -1,0 +1,26 @@
+#tags wrap sp stored procedure
+
+#name WrapSP
+
+#require spname
+
+
+#copy
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[`spname`]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[`spname`]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[`spname`]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[`spname`]
+AS
+BEGIN
+...
+END
+'
+END
+GO
+#end
+
+
+

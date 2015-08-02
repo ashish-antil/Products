@@ -1,0 +1,18 @@
+#tags purge download queue
+
+Purge Download Queue for given V300 TrackID.
+
+
+#require TrackID
+#put time=`timestamp`
+
+#copy
+INSERT INTO [Imarda360.Tracking].dbo.EventMessage (ID, EventTypeID, [EventData], CompanyID, UserID, DateCreated, DateModified, Deleted, Active, Channel, Priority, Status, TrackID)
+VALUES (
+'`newseqguid`', -3, 
+'<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`TrackID`</ID><Seq>0</Seq><Time>`time`Z</Time><Type>-3</Type></Atom>',
+'78c46d66-b886-44d0-a3c2-3aa9b12c4d98', '00000000-0000-0000-0000-000000000000', 
+'`time`', '`time`', 0, 1, 1, 0, 0, '`TrackID`')
+
+#end
+

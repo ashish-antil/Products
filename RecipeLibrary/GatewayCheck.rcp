@@ -1,0 +1,55 @@
+#tags monitor gateway
+#mode write log- int-
+
+#cdata test
+
+#load in=http://209.81.83.138:7711/sql?q=in
+#info `in`
+
+#putv queued=in
+#with queued
+match Queued
+xmatch (\d+)
+chomp
+#end
+
+#ifnot queued \d
+#put queued=0
+#endif
+
+#putv new=in
+#with new
+match New
+xmatch (\d+)
+chomp
+#end
+
+#ifnot new \d
+#put new=0
+#endif
+
+#write `new` + `queued`
+
+#ps sum
+`new` + `queued`
+#end
+
+#write `timestamp` `sum`
+
+#put smtp-host=smtp.imardainc.com
+#put smtp-sender=`computername`@imarda.com
+
+#if sum \d{4,}
+#marker SYSTEM OVERLOAD (`sum`)
+#email `c:\@\data\gateway-email-list.txt`
+`timestamp`
+Attention: Gateway `new` new + `queued` queued = `sum` messages.
+#end
+#endif
+
+#end test
+
+#until `ts:ddd` Wed
+## test
+#pause 300000
+#loop

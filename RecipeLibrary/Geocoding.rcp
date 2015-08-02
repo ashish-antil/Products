@@ -1,0 +1,45 @@
+#tags geocoding coordinates maps google
+#version 1.5+
+
+Put addreses in the section below between #put and #end,
+one per line.
+Then run this script either in Test or Write mode.
+The result will be printed in the Log window.
+Alternatively look click F7 and double-click "result"
+
+#put addr
+Via Caratti 5, 6500 Canton of Bellinzona, Switzerland
+Pabianicka 49, 90-001 Łódź, Poland
+Kloostermuur 16, 8310 Bruges, Belgium
+Ruelle Taquet 1-3, 7760 Celles, Belgium
+3 Rue Pelisson, 69100 Villeurbanne, France
+9 Rue Paul Blanc, 83170 Brignoles, France
+#end
+
+#cdata rcp
+#load json=http://maps.googleapis.com/maps/api/geocode/json?address=`i`&sensor=false
+#put ll=`json`
+#extract "location"\s*:\s*\{\s*"lat"\s*:\s*(-?\d+\.\d+),\s*"lng"\s*:\s*(-?\d+\.\d+) ll
+$1,$2#
+#end
+#append result
+`ll`|`i`
+
+#end
+#pause 1000
+#end rcp
+
+#put result=
+#put i=`addr`
+#iter i rcp
+
+#extract (?m)^([^#]+).*\|([^\r\n]*) result
+$1|$2
+
+#end
+
+#with result
+modify /-?\d+\.\d+/#|#.0000000/
+#end
+
+#info `nl``result`

@@ -1,0 +1,11 @@
+#mbox not finished
+#stop
+
+#tags unique service csproj
+
+#dir a=-r c:\teamimarda\imarda360\*.csproj
+
+#def Filter %filelist %rx
+#put a
+#enddef
+

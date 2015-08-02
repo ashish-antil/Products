@@ -1,0 +1,111 @@
+#tags lesson #do #marker #before #after #subs
+
+
+#mode write
+Lesson 04: Modifying existing files
+
+First create a file.
+
+path:
+#put fn=c:\temp\lesson04a.txt
+
+Create file with text and one macro
+Note the double backquotes, without them the greeting above would
+immediately go into the file, but we want to keep the macro
+with backquotes in the file.
+
+The /*** and ***/ encapsulate the template that will be expanded.
+Note: this is the default syntax used by most files (*.txt, *sql) but 
+for .cs files use a #if <marker> .. #endif instead.
+
+#newer `fn`
+
+Here are greetings:
+
+/*** Greeting
+Here is the greeting: ``greeting``
+***/
+
+End of file.
+#end
+
+Inspect:
+#cmd {notepad.exe} `fn`
+
+Declare the marker to look for in the file:
+#marker Greeting
+
+Now find the marker and copy the expanded text above it.
+The word `greeting` gets replaced by what we set it to.
+
+#put greeting=Hello from lesson 3.
+#do `fn`
+#cmd {notepad.exe} `fn`
+
+#put greeting=Second time hello.
+#do `fn`
+#cmd {notepad.exe} `fn`
+
+#put greeting
+Third and final
+greeting spanning
+3 lines...
+#end
+
+#do `fn`
+#cmd {notepad.exe} `fn`
+
+Delete the file:
+#del `fn`
+
+Rather than having a marker in the file, we can search for a pattern
+and put a given text before or after that pattern, or replace the pattern
+
+Create a new file:
+
+#put fn=c:\temp\lesson04b.html
+
+#newer `fn`
+<html><body>
+<ul>
+	<li>one</li>
+	<li>two</li>
+</ul>
+</body></html>
+#end
+
+Open in Notepad++
+#run {notepad++} "`fn`"
+
+#mbox Click OK after Notepad++ shows file
+
+Now we want to add a new list item, we find </ul> and insert before that
+#before </ul> `fn`
+	<li>three</li>
+
+#end
+
+#mbox Refresh Notepad++
+
+Now we insert an item at the beginning of the list:
+
+#after <ul> `fn`
+
+	<li>zero</li>
+#end
+
+#mbox Refresh Notepad++
+
+Next, we change every occurrence of <li> to <li class='a'>
+
+#subs <li> `fn`
+<li class='a'>
+#end
+
+#mbox Refresh Notepad++
+
+Clean up:
+#del `fn`
+
+End of lesson.
+

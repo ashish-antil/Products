@@ -1,0 +1,52 @@
+#tags lesson #copy paste clipboard
+
+
+Lesson 08: Clipboard
+
+The RecipeGUI can access the clipboard. 
+The command line recip.exe and the recipe service cannot work with the clipboard.
+
+At the start of the execution of the recipe, the contents of the clipboard is placed
+in a special macro called `paste`.
+
+Put some small text on the clipboard and then run this recipe.
+
+#mbox
+This is on the clipboard:
+`paste`
+#end
+
+The value of `paste` does not change automatically if during execution the clipboard
+contents is changed. It can be assigned with #put, though.
+
+Sometimes it is handy to have the result of execution of a recipe copied to the
+clipboard. The command #copy achieves this.
+
+Run this:
+
+#put msg=The UTC date now is `ts:d`.
+
+#copy `msg`
+#run {notepad}
+
+Paste the clipboard into the Notepad window that was opened for you.
+
+
+There is a special RecipeGUI feature Run>Expand Clipboard that lets you use
+the clipboard contents as a template which will be filled in immediately when running
+this menu item (or Shift-F5).
+
+E.g. put this template on the clipboard:
+
+	First I say `greeting` then `bye` then again `greeting`.
+
+When running Shift-F5 the system will REPLACE the current recipe pane with a generated
+recipe that uses the clipboard as text and prompts you for the required parameters.
+Built-in parameters will not be prompted for.
+After entering the parameters and clicking OK the generated recipe will be executed and
+the expanded template will be on the clipboard. 
+
+You will have to put the template on the clipboard each time you want to provide
+different parameters.
+
+End of lesson.

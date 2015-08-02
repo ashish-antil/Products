@@ -1,0 +1,37 @@
+#tags geocoding coordinates maps
+
+Put lat,lon in the section below between #put and #end ,
+one per line. Then run this script.
+The result will be printed in the Log window.
+Alternatively look click F7 and double-click "result"
+
+#put ll
+-33.82720,151.03492
+37.7499470,-81.139271
+37.7495880,-81.133833
+37.7499470,-81.13927199
+-36.772122,174.542778
+#end
+
+#cdata rcp
+#load json=http://maps.googleapis.com/maps/api/geocode/json?latlng=`i`&sensor=false
+#put fa=`json`
+#extract "formatted_address"\s*:\s*"([^"]+) fa
+$1#
+#end
+#append result
+`i`|`fa`
+
+#end
+#pause 1000
+#end rcp
+
+#put result=
+#put i=`ll`
+#iter i rcp
+
+#extract (?m)^[^#]+ result
+$0
+
+#end
+#write `nl``result`

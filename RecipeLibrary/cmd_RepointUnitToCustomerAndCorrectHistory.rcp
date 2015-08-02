@@ -1,0 +1,54 @@
+#tags device reporting
+
+This recipe generates a SQL script which can be run against a Database, to fix
+data when a Unit has sopped reporting to its normal company and is instead reporting to the Test Company.
+
+
+#require TrackID  - of the Unit concerned
+#require TestUnitID   - UnitID the device has for reporting to Test Company
+#require TestCompanyID  - company ID of the test company
+#require CustomerUnitID  - UnitID the device has for reporting to the Customer's Company
+#require CustomerCompanyID - company ID of the customer the unit should be reporting to
+
+Create the sql command:
+
+#put sql
+--Soft delete the Test Unit row
+UPDATE [Imarda360.Tracking].[dbo].[Unit]
+   SET [Deleted] = 1, [Active] = 0
+  where TrackID = '`TrackID`' and CompanyID = '`TestCompanyID`'
+GO
+
+--Soft delete the UnitPosition row for the Test Unit
+UPDATE up
+SET up.[Deleted] = 1, up.[Active] = 0
+From [Imarda360.Tracking].[dbo].[UnitPosition] up
+inner join Unit u with (nolock) ON up.ID = u.ID
+where u.CompanyID = '`TestCompanyID`'
+and u.TrackID = '`TrackID`'
+and u.Active = 0 and u.Deleted = 1
+and up.Active = 1 and up.Deleted = 0
+GO
+
+--Alter UnitTrace rows for Test company / Test Unit, so they are for Customer Company / Customer Unit
+UPDATE [Imarda360.Tracking].[dbo].[UnitTrace]
+   SET [CompanyID] = '`CustomerCompanyID`',
+   [UnitID] = '`CustomerUnitID`'
+   WHERE UnitID = '`TestUnitID`'
+   and CompanyID = '`TestCompanyID`'
+   and TrackID = '`TrackID`'
+GO
+
+--Alter UnitLog rows for Test company / Test Unit, so they are for Customer Company / Customer Unit
+UPDATE [Imarda360.Tracking].[dbo].[UnitLog]
+ SET [CompanyID] = '`CustomerCompanyID`',
+ [UnitID] = '`CustomerUnitID`'
+ WHERE UnitID = '`TestUnitID`'
+ and CompanyID = '`TestCompanyID`'
+GO
+
+#end
+
+Put on clipboard, for easy pasting into ssms
+
+#copy `sql`

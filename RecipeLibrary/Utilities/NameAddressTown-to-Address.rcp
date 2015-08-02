@@ -1,0 +1,34 @@
+Put text with lines like:
+Name Address Town 
+on the clipboard, tabs separate the fields
+
+#default f_in=c:\temp\result_NorthWest.txt
+
+#put addr=`paste`
+
+#with addr
+crlf
+subs /[^\t]+\t([^\t]+)\t(.*)/$1, $2\r\n/m
+modify /(?<=[\w'])\w+/lower/
+modify /(?<=Ma?c)[a-z]/upper/
+#end
+
+#copy `addr`
+
+#load gf=`f_in`
+
+#with gf
+suffix |---
+sclip addr ---
+#end
+
+#putv f_out=f_in
+#with f_out
+subs /\.txt/_1.txt/
+#end
+
+
+#del `f_out`
+#new `f_out`
+`gf`
+#end

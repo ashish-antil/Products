@@ -1,0 +1,23 @@
+This recipe creates sql INSERT statements
+to send literal commands to V300 units.
+
+This recipe calls cmd_LiteralV300Out.rcp
+
+---------------------
+#require Literal
+
+
+Make sure a list of Track IDs separated by \r\n
+is on the clipboard
+
+
+#put i=`paste`
+
+#load exe=C:\TeamImarda\Imarda360\Imarda360.Recipes\cmd_LiteralV300Out.rcp
+
+#put result=
+#iter i exe
+
+Put result on clipboard for use in SSMS
+
+#copy `result`

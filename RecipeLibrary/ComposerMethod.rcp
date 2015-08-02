@@ -1,0 +1,6 @@
+#name ComposerMethod
+
+#require Group
+#require Name
+
+#do C:\TeamImarda\Imarda360\Imarda360.Gateway\CommunicatorServices\V300b\V300bCommunicatorBusiness\Control\MessageComposer_`Group`.cs

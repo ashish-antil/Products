@@ -1,0 +1,22 @@
+Back up old js and replace it with new js in i360.Patch\PP-x folder
+
+#require PP#
+#require jsfile
+
+#put PP=PP-`PP#`
+
+#dir old=-r c:\inetpub\`jsfile`
+#warn Continue with `old` ?
+
+#put bak=c:\i360.Patch\`PP`\bak
+#dir `bak`
++`old`
+#end
+
+#run {`bak`}
+#warn check if exists: `bak`\`jsfile`
+
+#call
+copy c:\i360.Patch\`PP`\`jsfile` `old`
+#end
+

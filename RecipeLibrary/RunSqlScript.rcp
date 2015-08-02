@@ -1,0 +1,33 @@
+#tags sql launch script
+
+#require sql
+
+#put file=c:\temp\tmp_script.sql
+#del `file`
+#new `file`
+`sql`
+#end
+
+#call r
+@sqlcmd.exe -S localhost\SqlExpress -i "`file`" -s "|"
+#end
+
+
+
+#with r
+nomatch \(\d+\ rows?\ affected\)|-{7,}
+subs /[ \t]+/ /m
+subs /11111111-1111-1111-1111-111111111111/111.../
+subs /00000000-0000-0000-0000-000000000000/000.../
+delblank
+table /|/|/nz
+#end
+
+#put file1=c:\temp\sql_output.txt
+#del `file1`
+#new `file1`
+`r`
+#end
+
+#run {`file1`}
+

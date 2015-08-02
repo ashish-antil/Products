@@ -1,0 +1,27 @@
+cmd_LiteralV300Out.rcp
+
+#putv TrackID=i
+#require Literal
+
+#put dt=`ts:sql`
+
+Create the sql command:
+
+#put sql
+INSERT INTO [Imarda360.Tracking].dbo.[EventMessage]
+VALUES ('`newseqguid`',
+'-100',
+'<Atom xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:d3p1="http://schemas.datacontract.org/2004/07/ImardaAtomGatewayBusiness" xmlns="http://schemas.datacontract.org/2004/07/ImardaBatchProcessorInterface"><Addr>1</Addr><ID>`TrackID`</ID><Parts><AtomPart i:type="d3p1:Name"><d3p1:Name>`Literal`</d3p1:Name><d3p1:Tag>0</d3p1:Tag></AtomPart></Parts><Seq>0</Seq><Time>`timestamp`</Time><Type>-100</Type></Atom>',
+'11111111-1111-1111-1111-111111111111',
+'11111111-1111-1111-1111-111111111111',
+'`dt`','`dt`',0,1,0,0,'`TrackID`',1
+)
+
+#end
+
+Put on clipboard, for easy pasting into ssms
+
+#append result
+`sql`
+
+#end

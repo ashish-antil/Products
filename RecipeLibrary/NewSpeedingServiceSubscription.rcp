@@ -1,0 +1,17 @@
+#tags subscribe speeding maintain
+
+Run this to subscribe a new company to the speeding service.
+
+#name SpeedingService
+
+#require Jira
+#require CompanyName
+#require CompanyID
+#default NotificationItemID=50DF584C-2464-4702-BB77-08CED9DE064A
+#require PhoneTemplate -- contaiing {0,n}
+#require SpeedKph
+#require ToleranceSec
+
+#do C:\TeamImarda\Imarda360\Imarda360.DatabaseScripts\Imarda360.Tracking\Data\Imarda360.Speeding.sql
+
+

@@ -1,0 +1,70 @@
+#tags file watcher email
+
+#version 1.8.26+
+
+**************
+Watch a directory for file create, update, delete, read
+Send an email with a list of the affected files
+**************
+
+#mode write log-
+
+Top folder to watch
+#require folder
+
+File pattern e.g. *.xml
+#require wildcard
+
+Events to listen for, e.g. CU. C=create, U=update, R=read, D=delete
+#default events=C
+
+Email recipients, comma sep
+#require recipients
+
+Email subject
+#default subject=Change in `folder`
+
+Number of file to list in the email
+#default per-email=5
+
+-----------------
+
+#put $n=0
+#put $m=1
+#put $list=
+
+#cdata action
+#put smtp-host=smtp.imardainc.com
+#put smtp-sender=no-reply@imardainc.com
+#marker `subject`
+#email `recipients`
+`$list`
+#end
+#end action
+
+#watch `events` -r `folder`\`wildcard`
+
+#ps $n
+(`$n` + 1) % `$m`
+#end
+
+#put $m=`per-email`
+
+#append $list
+`signal`|`timestamp`|`arg0`
+
+#end
+
+#if $n 0
+
+#write 
+`$list`
+------
+
+#end
+
+#recipe action
+
+#put $list=
+#endif
+

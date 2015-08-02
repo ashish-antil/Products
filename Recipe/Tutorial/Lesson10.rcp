@@ -1,0 +1,65 @@
+#tags lesson interactive #ask
+#mode write
+
+Lesson 10: Interactive mode: #ask
+
+The #ask command prompts the user for input. The RecipeGUI has to be in interactive mode
+(default, menu>Window>Interactive) or #ask will be skipped.
+
+There are two formats: a one-liner and a construction with #end. 
+
+The one-liner will simply ask the user for text. The RecipeGUI will pop up an input window
+where text can be entered. There is also a file selector and a folder browser in that window
+in case a path name is required. 
+
+The one-liner format is #ask macro=prompt text
+
+#ask name=What is your name?
+
+A box will pop up and the prompt is displayed. Fill in some text; it will be assigned
+to the macro 'name' in this example, but only if OK is clicked to close the box.
+If Cancel is clicked, then the recipe stops.
+
+The second format is for multiple-choice questions.
+
+#ask url
+Which website?
+-
+http://gmail.com
+http://mail.yahoo.com
+http://login.live.com
+#end
+
+#run {`url`}
+
+A window pops up with the prompt which is the text between the #ask line and the line that 
+has a single dash (-) as its text. After the dash there is one line per option.
+
+There is an alternative form to make the display of the options user-friendlier:
+
+#ask url
+Which website?
+-
+http://gmail.com|Google Mail
+http://mail.yahoo.com|Yahoo! Mail
+http://login.live.com|Microsoft Live Mail
+#end
+
+#run {`url`}
+
+The text before the | is the one assigned to the macro ('url' here) and the text after
+the | is the one displayed to the user in the dialog.
+
+Another example
+
+#ask colour
+Which colour?
+-
+FF0000|red
+00FF00|green
+48F895|other
+#end
+
+#info `colour`
+
+End of lesson.

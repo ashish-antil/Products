@@ -1,0 +1,80 @@
+#default port=7711
+
+#mode write int- log-
+
+#server 0.0.0.0:`port`
+
+#cdata /time
+#put post=It's `ts:sql` on `computername`
+#end /time
+
+#cdata /disk
+#ps post
+gwmi Win32_LogicalDisk | ? {$_.DriveType -eq 3} | select Name, @{n='FreeSpace (GB)';e={"{0:n2}" -f ($_.FreeSpace/1GB)}}, @{n='PercentFree';e={"{0:n2}" -f ($_.FreeSpace/$_.Size*100)}} | Out-String
+#end
+put mime=text/plain
+#end /disk
+
+#cdata /services
+#ps post
+gsv | ? {$_.Name -like '*Imarda*' -or $_.Name -like '*Communicator'} | sort -p Name | ft -p Status, DisplayName -a | Out-String
+#end
+#put mime=text/plain
+#end /services
+
+#cdata /log
+#default q_comm=V300b
+#default q_filter=!TEST,
+#default q_n=20
+#default q_dir=In
+#default q_file=
+#if q_file .
+#ps post
+dir c:\i360.logs\gateway\Communicator.`q_comm`\`q_file` | %{select-string "`q_filter`" $_} | select -last `q_n` | ft -p Line -a -h | Out-String -width 300
+#end
+#else
+#ps post
+dir c:\i360.logs\gateway\Communicator.`q_comm`\`q_dir`bound* |sort -p LastWriteTime | select -last 1 | %{select-string "`q_filter`" $_} | select -last `q_n` | ft -p Line -a -h | Out-String -width 300
+#end
+#endif
+#put mime=text/plain
+#end /log
+
+#cdata /V300Releases
+#ps post
+dir C:\DeviceWebsite\V300\REL
+#end
+#put mime=text/plain
+#end /V300Releases
+
+#cdata /
+#put post
+<html>
+<body>
+<h1>NY Communicator Server</h1>
+<a href="/disk">Disk Space</a><br/>
+<a href="/services">Services</a><br/>
+<a href="/log">Log filter</a>: e.g. <code>/log?comm=V300b&filter=!103341&n=20</code><br/>
+<a href="/V300Releases">V300 Releases</a><br/>
+</body>
+</html>
+#end
+#put mime=text/html
+#end /
+
+#cdata /ir
+#default q_file=config.zip
+#cmd output
+"C:\Program Files\7-Zip\7z.exe" e -y -oC:\inetpub\wwwroot\Imarda360\UnitAPI\Incident\Configs "c:\DeviceWebsite\IncidentReporting\`q_file`"
+#end
+#put post=`output`
+#put mime=text/plain
+#end /ir
+
+#cdata /rstart
+#cmd post
+net start "Recipe Service"
+#end
+#end /rstart
+
+#recipe `query`

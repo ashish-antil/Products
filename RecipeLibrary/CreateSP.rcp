@@ -1,0 +1,26 @@
+#require Jira
+
+
+#require spname
+#require service
+
+#copy
+--& `Jira`
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[`spname`]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[`spname`]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[`spname`]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE `spname`
+AS
+
+'
+END
+GO
+--. `Jira`
+
+#end
+
+
+

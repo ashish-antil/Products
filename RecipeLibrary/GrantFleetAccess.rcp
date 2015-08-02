@@ -1,0 +1,13 @@
+#tags all vehicles fleet access fleetaccess sql
+
+#require companyID
+#require personID
+
+#copy
+insert into [Imarda360.VehicleManagement].dbo.FleetAccess
+	(ID, FleetID, OwnerID, CompanyID, UserID, DateCreated, DateModified, Active, Deleted)
+values
+	('`newseqguid`', '11111111-1111-1111-1111-111111111111', '`personID`', '`companyID`', '00000000-0000-0000-0000-000000000000', '`ts:sql`', '`ts:sql`', 1, 0)
+#end
+
+

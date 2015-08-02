@@ -1,0 +1,50 @@
+#tags make entity tostring
+
+Put entity class source code on clipboard
+
+#put class=`paste`
+#extract public\ class\ (\w+) class
+$1
+#end
+#warn Class=`class` ?
+
+#put properties=`paste`
+
+#extract \[DataMember\]\s*public\s\S+\s(\w+) properties
+$1
+
+#end
+
+#with properties
+delblank
+store list
+join ,`sp`
+#end
+
+#count n=list lines
+
+#put fmt=NUM`nl`
+
+#with fmt
+repeat `n`
+delblank
+enclose {[]}
+num
+join ,`sp`
+enclose "`class`({0}, [])"
+#end
+
+#put method
+		public override string ToString()
+		{
+			return string.Format(`fmt`, ID, `properties`);
+		}
+#end
+
+#warn 
+Put this on clipboard?
+---
+`method`
+#end
+
+#copy `method`

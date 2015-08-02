@@ -1,0 +1,65 @@
+This is the introduction of the 'Recipe' scripting language.
+Recipe is a simple but powerful scripting language for general
+text processing tasks. It was first used to maintain source code,
+and was later extended to run as a service for querying 
+system status, databases etc. It can be used for many kinds of
+text processing tasks.
+
+Main features:
+- three programs: interactive, cmd line, Windows Service
+- http service and client; can serve http requests and can download webpages
+- smtp (sending email)
+- can invoke PowerShell, Cmd shell
+- can compile and run inline C# code
+- numerous operations that work on text and files
+- makes use of .NET's powerful regex language
+- includes a file system watcher to listen for changes
+- some simple control flow (if-else, iterations, call-return)
+
+A Recipe script (*.rcp) can be executed by the RecipeGUI.exe or
+Recipe.exe, or can run as a Windows Service.
+
+Make sure to get the latest version of RecipeGUI to run this tutorial.
+
+Each lesson demonstrates a few Recipe commands. The lessons themselves
+are recipes and can be executed, but make sure to read the text in the
+files.
+
+Each recipe command starts with a # as the first character of a line.
+There is no space between the # and the command name. The command
+names are case-sensitive.
+
+Invalid commands will be skipped.
+
+Let's get started.
+
+In each lesson you'll find a #tags command. This is followed by 
+a number of keywords that can be searched for in RecipeGUI (Ctrl-F):
+
+#tags intro introduction #tags #version #mode
+
+Make sure to set the search folder to the location where you store the
+recipes. The keywords used will always include the #-commands introduced
+in the lesson.
+
+Another command that can be used to ensure that the recipe only runs
+from a given version of the RecipeGUI program is #version, it is followed
+by the RecipeLib.dll version and a + sign to denote the given version
+or later. A minus sign or no sign also works, and indicates older versions
+or the exact version.
+
+#version 1.7.3+
+
+Finally, the #mode command is sometimes used to set the RecipeGUI in 
+write-mode (default is test-mode). Write-mode is needed for some commands
+to modify contents on disk and to invoke external programs:
+
+#mode write
+
+I recommend also installing Notepad++.exe, some lessons use it. There 
+is a Recipe language definition file available for syntax highlighting.
+Also, RecipeGUI F2 invokes Notepad++ and places the recipe in it.
+
+
+Happy scripting
+-Maurice Verheijen

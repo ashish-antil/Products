@@ -1,0 +1,16 @@
+Recipe to change the Login.aspx Message.
+#tags util login message
+
+#require Message
+
+#with Message
+subs /&/&amp;/
+subs /"/&quot;/
+#end
+
+#subs (?si)(?<i>[\ \t]*)<p\ id="loginupdate">(.*?)</p> C:\Temp\login.aspx
+${i}<p id="loginupdate"><em>`ts:MMMM d`</em><br/>
+`Message`
+${i}</p>
+#end
+

@@ -1,0 +1,26 @@
+#name AtomPart
+
+#require Name - the prefix name of the class, e.g. "Info" -> class InfoPart
+
+#put base=C:\TeamImarda11.4\
+
+Add an AtomPart subclass to the gateway interface (model)
+
+#put file=`base`Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\Model\AtomParts\`Name`Part.cs
+
+#put LocalFolder=`base`Imarda360.Gateway\AtomGateway\AtomGatewayBusinessInterface\Model\AtomParts
+#put LocalFile=`Name`Part.cs
+
+
+Add a KnowType declaration to the config files:
+
+#do `base`Imarda360.Gateway\CommunicatorServices\V300b\V300bCommunicatorService\App*.config
+#do `base`Imarda360.Gateway\CommunicatorServices\SMDPb\SMDPbCommunicatorService\App*.config
+#do `base`Imarda360.Gateway\CommunicatorServices\Orionb\OrionbCommunicatorService\App*.config
+#do `base`Imarda360.Gateway\CommunicatorServices\Xirgo\XirgoCommunicatorService\App*.config
+#do `base`Imarda360.Gateway\CommunicatorServices\iPhone\iPhoneCommunicatorService\App*.config
+#do `base`Imarda360.Gateway\CommunicatorServices\Keystone\KeystoneCommunicatorService\App*.config
+#do `base`Imarda360.Gateway\AtomGateway\AtomGatewayService\App*.config
+#do `base`Imarda360.Application\Imarda360.Solution\Imarda360Service\App*.config
+#do `base`Imarda360.Business\Tools\AllHost\App.config
+

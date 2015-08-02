@@ -1,0 +1,104 @@
+#tags lesson predefined macros built-in #seq #rand #repeat
+
+Lesson 11: Built-in macros, pseudo-macros, number generators
+
+
+1. Fixed macros
+
+#info ` ` and `empty` both represent an empty string
+#info `nl` is a new line (CR LF combination)
+#info `tab` is a horizontal tab; multipble tabs: `tab``tab``tab``tab`!
+#info `sp` is a single space
+#info `bq` is a backquote
+
+2. Pseudo-macros
+
+#info `newguid` will be expanded as a random GUID in dash-format without braces or parentheses,
+#info `newseqguid` a sequential GUID for use in databases,
+#info `recipe` returns the path of the recipe currently being executed and will change when subrecipes are called
+#info `filename` the name of the file being created or modified, without extension
+#info `filename.ext` the name of the file being created or modified
+#info `fullpath` the full path of the file being created or modified
+#info `ts:d-MMM-yy HH:mm`, `ts:t`, `ts:s` - the last one is the same as `timestamp`
+#info `timestamp` UTC timestamp in ISO sortable format 2010-11-24T22:07:00
+#info `ts:sql` UTC timestamp for use with T-SQL: "2015-07-31 23:59:08"
+#info `version` is the version of the recipe dll
+
+To demonstrate the filename, filename.ext and fullpath try this:
+
+#put fn=c:\temp\lesson11.txt
+#newer `fn`
+Hello this is lesson 11, the file name is `filename`
+File name with extension is `filename.ext`
+Full path is `fullpath`
+#end
+
+#run {`fn`}
+
+3. Context dependent macros
+
+`_` is set by the #iter and #for loops to represent the current line or number respectively
+`1`, `2`, `3`, etc. and `0`, `#` are set by #expn to represent fields in a data line. `#` is the line number.
+`errormsg` is representing the argument of the #error command
+`paste` is the clipboard text as found at the start of the recipe
+`query` is the query string when receiving a http-get request while running Recipe Service 
+`q_....` the q_ prefix is added to each parameter on an http-get query string when running the Recipe Service.
+`post` is the text send by #post (http-post)
+`recipe` is the file or path of the recipe that is currently loaded
+
+4. #seq and #rand
+
+There are two types of number generating macros: one for sequence numbers and one for random numbers
+A number generator has to be declared before usage. The macro syntax is special after the first 
+backquote comes an ampersand and then the macro name:
+
+E.g. range 5..20 step 3, format 0000
+#seq s1 0000 5 2 20
+#info `&s1` `&s1` `&s1`
+#info `&s1` `&s1` `&s1`
+#info `&s1` `&s1` `&s1`
+
+Output:
+@info 0005 0007 0009
+@info 0011 0013 0015
+@info 0017 0019 0005
+
+The number gets incremented by the indicated step with each instantiation of the macro.
+When the maximum is reached, the generator is reset to the initial value.
+
+Default for the #seq parameters are: format="0" initial=1 step=1 maximum=2^31
+
+#seq s2
+#info `&s2` `&s2` `&s2` `&s2`
+
+Sequence generates can be used e.g. for line numbering, assigning unique IDs to records, etc.
+
+The random generator #rand has also max 4 parameters: format, min, max, seed
+Defaults: format="0" min=0, max=10, seed=0
+
+#rand r1 00 1 10 1234
+#info `&r1` `&r1` `&r1` `&r1` `&r1` `&r1` `&r1`
+#info `&r1` `&r1` `&r1` `&r1` `&r1` `&r1` `&r1`
+#info `&r1` `&r1` `&r1` `&r1` `&r1` `&r1` `&r1`
+#info `&r1` `&r1` `&r1` `&r1` `&r1` `&r1` `&r1`
+A seed other than 0 (default) will always give a different result when run multiple times.
+
+5. #repeat
+
+The contents of a macro can be repeated a given number of times with #repeat <macro> <count>.
+The result is stored in the same macro. Any macros inside the repeated text will have to
+be expanded explicitly with #exp.
+
+#@ greeting
+`&n` Hello world
+
+#end greeting
+
+#repeat greeting 5 
+
+#seq n 00'.' 1 1
+#exp greeting
+#write `greeting`
+
+
+End of lesson.

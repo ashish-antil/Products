@@ -1,0 +1,37 @@
+#tags build tools
+
+#dir list=-r c:\teamimarda\imardatools\*.sln
+
+
+#with list
+enclose msbuild.exe "[]"
+#end
+
+#put vs11=C:\Program Files (x86)\Microsoft Visual Studio 11.0\
+
+#put vspath
+`vs11`Common7\IDE\
+`vs11`Common7\IDE\CommonExtensions\Microsoft\TestWindow
+`vs11`Common7\Tools
+`vs11`Team Tools\Performance Tools
+`vs11`VC\BIN
+`vs11`VC\VCPackages
+`vs11`VSTSDB\Deploy
+C:\Windows\Microsoft.NET\Framework\v3.5
+C:\Windows\Microsoft.NET\Framework\v4.0.30319
+#end
+
+#with vspath
+join ;
+#end
+
+#cmd output
+path=%path%;`vspath`
+`list`
+#end
+
+#put out=c:\temp\tools_build.txt
+#newer `out`
+`output`
+#end
+#run {notepad.exe}  `out`

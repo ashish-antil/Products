@@ -1,0 +1,20 @@
+#tags build msbuild all sln
+
+#mode write
+
+#dir sln=-r c:\teamimarda\imarda360\*.sln
+
+#with sln
+enclose msbuild [] >> c:\temp\buildoutput.txt
+#end
+
+#cmd a
+PATH=C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft SDKs\F#\3.0\Framework\v4.0\;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VSTSDB\Deploy;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\BIN;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Windows\Microsoft.NET\Framework\v3.5;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\VCPackages;C:\Program Files (x86)\HTML Help Workshop;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Team Tools\Performance Tools;C:\Program Files (x86)\Windows Kits\8.0\bin\x86;C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;c:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;c:\TeamImarda\imarda360\imarda360.tools\Recipe\Recipe\bin\debug;C:\Program Files\Java\jre7\bin;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\;C:\Program Files (x86)\Git\cmd;C:\Program Files\SourceGear\Common\DiffMerge\;C:\Program Files\TortoiseGit\bin
+
+`sln`
+
+#end
+
+#info `a`
+
+#run {notepad++} c:\temp\buildoutput.txt

@@ -1,0 +1,66 @@
+#require path
+#require entity
+
+#before \r\n\t\}\s*\}\s*\Z `path`
+		#region Attributes
+
+		private static EntityAttributesFactory<`entity`Attributes> _EAFactory;
+
+		public static EntityAttributesFactory<`entity`Attributes> EAFactory
+		{
+			get
+			{
+				if (_EAFactory == null) _EAFactory = new EntityAttributesFactory<`entity`Attributes>();
+				return ._EAFactory;
+			}
+		}
+
+		private static EntityAttributesFactory<`entity`> _Factory;
+
+		public static EntityAttributesFactory<`entity`> Factory
+		{
+			get { return _Factory ?? (_Factory = new EntityAttributesFactory<`entity`>()); }
+		}
+
+
+		public void Reset`entity`Attributes()
+		{
+			_Attr = null;
+		}
+
+		private `entity`Attributes _Attr;
+
+		public void UpdateAttributes(string attributes)
+		{
+			if (Attributes != null) Attributes.Update(attributes);
+			else Attributes = new EntityAttributes(attributes);
+			_Attr = null; // make sure to refresh these on a call to GetAttributes()
+		}
+
+		public `entity`Attributes GetAttributes()
+		{
+			if (_Attr == null)
+			{
+				if (Attributes == null) Attributes = new EntityAttributes(string.Empty);
+				_Attr = EAFactory.Create(Attributes);
+			}
+			return _Attr;
+		}
+
+		public `entity`Attributes GetAttributes(DateTime utc, TimeZoneInfo userTZ)
+		{
+			GetAttributes().CalculatePropertiesFromHistory(utc, userTZ);
+			return _Attr;
+		}
+
+		public override void PrepareForSave()
+		{
+			if (_Attr != null)
+			{
+				_Attr.UpdateHistoryStrings();
+				EAFactory.Store(Attributes, _Attr);
+			}
+			base.PrepareForSave();
+		}
+		#endregion Attributes
+#end

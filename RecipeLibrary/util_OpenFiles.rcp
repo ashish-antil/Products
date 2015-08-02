@@ -1,0 +1,14 @@
+#tags util open file
+
+#require path
+#require pattern
+
+#dir a=-r `path`\`pattern`
+
+#putv i=a
+#cdata open
+#run {notepad++} "`i`"
+#end open
+
+#iter i open
+

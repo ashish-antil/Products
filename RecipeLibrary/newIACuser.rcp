@@ -1,0 +1,35 @@
+Create IAC permissions INSERT statements. Put the SecurityEntityIDs in the template as seid=<guid> lines.
+
+#tags iac permissions security sql
+
+#@ template
+INSERT INTO SecurityEntry (ID, ApplicationID, EntityID, SecurityObjectID, PermissionsGranted, PermissionsDenied, EntryType, CompanyID, UserID, Active, Deleted, DateModified, DateCreated)
+VALUES('`newseqguid`', 'b9e34b8d-f105-4e21-afed-60f8500b9edb', '`seid`', @IASLogin, 0, 0, 0, '`cid`', '00000000-0000-0000-0000-000000000000', 1, 0, `time`,  `time`)
+
+
+#end template
+
+#@ template2
+
+SELECT * FROM [Imarda360.Security].dbo.SecurityEntry
+where EntityID = '`seid`' and SecurityObjectID = '63620B0E-AFF5-402D-B1F1-37B61ADCE26B'
+#end template2
+
+#put time='`ts:sql`'
+#put cid=78c46d66-b886-44d0-a3c2-3aa9b12c4d98
+
+#expn template
+seid=12191167-16A4-49EE-A649-08D02BCAAC58
+#end
+
+#copy
+USE [Imarda360.Security]
+DECLARE @IASLogin uniqueidentifier = '63620B0E-AFF5-402D-B1F1-37B61ADCE26B'
+
+`template`
+#end
+
+To select relations:
+
+SELECT * FROM [Imarda360.Security].dbo.SecurityEntry
+where EntityID = '`seid`' and SecurityObjectID = '63620B0E-AFF5-402D-B1F1-37B61ADCE26B'

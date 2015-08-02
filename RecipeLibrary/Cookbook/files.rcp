@@ -1,0 +1,14 @@
+files
+___________________________________________________________
+#tags file multiple edit change
+2013-12-18T02:37:01 maurice.verheijen
+
+Get a list of files of some type
+in a subtree and open them all in notepad++
+
+#dir list=-r C:\TeamImarda\Imarda360\Imarda360.Business\Services\*.rcp
+
+#iter list
+#run {notepad++} `_`
+#next
+
