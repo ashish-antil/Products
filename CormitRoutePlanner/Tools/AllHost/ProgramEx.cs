@@ -4,6 +4,7 @@
 
 #region
 
+using Cormit.Application.RouteApplication.Security;
 using Imarda.Lib;
 using Imarda.Logging;
 
@@ -51,7 +52,8 @@ namespace AllHost
 
 
 			hostTypes.Add(typeof (Cormit.Business.RouteTracking.CormitRouteTracking));
-
+            hostTypes.Add(typeof(ImardaCRMBusiness.ImardaCRM));
+            hostTypes.Add(typeof(ImardaSecurityBusiness.ImardaSecurity));
 
             hostTypes.Add(typeof(Cormit.Application.RouteApplication.Cormit24));
 			

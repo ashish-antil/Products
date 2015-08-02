@@ -112,6 +112,10 @@
       <Project>{A0F83E5F-9310-4ADE-9EDF-DA54DC80213E}</Project>
       <Name>Imarda.Lib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Library\CRM\Imarda360CRMBusinessInterface\Imarda360CRMBusinessInterface.csproj">
+      <Project>{5ea2c0a5-682d-44f6-8284-680a80800311}</Project>
+      <Name>Imarda360CRMBusinessInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Library\RouteTracker\Imarda360TrackingBusinessInterface\CormitRouteTrackingApplicationLibInterface.csproj">
       <Project>{B2FB3371-BB3B-44A5-8417-49EF61753C18}</Project>
       <Name>CormitRouteTrackingApplicationLibInterface</Name>

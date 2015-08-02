@@ -73,6 +73,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\Library\ApplicationSecurity\AppliactionSecurityBusinessInterface\Imarda360SecurityBusinessInterface.csproj">
+      <Project>{99dd1d74-8e68-4938-9dd1-981c72a3bced}</Project>
+      <Name>Imarda360SecurityBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Application\Library\ApplicationSecurity\AppliactionSecurityBusiness\Imarda360SecurityBusiness.csproj">
+      <Project>{b24605d5-648a-427a-b537-61048feff3b8}</Project>
+      <Name>Imarda360SecurityBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Application\Library\CRM\Imarda360CRMBusinessInterface\Imarda360CRMBusinessInterface.csproj">
+      <Project>{5ea2c0a5-682d-44f6-8284-680a80800311}</Project>
+      <Name>Imarda360CRMBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Application\Library\CRM\Imarda360CRMBusiness\Imarda360CRMBusiness.csproj">
+      <Project>{a5519dfd-ff41-42c1-bbd8-169dedceb88c}</Project>
+      <Name>Imarda360CRMBusiness</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Application\Library\RouteTracker\Imarda360TrackingBusinessInterface\CormitRouteTrackingApplicationLibInterface.csproj">
       <Project>{b2fb3371-bb3b-44a5-8417-49ef61753c18}</Project>
       <Name>CormitRouteTrackingApplicationLibInterface</Name>
@@ -88,6 +104,14 @@
     <ProjectReference Include="..\..\Application\Solution\CormitRouteApplication\Imarda360Business.csproj">
       <Project>{6a7d8cfa-1316-4ae0-b27b-85cfbd3682fe}</Project>
       <Name>Imarda360Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\CRM\ImardaCRMBusinessInterface\ImardaCRMBusinessInterface.csproj">
+      <Project>{7770a95b-d345-4892-bc40-9d7effc64c8a}</Project>
+      <Name>ImardaCRMBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\CRM\ImardaCRMBusiness\ImardaCRMBusiness.csproj">
+      <Project>{d2e0ce2e-890a-48d9-b797-3cb7138a8bb2}</Project>
+      <Name>ImardaCRMBusiness</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Business\RouteTracking\CormitRouteBusiness\CormitRouteTrackingBusiness.csproj">
       <Project>{487b13e4-c354-497d-ad5e-13f45e83a468}</Project>
@@ -112,6 +136,14 @@
     <ProjectReference Include="..\..\Imarda.Logging\Imarda.Logging.csproj">
       <Project>{94e293d9-705a-4a6b-9cb9-eccfbbde3be6}</Project>
       <Name>Imarda.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Security\ImardaSecurityBusinessInterface\CormitSecurityBusinessInterface.csproj">
+      <Project>{5e9ca19f-50be-4c6a-bd80-2231144e96d1}</Project>
+      <Name>CormitSecurityBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Security\ImardaSecurityBusiness\CormitSecurityBusiness.csproj">
+      <Project>{fefa9792-648f-47e1-b9e6-bde4a29a1c3d}</Project>
+      <Name>CormitSecurityBusiness</Name>
     </ProjectReference>
     <ProjectReference Include="..\ServiceHostManager\ServiceHostManager.csproj">
       <Project>{6bae4538-4471-4040-9d6f-40636ad38048}</Project>
