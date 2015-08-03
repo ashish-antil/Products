@@ -72,6 +72,10 @@
       <Project>{1D04713F-179E-42B1-BF98-4E4051C70710}</Project>
       <Name>Imarda360Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Library\ApplicationSecurity\AppliactionSecurityBusinessInterface\Imarda360SecurityBusinessInterface.csproj">
+      <Project>{99dd1d74-8e68-4938-9dd1-981c72a3bced}</Project>
+      <Name>Imarda360SecurityBusinessInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Library\CRM\Imarda360CRMBusinessInterface\Imarda360CRMBusinessInterface.csproj">
       <Project>{5ea2c0a5-682d-44f6-8284-680a80800311}</Project>
       <Name>Imarda360CRMBusinessInterface</Name>

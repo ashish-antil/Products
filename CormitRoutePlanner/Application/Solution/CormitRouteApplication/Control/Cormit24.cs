@@ -17,6 +17,7 @@ using FernBusinessBase.Errors;
 using FernBusinessBase.Extensions;
 using FernBusinessBase.View.Generics;
 using Imarda.Lib;
+using Imarda.Logging;
 using Imarda360Application.CRM;
 using Imarda360Base;
 
@@ -28,6 +29,7 @@ using IImardaCRM = Imarda360Application.CRM.IImardaCRM;
 using IImardaSecurity = Cormit.Application.RouteApplication.Security.IImardaSecurity;
 
 
+
 // ReSharper disable once CheckNamespace
 namespace Cormit.Application.RouteApplication
 {
@@ -37,6 +39,7 @@ namespace Cormit.Application.RouteApplication
 		public static readonly Guid InstanceID = SequentialGuid.NewDbGuid();
 		public const string Description = "C24 Application";
 
+        private static readonly ErrorLogger _Log = ErrorLogger.GetLogger("C24");
 		//private static readonly ErrorLogger _Log = ErrorLogger.GetLogger("i360");
 
 
@@ -55,6 +58,7 @@ namespace Cormit.Application.RouteApplication
 		    _CRM = ImardaCRM.Instance;
 		    _Security = ImardaSecurity.Instance;
 		    //_CallLogger = new MethodCallLogger(_Log);
+            _CallLogger = new MethodCallLogger(_Log);
 
 		}
 
@@ -1817,7 +1821,1048 @@ namespace Cormit.Application.RouteApplication
             }
         }
         #endregion
+# region IimardaSecurity
 
+        /// <summary>
+        /// Change the security entity and person CompanyID.
+        /// Use this in conjunction with Change
+        /// </summary>
+        /// <param name="request">.ID = new company ID, ["username"] = SecurityEntity.LoginUserName</param>
+        /// <returns>personID wrapped in SimpleResponse</returns>
+        public SimpleResponse<Guid> TransferUser(IDRequest request)
+        {
+            try
+            {
+                Log("TransferUser", request);
+                _SessionManager.CheckPermissions(request, AuthToken.TransferUser);
+                var response1 = _Security.TransferUser(request);
+                Guid personID = response1.Value;
+                var response2 = _CRM.GetPerson(new IDRequest(personID));
+                Person person = response2.Item;
+                person.CompanyID = request.ID;
+                var response = _CRM.SavePerson(new SaveRequest<Person>(person));
+                ErrorHandler.Check(response);
+                LogResult(request, response);
+                return new SimpleResponse<Guid>(person.ID);
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<SimpleResponse<Guid>>(ex);
+            }
+        }
+        public BusinessMessageResponse SetDeletedSecurityEntityByCRMID(IDRequest request)
+        {
+            try
+            {
+                Log("SetDeletedSecurityEntityByCRMID", request);
+                _SessionManager.CheckPermissions(request, AuthToken.SetDeletedSecurityEntityByCRMID);
+                var response = _Security.SetDeletedSecurityEntityByCRMID(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+        public GetListResponse<SecurityObject> GetUnassignedSecurityObjects(IDRequest request)
+        {
+            try
+            {
+                Log("GetUnassignedSecurityObjects", request);
+                var response = _Security.GetUnassignedSecurityObjects(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<SecurityObject>>(ex);
+            }
+        }
+
+        public GetListResponse<SecurityObject> GetAssignedSecurityObjects(IDRequest request)
+        {
+            try
+            {
+                Log("GetAssignedSecurityObjects", request);
+                var response = _Security.GetAssignedSecurityObjects(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<SecurityObject>>(ex);
+            }
+        }
+        public BusinessMessageResponse SetAcessTokenOnSession(SessionRequest request)
+        {
+            try
+            {
+                Log("SetAcessTokenOnSession", request);
+                var response = _Security.SetAcessTokenOnSession(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+        public BusinessMessageResponse SaveUserSecurityEntity(SaveRequest<SecurityEntity> request)
+        {
+            try
+            {
+                Log("SaveUserSecurityEntity", request);
+                _SessionManager.CheckPermissions(request, AuthToken.SaveUserSecurityEntity);
+                var response = _Security.SaveUserSecurityEntity(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+        public BusinessMessageResponse SaveFeatureSupportList(SaveListRequest<FeatureSupport> request)
+        {
+            try
+            {
+                Log("SaveFeatureSupportList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveFeatureSupportList);
+                TimeZoneConverter.GlobalizeObjectList(request.List, session);
+                var response = _Security.SaveFeatureSupportList(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse SaveFeatureSupport(SaveRequest<FeatureSupport> request)
+        {
+            try
+            {
+                Log("SaveFeatureSupport", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveFeatureSupport);
+                TimeZoneConverter.GlobalizeObject(request.Item, session);
+                var response = _Security.SaveFeatureSupport(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse DeleteFeatureSupport(IDRequest request)
+        {
+            try
+            {
+                Log("DeleteFeatureSupport", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.DeleteFeatureSupport);
+                var response = _Security.DeleteFeatureSupport(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public GetItemResponse<FeatureSupport> GetFeatureSupport(IDRequest request)
+        {
+            try
+            {
+                Log("GetFeatureSupport", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetFeatureSupport);
+                var response = _Security.GetFeatureSupport(request);
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<FeatureSupport>>(ex);
+            }
+        }
+
+        public GetUpdateCountResponse GetFeatureSupportUpdateCount(GetUpdateCountRequest request)
+        {
+            try
+            {
+                Log("GetFeatureSupportUpdateCount", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetFeatureSupportUpdateCount);
+                var response = _Security.GetFeatureSupportUpdateCount(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+            }
+        }
+        public BusinessMessageResponse SaveApplicationPlanList(SaveListRequest<ApplicationPlan> request)
+        {
+            try
+            {
+                Log("SaveApplicationPlanList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationPlanList);
+                TimeZoneConverter.GlobalizeObjectList(request.List, session);
+                var response = _Security.SaveApplicationPlanList(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse SaveApplicationPlan(SaveRequest<ApplicationPlan> request)
+        {
+            try
+            {
+                Log("SaveApplicationPlan", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationPlan);
+                TimeZoneConverter.GlobalizeObject(request.Item, session);
+                var response = _Security.SaveApplicationPlan(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse DeleteApplicationPlan(IDRequest request)
+        {
+            try
+            {
+                Log("DeleteApplicationPlan", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.DeleteApplicationPlan);
+                var response = _Security.DeleteApplicationPlan(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public GetItemResponse<ApplicationPlan> GetApplicationPlan(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlan", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlan);
+                var response = _Security.GetApplicationPlan(request);
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<ApplicationPlan>>(ex);
+            }
+        }
+
+        public GetUpdateCountResponse GetApplicationPlanUpdateCount(GetUpdateCountRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlanUpdateCount", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlanUpdateCount);
+                var response = _Security.GetApplicationPlanUpdateCount(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+            }
+        }
+
+        public GetListResponse<ApplicationPlanFeature> GetApplicationPlanFeatureList(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlanFeatureList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlanFeatureList);
+                var response = _Security.GetApplicationPlanFeatureList(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationPlanFeature>>(ex);
+            }
+        }
+
+        public BusinessMessageResponse SaveApplicationPlanFeatureList(SaveListRequest<ApplicationPlanFeature> request)
+        {
+            try
+            {
+                Log("SaveApplicationPlanFeatureList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationPlanFeatureList);
+                TimeZoneConverter.GlobalizeObjectList(request.List, session);
+                var response = _Security.SaveApplicationPlanFeatureList(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse SaveApplicationPlanFeature(SaveRequest<ApplicationPlanFeature> request)
+        {
+            try
+            {
+                Log("SaveApplicationPlanFeature", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationPlanFeature);
+                TimeZoneConverter.GlobalizeObject(request.Item, session);
+                var response = _Security.SaveApplicationPlanFeature(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse DeleteApplicationPlanFeature(IDRequest request)
+        {
+            try
+            {
+                Log("DeleteApplicationPlanFeature", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.DeleteApplicationPlanFeature);
+                var response = _Security.DeleteApplicationPlanFeature(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public GetItemResponse<ApplicationPlanFeature> GetApplicationPlanFeature(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlanFeature", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlanFeature);
+                var response = _Security.GetApplicationPlanFeature(request);
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<ApplicationPlanFeature>>(ex);
+            }
+        }
+
+        public BusinessMessageResponse SaveApplicationFeatureOwnerList(SaveListRequest<ApplicationFeatureOwner> request)
+        {
+            try
+            {
+                Log("SaveApplicationFeatureOwnerList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationFeatureOwnerList);
+                TimeZoneConverter.GlobalizeObjectList(request.List, session);
+                var response = _Security.SaveApplicationFeatureOwnerList(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse SaveApplicationFeatureOwner(SaveRequest<ApplicationFeatureOwner> request)
+        {
+            try
+            {
+                Log("SaveApplicationFeatureOwner", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationFeatureOwner);
+                TimeZoneConverter.GlobalizeObject(request.Item, session);
+                var response = _Security.SaveApplicationFeatureOwner(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse DeleteApplicationFeatureOwner(IDRequest request)
+        {
+            try
+            {
+                Log("DeleteApplicationFeatureOwner", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.DeleteApplicationFeatureOwner);
+                var response = _Security.DeleteApplicationFeatureOwner(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public GetItemResponse<ApplicationFeatureOwner> GetApplicationFeatureOwner(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureOwner", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureOwner);
+                var response = _Security.GetApplicationFeatureOwner(request);
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<ApplicationFeatureOwner>>(ex);
+            }
+        }
+
+        public GetUpdateCountResponse GetApplicationFeatureOwnerUpdateCount(GetUpdateCountRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureOwnerUpdateCount", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureOwnerUpdateCount);
+                var response = _Security.GetApplicationFeatureOwnerUpdateCount(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+            }
+        }
+        public BusinessMessageResponse SaveApplicationFeatureList(SaveListRequest<ApplicationFeature> request)
+        {
+            try
+            {
+                Log("SaveApplicationFeatureList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationFeatureList);
+                TimeZoneConverter.GlobalizeObjectList(request.List, session);
+                var response = _Security.SaveApplicationFeatureList(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+        public BusinessMessageResponse SaveApplicationFeatureCategoryList(SaveListRequest<ApplicationFeatureCategory> request)
+        {
+            try
+            {
+                Log("SaveApplicationFeatureCategoryList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationFeatureCategoryList);
+                TimeZoneConverter.GlobalizeObjectList(request.List, session);
+                var response = _Security.SaveApplicationFeatureCategoryList(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+        public BusinessMessageResponse SaveApplicationFeatureCategory(SaveRequest<ApplicationFeatureCategory> request)
+        {
+            try
+            {
+                Log("SaveApplicationFeatureCategory", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationFeatureCategory);
+                TimeZoneConverter.GlobalizeObject(request.Item, session);
+                var response = _Security.SaveApplicationFeatureCategory(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public BusinessMessageResponse DeleteApplicationFeatureCategory(IDRequest request)
+        {
+            try
+            {
+                Log("DeleteApplicationFeatureCategory", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.DeleteApplicationFeatureCategory);
+                var response = _Security.DeleteApplicationFeatureCategory(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public GetItemResponse<ApplicationFeatureCategory> GetApplicationFeatureCategory(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureCategory", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureCategory);
+                var response = _Security.GetApplicationFeatureCategory(request);
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<ApplicationFeatureCategory>>(ex);
+            }
+        }
+
+        public GetUpdateCountResponse GetApplicationFeatureCategoryUpdateCount(GetUpdateCountRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureCategoryUpdateCount", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureCategoryUpdateCount);
+                var response = _Security.GetApplicationFeatureCategoryUpdateCount(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+            }
+        }
+
+        public BusinessMessageResponse SaveApplicationFeature(SaveRequest<ApplicationFeature> request)
+        {
+            try
+            {
+                Log("SaveApplicationFeature", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.SaveApplicationFeature);
+                TimeZoneConverter.GlobalizeObject(request.Item, session);
+                var response = _Security.SaveApplicationFeature(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+        public BusinessMessageResponse ResetPassword(ResetPasswordRequest request)
+        {
+            try
+            {
+                Log("ResetPassword", request);
+                var response = _Security.ResetPassword(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+        public BusinessMessageResponse Logout(SessionRequest request)
+        {
+            Log("Logout", request);
+
+            var response = _Security.Logout(request);
+            LogResult(request, response);
+            return response;
+        }
+
+        /// <summary>
+        /// Check for existence of session object in cache.
+        /// </summary>
+        /// <param name="request">SessionID != null, other fields are not used</param>
+        /// <returns>BusinessMessageResponse.StatusMessage == "OK" if authenticated </returns>
+        public BusinessMessageResponse IsAuthenticated(SessionRequest request)
+        {
+            try
+            {
+                if (request.SessionID != Guid.Empty)
+                {
+                    // check session ID only
+                    if (_SessionManager.GetSession(request.SessionID) != null)
+                    {
+                        return new BusinessMessageResponse();
+                    }
+                    else
+                    {
+                        return new BusinessMessageResponse { Status = false };
+                    }
+                }
+                else
+                {
+                    // check user name and password
+                    bool authenticated = false;
+                    string user = request.Username;
+                    string pwd = request.Password;
+                    if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pwd))
+                    {
+                        return new BusinessMessageResponse { Status = false, StatusMessage = "no input" };
+                    }
+                    GetItemResponse<SecurityEntity> resp =
+                        _Security.GetSecurityEntityByLoginUserName(new IDRequest(Guid.Empty, "username", user));
+                    if (ServiceMessageHelper.IsSuccess(resp))
+                    {
+                        SecurityEntity se = resp.Item;
+                        string hash2 = Convert.ToBase64String(AuthenticationHelper.ComputePasswordHash(se.Salt, pwd));
+                        if (hash2 == se.LoginPassword)
+                        {
+                            authenticated = true;
+                        }
+                        else
+                        {
+                            string hash1 = AuthenticationHelper.ComputeHashOldStyle(user, pwd);
+                            if (hash1 == se.LoginPassword)
+                            {
+                                authenticated = true;
+                            }
+                        }
+                    }
+                    return new BusinessMessageResponse { Status = authenticated };
+                }
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+        public GetItemResponse<SecurityEntity> GetUserSecurityEntity(IDRequest request)
+        {
+            try
+            {
+                Log("GetUserSecurityEntity", request);
+                SessionObject session = _SessionManager.CheckPermissions(request, AuthToken.GetUserSecurityEntity);
+
+                GetItemResponse<SecurityEntity> response = RemoveSensitiveData(_Security.GetUserSecurityEntity(request));
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<SecurityEntity>>(ex);
+            }
+        }
+        public GetListResponse<LogonLog> GetTopNLogonLogListBySecurityEntityID(IDRequest request)
+        {
+            try
+            {
+                Log("GetTopNLogonLogListBySecurityEntityID", request);
+                SessionObject session = _SessionManager.CheckPermissions(request,
+                                                                                                                                 AuthToken.GetTopNLogonLogListBySecurityEntityID);
+                TimeZoneConverter.GlobalizeRequest(request, session);
+                GetListResponse<LogonLog> response = _Security.GetTopNLogonLogListBySecurityEntityID(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<LogonLog>>(ex);
+            }
+        }
+        public GetItemResponse<ConfiguredSessionObject> GetSessionByID(SessionRequest request)
+        {
+            try
+            {
+                var session = _SessionManager.GetSession(request.SessionID);
+                var result = new GetItemResponse<ConfiguredSessionObject>();
+                if (session != null)
+                {
+                    result.Item = (ConfiguredSessionObject)session;
+                }
+                else
+                {
+                    result = new GetItemResponse<ConfiguredSessionObject> { Status = false, StatusMessage = "Invalid Session, Please ReLogin" };
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<ConfiguredSessionObject>>(ex);
+            }
+        }
+        public GetItemResponse<ConfiguredSessionObject> GetSession(SessionRequest request)
+        {
+            try
+            {
+                Log("GetSessionByAcessToken", request);
+                var response = _Security.GetSession(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<ConfiguredSessionObject>>(ex);
+            }
+        }
+        public GetItemResponse<SecurityEntity> GetSecurityEntityByLoginUserName(IDRequest request)
+        {
+            try
+            {
+                Log("GetSecurityEntityByLoginUserName", request);
+                SessionObject session = _SessionManager.CheckPermissions(request,
+                                                                                                                                 AuthToken.GetSecurityEntityByLoginUserName);
+                GetItemResponse<SecurityEntity> response = RemoveSensitiveData(_Security.GetSecurityEntityByLoginUserName(request));
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<SecurityEntity>>(ex);
+            }
+        }
+        public GetListResponse<FeatureSupport> GetFeatureSupportListByTimeStamp(GetListByTimestampRequest request)
+        {
+            try
+            {
+                Log("GetFeatureSupportListByTimeStamp", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetFeatureSupportListByTimeStamp);
+                TimeZoneConverter.Globalize(request, session);
+                var response = _Security.GetFeatureSupportListByTimeStamp(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<FeatureSupport>>(ex);
+            }
+        }
+
+        public GetListResponse<FeatureSupport> GetFeatureSupportList(IDRequest request)
+        {
+            try
+            {
+                Log("GetFeatureSupportList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetFeatureSupportList);
+                var response = _Security.GetFeatureSupportList(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<FeatureSupport>>(ex);
+            }
+        }
+        public GenericList360Response<GetListResponse<SecurityObject>> GetAssignedAndUnAssignedSecurityObjects(
+            IDRequest request)
+        {
+            try
+            {
+                Log("GetAssignedAndUnAssignedSecurityObjects", request);
+                SessionObject session = _SessionManager.GetSession(request.SessionID);
+                request["UserID"] = session.SecurityEntityID.ToString();
+                var response = _Security.GetAssignedAndUnAssignedSecurityObjects(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GenericList360Response<GetListResponse<SecurityObject>>>(ex);
+            }
+        }
+
+        public SolutionMessageResponse AssignSecurityObjectsToEntity(SaveListRequest<SecurityObject> request)
+        {
+            try
+            {
+                Log("AssignSecurityObjectsToEntity", request);
+                var response = _Security.AssignSecurityObjectsToEntity(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<SolutionMessageResponse>(ex);
+            }
+        }
+
+        public GetListResponse<ApplicationPlan> GetApplicationPlanListByTimeStamp(GetListByTimestampRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlanListByTimeStamp", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlanListByTimeStamp);
+                TimeZoneConverter.Globalize(request, session);
+                var response = _Security.GetApplicationPlanListByTimeStamp(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationPlan>>(ex);
+            }
+        }
+
+        public GetListResponse<ApplicationPlan> GetApplicationPlanList(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlanList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlanList);
+                var response = _Security.GetApplicationPlanList(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationPlan>>(ex);
+            }
+        }
+        public GetUpdateCountResponse GetApplicationPlanFeatureUpdateCount(GetUpdateCountRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlanFeatureUpdateCount", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlanFeatureUpdateCount);
+                var response = _Security.GetApplicationPlanFeatureUpdateCount(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+            }
+        }
+        public GetListResponse<ApplicationPlanFeature> GetApplicationPlanFeatureListByTimeStamp(GetListByTimestampRequest request)
+        {
+            try
+            {
+                Log("GetApplicationPlanFeatureListByTimeStamp", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationPlanFeatureListByTimeStamp);
+                TimeZoneConverter.Globalize(request, session);
+                var response = _Security.GetApplicationPlanFeatureListByTimeStamp(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationPlanFeature>>(ex);
+            }
+        }
+        public GetUpdateCountResponse GetApplicationFeatureUpdateCount(GetUpdateCountRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureUpdateCount", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureUpdateCount);
+                var response = _Security.GetApplicationFeatureUpdateCount(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetUpdateCountResponse>(ex);
+            }
+        }
+        public GetListResponse<ApplicationFeatureOwner> GetApplicationFeatureOwnerListByTimeStamp(GetListByTimestampRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureOwnerListByTimeStamp", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureOwnerListByTimeStamp);
+                TimeZoneConverter.Globalize(request, session);
+                var response = _Security.GetApplicationFeatureOwnerListByTimeStamp(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeatureOwner>>(ex);
+            }
+        }
+
+        public GetListResponse<ApplicationFeatureOwner> GetApplicationFeatureOwnerList(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureOwnerList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureOwnerList);
+                var response = _Security.GetApplicationFeatureOwnerList(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeatureOwner>>(ex);
+            }
+        }
+        public GetListResponse<ApplicationFeature> GetApplicationFeatureListByTimeStamp(GetListByTimestampRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureListByTimeStamp", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureListByTimeStamp);
+                TimeZoneConverter.Globalize(request, session);
+                var response = _Security.GetApplicationFeatureListByTimeStamp(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeature>>(ex);
+            }
+        }
+        public GetListResponse<ApplicationFeature> GetApplicationFeatureListByOwnerID(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureListByOwnerID", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureListByOwnerID);
+
+                var response = _Security.GetApplicationFeatureListByOwnerID(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeature>>(ex);
+            }
+        }
+        public GetListResponse<ApplicationFeature> GetApplicationFeatureListByCategoryID(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureListByCategoryID", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureListByCategoryID);
+
+                var response = _Security.GetApplicationFeatureListByCategoryID(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeature>>(ex);
+            }
+        }
+        public GetListResponse<ApplicationFeature> GetApplicationFeatureList(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureList);
+                var response = _Security.GetApplicationFeatureList(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeature>>(ex);
+            }
+        }
+        public GetListResponse<ApplicationFeatureCategory> GetApplicationFeatureCategoryListByTimeStamp(GetListByTimestampRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureCategoryListByTimeStamp", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureCategoryListByTimeStamp);
+                TimeZoneConverter.Globalize(request, session);
+                var response = _Security.GetApplicationFeatureCategoryListByTimeStamp(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeatureCategory>>(ex);
+            }
+        }
+        public GetListResponse<ApplicationFeatureCategory> GetApplicationFeatureCategoryList(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeatureCategoryList", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeatureCategoryList);
+                var response = _Security.GetApplicationFeatureCategoryList(request);
+                TimeZoneConverter.LocalizeObjectList(response.List, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetListResponse<ApplicationFeatureCategory>>(ex);
+            }
+        }
+        public GetItemResponse<ApplicationFeature> GetApplicationFeature(IDRequest request)
+        {
+            try
+            {
+                Log("GetApplicationFeature", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.GetApplicationFeature);
+                var response = _Security.GetApplicationFeature(request);
+                TimeZoneConverter.LocalizeObject(response.Item, session);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle<GetItemResponse<ApplicationFeature>>(ex);
+            }
+        }
+        public BusinessMessageResponse DeleteApplicationFeature(IDRequest request)
+        {
+            try
+            {
+                Log("DeleteApplicationFeature", request);
+                var session = _SessionManager.CheckPermissions(request, AuthToken.DeleteApplicationFeature);
+                var response = _Security.DeleteApplicationFeature(request);
+                LogResult(request, response);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return ErrorHandler.Handle(ex);
+            }
+        }
+
+#endregion
+
+        private static GetItemResponse<SecurityEntity> RemoveSensitiveData(GetItemResponse<SecurityEntity> r)
+        {
+            SecurityEntity se = r.Item;
+            if (se != null)
+            {
+                se.Salt = Guid.Empty;
+                se.LoginPassword = string.Empty;
+            }
+            return r;
+        }
         public GetItemResponse<ConfiguredSessionObject> Login(SessionRequest request)
         {
             try

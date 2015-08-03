@@ -137,6 +137,22 @@
       <Project>{94e293d9-705a-4a6b-9cb9-eccfbbde3be6}</Project>
       <Name>Imarda.Logging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\ConfigurationHelpers\ConfigManagement\ConfigManagement.csproj">
+      <Project>{e772d262-a1ff-4bb2-b74a-37589f0571d1}</Project>
+      <Name>ConfigManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\ImardaConfigurationBusinessInterface\ImardaConfigurationBusinessInterface.csproj">
+      <Project>{bb1fb605-a863-4906-a514-6c42c9bf68b1}</Project>
+      <Name>ImardaConfigurationBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\ImardaConfigurationBusiness\ImardaConfigurationBusiness.csproj">
+      <Project>{d602c213-48ac-484b-91b7-e38313eda271}</Project>
+      <Name>ImardaConfigurationBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\ImardaConfigurationService\ImardaConfigurationService.csproj">
+      <Project>{e742324b-de0b-44a0-acc1-97f39be3fd24}</Project>
+      <Name>ImardaConfigurationService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\Security\ImardaSecurityBusinessInterface\CormitSecurityBusinessInterface.csproj">
       <Project>{5e9ca19f-50be-4c6a-bd80-2231144e96d1}</Project>
       <Name>CormitSecurityBusinessInterface</Name>
