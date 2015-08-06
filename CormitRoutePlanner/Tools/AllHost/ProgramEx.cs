@@ -55,6 +55,7 @@ namespace AllHost
             hostTypes.Add(typeof(ImardaCRMBusiness.ImardaCRM));
             hostTypes.Add(typeof(ImardaSecurityBusiness.ImardaSecurity));
             hostTypes.Add(typeof(ImardaConfigurationBusiness.ImardaConfiguration));
+		    hostTypes.Add(typeof (ImardaTaskBusiness.ImardaTask));
 
             hostTypes.Add(typeof(Cormit.Application.RouteApplication.Cormit24));
 			

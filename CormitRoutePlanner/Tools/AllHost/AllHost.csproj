@@ -161,6 +161,14 @@
       <Project>{fefa9792-648f-47e1-b9e6-bde4a29a1c3d}</Project>
       <Name>CormitSecurityBusiness</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Task\ImardaTaskBusinessInterface\ImardaTaskBusinessInterface.csproj">
+      <Project>{b2708896-e7bc-4078-87f7-e3bee08a77fa}</Project>
+      <Name>ImardaTaskBusinessInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Task\ImardaTaskBusiness\ImardaTaskBusiness.csproj">
+      <Project>{a45b285b-4bd5-41b1-a9c5-a5b6cbf82284}</Project>
+      <Name>ImardaTaskBusiness</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiceHostManager\ServiceHostManager.csproj">
       <Project>{6bae4538-4471-4040-9d6f-40636ad38048}</Project>
       <Name>ServiceHostManager</Name>
